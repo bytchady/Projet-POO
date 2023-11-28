@@ -121,14 +121,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Article.cpp" />
     <ClCompile Include="BDD.cpp" />
     <ClCompile Include="mainmenu.cpp" />
+    <ClCompile Include="Cataloque.cpp" />
+    <ClCompile Include="ServiceArticle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Article.h" />
     <ClInclude Include="BDD.h" />
     <ClInclude Include="mainmenu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Catalogue.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ServiceArticle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Catalogue.resx">
+      <DependentUpon>Catalogue.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

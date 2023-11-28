@@ -8,7 +8,7 @@ BDD::BDD()
     try
     {
         // Chaine de connexion
-        String^ connectString = "Data Source=127.0.0.1,1433;Initial Catalog = shopbycesi;User ID=sa;Password=Mael123!";
+        String^ connectString = "Data Source=127.0.0.1,1433;Initial Catalog = shopbycesi;User ID=sa;Password=Octoberkaltouma1603!+";
         // Objet connection
         connection = gcnew SqlConnection(connectString);
         // Ouverture
@@ -29,7 +29,7 @@ System::Data::DataSet^ BDD::executeQuery(String^ sql)
 {
     System::Diagnostics::Debug::WriteLine("REQSQL: " + sql);
     SqlDataAdapter^ da = gcnew SqlDataAdapter(sql, this->connection);
-    // Cr�ation d'un DataSet
+    // Creation d'un DataSet
     System::Data::DataSet^ ds = gcnew System::Data::DataSet();
     // Remplissage du DataSet avec le SqlDataAdapter
     da->Fill(ds);
@@ -41,7 +41,7 @@ int BDD::executeNonQuery(String^ sql)
 {
     System::Diagnostics::Debug::WriteLine("REQSQL: " + sql);
     SqlCommand^ command = gcnew SqlCommand(sql, this->connection);
-    // Execution!
+    // Execution
     int affectedrows = command->ExecuteNonQuery();
     return affectedrows;
 }
