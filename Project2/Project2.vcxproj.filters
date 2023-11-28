@@ -21,12 +21,25 @@
     <ClCompile Include="BDD.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Article.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+>>>>>>> 05fec4464bc31568ed8ca87d84fbc69a327719f3
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BDD.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="mainmenu.h">
+=======
+    <ClInclude Include="Article.h">
+>>>>>>> 05fec4464bc31568ed8ca87d84fbc69a327719f3
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
