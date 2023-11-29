@@ -1,7 +1,6 @@
 #include "Article.h"
 using namespace System;
 
-
 namespace NS_Article {
     void Article::setRefArticle(int ref_article) {
         this->Ref_Article = ref_article;
@@ -79,7 +78,6 @@ namespace NS_Article {
         return "DECLARE @Nature_Article varchar(50); SET @Nature_Article = '" + Nature_Article + "'; "
             "DECLARE @Nom_Article varchar(50); SET @Nom_Article = '" + Nom_Article + "'; "
             "DECLARE @Couleur_Article varchar(50); SET @Couleur_Article  = '" + Couleur_Article + "'; "
-            "DECLARE @Ref_Article  int; SET @Ref_Article = " + Convert::ToString(Ref_Article) + "; "
             "IF NOT EXISTS(SELECT Ref_Article FROM Article WHERE Nature_Article = @Nature_Article AND Nom_Article = @Nom_Article AND Couleur_Article = @Couleur_Article) "
             "BEGIN "
             "INSERT INTO Article (Nom_Article, Nature_Article, Couleur_Article, Stock_Article, Quantite_Reapprovisionnement, Prix_HT, Taux_TVA, Supprimer) "
@@ -108,6 +106,5 @@ namespace NS_Article {
     String^ Article::Select() {
         return "SELECT * FROM Article";
     }
-}
-    
 
+}
