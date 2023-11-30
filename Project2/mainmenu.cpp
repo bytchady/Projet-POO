@@ -1,9 +1,9 @@
 #include "mainmenu.h"
 
-using namespace ProjetPOO;
+using namespace ProjectPOO;
 
 void WinMain() {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-    Application::Run(gcnew MyForm());
+    Application::Run(gcnew mainmenu());
 }
