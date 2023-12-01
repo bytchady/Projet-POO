@@ -11,6 +11,10 @@
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="AjouterPersonnel.cpp" />
+    <ClCompile Include="GestionClient.cpp" />
+    <ClCompile Include="ModifierClient.cpp" />
+    <ClCompile Include="AjouterClient.cpp" />
+    <ClCompile Include="ModifierAdresse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Article.h" />
@@ -23,5 +27,9 @@
     <ClInclude Include="Personnel.h" />
     <ClInclude Include="ModifierPersonnel.h" />
     <ClInclude Include="AjouterPersonnel.h" />
+    <ClInclude Include="GestionClient.h" />
+    <ClInclude Include="ModifierClient.h" />
+    <ClInclude Include="AjouterClient.h" />
+    <ClInclude Include="ModifierAdresse.h" />
   </ItemGroup>
 </Project>

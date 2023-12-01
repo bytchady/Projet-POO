@@ -122,19 +122,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ModifierAdresse.cpp" />
     <ClCompile Include="AjouterArticle.cpp" />
+    <ClCompile Include="AjouterClient.cpp" />
     <ClCompile Include="AjouterPersonnel.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="BDD.cpp" />
     <ClCompile Include="Catalogue.cpp" />
+    <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="mainmenu.cpp" />
+    <ClCompile Include="ModifierClient.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ModifierAdresse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AjouterArticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AjouterClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AjouterPersonnel.h">
@@ -145,10 +155,16 @@
     <ClInclude Include="Catalogue.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GestionClient.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="GestionPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="mainmenu.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModifierClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModifierPersonnel.h">
@@ -158,6 +174,9 @@
     <ClInclude Include="ServiceArticle.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ModifierAdresse.resx">
+      <DependentUpon>ModifierAdresse.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AjouterArticle.resx">
       <DependentUpon>AjouterArticle.h</DependentUpon>
     </EmbeddedResource>
@@ -167,11 +186,17 @@
     <EmbeddedResource Include="Catalogue.resx">
       <DependentUpon>Catalogue.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionClient.resx">
+      <DependentUpon>GestionClient.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionPersonnel.resx">
       <DependentUpon>GestionPersonnel.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainmenu.resx">
       <DependentUpon>mainmenu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierClient.resx">
+      <DependentUpon>ModifierClient.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierPersonnel.resx">
       <DependentUpon>ModifierPersonnel.h</DependentUpon>
