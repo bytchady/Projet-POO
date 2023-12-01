@@ -26,6 +26,7 @@
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>Project2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Project2</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -121,16 +122,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="BDD.cpp" />
+    <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="mainmenu.cpp" />
+    <ClCompile Include="ServiceArticle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AjouterArticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Article.h" />
     <ClInclude Include="BDD.h" />
+    <ClInclude Include="Catalogue.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="mainmenu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ServiceArticle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AjouterArticle.resx">
+      <DependentUpon>AjouterArticle.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogue.resx">
+      <DependentUpon>Catalogue.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainmenu.resx">
+      <DependentUpon>mainmenu.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
