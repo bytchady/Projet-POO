@@ -2,6 +2,7 @@
 #include "Catalogue.h"
 #include "GestionPersonnel.h"
 #include "GestionCommandes.h"
+#include "GestionStatistiques.h"
 
 namespace ProjectPOO {
 
@@ -225,8 +226,8 @@ namespace ProjectPOO {
 		g->ShowDialog();
 	}
 	private: System::Void bCommandes_Click(System::Object^ sender, System::EventArgs^ e) {
-		GestionCommandes^ c = gcnew GestionCommandes();
-		c->ShowDialog();
+		GestionCommandes^ com = gcnew GestionCommandes();
+		com->ShowDialog();
 	}
 	private: System::Void bClient_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -235,6 +236,8 @@ namespace ProjectPOO {
 		C->ShowDialog();
 	}
 	private: System::Void bStatisitques_Click(System::Object^ sender, System::EventArgs^ e) {
+		GestionStatistiques^ st = gcnew GestionStatistiques();
+		st->ShowDialog();
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}

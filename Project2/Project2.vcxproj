@@ -129,6 +129,7 @@
     <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="GestionCommandes.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
+    <ClCompile Include="GestionStatistiques.cpp" />
     <ClCompile Include="mainmenu.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
@@ -150,6 +151,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GestionPersonnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GestionStatistiques.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="mainmenu.h">
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionPersonnel.resx">
       <DependentUpon>GestionPersonnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionStatistiques.resx">
+      <DependentUpon>GestionStatistiques.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainmenu.resx">
       <DependentUpon>mainmenu.h</DependentUpon>
