@@ -12,12 +12,12 @@ namespace ProjectPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de ModifierPersonnel
+	/// Description résumée de AjouterPersonnel
 	/// </summary>
-	public ref class ModifierPersonnel : public System::Windows::Forms::Form
+	public ref class AjouterPersonnel : public System::Windows::Forms::Form
 	{
 	public:
-		ModifierPersonnel(void)
+		AjouterPersonnel(void)
 		{
 			InitializeComponent();
 			//
@@ -29,7 +29,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~ModifierPersonnel()
+		~AjouterPersonnel()
 		{
 			if (components)
 			{
@@ -55,7 +55,8 @@ namespace ProjectPOO {
 
 	private: System::Windows::Forms::VScrollBar^ vScrollBar1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
-	private: System::Windows::Forms::Button^ bValider;
+	private: System::Windows::Forms::Button^ bAjouter;
+
 
 	private: System::Windows::Forms::Label^ label1;
 
@@ -114,7 +115,7 @@ namespace ProjectPOO {
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->bAnnuler = (gcnew System::Windows::Forms::Button());
-			this->bValider = (gcnew System::Windows::Forms::Button());
+			this->bAjouter = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->vScrollBar1 = (gcnew System::Windows::Forms::VScrollBar());
@@ -167,7 +168,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 89)));
 			this->tableLayoutPanel2->Size = System::Drawing::Size(709, 831);
 			this->tableLayoutPanel2->TabIndex = 2;
-			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ModifierPersonnel::tableLayoutPanel2_Paint);
+			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AjouterPersonnel::tableLayoutPanel2_Paint);
 			// 
 			// label2
 			// 
@@ -207,7 +208,7 @@ namespace ProjectPOO {
 			this->label3->Size = System::Drawing::Size(705, 31);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Numéro et nom de rue";
-			this->label3->Click += gcnew System::EventHandler(this, &ModifierPersonnel::label3_Click);
+			this->label3->Click += gcnew System::EventHandler(this, &AjouterPersonnel::label3_Click);
 			// 
 			// textBox3
 			// 
@@ -234,7 +235,7 @@ namespace ProjectPOO {
 			this->label4->Size = System::Drawing::Size(705, 31);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Code postal";
-			this->label4->Click += gcnew System::EventHandler(this, &ModifierPersonnel::label4_Click);
+			this->label4->Click += gcnew System::EventHandler(this, &AjouterPersonnel::label4_Click);
 			// 
 			// textBox4
 			// 
@@ -248,7 +249,7 @@ namespace ProjectPOO {
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(705, 38);
 			this->textBox4->TabIndex = 13;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &ModifierPersonnel::textBox4_TextChanged);
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &AjouterPersonnel::textBox4_TextChanged);
 			// 
 			// label5
 			// 
@@ -337,7 +338,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
 			this->tableLayoutPanel1->Controls->Add(this->bAnnuler, 1, 0);
-			this->tableLayoutPanel1->Controls->Add(this->bValider, 0, 0);
+			this->tableLayoutPanel1->Controls->Add(this->bAjouter, 0, 0);
 			this->tableLayoutPanel1->Location = System::Drawing::Point(3, 744);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
@@ -358,21 +359,22 @@ namespace ProjectPOO {
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
-			this->bAnnuler->Click += gcnew System::EventHandler(this, &ModifierPersonnel::bAnnuler_Click);
+			this->bAnnuler->Click += gcnew System::EventHandler(this, &AjouterPersonnel::bAnnuler_Click);
 			// 
-			// bValider
+			// bAjouter
 			// 
-			this->bValider->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->bAjouter->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->bValider->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bAjouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bValider->Location = System::Drawing::Point(3, 3);
-			this->bValider->Name = L"bValider";
-			this->bValider->Size = System::Drawing::Size(345, 78);
-			this->bValider->TabIndex = 0;
-			this->bValider->Text = L"Valider";
-			this->bValider->UseVisualStyleBackColor = true;
+			this->bAjouter->Location = System::Drawing::Point(3, 3);
+			this->bAjouter->Name = L"bAjouter";
+			this->bAjouter->Size = System::Drawing::Size(345, 78);
+			this->bAjouter->TabIndex = 0;
+			this->bAjouter->Text = L"Ajouter";
+			this->bAjouter->UseVisualStyleBackColor = true;
+			this->bAjouter->Click += gcnew System::EventHandler(this, &AjouterPersonnel::bValider_Click);
 			// 
 			// textBox1
 			// 
@@ -397,7 +399,7 @@ namespace ProjectPOO {
 			this->label1->Size = System::Drawing::Size(705, 31);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Nom";
-			this->label1->Click += gcnew System::EventHandler(this, &ModifierPersonnel::label1_Click);
+			this->label1->Click += gcnew System::EventHandler(this, &AjouterPersonnel::label1_Click);
 			// 
 			// vScrollBar1
 			// 
@@ -407,21 +409,21 @@ namespace ProjectPOO {
 			this->vScrollBar1->Size = System::Drawing::Size(22, 985);
 			this->vScrollBar1->TabIndex = 3;
 			this->vScrollBar1->Value = 50;
-			this->vScrollBar1->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &ModifierPersonnel::vScrollBar1_Scroll);
+			this->vScrollBar1->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &AjouterPersonnel::vScrollBar1_Scroll);
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(414, 37);
+			this->label8->Location = System::Drawing::Point(399, 26);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(486, 55);
+			this->label8->Size = System::Drawing::Size(468, 55);
 			this->label8->TabIndex = 4;
-			this->label8->Text = L"Modifier un personnel";
-			this->label8->Click += gcnew System::EventHandler(this, &ModifierPersonnel::label8_Click);
+			this->label8->Text = L"Ajouter un personnel";
+			this->label8->Click += gcnew System::EventHandler(this, &AjouterPersonnel::label8_Click);
 			// 
-			// ModifierPersonnel
+			// AjouterPersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -432,11 +434,11 @@ namespace ProjectPOO {
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximumSize = System::Drawing::Size(1280, 1024);
 			this->MinimumSize = System::Drawing::Size(1280, 1024);
-			this->Name = L"ModifierPersonnel";
+			this->Name = L"AjouterPersonnel";
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Modifier un personnel";
-			this->Load += gcnew System::EventHandler(this, &ModifierPersonnel::ModifierPersonnel_Load);
+			this->Text = L"Ajouter un personnel";
+			this->Load += gcnew System::EventHandler(this, &AjouterPersonnel::AjouterPersonnel_Load);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();
 			this->tableLayoutPanel1->ResumeLayout(false);
@@ -449,23 +451,22 @@ namespace ProjectPOO {
 	}
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
 	private: System::Void vScrollBar1_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void ModifierPersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
+	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+	private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AjouterPersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void bValider_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 };
 }

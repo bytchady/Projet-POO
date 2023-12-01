@@ -26,7 +26,7 @@
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>Project2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Project2</ProjectName>
+    <ProjectName>ProjectPOO</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AjouterArticle.cpp" />
+    <ClCompile Include="AjouterPersonnel.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="BDD.cpp" />
     <ClCompile Include="Catalogue.cpp" />
@@ -134,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AjouterArticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AjouterPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Article.h" />
@@ -157,11 +161,20 @@
     <EmbeddedResource Include="AjouterArticle.resx">
       <DependentUpon>AjouterArticle.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AjouterPersonnel.resx">
+      <DependentUpon>AjouterPersonnel.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogue.resx">
       <DependentUpon>Catalogue.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionPersonnel.resx">
+      <DependentUpon>GestionPersonnel.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainmenu.resx">
       <DependentUpon>mainmenu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierPersonnel.resx">
+      <DependentUpon>ModifierPersonnel.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
