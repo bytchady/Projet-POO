@@ -122,7 +122,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AjouterArcticle.cpp" />
+    <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="BDD.cpp" />
     <ClCompile Include="Catalogue.cpp" />
@@ -130,7 +130,7 @@
     <ClCompile Include="ServiceArticle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AjouterArcticle.h">
+    <ClInclude Include="AjouterArticle.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Article.h" />
@@ -144,8 +144,8 @@
     <ClInclude Include="ServiceArticle.h" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AjouterArcticle.resx">
-      <DependentUpon>AjouterArcticle.h</DependentUpon>
+    <EmbeddedResource Include="AjouterArticle.resx">
+      <DependentUpon>AjouterArticle.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogue.resx">
       <DependentUpon>Catalogue.h</DependentUpon>

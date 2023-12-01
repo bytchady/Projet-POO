@@ -5,7 +5,7 @@
     <ClCompile Include="BDD.cpp" />
     <ClCompile Include="mainmenu.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
-    <ClCompile Include="AjouterArcticle.cpp" />
+    <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="Catalogue.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -13,7 +13,7 @@
     <ClInclude Include="BDD.h" />
     <ClInclude Include="mainmenu.h" />
     <ClInclude Include="ServiceArticle.h" />
-    <ClInclude Include="AjouterArcticle.h" />
+    <ClInclude Include="AjouterArticle.h" />
     <ClInclude Include="Catalogue.h" />
   </ItemGroup>
 </Project>

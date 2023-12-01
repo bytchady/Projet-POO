@@ -1,5 +1,5 @@
 #pragma once
-#include "AjouterArcticle.h"
+#include "AjouterArticle.h"
 
 namespace ProjectPOO {
 
@@ -85,7 +85,7 @@ namespace ProjectPOO {
 			// 
 			// Btn_RetourCatalogue
 			// 
-			this->Btn_RetourCatalogue->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->Btn_RetourCatalogue->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->Btn_RetourCatalogue->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Btn_RetourCatalogue->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
@@ -173,6 +173,7 @@ namespace ProjectPOO {
 			// 
 			this->Btn_AddCatalogue->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->Btn_AddCatalogue->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->Btn_AddCatalogue->BackColor = System::Drawing::SystemColors::Window;
 			this->Btn_AddCatalogue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Btn_AddCatalogue->Location = System::Drawing::Point(1760, 100);
@@ -180,13 +181,14 @@ namespace ProjectPOO {
 			this->Btn_AddCatalogue->Size = System::Drawing::Size(130, 50);
 			this->Btn_AddCatalogue->TabIndex = 6;
 			this->Btn_AddCatalogue->Text = L"Ajouter";
-			this->Btn_AddCatalogue->UseVisualStyleBackColor = true;
+			this->Btn_AddCatalogue->UseVisualStyleBackColor = false;
 			this->Btn_AddCatalogue->Click += gcnew System::EventHandler(this, &Catalogue::Btn_AddCatalogue_Click);
 			// 
 			// Btn_UpdateCatalogue
 			// 
 			this->Btn_UpdateCatalogue->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->Btn_UpdateCatalogue->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->Btn_UpdateCatalogue->BackColor = System::Drawing::SystemColors::Window;
 			this->Btn_UpdateCatalogue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Btn_UpdateCatalogue->Location = System::Drawing::Point(1760, 200);
@@ -194,13 +196,14 @@ namespace ProjectPOO {
 			this->Btn_UpdateCatalogue->Size = System::Drawing::Size(130, 50);
 			this->Btn_UpdateCatalogue->TabIndex = 7;
 			this->Btn_UpdateCatalogue->Text = L"Modifier";
-			this->Btn_UpdateCatalogue->UseVisualStyleBackColor = true;
+			this->Btn_UpdateCatalogue->UseVisualStyleBackColor = false;
 			this->Btn_UpdateCatalogue->Click += gcnew System::EventHandler(this, &Catalogue::Btn_UpdateCatalogue_Click);
 			// 
 			// Btn_SuppCatalogue
 			// 
 			this->Btn_SuppCatalogue->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->Btn_SuppCatalogue->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->Btn_SuppCatalogue->BackColor = System::Drawing::SystemColors::Window;
 			this->Btn_SuppCatalogue->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Btn_SuppCatalogue->Location = System::Drawing::Point(1760, 300);
@@ -208,7 +211,7 @@ namespace ProjectPOO {
 			this->Btn_SuppCatalogue->Size = System::Drawing::Size(130, 50);
 			this->Btn_SuppCatalogue->TabIndex = 8;
 			this->Btn_SuppCatalogue->Text = L"Supprimer";
-			this->Btn_SuppCatalogue->UseVisualStyleBackColor = true;
+			this->Btn_SuppCatalogue->UseVisualStyleBackColor = false;
 			this->Btn_SuppCatalogue->Click += gcnew System::EventHandler(this, &Catalogue::Btn_SuppCatalogue_Click);
 			// 
 			// Catalogue
@@ -223,6 +226,7 @@ namespace ProjectPOO {
 			this->Controls->Add(this->Btn_RetourCatalogue);
 			this->Name = L"Catalogue";
 			this->Text = L"Catalogue";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &Catalogue::Catalogue_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueArticle))->EndInit();
 			this->ResumeLayout(false);
