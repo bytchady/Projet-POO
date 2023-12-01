@@ -1,6 +1,7 @@
 #pragma once
 #include "Catalogue.h"
 #include "GestionPersonnel.h"
+#include "GestionCommandes.h"
 
 namespace ProjectPOO {
 
@@ -224,6 +225,8 @@ namespace ProjectPOO {
 		g->ShowDialog();
 	}
 	private: System::Void bCommandes_Click(System::Object^ sender, System::EventArgs^ e) {
+		GestionCommandes^ c = gcnew GestionCommandes();
+		c->ShowDialog();
 	}
 	private: System::Void bClient_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

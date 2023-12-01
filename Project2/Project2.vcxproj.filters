@@ -11,6 +11,7 @@
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="AjouterPersonnel.cpp" />
+    <ClCompile Include="GestionCommandes.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Article.h" />
@@ -23,5 +24,6 @@
     <ClInclude Include="Personnel.h" />
     <ClInclude Include="ModifierPersonnel.h" />
     <ClInclude Include="AjouterPersonnel.h" />
+    <ClInclude Include="GestionCommandes.h" />
   </ItemGroup>
 </Project>
