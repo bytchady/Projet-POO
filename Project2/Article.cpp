@@ -2,8 +2,8 @@
 using namespace System;
 
 namespace NS_Article {
-    void Article::setRefArticle(int ref_article) {
-        this->Ref_Article = ref_article;
+    void Article::setRefArticle(int reference) {
+        this->Ref_Article = reference;
     }
 
     void Article::setNom(String^ nom_article) {

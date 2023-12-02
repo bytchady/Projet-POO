@@ -13,5 +13,5 @@ public:
     int executeNonQuery(String^ sql);
     int executeInsert(String^ sql);
     SqlConnection^ connection;
-
+    Object^ executeScalar(String^ query);
 };

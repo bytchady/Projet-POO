@@ -54,3 +54,12 @@ int BDD::executeInsert(String^ sql)
     int idGenere = Decimal::ToInt32((Decimal)command->ExecuteScalar());
     return idGenere;
 }
+
+Object^ BDD::executeScalar(String^ query)
+{
+    SqlCommand^ cmd = gcnew SqlCommand(query, connection);
+    connection->Open();
+    Object^ result = cmd->ExecuteScalar();
+    connection->Close();
+    return result;
+}

@@ -203,7 +203,7 @@ namespace ProjectPOO {
 			this->NomStartup->TabIndex = 0;
 			this->NomStartup->Text = L"ShopbyCESI";
 			this->NomStartup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->NomStartup->Click += gcnew System::EventHandler(this, &mainmenu::label1_Click);
+			this->NomStartup->Click += gcnew System::EventHandler(this, &mainmenu::NomStartup_Click);
 			// 
 			// mainmenu
 			// 
@@ -216,14 +216,14 @@ namespace ProjectPOO {
 			this->Name = L"mainmenu";
 			this->Text = L"Menu";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
-			this->Load += gcnew System::EventHandler(this, &mainmenu::MyForm_Load);
+			this->Load += gcnew System::EventHandler(this, &mainmenu::mainmenu_Load);
 			this->tabmenu->ResumeLayout(false);
 			this->tabmenu->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void NomStartup_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void bPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -237,7 +237,7 @@ namespace ProjectPOO {
 	}
 	private: System::Void bStatisitques_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void mainmenu_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-};
+	};
 }

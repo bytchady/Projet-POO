@@ -140,6 +140,8 @@
     </ClInclude>
     <ClInclude Include="mainmenu.h">
       <FileType>CppForm</FileType>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
     </ClInclude>
     <ClInclude Include="ServiceArticle.h" />
   </ItemGroup>

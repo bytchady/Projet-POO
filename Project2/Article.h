@@ -3,7 +3,7 @@
 using namespace System;
 
 namespace NS_Article {
-    ref class Article
+   ref class Article
     {
     private:
         int Id_Article;
@@ -18,7 +18,7 @@ namespace NS_Article {
         bool Supprimer;
 
     public:
-        void setRefArticle(int ref_article);
+        void setRefArticle(int reference);
         void setNom(String^ nom_article);
         void setNature(String^ nature);
         void setCouleur(String^ couleur);
