@@ -15,8 +15,17 @@
     <ClCompile Include="ModifierClient.cpp" />
     <ClCompile Include="AjouterClient.cpp" />
     <ClCompile Include="ModifierAdresse.cpp" />
-    <ClCompile Include="SupprimerPopUp.cpp" />
+    <ClCompile Include="SupprimerClientPopUp.cpp" />
     <ClCompile Include="AjouterAdresse.cpp" />
+    <ClCompile Include="GestionCommande.cpp" />
+    <ClCompile Include="ModifierCommande.cpp" />
+    <ClCompile Include="SupprimerCommandePopUp.cpp" />
+    <ClCompile Include="DetailCommande.cpp" />
+    <ClCompile Include="Statistiques.cpp" />
+    <ClCompile Include="Stat1.cpp" />
+    <ClCompile Include="Stat2.cpp" />
+    <ClCompile Include="Stat3.cpp" />
+    <ClCompile Include="Stat4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Article.h" />
@@ -33,7 +42,16 @@
     <ClInclude Include="ModifierClient.h" />
     <ClInclude Include="AjouterClient.h" />
     <ClInclude Include="ModifierAdresse.h" />
-    <ClInclude Include="SupprimerPopUp.h" />
+    <ClInclude Include="SupprimerClientPopUp.h" />
     <ClInclude Include="AjouterAdresse.h" />
+    <ClInclude Include="GestionCommande.h" />
+    <ClInclude Include="ModifierCommande.h" />
+    <ClInclude Include="SupprimerCommandePopUp.h" />
+    <ClInclude Include="DetailCommande.h" />
+    <ClInclude Include="Statistiques.h" />
+    <ClInclude Include="Stat1.h" />
+    <ClInclude Include="Stat2.h" />
+    <ClInclude Include="Stat3.h" />
+    <ClInclude Include="Stat4.h" />
   </ItemGroup>
 </Project>

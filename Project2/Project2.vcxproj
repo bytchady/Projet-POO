@@ -123,6 +123,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AjouterAdresse.cpp" />
+    <ClCompile Include="DetailCommande.cpp" />
+    <ClCompile Include="GestionCommande.cpp" />
     <ClCompile Include="ModifierAdresse.cpp" />
     <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="AjouterClient.cpp" />
@@ -134,13 +136,26 @@
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="mainmenu.cpp" />
     <ClCompile Include="ModifierClient.cpp" />
+    <ClCompile Include="ModifierCommande.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
-    <ClCompile Include="SupprimerPopUp.cpp" />
+    <ClCompile Include="Stat1.cpp" />
+    <ClCompile Include="Stat2.cpp" />
+    <ClCompile Include="Stat3.cpp" />
+    <ClCompile Include="Stat4.cpp" />
+    <ClCompile Include="Statistiques.cpp" />
+    <ClCompile Include="SupprimerClientPopUp.cpp" />
+    <ClCompile Include="SupprimerCommandePopUp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AjouterAdresse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DetailCommande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GestionCommande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModifierAdresse.h">
@@ -172,12 +187,33 @@
     <ClInclude Include="ModifierClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ModifierCommande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ModifierPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Personnel.h" />
     <ClInclude Include="ServiceArticle.h" />
-    <ClInclude Include="SupprimerPopUp.h">
+    <ClInclude Include="Stat1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Stat2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Stat3.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Stat4.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Statistiques.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SupprimerClientPopUp.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SupprimerCommandePopUp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -187,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AjouterClient.resx">
       <DependentUpon>AjouterClient.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailCommande.resx">
+      <DependentUpon>DetailCommande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionCommande.resx">
+      <DependentUpon>GestionCommande.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierAdresse.resx">
       <DependentUpon>ModifierAdresse.h</DependentUpon>
@@ -212,11 +254,32 @@
     <EmbeddedResource Include="ModifierClient.resx">
       <DependentUpon>ModifierClient.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModifierCommande.resx">
+      <DependentUpon>ModifierCommande.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModifierPersonnel.resx">
       <DependentUpon>ModifierPersonnel.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SupprimerPopUp.resx">
-      <DependentUpon>SupprimerPopUp.h</DependentUpon>
+    <EmbeddedResource Include="Stat1.resx">
+      <DependentUpon>Stat1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stat2.resx">
+      <DependentUpon>Stat2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stat3.resx">
+      <DependentUpon>Stat3.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stat4.resx">
+      <DependentUpon>Stat4.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques.resx">
+      <DependentUpon>Statistiques.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupprimerClientPopUp.resx">
+      <DependentUpon>SupprimerClientPopUp.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupprimerCommandePopUp.resx">
+      <DependentUpon>SupprimerCommandePopUp.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

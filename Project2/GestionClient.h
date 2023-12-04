@@ -1,6 +1,6 @@
 #pragma once
 #include "ModifierClient.h"
-#include "SupprimerPopUp.h"
+#include "SupprimerClientPopUp.h"
 #include "AjouterClient.h"
 
 namespace ProjectPOO {
@@ -243,7 +243,7 @@ namespace ProjectPOO {
 		a->ShowDialog();
 	}
 	private: System::Void bsupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-		SupprimerPopUp^ s = gcnew SupprimerPopUp();
+		SupprimerClientPopUp^ s = gcnew SupprimerClientPopUp();
 		s->ShowDialog();
 	}
 };

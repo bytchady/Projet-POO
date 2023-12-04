@@ -2,6 +2,8 @@
 #include "Catalogue.h"
 #include "GestionPersonnel.h"
 #include "GestionClient.h"
+#include "GestionCommande.h"
+#include "Statistiques.h"
 
 namespace ProjectPOO {
 
@@ -95,7 +97,7 @@ namespace ProjectPOO {
 			this->tabmenu->Controls->Add(this->bStatisitques, 0, 5);
 			this->tabmenu->Controls->Add(this->bCatalogue, 0, 4);
 			this->tabmenu->Controls->Add(this->NomStartup, 0, 0);
-			this->tabmenu->Location = System::Drawing::Point(463, 131);
+			this->tabmenu->Location = System::Drawing::Point(463, 201);
 			this->tabmenu->Name = L"tabmenu";
 			this->tabmenu->RowCount = 6;
 			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 45.3202F)));
@@ -204,10 +206,10 @@ namespace ProjectPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1264, 845);
+			this->ClientSize = System::Drawing::Size(1264, 985);
 			this->Controls->Add(this->tabmenu);
 			this->MaximumSize = System::Drawing::Size(1280, 1024);
-			this->MinimumSize = System::Drawing::Size(1280, 814);
+			this->MinimumSize = System::Drawing::Size(1280, 1024);
 			this->Name = L"mainmenu";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Menu";
@@ -225,6 +227,8 @@ namespace ProjectPOO {
 		g->ShowDialog();
 	}
 	private: System::Void bCommandes_Click(System::Object^ sender, System::EventArgs^ e) {
+		GestionCommande^ gc = gcnew GestionCommande();
+		gc->ShowDialog();
 	}
 	private: System::Void bClient_Click(System::Object^ sender, System::EventArgs^ e) {
 		GestionClient^ cl = gcnew GestionClient();
@@ -235,6 +239,8 @@ namespace ProjectPOO {
 		C->ShowDialog();
 	}
 	private: System::Void bStatisitques_Click(System::Object^ sender, System::EventArgs^ e) {
+		Statistiques^ s = gcnew Statistiques();
+		s->ShowDialog();
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}

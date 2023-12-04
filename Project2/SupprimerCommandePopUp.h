@@ -10,12 +10,12 @@ namespace ProjectPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de SupprimerPopUp
+	/// Description résumée de SupprimerCommandePopUp
 	/// </summary>
-	public ref class SupprimerPopUp : public System::Windows::Forms::Form
+	public ref class SupprimerCommandePopUp : public System::Windows::Forms::Form
 	{
 	public:
-		SupprimerPopUp(void)
+		SupprimerCommandePopUp(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~SupprimerPopUp()
+		~SupprimerCommandePopUp()
 		{
 			if (components)
 			{
@@ -48,7 +48,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -97,7 +97,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				125)));
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				97)));
+				99)));
 			this->tableLayoutPanel2->Controls->Add(this->bValider, 1, 0);
 			this->tableLayoutPanel2->Controls->Add(this->bAnnuler, 2, 0);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(3, 142);
@@ -113,13 +113,13 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bValider->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bValider->Location = System::Drawing::Point(93, 21);
+			this->bValider->Location = System::Drawing::Point(92, 21);
 			this->bValider->Name = L"bValider";
-			this->bValider->Size = System::Drawing::Size(118, 30);
+			this->bValider->Size = System::Drawing::Size(117, 30);
 			this->bValider->TabIndex = 0;
 			this->bValider->Text = L"Valider";
 			this->bValider->UseVisualStyleBackColor = true;
-			this->bValider->Click += gcnew System::EventHandler(this, &SupprimerPopUp::bValider_Click);
+			this->bValider->Click += gcnew System::EventHandler(this, &SupprimerCommandePopUp::bValider_Click);
 			// 
 			// bAnnuler
 			// 
@@ -127,13 +127,13 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bAnnuler->Location = System::Drawing::Point(217, 21);
+			this->bAnnuler->Location = System::Drawing::Point(215, 21);
 			this->bAnnuler->Name = L"bAnnuler";
 			this->bAnnuler->Size = System::Drawing::Size(119, 30);
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
-			this->bAnnuler->Click += gcnew System::EventHandler(this, &SupprimerPopUp::bAnnuler_Click);
+			this->bAnnuler->Click += gcnew System::EventHandler(this, &SupprimerCommandePopUp::bAnnuler_Click);
 			// 
 			// tableLayoutPanel3
 			// 
@@ -147,25 +147,27 @@ namespace ProjectPOO {
 			this->tableLayoutPanel3->Location = System::Drawing::Point(3, 3);
 			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
 			this->tableLayoutPanel3->RowCount = 3;
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 69.23077F)));
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 30.76923F)));
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 54)));
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 42.74194F)));
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 57.25806F)));
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 34)));
 			this->tableLayoutPanel3->Size = System::Drawing::Size(437, 133);
 			this->tableLayoutPanel3->TabIndex = 1;
 			// 
 			// label1
 			// 
-			this->label1->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(22, 54);
+			this->label1->Location = System::Drawing::Point(60, 42);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(392, 24);
+			this->label1->Size = System::Drawing::Size(316, 56);
 			this->label1->TabIndex = 2;
-			this->label1->Text = L"Êtes-vous sûrs de vouloir supprimer ce client \?";
+			this->label1->Text = L"Êtes-vous sûrs de vouloir supprimer \n cette commande \?";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label1->Click += gcnew System::EventHandler(this, &SupprimerCommandePopUp::label1_Click);
 			// 
-			// SupprimerPopUp
+			// SupprimerCommandePopUp
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -173,7 +175,7 @@ namespace ProjectPOO {
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->MaximumSize = System::Drawing::Size(483, 262);
 			this->MinimumSize = System::Drawing::Size(483, 262);
-			this->Name = L"SupprimerPopUp";
+			this->Name = L"SupprimerCommandePopUp";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Confirmation de suppression";
 			this->tableLayoutPanel1->ResumeLayout(false);
@@ -187,7 +189,9 @@ namespace ProjectPOO {
 	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-private: System::Void bValider_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void bValider_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 };
 }
