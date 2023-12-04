@@ -10,12 +10,12 @@ namespace ProjectPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de ModifierAdresse
+	/// Description résumée de AjouterAdresse
 	/// </summary>
-	public ref class ModifierAdresse : public System::Windows::Forms::Form
+	public ref class AjouterAdresse : public System::Windows::Forms::Form
 	{
 	public:
-		ModifierAdresse(void)
+		AjouterAdresse(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~ModifierAdresse()
+		~AjouterAdresse()
 		{
 			if (components)
 			{
@@ -54,7 +54,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -87,7 +87,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				71.6129F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				318)));
+				319)));
 			this->tableLayoutPanel1->Controls->Add(this->label1, 1, 0);
 			this->tableLayoutPanel1->Controls->Add(this->label2, 1, 2);
 			this->tableLayoutPanel1->Controls->Add(this->label3, 1, 4);
@@ -158,7 +158,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox1->Location = System::Drawing::Point(264, 95);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(654, 22);
+			this->textBox1->Size = System::Drawing::Size(653, 22);
 			this->textBox1->TabIndex = 3;
 			// 
 			// textBox2
@@ -168,7 +168,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox2->Location = System::Drawing::Point(264, 218);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(654, 22);
+			this->textBox2->Size = System::Drawing::Size(653, 22);
 			this->textBox2->TabIndex = 4;
 			// 
 			// textBox3
@@ -178,9 +178,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox3->Location = System::Drawing::Point(264, 352);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(654, 22);
+			this->textBox3->Size = System::Drawing::Size(653, 22);
 			this->textBox3->TabIndex = 5;
-			this->textBox3->TextChanged += gcnew System::EventHandler(this, &ModifierAdresse::textBox3_TextChanged);
+			this->textBox3->TextChanged += gcnew System::EventHandler(this, &AjouterAdresse::textBox3_TextChanged);
 			// 
 			// checkAdrLivraison
 			// 
@@ -193,7 +193,7 @@ namespace ProjectPOO {
 			this->checkAdrLivraison->TabIndex = 6;
 			this->checkAdrLivraison->Text = L"Adresse de livraison";
 			this->checkAdrLivraison->UseVisualStyleBackColor = true;
-			this->checkAdrLivraison->CheckedChanged += gcnew System::EventHandler(this, &ModifierAdresse::checkAdrLivraison_CheckedChanged);
+			this->checkAdrLivraison->CheckedChanged += gcnew System::EventHandler(this, &AjouterAdresse::checkAdrLivraison_CheckedChanged);
 			// 
 			// checkAdrFacturation
 			// 
@@ -206,7 +206,7 @@ namespace ProjectPOO {
 			this->checkAdrFacturation->TabIndex = 7;
 			this->checkAdrFacturation->Text = L"Adresse de facturation";
 			this->checkAdrFacturation->UseVisualStyleBackColor = true;
-			this->checkAdrFacturation->CheckedChanged += gcnew System::EventHandler(this, &ModifierAdresse::checkAdrFacturation_CheckedChanged);
+			this->checkAdrFacturation->CheckedChanged += gcnew System::EventHandler(this, &AjouterAdresse::checkAdrFacturation_CheckedChanged);
 			// 
 			// tableLayoutPanel2
 			// 
@@ -224,7 +224,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 1;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(654, 58);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(653, 58);
 			this->tableLayoutPanel2->TabIndex = 9;
 			// 
 			// bValider
@@ -236,11 +236,11 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bValider->Location = System::Drawing::Point(3, 3);
 			this->bValider->Name = L"bValider";
-			this->bValider->Size = System::Drawing::Size(321, 52);
+			this->bValider->Size = System::Drawing::Size(320, 52);
 			this->bValider->TabIndex = 0;
 			this->bValider->Text = L"Valider";
 			this->bValider->UseVisualStyleBackColor = true;
-			this->bValider->Click += gcnew System::EventHandler(this, &ModifierAdresse::bValider_Click);
+			this->bValider->Click += gcnew System::EventHandler(this, &AjouterAdresse::bValider_Click);
 			// 
 			// bAnnuler
 			// 
@@ -249,15 +249,15 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bAnnuler->Location = System::Drawing::Point(330, 3);
+			this->bAnnuler->Location = System::Drawing::Point(329, 3);
 			this->bAnnuler->Name = L"bAnnuler";
 			this->bAnnuler->Size = System::Drawing::Size(321, 52);
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
-			this->bAnnuler->Click += gcnew System::EventHandler(this, &ModifierAdresse::bAnnuler_Click);
+			this->bAnnuler->Click += gcnew System::EventHandler(this, &AjouterAdresse::bAnnuler_Click);
 			// 
-			// ModifierAdresse
+			// AjouterAdresse
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -265,9 +265,9 @@ namespace ProjectPOO {
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->MaximumSize = System::Drawing::Size(1280, 1024);
 			this->MinimumSize = System::Drawing::Size(1280, 1024);
-			this->Name = L"ModifierAdresse";
+			this->Name = L"AjouterAdresse";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"ModifierAdresse";
+			this->Text = L"AjouterAdresse";
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel1->PerformLayout();
 			this->tableLayoutPanel2->ResumeLayout(false);
@@ -278,13 +278,13 @@ namespace ProjectPOO {
 	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-private: System::Void bValider_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void checkAdrLivraison_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void checkAdrFacturation_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void bValider_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void checkAdrLivraison_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void checkAdrFacturation_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }

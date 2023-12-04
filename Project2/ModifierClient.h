@@ -1,5 +1,6 @@
 #pragma once
 #include "ModifierAdresse.h"
+#include "AjouterAdresse.h"
 
 namespace ProjectPOO {
 
@@ -54,6 +55,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
 	private: System::Windows::Forms::Button^ bAnnuler;
 	private: System::Windows::Forms::Button^ bValider;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel5;
+	private: System::Windows::Forms::Button^ bAjouterAdresse;
 
 
 
@@ -89,11 +92,14 @@ namespace ProjectPOO {
 			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->bAnnuler = (gcnew System::Windows::Forms::Button());
 			this->bValider = (gcnew System::Windows::Forms::Button());
+			this->tableLayoutPanel5 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->bAjouterAdresse = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
 			this->tableLayoutPanel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->tableLayoutPanel3->SuspendLayout();
+			this->tableLayoutPanel5->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -173,7 +179,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox1->Location = System::Drawing::Point(3, 225);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(503, 20);
+			this->textBox1->Size = System::Drawing::Size(503, 22);
 			this->textBox1->TabIndex = 2;
 			// 
 			// textBox2
@@ -183,7 +189,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox2->Location = System::Drawing::Point(3, 337);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(503, 20);
+			this->textBox2->Size = System::Drawing::Size(503, 22);
 			this->textBox2->TabIndex = 6;
 			// 
 			// label4
@@ -205,7 +211,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox3->Location = System::Drawing::Point(3, 451);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(503, 20);
+			this->textBox3->Size = System::Drawing::Size(503, 22);
 			this->textBox3->TabIndex = 7;
 			// 
 			// textBox4
@@ -215,7 +221,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox4->Location = System::Drawing::Point(3, 571);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(503, 20);
+			this->textBox4->Size = System::Drawing::Size(503, 22);
 			this->textBox4->TabIndex = 8;
 			// 
 			// label1
@@ -236,15 +242,17 @@ namespace ProjectPOO {
 			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
 			this->tableLayoutPanel4->Controls->Add(this->dataGridView1, 0, 1);
-			this->tableLayoutPanel4->Controls->Add(this->bModifierAdresse, 0, 2);
-			this->tableLayoutPanel4->Controls->Add(this->tableLayoutPanel3, 0, 3);
+			this->tableLayoutPanel4->Controls->Add(this->tableLayoutPanel3, 0, 5);
+			this->tableLayoutPanel4->Controls->Add(this->tableLayoutPanel5, 0, 2);
 			this->tableLayoutPanel4->Location = System::Drawing::Point(521, 3);
 			this->tableLayoutPanel4->Name = L"tableLayoutPanel4";
-			this->tableLayoutPanel4->RowCount = 4;
+			this->tableLayoutPanel4->RowCount = 6;
 			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 14.5F)));
 			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 85.5F)));
-			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 66)));
-			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 291)));
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 79)));
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 84)));
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 162)));
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 72)));
 			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
 			this->tableLayoutPanel4->Size = System::Drawing::Size(716, 955);
 			this->tableLayoutPanel4->TabIndex = 1;
@@ -252,9 +260,9 @@ namespace ProjectPOO {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(3, 89);
+			this->dataGridView1->Location = System::Drawing::Point(3, 83);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(710, 505);
+			this->dataGridView1->Size = System::Drawing::Size(710, 471);
 			this->dataGridView1->TabIndex = 0;
 			// 
 			// bModifierAdresse
@@ -262,9 +270,9 @@ namespace ProjectPOO {
 			this->bModifierAdresse->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->bModifierAdresse->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bModifierAdresse->Location = System::Drawing::Point(180, 600);
+			this->bModifierAdresse->Location = System::Drawing::Point(358, 3);
 			this->bModifierAdresse->Name = L"bModifierAdresse";
-			this->bModifierAdresse->Size = System::Drawing::Size(355, 60);
+			this->bModifierAdresse->Size = System::Drawing::Size(349, 67);
 			this->bModifierAdresse->TabIndex = 1;
 			this->bModifierAdresse->Text = L"Modifier adresse";
 			this->bModifierAdresse->UseVisualStyleBackColor = true;
@@ -318,6 +326,40 @@ namespace ProjectPOO {
 			this->bValider->UseVisualStyleBackColor = true;
 			this->bValider->Click += gcnew System::EventHandler(this, &ModifierClient::bValider_Click);
 			// 
+			// tableLayoutPanel5
+			// 
+			this->tableLayoutPanel5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->tableLayoutPanel5->ColumnCount = 2;
+			this->tableLayoutPanel5->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel5->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel5->Controls->Add(this->bModifierAdresse, 1, 0);
+			this->tableLayoutPanel5->Controls->Add(this->bAjouterAdresse, 0, 0);
+			this->tableLayoutPanel5->Location = System::Drawing::Point(3, 560);
+			this->tableLayoutPanel5->Name = L"tableLayoutPanel5";
+			this->tableLayoutPanel5->RowCount = 1;
+			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel5->Size = System::Drawing::Size(710, 73);
+			this->tableLayoutPanel5->TabIndex = 3;
+			// 
+			// bAjouterAdresse
+			// 
+			this->bAjouterAdresse->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->bAjouterAdresse->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->bAjouterAdresse->Location = System::Drawing::Point(3, 3);
+			this->bAjouterAdresse->Name = L"bAjouterAdresse";
+			this->bAjouterAdresse->Size = System::Drawing::Size(349, 67);
+			this->bAjouterAdresse->TabIndex = 2;
+			this->bAjouterAdresse->Text = L"Ajouter adresse";
+			this->bAjouterAdresse->UseVisualStyleBackColor = true;
+			this->bAjouterAdresse->Click += gcnew System::EventHandler(this, &ModifierClient::bAjouterAdresse_Click);
+			// 
 			// ModifierClient
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -335,6 +377,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel4->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->tableLayoutPanel3->ResumeLayout(false);
+			this->tableLayoutPanel5->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -347,6 +390,10 @@ namespace ProjectPOO {
 	}
 	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
+	}
+	private: System::Void bAjouterAdresse_Click(System::Object^ sender, System::EventArgs^ e) {
+		AjouterAdresse^ aa = gcnew AjouterAdresse();
+		aa->ShowDialog();
 	}
 };
 }
