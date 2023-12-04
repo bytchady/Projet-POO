@@ -236,12 +236,12 @@ namespace ProjectPOO {
 	private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
 	private: System::Void bmodifier_Click(System::Object^ sender, System::EventArgs^ e) {
-		ModifierPersonnel^ m = gcnew ModifierPersonnel();
-		m->ShowDialog();
+		ModifierPersonnel^ modifierpersonnel = gcnew ModifierPersonnel();
+		modifierpersonnel->ShowDialog();
 	}
 	private: System::Void bajouter_Click(System::Object^ sender, System::EventArgs^ e) {
-		AjouterPersonnel^ a = gcnew AjouterPersonnel();
-		a->ShowDialog();
+		AjouterPersonnel^ ajouterpersonnel = gcnew AjouterPersonnel();
+		ajouterpersonnel->ShowDialog();
 	}
 };
 }

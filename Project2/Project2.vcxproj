@@ -122,6 +122,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Adresse.cpp" />
     <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="AjouterCommandes.cpp" />
     <ClCompile Include="AjouterPersonnel.cpp" />
@@ -135,9 +136,12 @@
     <ClCompile Include="ModifierCommandes.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="ServiceAdresse.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
+    <ClCompile Include="ServicePersonnel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Adresse.h" />
     <ClInclude Include="AjouterArticle.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -171,7 +175,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Personnel.h" />
+    <ClInclude Include="ServiceAdresse.h" />
     <ClInclude Include="ServiceArticle.h" />
+    <ClInclude Include="ServicePersonnel.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AjouterArticle.resx">
