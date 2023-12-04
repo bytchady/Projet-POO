@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AjouterArticle.cpp" />
+    <ClCompile Include="AjouterCommandes.cpp" />
     <ClCompile Include="AjouterPersonnel.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="BDD.cpp" />
@@ -131,12 +132,16 @@
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="GestionStatistiques.cpp" />
     <ClCompile Include="mainmenu.cpp" />
+    <ClCompile Include="ModifierCommandes.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AjouterArticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AjouterCommandes.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AjouterPersonnel.h">
@@ -159,6 +164,9 @@
     <ClInclude Include="mainmenu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ModifierCommandes.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ModifierPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -168,6 +176,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AjouterArticle.resx">
       <DependentUpon>AjouterArticle.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouterCommandes.resx">
+      <DependentUpon>AjouterCommandes.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AjouterPersonnel.resx">
       <DependentUpon>AjouterPersonnel.h</DependentUpon>
@@ -186,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainmenu.resx">
       <DependentUpon>mainmenu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierCommandes.resx">
+      <DependentUpon>ModifierCommandes.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierPersonnel.resx">
       <DependentUpon>ModifierPersonnel.h</DependentUpon>

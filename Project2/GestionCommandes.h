@@ -1,4 +1,6 @@
 #pragma once
+#include "ModifierCommandes.h"
+#include "AjouterCommandes.h"
 
 namespace ProjectPOO{
 
@@ -91,7 +93,7 @@ namespace ProjectPOO{
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				208)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				199)));
+				201)));
 			this->tableLayoutPanel1->Controls->Add(this->bsupprimer, 3, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bmodifier, 2, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bretour, 0, 0);
@@ -111,7 +113,7 @@ namespace ProjectPOO{
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bsupprimer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bsupprimer->Location = System::Drawing::Point(584, 3);
+			this->bsupprimer->Location = System::Drawing::Point(582, 3);
 			this->bsupprimer->Name = L"bsupprimer";
 			this->bsupprimer->Size = System::Drawing::Size(199, 74);
 			this->bsupprimer->TabIndex = 4;
@@ -125,12 +127,13 @@ namespace ProjectPOO{
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bmodifier->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bmodifier->Location = System::Drawing::Point(371, 3);
+			this->bmodifier->Location = System::Drawing::Point(369, 3);
 			this->bmodifier->Name = L"bmodifier";
 			this->bmodifier->Size = System::Drawing::Size(207, 74);
 			this->bmodifier->TabIndex = 3;
 			this->bmodifier->Text = L"Modifier";
 			this->bmodifier->UseVisualStyleBackColor = true;
+			this->bmodifier->Click += gcnew System::EventHandler(this, &GestionCommandes::bmodifier_Click);
 			// 
 			// bretour
 			// 
@@ -141,7 +144,7 @@ namespace ProjectPOO{
 				static_cast<System::Byte>(0)));
 			this->bretour->Location = System::Drawing::Point(3, 3);
 			this->bretour->Name = L"bretour";
-			this->bretour->Size = System::Drawing::Size(219, 74);
+			this->bretour->Size = System::Drawing::Size(218, 74);
 			this->bretour->TabIndex = 1;
 			this->bretour->Text = L"Retour";
 			this->bretour->UseVisualStyleBackColor = true;
@@ -154,12 +157,13 @@ namespace ProjectPOO{
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bajouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bajouter->Location = System::Drawing::Point(789, 3);
+			this->bajouter->Location = System::Drawing::Point(787, 3);
 			this->bajouter->Name = L"bajouter";
 			this->bajouter->Size = System::Drawing::Size(202, 74);
 			this->bajouter->TabIndex = 2;
 			this->bajouter->Text = L"Ajouter";
 			this->bajouter->UseVisualStyleBackColor = true;
+			this->bajouter->Click += gcnew System::EventHandler(this, &GestionCommandes::bajouter_Click);
 			// 
 			// bDetails
 			// 
@@ -168,9 +172,9 @@ namespace ProjectPOO{
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bDetails->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bDetails->Location = System::Drawing::Point(997, 3);
+			this->bDetails->Location = System::Drawing::Point(995, 3);
 			this->bDetails->Name = L"bDetails";
-			this->bDetails->Size = System::Drawing::Size(194, 74);
+			this->bDetails->Size = System::Drawing::Size(196, 74);
 			this->bDetails->TabIndex = 5;
 			this->bDetails->Text = L"Détails";
 			this->bDetails->UseVisualStyleBackColor = true;
@@ -241,6 +245,14 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void bretour_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void bmodifier_Click(System::Object^ sender, System::EventArgs^ e) {
+	ModifierCommandes^ com = gcnew ModifierCommandes();
+	com->ShowDialog();
+}
+private: System::Void bajouter_Click(System::Object^ sender, System::EventArgs^ e) {
+	AjouterCommandes^ co = gcnew AjouterCommandes();
+	co->ShowDialog();
 }
 };
 }
