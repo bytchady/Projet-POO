@@ -14,5 +14,6 @@ namespace NS_Article {
         bool InsertServiceArticle(Article^ article);
         void DeleteServiceArticle(Article^ article);
         void UpdateServiceArticle(Article^ article);
+        bool ArticleExists(int refArticle);
     };
 }

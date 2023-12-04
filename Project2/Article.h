@@ -18,7 +18,7 @@ namespace NS_Article {
         bool Supprimer;
 
     public:
-        void setRefArticle(int reference);
+        void setRefArticle(int ref_article);
         void setNom(String^ nom_article);
         void setNature(String^ nature);
         void setCouleur(String^ couleur);
@@ -41,6 +41,5 @@ namespace NS_Article {
         String^ CreateArticle();
         String^ UpdateArticle();
         String^ DeleteArticle();
-        String^ SelectArticle();
     };
 }

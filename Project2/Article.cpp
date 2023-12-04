@@ -2,8 +2,8 @@
 using namespace System;
 
 namespace NS_Article {
-    void Article::setRefArticle(int reference) {
-        this->Ref_Article = reference;
+    void Article::setRefArticle(int ref_article) {
+        this->Ref_Article = ref_article;
     }
 
     void Article::setNom(String^ nom_article) {
@@ -39,39 +39,39 @@ namespace NS_Article {
     }
 
     int Article::getRefArticle() {
-        return Ref_Article;
+        return this->Ref_Article;
     }
 
     String^ Article::getNom() {
-        return Nom_Article;
+        return this->Nom_Article;
     }
 
     String^ Article::getNature() {
-        return Nature_Article;
+        return this->Nature_Article;
     }
 
     String^ Article::getCouleur() {
-        return Couleur_Article;
+        return this->Couleur_Article;
     }
 
     int Article::getStock() {
-        return Stock_Article;
+        return this->Stock_Article;
     }
 
     int Article::getQuantiteReapprovisionnement() {
-        return Quantite_Reapprovisionnement;
+        return this->Quantite_Reapprovisionnement;
     }
 
     float Article::getPrixHT() {
-        return Prix_HT;
+        return this->Prix_HT;
     }
 
     float Article::getTauxTVA() {
-        return Taux_TVA;
+        return this->Taux_TVA;
     }
 
     bool Article::getSupprimer() {
-        return Supprimer;
+        return this->Supprimer;
     }
 
     String^ Article::CreateArticle() {
@@ -87,7 +87,7 @@ namespace NS_Article {
             "DECLARE @Taux_TVA float; SET @Taux_TVA = " + Convert::ToString(defaultTauxTVA)->Replace(",", ".") + "; "
             "DECLARE @Supprimer bit; SET @Supprimer = 0; "  
 
-            "IF NOT EXISTS(SELECT Ref_Article FROM Article WHERE Nature_Article = @Nature_Article AND Nom_Article = @Nom_Article AND Couleur_Article = @Couleur_Article) "
+            "IF NOT EXISTS(SELECT Id_Article FROM Article WHERE Ref_Article = @Ref_Article AND Nature_Article = @Nature_Article AND Nom_Article = @Nom_Article AND Couleur_Article = @Couleur_Article) "
             "BEGIN "
             "INSERT INTO Article (Ref_Article, Nom_Article, Nature_Article, Couleur_Article, Stock_Article, Quantite_Reapprovisionnement, Prix_HT, Taux_TVA, Supprimer) "
             "VALUES (@Ref_Article, @Nom_Article, @Nature_Article, @Couleur_Article, @Stock_Article, @Quantite_Reapprovisionnement, @Prix_HT, @Taux_TVA, @Supprimer); "
@@ -100,19 +100,15 @@ namespace NS_Article {
     }
 
     String^ Article::UpdateArticle() {
-        return "UPDATE Article SET Ref_Article = '" + Ref_Article + "', Nom_Article = '" + Nom_Article + "', Nature_Article = '" + Nature_Article + "', Couleur_Article = '" + Couleur_Article +
+        float defaultTauxTVA = 20.6;
+        return "UPDATE Article SET Nom_Article = '" + Nom_Article + "', Nature_Article = '" + Nature_Article + "', Couleur_Article = '" + Couleur_Article +
             "', Stock_Article = " + Stock_Article + ", Quantite_Reapprovisionnement = " +
             Convert::ToString(Quantite_Reapprovisionnement) + ", Prix_HT = " + Convert::ToString(Prix_HT)->Replace(",", ".") +
-            ", Taux_TVA = " + Convert::ToString(Taux_TVA)->Replace(",", ".") + ", Supprimer = " + (Supprimer ? "1" : "0") +
-            " WHERE Ref_Article = " + Convert::ToString(Ref_Article);
+            ", Taux_TVA = " + Convert::ToString(defaultTauxTVA)->Replace(",", ".") + ", Supprimer = 0" +
+            " WHERE Ref_Article = " + Ref_Article;
     }
 
     String^ Article::DeleteArticle() {
         return "UPDATE Article SET Supprimer = 1 WHERE Ref_Article = " + Convert::ToString(Ref_Article);
     }
-
-    String^ Article::SelectArticle() {
-        return "SELECT * FROM Article";
-    }
-
 }
