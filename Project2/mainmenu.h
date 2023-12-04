@@ -93,7 +93,7 @@ namespace ProjectPOO {
 			this->tabmenu->Controls->Add(this->bStatisitques, 0, 5);
 			this->tabmenu->Controls->Add(this->bCatalogue, 0, 4);
 			this->tabmenu->Controls->Add(this->NomStartup, 0, 0);
-			this->tabmenu->Location = System::Drawing::Point(725, 157);
+			this->tabmenu->Location = System::Drawing::Point(405, 129);
 			this->tabmenu->Margin = System::Windows::Forms::Padding(4);
 			this->tabmenu->Name = L"tabmenu";
 			this->tabmenu->RowCount = 6;
@@ -209,13 +209,13 @@ namespace ProjectPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1902, 1033);
+			this->ClientSize = System::Drawing::Size(1262, 977);
 			this->Controls->Add(this->tabmenu);
 			this->Margin = System::Windows::Forms::Padding(4);
-			this->MinimumSize = System::Drawing::Size(511, 808);
+			this->MaximumSize = System::Drawing::Size(1280, 1024);
+			this->MinimumSize = System::Drawing::Size(1280, 1018);
 			this->Name = L"mainmenu";
 			this->Text = L"Menu";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &mainmenu::mainmenu_Load);
 			this->tabmenu->ResumeLayout(false);
 			this->tabmenu->PerformLayout();

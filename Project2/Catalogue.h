@@ -43,6 +43,18 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ bRetour;
 
 	private: System::Windows::Forms::DataGridView^ CatalogueArticle;
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::TableLayoutPanel^ Catalogue_tableLayoutPanel2;
+	private: System::Windows::Forms::Button^ bAjouter;
+	private: System::Windows::Forms::Button^ bModifier;
+	private: System::Windows::Forms::Button^ bSupprimer;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ref_Article;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nature_Article;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nom_Article;
@@ -51,10 +63,6 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Approvisionnement_Article;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PrixHT_Article;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ TVA_Article;
-	private: System::Windows::Forms::TableLayoutPanel^ Catalogue_tableLayoutPanel2;
-	private: System::Windows::Forms::Button^ bAjouter;
-	private: System::Windows::Forms::Button^ bModifier;
-	private: System::Windows::Forms::Button^ bSupprimer;
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -96,7 +104,9 @@ namespace ProjectPOO {
 			this->Catalogue_tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				1100)));
 			this->Catalogue_tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				228)));
+				20)));
+			this->Catalogue_tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				20)));
 			this->Catalogue_tableLayoutPanel1->Controls->Add(this->bRetour, 0, 0);
 			this->Catalogue_tableLayoutPanel1->Controls->Add(this->Catalogue_tableLayoutPanel2, 1, 1);
 			this->Catalogue_tableLayoutPanel1->Controls->Add(this->CatalogueArticle, 1, 2);
@@ -282,7 +292,6 @@ namespace ProjectPOO {
 			this->MinimumSize = System::Drawing::Size(1280, 1018);
 			this->Name = L"Catalogue";
 			this->Text = L"Catalogue";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &Catalogue::Catalogue_Load);
 			this->Catalogue_tableLayoutPanel1->ResumeLayout(false);
 			this->Catalogue_tableLayoutPanel2->ResumeLayout(false);
@@ -292,6 +301,25 @@ namespace ProjectPOO {
 		}
 #pragma endregion
 	private: System::Void Catalogue_Load(System::Object^ sender, System::EventArgs^ e) {
+		// Créer une instance de la classe ServiceArticle
+		NS_Article::ServiceArticle^ serviceArticle = gcnew NS_Article::ServiceArticle();
+
+		// Appeler la méthode pour récupérer tous les articles
+		System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
+
+		// Lier le DataSet au DataGridView
+		CatalogueArticle->DataSource = dataSet;
+		CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
+
+		// Associer chaque colonne du DataGridView à une colonne spécifique du DataSet
+		CatalogueArticle->Columns["Ref_Article"]->DataPropertyName = "Ref_Article";
+		CatalogueArticle->Columns["Nature_Article"]->DataPropertyName = "Nature_Article";
+		CatalogueArticle->Columns["Nom_Article"]->DataPropertyName = "Nom_Article";
+		CatalogueArticle->Columns["Couleur_Article"]->DataPropertyName = "Couleur_Article";
+		CatalogueArticle->Columns["Stock_Article"]->DataPropertyName = "Stock_Article";
+		CatalogueArticle->Columns["Approvisionnement_Article"]->DataPropertyName = "Quantite_Reapprovisionnement";
+		CatalogueArticle->Columns["PrixHT_Article"]->DataPropertyName = "Prix_HT";
+		CatalogueArticle->Columns["TVA_Article"]->DataPropertyName = "Taux_TVA";
 	}
 	private: System::Void Catalogue_tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}

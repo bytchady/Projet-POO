@@ -10,12 +10,9 @@ namespace NS_Article {
     public:
         ServiceArticle();
         ~ServiceArticle();
-        System::Data::DataSet^ SelectAllArticle();
-        void InsertArticle(Article^ article);
-        void DeleteArticle(Article^ article);
-        void UpdateArticle(Article^ article);
-        System::Data::DataTable^ GetDataTable();
-        int GenererReferenceUnique();
-        bool ReferenceDejaUtilisee(int reference);
+        System::Data::DataSet^ SelectAllServiceArticle();
+        bool InsertServiceArticle(Article^ article);
+        void DeleteServiceArticle(Article^ article);
+        void UpdateServiceArticle(Article^ article);
     };
 }
