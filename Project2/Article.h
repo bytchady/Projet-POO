@@ -3,7 +3,7 @@
 using namespace System;
 
 namespace NS_Article {
-    ref class Article
+   public ref class Article
     {
     private:
         int Id_Article;
@@ -38,9 +38,8 @@ namespace NS_Article {
         float getTauxTVA();
         bool getSupprimer();
 
-        String^ Create();
-        String^ Update();
-        String^ Delete();
-        String^ Select();
+        String^ CreateArticle();
+        String^ UpdateArticle();
+        String^ DeleteArticle();
     };
 }

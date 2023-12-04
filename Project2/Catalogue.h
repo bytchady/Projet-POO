@@ -35,25 +35,17 @@ namespace ProjectPOO {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ Btn_RetourCatalogue;
+
 	protected:
 
+
+	private: System::Windows::Forms::TableLayoutPanel^ Catalogue_tableLayoutPanel1;
+	private: System::Windows::Forms::Button^ bRetour;
+	private: System::Windows::Forms::TableLayoutPanel^ Catalogue_tableLayoutPanel2;
+	private: System::Windows::Forms::Button^ bSupprimer;
+	private: System::Windows::Forms::Button^ bAjouter;
+	private: System::Windows::Forms::Button^ bModifier;
 	private: System::Windows::Forms::DataGridView^ CatalogueArticle;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ref_Article;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nature_Article;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nom_Article;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Couleur_Article;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Stock_Article;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Approviosionnement_Article;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PrixHT_Article;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ TVA_Article;
-	private: System::Windows::Forms::Button^ Btn_AddCatalogue;
-	private: System::Windows::Forms::Button^ Btn_UpdateCatalogue;
-	private: System::Windows::Forms::Button^ Btn_SuppCatalogue;
-
-
-	protected:
-
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -67,184 +59,286 @@ namespace ProjectPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->Btn_RetourCatalogue = (gcnew System::Windows::Forms::Button());
+			this->Catalogue_tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->bRetour = (gcnew System::Windows::Forms::Button());
 			this->CatalogueArticle = (gcnew System::Windows::Forms::DataGridView());
-			this->Ref_Article = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Nature_Article = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Nom_Article = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Couleur_Article = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Stock_Article = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Approviosionnement_Article = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PrixHT_Article = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->TVA_Article = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Btn_AddCatalogue = (gcnew System::Windows::Forms::Button());
-			this->Btn_UpdateCatalogue = (gcnew System::Windows::Forms::Button());
-			this->Btn_SuppCatalogue = (gcnew System::Windows::Forms::Button());
+			this->bModifier = (gcnew System::Windows::Forms::Button());
+			this->bAjouter = (gcnew System::Windows::Forms::Button());
+			this->bSupprimer = (gcnew System::Windows::Forms::Button());
+			this->Catalogue_tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->Catalogue_tableLayoutPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueArticle))->BeginInit();
+			this->Catalogue_tableLayoutPanel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// Btn_RetourCatalogue
+			// Catalogue_tableLayoutPanel1
 			// 
-			this->Btn_RetourCatalogue->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->Btn_RetourCatalogue->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->Catalogue_tableLayoutPanel1->ColumnCount = 2;
+			this->Catalogue_tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				1221)));
+			this->Catalogue_tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				20)));
+			this->Catalogue_tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				20)));
+			this->Catalogue_tableLayoutPanel1->Controls->Add(this->Catalogue_tableLayoutPanel2, 0, 1);
+			this->Catalogue_tableLayoutPanel1->Controls->Add(this->CatalogueArticle, 0, 2);
+			this->Catalogue_tableLayoutPanel1->Controls->Add(this->bRetour, 0, 0);
+			this->Catalogue_tableLayoutPanel1->Location = System::Drawing::Point(12, 13);
+			this->Catalogue_tableLayoutPanel1->Margin = System::Windows::Forms::Padding(15);
+			this->Catalogue_tableLayoutPanel1->Name = L"Catalogue_tableLayoutPanel1";
+			this->Catalogue_tableLayoutPanel1->RowCount = 4;
+			this->Catalogue_tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute,
+				50)));
+			this->Catalogue_tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute,
+				80)));
+			this->Catalogue_tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute,
+				796)));
+			this->Catalogue_tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute,
+				41)));
+			this->Catalogue_tableLayoutPanel1->Size = System::Drawing::Size(1902, 1033);
+			this->Catalogue_tableLayoutPanel1->TabIndex = 9;
+			this->Catalogue_tableLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Catalogue::Catalogue_tableLayoutPanel1_Paint);
+			// 
+			// bRetour
+			// 
+			this->bRetour->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->bRetour->BackColor = System::Drawing::SystemColors::Control;
+			this->bRetour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Btn_RetourCatalogue->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Btn_RetourCatalogue->Location = System::Drawing::Point(12, 12);
-			this->Btn_RetourCatalogue->Name = L"Btn_RetourCatalogue";
-			this->Btn_RetourCatalogue->Size = System::Drawing::Size(100, 50);
-			this->Btn_RetourCatalogue->TabIndex = 1;
-			this->Btn_RetourCatalogue->Text = L"Retour";
-			this->Btn_RetourCatalogue->UseVisualStyleBackColor = false;
-			this->Btn_RetourCatalogue->Click += gcnew System::EventHandler(this, &Catalogue::Btn_RetourCatalogue_Click);
+			this->bRetour->Location = System::Drawing::Point(3, 3);
+			this->bRetour->Name = L"bRetour";
+			this->bRetour->Size = System::Drawing::Size(111, 44);
+			this->bRetour->TabIndex = 0;
+			this->bRetour->Text = L"Retour";
+			this->bRetour->UseVisualStyleBackColor = false;
+			this->bRetour->Click += gcnew System::EventHandler(this, &Catalogue::bRetour_Click);
 			// 
 			// CatalogueArticle
 			// 
+			this->CatalogueArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->CatalogueArticle->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->CatalogueArticle->BackgroundColor = System::Drawing::SystemColors::ControlLight;
 			this->CatalogueArticle->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->CatalogueArticle->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
-				this->Ref_Article,
-					this->Nature_Article, this->Nom_Article, this->Couleur_Article, this->Stock_Article, this->Approviosionnement_Article, this->PrixHT_Article,
-					this->TVA_Article
-			});
-			this->CatalogueArticle->Location = System::Drawing::Point(12, 99);
+			this->CatalogueArticle->Location = System::Drawing::Point(3, 133);
 			this->CatalogueArticle->Name = L"CatalogueArticle";
-			this->CatalogueArticle->RowHeadersWidth = 51;
+			this->CatalogueArticle->RowHeadersWidth = 60;
 			this->CatalogueArticle->RowTemplate->Height = 24;
-			this->CatalogueArticle->Size = System::Drawing::Size(1453, 725);
-			this->CatalogueArticle->TabIndex = 5;
+			this->CatalogueArticle->Size = System::Drawing::Size(1215, 790);
+			this->CatalogueArticle->TabIndex = 7;
+			this->CatalogueArticle->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Catalogue::CatalogueArticle_CellContentClick);
 			// 
-			// Ref_Article
+			// bModifier
 			// 
-			this->Ref_Article->HeaderText = L"Reference";
-			this->Ref_Article->MinimumWidth = 6;
-			this->Ref_Article->Name = L"Ref_Article";
-			this->Ref_Article->Width = 125;
-			// 
-			// Nature_Article
-			// 
-			this->Nature_Article->HeaderText = L"Nature";
-			this->Nature_Article->MinimumWidth = 6;
-			this->Nature_Article->Name = L"Nature_Article";
-			this->Nature_Article->Width = 125;
-			// 
-			// Nom_Article
-			// 
-			this->Nom_Article->HeaderText = L"Nom";
-			this->Nom_Article->MinimumWidth = 6;
-			this->Nom_Article->Name = L"Nom_Article";
-			this->Nom_Article->Width = 125;
-			// 
-			// Couleur_Article
-			// 
-			this->Couleur_Article->HeaderText = L"Couleur";
-			this->Couleur_Article->MinimumWidth = 6;
-			this->Couleur_Article->Name = L"Couleur_Article";
-			this->Couleur_Article->Width = 125;
-			// 
-			// Stock_Article
-			// 
-			this->Stock_Article->HeaderText = L"Quantite en stock";
-			this->Stock_Article->MinimumWidth = 6;
-			this->Stock_Article->Name = L"Stock_Article";
-			this->Stock_Article->Width = 125;
-			// 
-			// Approviosionnement_Article
-			// 
-			this->Approviosionnement_Article->HeaderText = L"Seuil Approvisionnement";
-			this->Approviosionnement_Article->MinimumWidth = 6;
-			this->Approviosionnement_Article->Name = L"Approviosionnement_Article";
-			this->Approviosionnement_Article->Width = 125;
-			// 
-			// PrixHT_Article
-			// 
-			this->PrixHT_Article->HeaderText = L"Prix HT";
-			this->PrixHT_Article->MinimumWidth = 6;
-			this->PrixHT_Article->Name = L"PrixHT_Article";
-			this->PrixHT_Article->Width = 125;
-			// 
-			// TVA_Article
-			// 
-			this->TVA_Article->HeaderText = L"Taux TVA";
-			this->TVA_Article->MinimumWidth = 6;
-			this->TVA_Article->Name = L"TVA_Article";
-			this->TVA_Article->Width = 125;
-			// 
-			// Btn_AddCatalogue
-			// 
-			this->Btn_AddCatalogue->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->Btn_AddCatalogue->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->Btn_AddCatalogue->BackColor = System::Drawing::SystemColors::Window;
-			this->Btn_AddCatalogue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bModifier->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->bModifier->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Btn_AddCatalogue->Location = System::Drawing::Point(1760, 100);
-			this->Btn_AddCatalogue->Name = L"Btn_AddCatalogue";
-			this->Btn_AddCatalogue->Size = System::Drawing::Size(130, 50);
-			this->Btn_AddCatalogue->TabIndex = 6;
-			this->Btn_AddCatalogue->Text = L"Ajouter";
-			this->Btn_AddCatalogue->UseVisualStyleBackColor = false;
-			this->Btn_AddCatalogue->Click += gcnew System::EventHandler(this, &Catalogue::Btn_AddCatalogue_Click);
+			this->bModifier->Location = System::Drawing::Point(10, 10);
+			this->bModifier->Margin = System::Windows::Forms::Padding(10);
+			this->bModifier->Name = L"bModifier";
+			this->bModifier->Size = System::Drawing::Size(160, 47);
+			this->bModifier->TabIndex = 2;
+			this->bModifier->Text = L"Modifier";
+			this->bModifier->UseVisualStyleBackColor = true;
+			this->bModifier->Click += gcnew System::EventHandler(this, &Catalogue::bModifier_Click);
 			// 
-			// Btn_UpdateCatalogue
+			// bAjouter
 			// 
-			this->Btn_UpdateCatalogue->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->Btn_UpdateCatalogue->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->Btn_UpdateCatalogue->BackColor = System::Drawing::SystemColors::Window;
-			this->Btn_UpdateCatalogue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->Btn_UpdateCatalogue->Location = System::Drawing::Point(1760, 200);
-			this->Btn_UpdateCatalogue->Name = L"Btn_UpdateCatalogue";
-			this->Btn_UpdateCatalogue->Size = System::Drawing::Size(130, 50);
-			this->Btn_UpdateCatalogue->TabIndex = 7;
-			this->Btn_UpdateCatalogue->Text = L"Modifier";
-			this->Btn_UpdateCatalogue->UseVisualStyleBackColor = false;
-			this->Btn_UpdateCatalogue->Click += gcnew System::EventHandler(this, &Catalogue::Btn_UpdateCatalogue_Click);
-			// 
-			// Btn_SuppCatalogue
-			// 
-			this->Btn_SuppCatalogue->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->Btn_SuppCatalogue->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->Btn_SuppCatalogue->BackColor = System::Drawing::SystemColors::Window;
-			this->Btn_SuppCatalogue->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bAjouter->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->bAjouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Btn_SuppCatalogue->Location = System::Drawing::Point(1760, 300);
-			this->Btn_SuppCatalogue->Name = L"Btn_SuppCatalogue";
-			this->Btn_SuppCatalogue->Size = System::Drawing::Size(130, 50);
-			this->Btn_SuppCatalogue->TabIndex = 8;
-			this->Btn_SuppCatalogue->Text = L"Supprimer";
-			this->Btn_SuppCatalogue->UseVisualStyleBackColor = false;
-			this->Btn_SuppCatalogue->Click += gcnew System::EventHandler(this, &Catalogue::Btn_SuppCatalogue_Click);
+			this->bAjouter->Location = System::Drawing::Point(370, 10);
+			this->bAjouter->Margin = System::Windows::Forms::Padding(10);
+			this->bAjouter->Name = L"bAjouter";
+			this->bAjouter->Size = System::Drawing::Size(160, 47);
+			this->bAjouter->TabIndex = 1;
+			this->bAjouter->Text = L"Ajouter";
+			this->bAjouter->UseVisualStyleBackColor = true;
+			this->bAjouter->Click += gcnew System::EventHandler(this, &Catalogue::bAjouter_Click);
+			// 
+			// bSupprimer
+			// 
+			this->bSupprimer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->bSupprimer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bSupprimer->Location = System::Drawing::Point(190, 10);
+			this->bSupprimer->Margin = System::Windows::Forms::Padding(10);
+			this->bSupprimer->Name = L"bSupprimer";
+			this->bSupprimer->Size = System::Drawing::Size(160, 47);
+			this->bSupprimer->TabIndex = 3;
+			this->bSupprimer->Text = L"Supprimer";
+			this->bSupprimer->UseVisualStyleBackColor = true;
+			this->bSupprimer->Click += gcnew System::EventHandler(this, &Catalogue::bSupprimer_Click);
+			// 
+			// Catalogue_tableLayoutPanel2
+			// 
+			this->Catalogue_tableLayoutPanel2->ColumnCount = 4;
+			this->Catalogue_tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				180)));
+			this->Catalogue_tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				180)));
+			this->Catalogue_tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				180)));
+			this->Catalogue_tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				569)));
+			this->Catalogue_tableLayoutPanel2->Controls->Add(this->bSupprimer, 1, 0);
+			this->Catalogue_tableLayoutPanel2->Controls->Add(this->bAjouter, 2, 0);
+			this->Catalogue_tableLayoutPanel2->Controls->Add(this->bModifier, 0, 0);
+			this->Catalogue_tableLayoutPanel2->Location = System::Drawing::Point(3, 53);
+			this->Catalogue_tableLayoutPanel2->Name = L"Catalogue_tableLayoutPanel2";
+			this->Catalogue_tableLayoutPanel2->RowCount = 1;
+			this->Catalogue_tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
+				100)));
+			this->Catalogue_tableLayoutPanel2->Size = System::Drawing::Size(1094, 67);
+			this->Catalogue_tableLayoutPanel2->TabIndex = 8;
+			this->Catalogue_tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Catalogue::Catalogue_tableLayoutPanel2_Paint);
 			// 
 			// Catalogue
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1902, 1033);
-			this->Controls->Add(this->Btn_SuppCatalogue);
-			this->Controls->Add(this->Btn_UpdateCatalogue);
-			this->Controls->Add(this->Btn_AddCatalogue);
-			this->Controls->Add(this->CatalogueArticle);
-			this->Controls->Add(this->Btn_RetourCatalogue);
+			this->ClientSize = System::Drawing::Size(1262, 977);
+			this->Controls->Add(this->Catalogue_tableLayoutPanel1);
+			this->MaximumSize = System::Drawing::Size(1280, 1024);
+			this->MinimumSize = System::Drawing::Size(1280, 1018);
 			this->Name = L"Catalogue";
 			this->Text = L"Catalogue";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &Catalogue::Catalogue_Load);
+			this->Catalogue_tableLayoutPanel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueArticle))->EndInit();
+			this->Catalogue_tableLayoutPanel2->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-private: System::Void Catalogue_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Catalogue_Load(System::Object^ sender, System::EventArgs^ e) {
+		// Créer une instance de la classe ServiceArticle
+		NS_Article::ServiceArticle^ serviceArticle = gcnew NS_Article::ServiceArticle();
+
+		// Appeler la méthode pour récupérer tous les articles
+		System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
+		// Lier le DataSet au DataGridView
+		CatalogueArticle->DataSource = dataSet;
+		CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
 	}
-private: System::Void Btn_RetourCatalogue_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+	private: System::Void Catalogue_tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ e) {
+	NS_Article::ServiceArticle^ serviceArticle = gcnew NS_Article::ServiceArticle();
+	AjouterArticle^ article = gcnew AjouterArticle();
+	article->ShowDialog();
+	System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
+	CatalogueArticle->DataSource = dataSet;
+	CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
 }
-private: System::Void Btn_AddCatalogue_Click(System::Object^ sender, System::EventArgs^ e) {
-	AjouterArticle^ A = gcnew AjouterArticle();
-	A->ShowDialog();
+private: System::Void bModifier_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (CatalogueArticle->SelectedRows->Count > 0) {
+		// Obtenez l'index de la première ligne sélectionnée
+		int rowIndex = CatalogueArticle->SelectedRows[0]->Index;
+
+		// Créez un nouvel objet Article avec les données de la ligne sélectionnée
+		Article^ article = gcnew Article;
+		Object^ refArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Ref_Article"]->Value;
+		if (refArticleValue != DBNull::Value) {
+			article->setRefArticle(Convert::ToInt32(refArticleValue));
+		}
+		else {
+			MessageBox::Show("Veuillez saisir une valeur pour la référence de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return; 
+		}
+		Object^ NatureArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Nature_Article"]->Value;
+		if (NatureArticleValue != DBNull::Value) {
+			article->setNature(Convert::ToString(NatureArticleValue));
+		}
+		else {
+			MessageBox::Show("Veuillez saisir une valeur pour la nature de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return; 
+		};
+		Object^ NomArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Nom_Article"]->Value;
+		if (NomArticleValue != DBNull::Value) {
+			article->setNom(Convert::ToString(NomArticleValue));
+		}
+		else {
+			MessageBox::Show("Veuillez saisir une valeur pour la nom de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return;
+		};
+		article->setCouleur(Convert::ToString(CatalogueArticle->Rows[rowIndex]->Cells["Couleur_Article"]->Value));
+		Object^ StockArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Stock_Article"]->Value;
+		if (StockArticleValue != DBNull::Value) {
+			article->setStock(Convert::ToInt32(StockArticleValue));
+		}
+		else {
+			MessageBox::Show("Veuillez saisir une valeur pour l'etat du stock de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return;
+		};
+		Object^ ReapproArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Quantite_Reapprovisionnement"]->Value;
+		if (ReapproArticleValue != DBNull::Value) {
+			article->setQuantiteReapprovisionnement(Convert::ToInt32(ReapproArticleValue));
+		}
+		else {
+			MessageBox::Show("Veuillez saisir une valeur pour le seuil de reapprovisionnement de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return;
+		};
+		Object^ PrixHTArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Prix_HT"]->Value;
+		if (PrixHTArticleValue != DBNull::Value) {
+			article->setPrixHT(Convert::ToDouble(PrixHTArticleValue));
+		}
+		else {
+			MessageBox::Show("Veuillez saisir une valeur pour le prix HT de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return;
+		};
+
+		// Mettre à jour l'article dans la base de données
+		NS_Article::ServiceArticle^ serviceArticle = gcnew NS_Article::ServiceArticle();
+		serviceArticle->UpdateServiceArticle(article);
+		// Rafraîchir le DataGridView après la mise à jour
+		System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
+		CatalogueArticle->DataSource = dataSet;
+		CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
+
+		MessageBox::Show("Modification terminée avec succès", "Mise à jour ", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else {
+		MessageBox::Show("Veuillez sélectionner une ligne à modifier.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
 }
-private: System::Void Btn_UpdateCatalogue_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void bSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (CatalogueArticle->SelectedRows->Count > 0) {
+		int rowIndex = CatalogueArticle->SelectedRows[0]->Index;
+		int refArticle = Convert::ToInt32(CatalogueArticle->Rows[rowIndex]->Cells["Ref_Article"]->Value);
+		System::Windows::Forms::DialogResult result = MessageBox::Show("Êtes-vous sûr de vouloir supprimer cet article ?", "Confirmation de suppression", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+		if (result == System::Windows::Forms::DialogResult::Yes) {
+			NS_Article::ServiceArticle^ serviceArticle = gcnew NS_Article::ServiceArticle();
+			Article^ articleToDelete = gcnew Article();
+			articleToDelete->setRefArticle(refArticle);
+			serviceArticle->DeleteServiceArticle(articleToDelete);
+
+			System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
+			CatalogueArticle->DataSource = dataSet;
+			CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
+
+			MessageBox::Show("Article supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+	}
+	else {
+		MessageBox::Show("Veuillez sélectionner une ligne à supprimer.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
 }
-private: System::Void Btn_SuppCatalogue_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void CatalogueArticle_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void Catalogue_tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }
