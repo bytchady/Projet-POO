@@ -2,13 +2,14 @@
 
 using namespace System;
 using namespace System::Data::SqlClient;
+using namespace System::Data;
 // Test
 BDD::BDD()
 {
     try
     {
         // Chaine de connexion
-        String^ connectString = "Data Source=127.0.0.1,1433;Initial Catalog = shopbycesi;User ID=sa;Password=Mael123!";
+        String^ connectString = "Data Source=127.0.0.1,1433;Initial Catalog = shopbycesi;User ID=sa;Password=Mael1234!";
         // Objet connection
         connection = gcnew SqlConnection(connectString);
         // Ouverture
@@ -53,4 +54,22 @@ int BDD::executeInsert(String^ sql)
     // Execution
     int idGenere = Decimal::ToInt32((Decimal)command->ExecuteScalar());
     return idGenere;
+}
+
+Object^ BDD::executeScalar(String^ query)
+{
+    try {
+        SqlCommand^ cmd = gcnew SqlCommand(query, connection);
+        connection->Open();
+        Object^ result = cmd->ExecuteScalar();
+        return result;
+    }
+    catch (Exception^ e) {
+        throw e;
+    }
+    finally {
+        if (connection->State == ConnectionState::Open) {
+            connection->Close();
+        }
+    }
 }

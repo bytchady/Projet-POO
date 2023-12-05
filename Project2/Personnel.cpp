@@ -1,4 +1,5 @@
 #include "Personnel.h"
+#include "Adresse.h"
 
 namespace NS_Personnel {
 	int Personnel::getId_Personnel() {
@@ -91,6 +92,9 @@ namespace NS_Personnel {
 			"SELECT 'Ce personnel existe déjà !' AS Resultat; "
 			"END";
 	}
+
+
+
 
 	String^ Personnel::UpdatePersonnel()
 	{

@@ -1,46 +1,6 @@
 #include "Adresse.h"
 
 namespace NS_Adresse {
-    int Adresse::getId_Adresse()
-    {
-        return this->getId_Adresse();
-    }
-
-    int Adresse::getNum_Rue()
-    {
-        return this->getNum_Rue();
-    }
-
-    String^ Adresse::getNom_rue()
-    {
-        return this->getNom_rue();
-    }
-
-    String^ Adresse::getComplement_Adr()
-    {
-        return this->getComplement_Adr();
-    }
-
-    String^ Adresse::getNom_Ville()
-    {
-        return this->getNom_Ville();
-    }
-
-    int Adresse::getCode_Postal()
-    {
-        return getCode_Postal();
-    }
-
-    bool Adresse::getSupprimer()
-    {
-        return getSupprimer();
-    }
-
-    void Adresse::setId_Adresse(int Id_Adresse)
-    {
-        this->Id_Adresse = Id_Adresse;
-    }
-
     void Adresse::setNum_Rue(int Num_Rue)
     {
         this->Num_Rue = Num_Rue;
@@ -71,6 +31,36 @@ namespace NS_Adresse {
         this->Supprimer = Supprimer;
     }
 
+    int Adresse::getNum_Rue()
+    {
+        return this->Num_Rue;
+    }
+
+    String^ Adresse::getNom_rue()
+    {
+        return this->Nom_rue;
+    }
+
+    String^ Adresse::getComplement_Adr()
+    {
+        return this->Complement_Adr;
+    }
+
+    String^ Adresse::getNom_Ville()
+    {
+        return this->Nom_Ville;
+    }
+
+    int Adresse::getCode_Postal()
+    {
+        return this->Code_Postal;
+    }
+
+    bool Adresse::getSupprimer()
+    {
+        return this->Supprimer;
+    }
+
     String^ Adresse::CreateAdresse()
     {
         return "DECLARE @Num_Rue int; SET @Num_Rue = '" + Convert::ToString(Num_Rue) + "'; "
@@ -84,11 +74,6 @@ namespace NS_Adresse {
     String^ Adresse::DeleteAdresse()
     {
         return "UPDATE Adresse SET Supprimer = 1 WHERE Id_Adresse = " + Convert::ToString(Id_Adresse);
-
-    }
-
-    String^ Adresse::SelectAdresse()
-    {
 
     }
 }
