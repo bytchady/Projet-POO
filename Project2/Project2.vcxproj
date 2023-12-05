@@ -122,7 +122,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AjouterCommande1.cpp" />
     <ClCompile Include="AjouterAdresse.cpp" />
+    <ClCompile Include="AjouterCommande2.cpp" />
+    <ClCompile Include="AjouterCommande3.cpp" />
     <ClCompile Include="DetailCommande.cpp" />
     <ClCompile Include="GestionCommande.cpp" />
     <ClCompile Include="ModifierAdresse.cpp" />
@@ -135,6 +138,7 @@
     <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="mainmenu.cpp" />
+    <ClCompile Include="ModifierArticle.cpp" />
     <ClCompile Include="ModifierClient.cpp" />
     <ClCompile Include="ModifierCommande.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
@@ -149,7 +153,16 @@
     <ClCompile Include="SupprimerCommandePopUp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AjouterCommande1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AjouterAdresse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AjouterCommande2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AjouterCommande3.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DetailCommande.h">
@@ -182,6 +195,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="mainmenu.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModifierArticle.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModifierClient.h">
@@ -224,6 +240,15 @@
     <EmbeddedResource Include="AjouterClient.resx">
       <DependentUpon>AjouterClient.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AjouterCommande1.resx">
+      <DependentUpon>AjouterCommande1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouterCommande2.resx">
+      <DependentUpon>AjouterCommande2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouterCommande3.resx">
+      <DependentUpon>AjouterCommande3.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetailCommande.resx">
       <DependentUpon>DetailCommande.h</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainmenu.resx">
       <DependentUpon>mainmenu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierArticle.resx">
+      <DependentUpon>ModifierArticle.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierClient.resx">
       <DependentUpon>ModifierClient.h</DependentUpon>

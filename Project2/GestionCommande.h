@@ -2,6 +2,7 @@
 #include "SupprimerCommandePopUp.h"
 #include "ModifierCommande.h"
 #include "DetailCommande.h"
+#include "AjouterCommande1.h"
 
 namespace ProjectPOO {
 
@@ -237,6 +238,8 @@ namespace ProjectPOO {
 		dc->ShowDialog();
 	}
 private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ e) {
+	AjouterCommande1^ ac1 = gcnew AjouterCommande1();
+	ac1->ShowDialog();
 }
 private: System::Void bModifier_Click(System::Object^ sender, System::EventArgs^ e) {
 	ModifierCommande^ mc = gcnew ModifierCommande();

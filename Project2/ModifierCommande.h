@@ -1,4 +1,5 @@
 #pragma once
+#include "ModifierArticle.h"
 
 namespace ProjectPOO {
 
@@ -181,7 +182,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox8->Location = System::Drawing::Point(3, 914);
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(607, 22);
+			this->textBox8->Size = System::Drawing::Size(607, 20);
 			this->textBox8->TabIndex = 15;
 			// 
 			// textBox7
@@ -191,7 +192,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox7->Location = System::Drawing::Point(3, 800);
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(607, 22);
+			this->textBox7->Size = System::Drawing::Size(607, 20);
 			this->textBox7->TabIndex = 14;
 			// 
 			// textBox6
@@ -201,7 +202,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox6->Location = System::Drawing::Point(3, 693);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(607, 22);
+			this->textBox6->Size = System::Drawing::Size(607, 20);
 			this->textBox6->TabIndex = 13;
 			// 
 			// textBox5
@@ -211,7 +212,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox5->Location = System::Drawing::Point(3, 572);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(607, 22);
+			this->textBox5->Size = System::Drawing::Size(607, 20);
 			this->textBox5->TabIndex = 12;
 			// 
 			// textBox4
@@ -221,7 +222,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox4->Location = System::Drawing::Point(3, 448);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(607, 22);
+			this->textBox4->Size = System::Drawing::Size(607, 20);
 			this->textBox4->TabIndex = 11;
 			// 
 			// textBox3
@@ -231,7 +232,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox3->Location = System::Drawing::Point(3, 327);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(607, 22);
+			this->textBox3->Size = System::Drawing::Size(607, 20);
 			this->textBox3->TabIndex = 10;
 			// 
 			// textBox2
@@ -241,7 +242,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox2->Location = System::Drawing::Point(3, 214);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(607, 22);
+			this->textBox2->Size = System::Drawing::Size(607, 20);
 			this->textBox2->TabIndex = 9;
 			// 
 			// label1
@@ -347,7 +348,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox1->Location = System::Drawing::Point(3, 98);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(607, 22);
+			this->textBox1->Size = System::Drawing::Size(607, 20);
 			this->textBox1->TabIndex = 8;
 			// 
 			// tableLayoutPanel3
@@ -394,7 +395,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				57.21393F)));
 			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				184)));
+				186)));
 			this->tableLayoutPanel4->Controls->Add(this->bModifierArticle, 1, 0);
 			this->tableLayoutPanel4->Location = System::Drawing::Point(3, 651);
 			this->tableLayoutPanel4->Name = L"tableLayoutPanel4";
@@ -408,12 +409,13 @@ namespace ProjectPOO {
 			this->bModifierArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->bModifierArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bModifierArticle->Location = System::Drawing::Point(184, 3);
+			this->bModifierArticle->Location = System::Drawing::Point(183, 3);
 			this->bModifierArticle->Name = L"bModifierArticle";
-			this->bModifierArticle->Size = System::Drawing::Size(236, 65);
+			this->bModifierArticle->Size = System::Drawing::Size(235, 65);
 			this->bModifierArticle->TabIndex = 2;
 			this->bModifierArticle->Text = L"Modifier Article";
 			this->bModifierArticle->UseVisualStyleBackColor = true;
+			this->bModifierArticle->Click += gcnew System::EventHandler(this, &ModifierCommande::bModifierArticle_Click);
 			// 
 			// tableLayoutPanel5
 			// 
@@ -490,6 +492,10 @@ namespace ProjectPOO {
 	}
 private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void bModifierArticle_Click(System::Object^ sender, System::EventArgs^ e) {
+	ModifierArticle^ ma = gcnew ModifierArticle();
+	ma->ShowDialog();
 }
 };
 }

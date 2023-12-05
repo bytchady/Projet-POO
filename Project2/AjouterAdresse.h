@@ -87,7 +87,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				71.6129F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				319)));
+				320)));
 			this->tableLayoutPanel1->Controls->Add(this->label1, 1, 0);
 			this->tableLayoutPanel1->Controls->Add(this->label2, 1, 2);
 			this->tableLayoutPanel1->Controls->Add(this->label3, 1, 4);
@@ -158,7 +158,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox1->Location = System::Drawing::Point(264, 95);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(653, 22);
+			this->textBox1->Size = System::Drawing::Size(652, 20);
 			this->textBox1->TabIndex = 3;
 			// 
 			// textBox2
@@ -168,7 +168,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox2->Location = System::Drawing::Point(264, 218);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(653, 22);
+			this->textBox2->Size = System::Drawing::Size(652, 20);
 			this->textBox2->TabIndex = 4;
 			// 
 			// textBox3
@@ -178,7 +178,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox3->Location = System::Drawing::Point(264, 352);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(653, 22);
+			this->textBox3->Size = System::Drawing::Size(652, 20);
 			this->textBox3->TabIndex = 5;
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &AjouterAdresse::textBox3_TextChanged);
 			// 
@@ -224,7 +224,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 1;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(653, 58);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(652, 58);
 			this->tableLayoutPanel2->TabIndex = 9;
 			// 
 			// bValider
@@ -251,7 +251,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bAnnuler->Location = System::Drawing::Point(329, 3);
 			this->bAnnuler->Name = L"bAnnuler";
-			this->bAnnuler->Size = System::Drawing::Size(321, 52);
+			this->bAnnuler->Size = System::Drawing::Size(320, 52);
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;

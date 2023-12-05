@@ -46,9 +46,9 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::Label^ label4;
+
 	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
+
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel4;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ bModifierAdresse;
@@ -80,9 +80,7 @@ namespace ProjectPOO {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel4 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -122,9 +120,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->Controls->Add(this->label3, 0, 6);
 			this->tableLayoutPanel2->Controls->Add(this->textBox1, 0, 3);
 			this->tableLayoutPanel2->Controls->Add(this->textBox2, 0, 5);
-			this->tableLayoutPanel2->Controls->Add(this->label4, 0, 8);
 			this->tableLayoutPanel2->Controls->Add(this->textBox3, 0, 7);
-			this->tableLayoutPanel2->Controls->Add(this->textBox4, 0, 9);
 			this->tableLayoutPanel2->Controls->Add(this->label1, 0, 2);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(3, 3);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
@@ -174,7 +170,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox1->Location = System::Drawing::Point(3, 225);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(503, 22);
+			this->textBox1->Size = System::Drawing::Size(503, 20);
 			this->textBox1->TabIndex = 2;
 			// 
 			// textBox2
@@ -184,20 +180,8 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox2->Location = System::Drawing::Point(3, 337);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(503, 22);
+			this->textBox2->Size = System::Drawing::Size(503, 20);
 			this->textBox2->TabIndex = 6;
-			// 
-			// label4
-			// 
-			this->label4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(3, 537);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(390, 31);
-			this->label4->TabIndex = 5;
-			this->label4->Text = L"Date de la première commande";
 			// 
 			// textBox3
 			// 
@@ -206,18 +190,8 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox3->Location = System::Drawing::Point(3, 451);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(503, 22);
+			this->textBox3->Size = System::Drawing::Size(503, 20);
 			this->textBox3->TabIndex = 7;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox4->Location = System::Drawing::Point(3, 571);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(503, 22);
-			this->textBox4->TabIndex = 8;
 			// 
 			// label1
 			// 

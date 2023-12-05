@@ -26,6 +26,10 @@
     <ClCompile Include="Stat2.cpp" />
     <ClCompile Include="Stat3.cpp" />
     <ClCompile Include="Stat4.cpp" />
+    <ClCompile Include="AjouterCommande1.cpp" />
+    <ClCompile Include="AjouterCommande2.cpp" />
+    <ClCompile Include="AjouterCommande3.cpp" />
+    <ClCompile Include="ModifierArticle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Article.h" />
@@ -53,5 +57,9 @@
     <ClInclude Include="Stat2.h" />
     <ClInclude Include="Stat3.h" />
     <ClInclude Include="Stat4.h" />
+    <ClInclude Include="AjouterCommande1.h" />
+    <ClInclude Include="AjouterCommande2.h" />
+    <ClInclude Include="AjouterCommande3.h" />
+    <ClInclude Include="ModifierArticle.h" />
   </ItemGroup>
 </Project>
