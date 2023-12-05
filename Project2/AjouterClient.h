@@ -3,7 +3,7 @@
 #include "ServiceClient.h"
 
 using namespace NS_Client;
-namespace Project2 {
+namespace ProjectPOO {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -52,7 +52,8 @@ namespace Project2 {
 	private: System::Windows::Forms::TextBox^ textBox_NumClient;
 	private: System::Windows::Forms::TextBox^ textBox_PrenomClient;
 	private: System::Windows::Forms::TextBox^ textBox_NaissanceClient;
-	private: System::Windows::Forms::Label^ ResulatAjouterClient;
+	private: System::Windows::Forms::Label^ ResultatAjouterClient;
+
 
 
 
@@ -85,7 +86,7 @@ namespace Project2 {
 			this->textBox_NaissanceClient = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_NomClient = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_NumClient = (gcnew System::Windows::Forms::TextBox());
-			this->ResulatAjouterClient = (gcnew System::Windows::Forms::Label());
+			this->ResultatAjouterClient = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
@@ -114,7 +115,7 @@ namespace Project2 {
 			this->tableLayoutPanel1->Controls->Add(this->textBox_NaissanceClient, 2, 5);
 			this->tableLayoutPanel1->Controls->Add(this->textBox_NomClient, 2, 3);
 			this->tableLayoutPanel1->Controls->Add(this->textBox_NumClient, 2, 2);
-			this->tableLayoutPanel1->Controls->Add(this->ResulatAjouterClient, 2, 1);
+			this->tableLayoutPanel1->Controls->Add(this->ResultatAjouterClient, 2, 1);
 			this->tableLayoutPanel1->Location = System::Drawing::Point(12, 5);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 10;
@@ -271,21 +272,21 @@ namespace Project2 {
 			this->textBox_NumClient->Size = System::Drawing::Size(606, 38);
 			this->textBox_NumClient->TabIndex = 8;
 			// 
-			// ResulatAjouterClient
+			// ResultatAjouterClient
 			// 
-			this->ResulatAjouterClient->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->ResultatAjouterClient->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->ResulatAjouterClient->AutoSize = true;
-			this->ResulatAjouterClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+			this->ResultatAjouterClient->AutoSize = true;
+			this->ResultatAjouterClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->ResulatAjouterClient->Location = System::Drawing::Point(566, 65);
-			this->ResulatAjouterClient->Name = L"ResulatAjouterClient";
-			this->ResulatAjouterClient->Size = System::Drawing::Size(606, 65);
-			this->ResulatAjouterClient->TabIndex = 10;
-			this->ResulatAjouterClient->Text = L"label1";
-			this->ResulatAjouterClient->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->ResulatAjouterClient->Click += gcnew System::EventHandler(this, &AjouterClient::ResulatAjouterClient_Click);
+			this->ResultatAjouterClient->Location = System::Drawing::Point(566, 65);
+			this->ResultatAjouterClient->Name = L"ResultatAjouterClient";
+			this->ResultatAjouterClient->Size = System::Drawing::Size(606, 65);
+			this->ResultatAjouterClient->TabIndex = 10;
+			this->ResultatAjouterClient->Text = L"label1";
+			this->ResultatAjouterClient->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->ResultatAjouterClient->Click += gcnew System::EventHandler(this, &AjouterClient::ResulatAjouterClient_Click);
 			// 
 			// tabControl1
 			// 
@@ -345,10 +346,10 @@ namespace Project2 {
 			return;
 		}
 		Client^ client = gcnew Client;
-		client->setNumeroClient(this->textBox_NumClient->Text);
-		client->setNomClient(this->textBox_NomClient->Text);
-		client->setPrenomClient(this->textBox_PrenomClient->Text);
-		client->setNaissanceClient(this->textBox_NaissanceClient->Text);
+		client->setNumeroClient(Convert::ToString(this->textBox_NumClient->Text));
+		client->setNomClient(Convert::ToString(this->textBox_NomClient->Text));
+		client->setPrenomClient(Convert::ToString(this->textBox_PrenomClient->Text));
+		client->setNaissanceClient(Convert::ToString(this->textBox_NaissanceClient->Text));
 
 		//Verifer si le numero client existe deja dans la bdd
 		ServiceClient^ serviceClient = gcnew ServiceClient();
@@ -360,20 +361,24 @@ namespace Project2 {
 
 		//Verifer l'ajout a ete effectuer
 		if (serviceClient->InsertServiceClient(client)) {
-			this->ResulatAjouterClient->Text = "Client ajouté avec succès";
+			this->ResultatAjouterClient->Text = "Client ajouté avec succès";
 		}
 		else {
-			this->ResulatAjouterClient->Text = "Erreur d'ajout du client";
+			this->ResultatAjouterClient->Text = "Erreur d'ajout du client";
 		}
 	}
-private: System::Void ResulatAjouterClient_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 private: System::Void AjouterClient_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->ResultatAjouterClient->Text = "";
 }
 private: System::Void textBox_NaissanceClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	MessageBox::Show("Le Format de la date est yyyy/mm/dd", "Format de la cellule", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	if (String::IsNullOrWhiteSpace(this->textBox_NaissanceClient->Text)) {
+		MessageBox::Show("Le Format de la date est yyyy/mm/dd", "Format de la cellule", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	};
 }
 private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void ResulatAjouterClient_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

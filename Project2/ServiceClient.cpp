@@ -28,12 +28,14 @@ namespace NS_Client {
 
     void ServiceClient::UpdateServiceClient(Client^ client) {
         String^ query = client->UpdateClient();
+        System::Diagnostics::Debug::WriteLine("Requête SQL générée : " + query);
         bdd->executeNonQuery(query);
     }
 
     bool ServiceClient::ClientExists(String^ num_client) {
-        String^ checkQuery = "SELECT Numero_Client FROM Client WHERE Numero_Client = " + Convert::ToString(num_client);
-        System::Data::DataSet^ result = bdd->executeQuery(checkQuery);
+        String^ query = "SELECT Numero_Client FROM Client WHERE Numero_Client = " + num_client;
+        System::Data::DataSet^ result = bdd->executeQuery(query);
+        System::Diagnostics::Debug::WriteLine("Requête SQL générée : " + query);
         return result != nullptr && result->Tables[0]->Rows->Count > 0;
     }
 }

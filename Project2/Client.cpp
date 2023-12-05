@@ -9,12 +9,12 @@ namespace NS_Client {
 
     void Client::setNomClient(String^ nom_client)
     {
-        this->Numero_Client = nom_client;
+        this->Nom_Client = nom_client;
     }
 
     void Client::setPrenomClient(String^ prenom_client)
     {
-        this->Numero_Client = prenom_client;
+        this->Prenom_Client = prenom_client;
     }
 
     void Client::setNaissanceClient(String^ naissance_client)
@@ -64,17 +64,17 @@ namespace NS_Client {
 
     String^ Client::CreateClient()
     {
-        return "DECLARE @Numero_Client varchar(50); SET @Numero_Client = " + Numero_Client + "; "
+        return "DECLARE @Numero_Client varchar(50); SET @Numero_Client = '" + Numero_Client + "'; "
             "DECLARE @Nom_Client varchar(50); SET @Nom_Client = '" + Nom_Client + "'; "
             "DECLARE @Prenom_Client varchar(50); SET @Prenom_Client = '" + Prenom_Client + "'; "
             "DECLARE @Naissance_Client date; SET @Naissance_Client  = '" + Naissance_Client->Replace("/", "-") + "'; "
-            "DECLARE @PremierAchat date; SET @PremierAchat = " + PremierAchat->Replace("/", "-") + "; "
+            //"DECLARE @PremierAchat date; SET @PremierAchat = '" + PremierAchat->Replace("/", "-") + "'; "
             "DECLARE @Supprimer bit; SET @Supprimer = 0; "
 
-            "IF NOT EXISTS(SELECT Id_Client FROM Client WHERE Numero_Client = @Numero_Client AND Nom_Client = @Nom_Client AND Prenom_Client = @Prenom_Client AND Naissance_Client = @Naissance_Client AND PremierAchat = @PremierAchat) "
+            "IF NOT EXISTS(SELECT Numero_Client FROM Client WHERE Numero_Client = @Numero_Client AND Nom_Client = @Nom_Client AND Prenom_Client = @Prenom_Client AND Naissance_Client = @Naissance_Client ) "
             "BEGIN "
-            "INSERT INTO Article (Numero_Client, Nom_Client, Prenom_Client, Naissance_Client, PremierAchat, Supprimer) "
-            "VALUES (@Numero_Client, @Nom_Client, @Prenom_Client, @Naissance_Client, @PremierAchat, @Supprimer); "
+            "INSERT INTO Client (Numero_Client, Nom_Client, Prenom_Client, Naissance_Client, Supprimer) "
+            "VALUES (@Numero_Client, @Nom_Client, @Prenom_Client, @Naissance_Client,  @Supprimer); "
             "SELECT 'Le client a été ajouté avec succès.' AS Resultat; "
             "END "
             "ELSE "
@@ -83,16 +83,16 @@ namespace NS_Client {
             "END";
     }
 
+
     String^ Client::UpdateClient()
     {
         return "UPDATE Client SET Nom_Client = '" + Nom_Client + 
-            "', Prenom_Client = '" + Prenom_Client + "', Stock_Article = " + Convert::ToString(Naissance_Client) + 
-            ", PremierAchat = " +Convert::ToString(PremierAchat) + ", Supprimer = 0" +
+            "', Prenom_Client = '" + Prenom_Client + "', Naissance_Client = " + Naissance_Client + ", Supprimer = 0" +
             " WHERE Numero_Client = " + Numero_Client;
     }
 
     String^ Client::DeleteClient()
     {
-        return "UPDATE Client SET Supprimer = 1 WHERE Numero_Client = " + Convert::ToString(Numero_Client);
+        return "UPDATE Client SET Supprimer = 1 WHERE Numero_Client = " + Numero_Client;
     }
 }

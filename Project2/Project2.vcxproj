@@ -134,13 +134,13 @@
     <ClCompile Include="BDD.cpp" />
     <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Commande.cpp" />
     <ClCompile Include="DetailCommande.cpp" />
     <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionCommande.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="mainmenu.cpp" />
     <ClCompile Include="ModifierAdresse.cpp" />
-    <ClCompile Include="ModifierClient.cpp" />
     <ClCompile Include="ModifierCommande.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
@@ -176,6 +176,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Client.h" />
+    <ClInclude Include="Commande.h" />
     <ClInclude Include="DetailCommande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -194,9 +195,6 @@
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
     </ClInclude>
     <ClInclude Include="ModifierAdresse.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ModifierClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModifierCommandes.h">
@@ -265,9 +263,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierAdresse.resx">
       <DependentUpon>ModifierAdresse.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModifierClient.resx">
-      <DependentUpon>ModifierClient.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierCommande.resx">
       <DependentUpon>ModifierCommande.h</DependentUpon>

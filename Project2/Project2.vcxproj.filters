@@ -15,7 +15,6 @@
     <ClCompile Include="Adresse.cpp" />
     <ClCompile Include="ServiceAdresse.cpp" />
     <ClCompile Include="GestionClient.cpp" />
-    <ClCompile Include="ModifierClient.cpp" />
     <ClCompile Include="ModifierAdresse.cpp" />
     <ClCompile Include="SupprimerClientPopUp.cpp" />
     <ClCompile Include="AjouterAdresse.cpp" />
@@ -31,6 +30,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ServiceClient.cpp" />
     <ClCompile Include="AjouterClient.cpp" />
+    <ClCompile Include="Commande.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adresse.h" />
@@ -46,7 +46,6 @@
     <ClInclude Include="GestionPersonnel.h" />
     <ClInclude Include="mainmenu.h" />
     <ClInclude Include="ModifierAdresse.h" />
-    <ClInclude Include="ModifierClient.h" />
     <ClInclude Include="ModifierCommandes.h" />
     <ClInclude Include="ModifierPersonnel.h" />
     <ClInclude Include="Personnel.h" />
@@ -63,5 +62,6 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="ServiceClient.h" />
     <ClInclude Include="AjouterClient.h" />
+    <ClInclude Include="Commande.h" />
   </ItemGroup>
 </Project>

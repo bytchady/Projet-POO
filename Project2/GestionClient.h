@@ -1,5 +1,4 @@
 #pragma once
-#include "ServiceClient.h"
 #include "AjouterClient.h"
 
 using namespace NS_Client;
@@ -184,26 +183,29 @@ namespace ProjectPOO {
 				422)));
 			this->tableLayoutPanel2->Controls->Add(this->CatalogueClient, 0, 1);
 			this->tableLayoutPanel2->Controls->Add(this->tableLayoutPanel1, 0, 0);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(33, 139);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(13, 127);
 			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(4);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 3;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 80)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 700)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(1600, 1034);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(1600, 1031);
 			this->tableLayoutPanel2->TabIndex = 3;
 			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GestionClient::tableLayoutPanel2_Paint);
 			// 
 			// CatalogueClient
 			// 
+			this->CatalogueClient->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->CatalogueClient->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->CatalogueClient->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->CatalogueClient->Location = System::Drawing::Point(4, 84);
 			this->CatalogueClient->Margin = System::Windows::Forms::Padding(4);
 			this->CatalogueClient->Name = L"CatalogueClient";
 			this->CatalogueClient->RowHeadersWidth = 51;
 			this->CatalogueClient->Size = System::Drawing::Size(1170, 692);
-			this->CatalogueClient->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->CatalogueClient->TabIndex = 3;
 			this->CatalogueClient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionClient::dataGridView1_CellContentClick);
 			// 
@@ -249,6 +251,7 @@ namespace ProjectPOO {
 		System::Data::DataSet^ dataSet = serviceClient->SelectAllServiceClient();
 		CatalogueClient->DataSource = dataSet;
 		CatalogueClient->DataMember = dataSet->Tables[0]->TableName;
+
 	}
 	private: System::Void tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
@@ -257,17 +260,97 @@ namespace ProjectPOO {
 	private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
 	private: System::Void bmodifier_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (CatalogueClient->SelectedRows->Count > 0) {
+			// Obtenez l'index de la première ligne sélectionnée
+			int rowIndex = CatalogueClient->SelectedRows[0]->Index;
+
+			// Créez un nouvel objet Article avec les données de la ligne sélectionnée
+			Client^ client = gcnew Client;
+			Object^ numclientvalue = CatalogueClient->Rows[rowIndex]->Cells["Numero_Client"]->Value;
+			if (numclientvalue != DBNull::Value) {
+				String^ numClientString = Convert::ToString(numclientvalue);
+				client->setNumeroClient(numClientString);
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour le numéro client.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+			Object^ nomclientvalue = CatalogueClient->Rows[rowIndex]->Cells["Nom_Client"]->Value;
+			if (nomclientvalue != DBNull::Value) {
+				String^ nomClientString = Convert::ToString(nomclientvalue);
+				client->setNomClient(nomClientString);
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour le nom du client.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			};
+			Object^ prenomclientvalue = CatalogueClient->Rows[rowIndex]->Cells["Prenom_Client"]->Value;
+			if (prenomclientvalue != DBNull::Value) {
+				String^ prenomClientString = Convert::ToString(prenomclientvalue);
+				client->setPrenomClient(prenomClientString);
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour le prenom du client.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			};
+			Object^ naissanceclientvalue = CatalogueClient->Rows[rowIndex]->Cells["Naissance_Client"]->Value;
+			if (naissanceclientvalue != DBNull::Value) {
+				DateTime naissanceClientDate = Convert::ToDateTime(naissanceclientvalue);
+				String^ naissanceClientString = naissanceClientDate.ToString("yyyy-MM-dd");
+				// Ajoutez des guillemets simples autour de la date dans la requête SQL
+				client->setNaissanceClient("'" + naissanceClientString + "'");
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour la date de naissance du client.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+			;
+			// Mettre à jour l'article dans la base de données
+			ServiceClient^ serviceArticle = gcnew ServiceClient();
+			serviceArticle->UpdateServiceClient(client);
+			// Rafraîchir le DataGridView après la mise à jour
+			System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceClient();
+			CatalogueClient->DataSource = dataSet;
+			CatalogueClient->DataMember = dataSet->Tables[0]->TableName;
+
+			MessageBox::Show("Modification terminée avec succès", "Mise à jour ", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+		else {
+			MessageBox::Show("Veuillez sélectionner une ligne à modifier.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 	}
 	private: System::Void bajouter_Click(System::Object^ sender, System::EventArgs^ e) {
-		NS_Client::ServiceClient^ serviceClient = gcnew NS_Client::ServiceClient();
-		AjouterClient^ client = gcnew AjouterClient();
-		client->ShowDialog();
-		System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
-		CatalogueArticle->DataSource = dataSet;
-		CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
-	}
+		AjouterClient^ ajouterClient = gcnew AjouterClient();
+		ajouterClient->ShowDialog();
+
+		ServiceClient^ serviceClient = gcnew ServiceClient();
+		System::Data::DataSet^ dataSet = serviceClient->SelectAllServiceClient();
+		CatalogueClient->DataSource = dataSet;
+		CatalogueClient->DataMember = dataSet->Tables[0]->TableName;
 	}
 	private: System::Void bsupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (CatalogueClient->SelectedRows->Count > 0) {
+			int rowIndex = CatalogueClient->SelectedRows[0]->Index;
+			String^ refClient = Convert::ToString(CatalogueClient->Rows[rowIndex]->Cells["Numero_Client"]->Value);
+			System::Windows::Forms::DialogResult result = MessageBox::Show("Êtes-vous sûr de vouloir supprimer ce client ?", "Confirmation de suppression", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+			if (result == System::Windows::Forms::DialogResult::Yes) {
+				ServiceClient^ serviceClient = gcnew ServiceClient();
+				Client^ clientToDelete = gcnew Client();
+				clientToDelete->setNumeroClient(refClient);
+				serviceClient->DeleteServiceClient(clientToDelete);
+
+				System::Data::DataSet^ dataSet = serviceClient->SelectAllServiceClient();
+				CatalogueClient->DataSource = dataSet;
+				CatalogueClient->DataMember = dataSet->Tables[0]->TableName;
+
+				MessageBox::Show("Client supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			}
+		}
+		else {
+			MessageBox::Show("Veuillez sélectionner une ligne à supprimer.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 	}
-};
+
+	};
 }
