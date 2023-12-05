@@ -85,7 +85,7 @@ namespace NS_Article {
             "DECLARE @Quantite_Reapprovisionnement int; SET @Quantite_Reapprovisionnement = " + Convert::ToString(Quantite_Reapprovisionnement) + "; "
             "DECLARE @Prix_HT float; SET @Prix_HT = " + Convert::ToString(Prix_HT)->Replace(",", ".") + "; "
             "DECLARE @Taux_TVA float; SET @Taux_TVA = " + Convert::ToString(defaultTauxTVA)->Replace(",", ".") + "; "
-            "DECLARE @Supprimer bit; SET @Supprimer = 0; "  
+            "DECLARE @Supprimer bit; SET @Supprimer = 0; "
 
             "IF NOT EXISTS(SELECT Id_Article FROM Article WHERE Ref_Article = @Ref_Article AND Nature_Article = @Nature_Article AND Nom_Article = @Nom_Article AND Couleur_Article = @Couleur_Article) "
             "BEGIN "

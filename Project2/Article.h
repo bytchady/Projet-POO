@@ -3,7 +3,7 @@
 using namespace System;
 
 namespace NS_Article {
-   public ref class Article
+    public ref class Article
     {
     private:
         int Id_Article;

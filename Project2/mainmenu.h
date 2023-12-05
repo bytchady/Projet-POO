@@ -1,5 +1,9 @@
 #pragma once
 #include "Catalogue.h"
+#include "GestionPersonnel.h"
+#include "GestionClient.h"
+#include "GestionCommande.h"
+#include "Statistiques.h"
 
 namespace ProjectPOO {
 
@@ -93,18 +97,18 @@ namespace ProjectPOO {
 			this->tabmenu->Controls->Add(this->bStatisitques, 0, 5);
 			this->tabmenu->Controls->Add(this->bCatalogue, 0, 4);
 			this->tabmenu->Controls->Add(this->NomStartup, 0, 0);
-			this->tabmenu->Location = System::Drawing::Point(405, 129);
+	        this->tabmenu->Location = System::Drawing::Point(463, 201);
 			this->tabmenu->Margin = System::Windows::Forms::Padding(4);
 			this->tabmenu->Name = L"tabmenu";
 			this->tabmenu->RowCount = 6;
 			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 45.3202F)));
 			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 54.6798F)));
-			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 128)));
-			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 123)));
-			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 117)));
-			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 119)));
-			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 25)));
-			this->tabmenu->Size = System::Drawing::Size(443, 714);
+			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 104)));
+			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 100)));
+			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 95)));
+			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 97)));
+			this->tabmenu->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
+			this->tabmenu->Size = System::Drawing::Size(332, 580);
 			this->tabmenu->TabIndex = 0;
 			// 
 			// bCommandes
@@ -114,10 +118,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bCommandes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bCommandes->Location = System::Drawing::Point(4, 358);
-			this->bCommandes->Margin = System::Windows::Forms::Padding(4);
+			this->bCommandes->Location = System::Drawing::Point(3, 290);
 			this->bCommandes->Name = L"bCommandes";
-			this->bCommandes->Size = System::Drawing::Size(435, 115);
+			this->bCommandes->Size = System::Drawing::Size(326, 94);
 			this->bCommandes->TabIndex = 3;
 			this->bCommandes->Text = L"Commandes";
 			this->bCommandes->UseVisualStyleBackColor = true;
@@ -130,10 +133,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bClient->Location = System::Drawing::Point(4, 230);
-			this->bClient->Margin = System::Windows::Forms::Padding(4);
+			this->bClient->Location = System::Drawing::Point(3, 186);
 			this->bClient->Name = L"bClient";
-			this->bClient->Size = System::Drawing::Size(435, 120);
+			this->bClient->Size = System::Drawing::Size(326, 98);
 			this->bClient->TabIndex = 2;
 			this->bClient->Text = L"Client";
 			this->bClient->UseVisualStyleBackColor = true;
@@ -146,10 +148,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bPersonnel->Location = System::Drawing::Point(4, 106);
-			this->bPersonnel->Margin = System::Windows::Forms::Padding(4);
+			this->bPersonnel->Location = System::Drawing::Point(3, 86);
 			this->bPersonnel->Name = L"bPersonnel";
-			this->bPersonnel->Size = System::Drawing::Size(435, 116);
+			this->bPersonnel->Size = System::Drawing::Size(326, 94);
 			this->bPersonnel->TabIndex = 1;
 			this->bPersonnel->Text = L"Personnel";
 			this->bPersonnel->UseVisualStyleBackColor = true;
@@ -162,10 +163,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bStatisitques->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bStatisitques->Location = System::Drawing::Point(4, 598);
-			this->bStatisitques->Margin = System::Windows::Forms::Padding(4);
+			this->bStatisitques->Location = System::Drawing::Point(3, 485);
 			this->bStatisitques->Name = L"bStatisitques";
-			this->bStatisitques->Size = System::Drawing::Size(435, 112);
+			this->bStatisitques->Size = System::Drawing::Size(326, 92);
 			this->bStatisitques->TabIndex = 4;
 			this->bStatisitques->Text = L"Statistiques";
 			this->bStatisitques->UseVisualStyleBackColor = true;
@@ -178,10 +178,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bCatalogue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bCatalogue->Location = System::Drawing::Point(4, 481);
-			this->bCatalogue->Margin = System::Windows::Forms::Padding(4);
+			this->bCatalogue->Location = System::Drawing::Point(3, 390);
 			this->bCatalogue->Name = L"bCatalogue";
-			this->bCatalogue->Size = System::Drawing::Size(435, 109);
+			this->bCatalogue->Size = System::Drawing::Size(326, 89);
 			this->bCatalogue->TabIndex = 5;
 			this->bCatalogue->Text = L"Catalogue";
 			this->bCatalogue->UseVisualStyleBackColor = true;
@@ -195,11 +194,10 @@ namespace ProjectPOO {
 			this->NomStartup->AutoSize = true;
 			this->NomStartup->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NomStartup->Location = System::Drawing::Point(4, 0);
-			this->NomStartup->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->NomStartup->Location = System::Drawing::Point(3, 0);
 			this->NomStartup->Name = L"NomStartup";
 			this->NomStartup->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->NomStartup->Size = System::Drawing::Size(435, 102);
+			this->NomStartup->Size = System::Drawing::Size(326, 83);
 			this->NomStartup->TabIndex = 0;
 			this->NomStartup->Text = L"ShopbyCESI";
 			this->NomStartup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -207,16 +205,16 @@ namespace ProjectPOO {
 			// 
 			// mainmenu
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1262, 977);
+			this->ClientSize = System::Drawing::Size(1264, 985);
 			this->Controls->Add(this->tabmenu);
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximumSize = System::Drawing::Size(1280, 1024);
-			this->MinimumSize = System::Drawing::Size(1280, 1018);
+			this->MinimumSize = System::Drawing::Size(1280, 1024);
 			this->Name = L"mainmenu";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Menu";
-			this->Load += gcnew System::EventHandler(this, &mainmenu::mainmenu_Load);
+			this->Load += gcnew System::EventHandler(this, &mainmenu::MyForm_Load);
 			this->tabmenu->ResumeLayout(false);
 			this->tabmenu->PerformLayout();
 			this->ResumeLayout(false);
@@ -226,18 +224,26 @@ namespace ProjectPOO {
 	private: System::Void NomStartup_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void bPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+		GestionPersonnel^ g = gcnew GestionPersonnel();
+		g->ShowDialog();
 	}
 	private: System::Void bCommandes_Click(System::Object^ sender, System::EventArgs^ e) {
+		GestionCommande^ gc = gcnew GestionCommande();
+		gc->ShowDialog();
 	}
 	private: System::Void bClient_Click(System::Object^ sender, System::EventArgs^ e) {
+		GestionClient^ cl = gcnew GestionClient();
+		cl->ShowDialog();
 	}
 	private: System::Void bCatalogue_Click(System::Object^ sender, System::EventArgs^ e) {
 		Catalogue^ C = gcnew Catalogue();
 		C->ShowDialog();
 	}
 	private: System::Void bStatisitques_Click(System::Object^ sender, System::EventArgs^ e) {
+		Statistiques^ s = gcnew Statistiques();
+		s->ShowDialog();
 	}
-	private: System::Void mainmenu_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }

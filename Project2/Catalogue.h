@@ -50,7 +50,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -233,112 +233,112 @@ namespace ProjectPOO {
 	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ e) {
-	NS_Article::ServiceArticle^ serviceArticle = gcnew NS_Article::ServiceArticle();
-	AjouterArticle^ article = gcnew AjouterArticle();
-	article->ShowDialog();
-	System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
-	CatalogueArticle->DataSource = dataSet;
-	CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
-}
-private: System::Void bModifier_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (CatalogueArticle->SelectedRows->Count > 0) {
-		// Obtenez l'index de la première ligne sélectionnée
-		int rowIndex = CatalogueArticle->SelectedRows[0]->Index;
-
-		// Créez un nouvel objet Article avec les données de la ligne sélectionnée
-		Article^ article = gcnew Article;
-		Object^ refArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Ref_Article"]->Value;
-		if (refArticleValue != DBNull::Value) {
-			article->setRefArticle(Convert::ToInt32(refArticleValue));
-		}
-		else {
-			MessageBox::Show("Veuillez saisir une valeur pour la référence de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			return; 
-		}
-		Object^ NatureArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Nature_Article"]->Value;
-		if (NatureArticleValue != DBNull::Value) {
-			article->setNature(Convert::ToString(NatureArticleValue));
-		}
-		else {
-			MessageBox::Show("Veuillez saisir une valeur pour la nature de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			return; 
-		};
-		Object^ NomArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Nom_Article"]->Value;
-		if (NomArticleValue != DBNull::Value) {
-			article->setNom(Convert::ToString(NomArticleValue));
-		}
-		else {
-			MessageBox::Show("Veuillez saisir une valeur pour la nom de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			return;
-		};
-		article->setCouleur(Convert::ToString(CatalogueArticle->Rows[rowIndex]->Cells["Couleur_Article"]->Value));
-		Object^ StockArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Stock_Article"]->Value;
-		if (StockArticleValue != DBNull::Value) {
-			article->setStock(Convert::ToInt32(StockArticleValue));
-		}
-		else {
-			MessageBox::Show("Veuillez saisir une valeur pour l'etat du stock de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			return;
-		};
-		Object^ ReapproArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Quantite_Reapprovisionnement"]->Value;
-		if (ReapproArticleValue != DBNull::Value) {
-			article->setQuantiteReapprovisionnement(Convert::ToInt32(ReapproArticleValue));
-		}
-		else {
-			MessageBox::Show("Veuillez saisir une valeur pour le seuil de reapprovisionnement de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			return;
-		};
-		Object^ PrixHTArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Prix_HT"]->Value;
-		if (PrixHTArticleValue != DBNull::Value) {
-			article->setPrixHT(Convert::ToDouble(PrixHTArticleValue));
-		}
-		else {
-			MessageBox::Show("Veuillez saisir une valeur pour le prix HT de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			return;
-		};
-
-		// Mettre à jour l'article dans la base de données
+	private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ e) {
 		NS_Article::ServiceArticle^ serviceArticle = gcnew NS_Article::ServiceArticle();
-		serviceArticle->UpdateServiceArticle(article);
-		// Rafraîchir le DataGridView après la mise à jour
+		AjouterArticle^ article = gcnew AjouterArticle();
+		article->ShowDialog();
 		System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
 		CatalogueArticle->DataSource = dataSet;
 		CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
-
-		MessageBox::Show("Modification terminée avec succès", "Mise à jour ", MessageBoxButtons::OK, MessageBoxIcon::Information);
 	}
-	else {
-		MessageBox::Show("Veuillez sélectionner une ligne à modifier.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
-	}
-}
-private: System::Void bSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (CatalogueArticle->SelectedRows->Count > 0) {
-		int rowIndex = CatalogueArticle->SelectedRows[0]->Index;
-		int refArticle = Convert::ToInt32(CatalogueArticle->Rows[rowIndex]->Cells["Ref_Article"]->Value);
-		System::Windows::Forms::DialogResult result = MessageBox::Show("Êtes-vous sûr de vouloir supprimer cet article ?", "Confirmation de suppression", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+	private: System::Void bModifier_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (CatalogueArticle->SelectedRows->Count > 0) {
+			// Obtenez l'index de la première ligne sélectionnée
+			int rowIndex = CatalogueArticle->SelectedRows[0]->Index;
 
-		if (result == System::Windows::Forms::DialogResult::Yes) {
+			// Créez un nouvel objet Article avec les données de la ligne sélectionnée
+			Article^ article = gcnew Article;
+			Object^ refArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Ref_Article"]->Value;
+			if (refArticleValue != DBNull::Value) {
+				article->setRefArticle(Convert::ToInt32(refArticleValue));
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour la référence de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+			Object^ NatureArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Nature_Article"]->Value;
+			if (NatureArticleValue != DBNull::Value) {
+				article->setNature(Convert::ToString(NatureArticleValue));
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour la nature de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			};
+			Object^ NomArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Nom_Article"]->Value;
+			if (NomArticleValue != DBNull::Value) {
+				article->setNom(Convert::ToString(NomArticleValue));
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour la nom de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			};
+			article->setCouleur(Convert::ToString(CatalogueArticle->Rows[rowIndex]->Cells["Couleur_Article"]->Value));
+			Object^ StockArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Stock_Article"]->Value;
+			if (StockArticleValue != DBNull::Value) {
+				article->setStock(Convert::ToInt32(StockArticleValue));
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour l'etat du stock de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			};
+			Object^ ReapproArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Quantite_Reapprovisionnement"]->Value;
+			if (ReapproArticleValue != DBNull::Value) {
+				article->setQuantiteReapprovisionnement(Convert::ToInt32(ReapproArticleValue));
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour le seuil de reapprovisionnement de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			};
+			Object^ PrixHTArticleValue = CatalogueArticle->Rows[rowIndex]->Cells["Prix_HT"]->Value;
+			if (PrixHTArticleValue != DBNull::Value) {
+				article->setPrixHT(Convert::ToDouble(PrixHTArticleValue));
+			}
+			else {
+				MessageBox::Show("Veuillez saisir une valeur pour le prix HT de l'article.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			};
+
+			// Mettre à jour l'article dans la base de données
 			NS_Article::ServiceArticle^ serviceArticle = gcnew NS_Article::ServiceArticle();
-			Article^ articleToDelete = gcnew Article();
-			articleToDelete->setRefArticle(refArticle);
-			serviceArticle->DeleteServiceArticle(articleToDelete);
-
+			serviceArticle->UpdateServiceArticle(article);
+			// Rafraîchir le DataGridView après la mise à jour
 			System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
 			CatalogueArticle->DataSource = dataSet;
 			CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
 
-			MessageBox::Show("Article supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			MessageBox::Show("Modification terminée avec succès", "Mise à jour ", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+		else {
+			MessageBox::Show("Veuillez sélectionner une ligne à modifier.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
 	}
-	else {
-		MessageBox::Show("Veuillez sélectionner une ligne à supprimer.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
-	}
-}
+	private: System::Void bSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (CatalogueArticle->SelectedRows->Count > 0) {
+			int rowIndex = CatalogueArticle->SelectedRows[0]->Index;
+			int refArticle = Convert::ToInt32(CatalogueArticle->Rows[rowIndex]->Cells["Ref_Article"]->Value);
+			System::Windows::Forms::DialogResult result = MessageBox::Show("Êtes-vous sûr de vouloir supprimer cet article ?", "Confirmation de suppression", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 
-private: System::Void CatalogueArticle_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
-private: System::Void Catalogue_tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-};
+			if (result == System::Windows::Forms::DialogResult::Yes) {
+				NS_Article::ServiceArticle^ serviceArticle = gcnew NS_Article::ServiceArticle();
+				Article^ articleToDelete = gcnew Article();
+				articleToDelete->setRefArticle(refArticle);
+				serviceArticle->DeleteServiceArticle(articleToDelete);
+
+				System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
+				CatalogueArticle->DataSource = dataSet;
+				CatalogueArticle->DataMember = dataSet->Tables[0]->TableName;
+
+				MessageBox::Show("Article supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			}
+		}
+		else {
+			MessageBox::Show("Veuillez sélectionner une ligne à supprimer.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+	}
+
+	private: System::Void CatalogueArticle_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	}
+	private: System::Void Catalogue_tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+	};
 }

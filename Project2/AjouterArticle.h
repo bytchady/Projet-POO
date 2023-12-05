@@ -394,8 +394,8 @@ namespace ProjectPOO {
 			String::IsNullOrWhiteSpace(this->textBox_StockArticle->Text) ||
 			String::IsNullOrWhiteSpace(this->textBox_ReaproArticle->Text)) {
 
-			MessageBox::Show("Veuillez remplir tous les champs.", "Champs obligatoires",MessageBoxButtons::OK, MessageBoxIcon::Error);
-			return; 
+			MessageBox::Show("Veuillez remplir tous les champs.", "Champs obligatoires", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
 		}
 		Article^ article = gcnew Article;
 		article->setRefArticle(int::Parse(this->textBox_RefArticle->Text));
@@ -430,5 +430,5 @@ namespace ProjectPOO {
 	}
 	private: System::Void ResultatAjoutArticle_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-};
+	};
 }
