@@ -1,6 +1,7 @@
 #pragma once
 #include "AjouterArticle.h"
 
+using namespace NS_Article;
 namespace ProjectPOO {
 
 	using namespace System;

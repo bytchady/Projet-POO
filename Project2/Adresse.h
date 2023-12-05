@@ -1,6 +1,5 @@
 #pragma once
 
-using namespace std;
 using namespace System;
 
 namespace NS_Adresse {
@@ -16,8 +15,6 @@ namespace NS_Adresse {
 		bool Supprimer;
 
 	public:
-
-		int getId_Adresse();
 		int getNum_Rue();
 		String^ getNom_rue();
 		String^ getComplement_Adr();
@@ -25,7 +22,6 @@ namespace NS_Adresse {
 		int getCode_Postal();
 		bool getSupprimer();
 
-		void setId_Adresse(int Id_Adresse);
 		void setNum_Rue(int Num_Rue);
 		void setNom_rue(String^ Nom_rue);
 		void setComplement_Adr(String^ Complement_Adr);
@@ -35,7 +31,6 @@ namespace NS_Adresse {
 
 		String^ CreateAdresse();
 		String^ DeleteAdresse();
-		String^ SelectAdresse();
 	};
 }
 
