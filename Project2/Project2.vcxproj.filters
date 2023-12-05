@@ -1,19 +1,19 @@
-﻿﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="BDD.cpp" />
+    <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="mainmenu.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
-    <ClCompile Include="AjouterArticle.cpp" />
-    <ClCompile Include="Catalogue.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AjouterArticle.h" />
     <ClInclude Include="Article.h" />
     <ClInclude Include="BDD.h" />
+    <ClInclude Include="Catalogue.h" />
     <ClInclude Include="mainmenu.h" />
     <ClInclude Include="ServiceArticle.h" />
-    <ClInclude Include="AjouterArticle.h" />
-    <ClInclude Include="Catalogue.h" />
   </ItemGroup>
 </Project>

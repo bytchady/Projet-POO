@@ -95,18 +95,24 @@ namespace ProjectPOO {
 			this->ResultatAjoutArticle = (gcnew System::Windows::Forms::Label());
 			this->AjouterArticle_tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
+			// 
+			// ReferenceArticle
+			// 
 			this->ReferenceArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->ReferenceArticle->AutoSize = true;
-			this->ReferenceArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->ReferenceArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ReferenceArticle->Location = System::Drawing::Point(158, 137);
 			this->ReferenceArticle->Name = L"ReferenceArticle";
 			this->ReferenceArticle->Size = System::Drawing::Size(402, 70);
 			this->ReferenceArticle->TabIndex = 19;
 			this->ReferenceArticle->Text = L"Reference";
 			this->ReferenceArticle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// textBox_RefArticle
+			// 
 			this->textBox_RefArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -117,6 +123,9 @@ namespace ProjectPOO {
 			this->textBox_RefArticle->Size = System::Drawing::Size(607, 41);
 			this->textBox_RefArticle->TabIndex = 18;
 			this->textBox_RefArticle->TextChanged += gcnew System::EventHandler(this, &AjouterArticle::textBox_RefArticle_TextChanged);
+			// 
+			// textBox_ReaproArticle
+			// 
 			this->textBox_ReaproArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -127,11 +136,14 @@ namespace ProjectPOO {
 			this->textBox_ReaproArticle->Size = System::Drawing::Size(607, 41);
 			this->textBox_ReaproArticle->TabIndex = 10;
 			this->textBox_ReaproArticle->TextChanged += gcnew System::EventHandler(this, &AjouterArticle::textBox_ReaproArticle_TextChanged);
+			// 
+			// ReaproArticle
+			// 
 			this->ReaproArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->ReaproArticle->AutoSize = true;
-			this->ReaproArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ReaproArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ReaproArticle->Location = System::Drawing::Point(158, 557);
 			this->ReaproArticle->Name = L"ReaproArticle";
@@ -139,6 +151,9 @@ namespace ProjectPOO {
 			this->ReaproArticle->TabIndex = 16;
 			this->ReaproArticle->Text = L" Seuil de reapprovisionnement";
 			this->ReaproArticle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// textBox_StockArticle
+			// 
 			this->textBox_StockArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -149,11 +164,14 @@ namespace ProjectPOO {
 			this->textBox_StockArticle->Size = System::Drawing::Size(607, 41);
 			this->textBox_StockArticle->TabIndex = 12;
 			this->textBox_StockArticle->TextChanged += gcnew System::EventHandler(this, &AjouterArticle::textBox_StockArticle_TextChanged);
+			// 
+			// StockArticle
+			// 
 			this->StockArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->StockArticle->AutoSize = true;
-			this->StockArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->StockArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->StockArticle->Location = System::Drawing::Point(158, 487);
 			this->StockArticle->Name = L"StockArticle";
@@ -161,10 +179,13 @@ namespace ProjectPOO {
 			this->StockArticle->TabIndex = 15;
 			this->StockArticle->Text = L"Quantite en stock";
 			this->StockArticle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// ValiderArticle
+			// 
 			this->ValiderArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->ValiderArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ValiderArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ValiderArticle->Location = System::Drawing::Point(3, 350);
 			this->ValiderArticle->Name = L"ValiderArticle";
@@ -173,11 +194,14 @@ namespace ProjectPOO {
 			this->ValiderArticle->Text = L"Valider";
 			this->ValiderArticle->UseVisualStyleBackColor = true;
 			this->ValiderArticle->Click += gcnew System::EventHandler(this, &AjouterArticle::ValiderArticle_Click);
+			// 
+			// PrixHTArticle
+			// 
 			this->PrixHTArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->PrixHTArticle->AutoSize = true;
-			this->PrixHTArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PrixHTArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->PrixHTArticle->Location = System::Drawing::Point(158, 417);
 			this->PrixHTArticle->Name = L"PrixHTArticle";
@@ -185,6 +209,9 @@ namespace ProjectPOO {
 			this->PrixHTArticle->TabIndex = 13;
 			this->PrixHTArticle->Text = L"Prix HT";
 			this->PrixHTArticle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// textBox_PrixHTArticle
+			// 
 			this->textBox_PrixHTArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -195,6 +222,9 @@ namespace ProjectPOO {
 			this->textBox_PrixHTArticle->Size = System::Drawing::Size(607, 41);
 			this->textBox_PrixHTArticle->TabIndex = 9;
 			this->textBox_PrixHTArticle->TextChanged += gcnew System::EventHandler(this, &AjouterArticle::textBox_PrixHTArticle_TextChanged);
+			// 
+			// textBox_NomArticle
+			// 
 			this->textBox_NomArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -205,6 +235,9 @@ namespace ProjectPOO {
 			this->textBox_NomArticle->Size = System::Drawing::Size(607, 41);
 			this->textBox_NomArticle->TabIndex = 3;
 			this->textBox_NomArticle->TextChanged += gcnew System::EventHandler(this, &AjouterArticle::textBox_NomArticle_TextChanged);
+			// 
+			// textBox_CouleurArticle
+			// 
 			this->textBox_CouleurArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -215,6 +248,9 @@ namespace ProjectPOO {
 			this->textBox_CouleurArticle->Size = System::Drawing::Size(607, 41);
 			this->textBox_CouleurArticle->TabIndex = 8;
 			this->textBox_CouleurArticle->TextChanged += gcnew System::EventHandler(this, &AjouterArticle::textBox_CouleurArticle_TextChanged);
+			// 
+			// textBox_NatureArticle
+			// 
 			this->textBox_NatureArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -225,12 +261,15 @@ namespace ProjectPOO {
 			this->textBox_NatureArticle->Size = System::Drawing::Size(607, 41);
 			this->textBox_NatureArticle->TabIndex = 4;
 			this->textBox_NatureArticle->TextChanged += gcnew System::EventHandler(this, &AjouterArticle::textBox_NatureArticle_TextChanged);
+			// 
+			// CouleurArticle
+			// 
 			this->CouleurArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->CouleurArticle->AutoSize = true;
 			this->CouleurArticle->BackColor = System::Drawing::SystemColors::Control;
-			this->CouleurArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->CouleurArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CouleurArticle->Location = System::Drawing::Point(158, 347);
 			this->CouleurArticle->Name = L"CouleurArticle";
@@ -239,11 +278,14 @@ namespace ProjectPOO {
 			this->CouleurArticle->Text = L"Couleur";
 			this->CouleurArticle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->CouleurArticle->Click += gcnew System::EventHandler(this, &AjouterArticle::CouleurArticle_Click);
+			// 
+			// NomArticle
+			// 
 			this->NomArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->NomArticle->AutoSize = true;
-			this->NomArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->NomArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NomArticle->Location = System::Drawing::Point(158, 207);
 			this->NomArticle->Name = L"NomArticle";
@@ -252,11 +294,14 @@ namespace ProjectPOO {
 			this->NomArticle->Text = L"Nom ";
 			this->NomArticle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->NomArticle->Click += gcnew System::EventHandler(this, &AjouterArticle::NomArticle_Click);
+			// 
+			// NatureArticle
+			// 
 			this->NatureArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->NatureArticle->AutoSize = true;
-			this->NatureArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->NatureArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NatureArticle->Location = System::Drawing::Point(158, 277);
 			this->NatureArticle->Name = L"NatureArticle";
@@ -265,11 +310,14 @@ namespace ProjectPOO {
 			this->NatureArticle->Text = L"Nature";
 			this->NatureArticle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->NatureArticle->Click += gcnew System::EventHandler(this, &AjouterArticle::NatureArticle_Click);
+			// 
+			// bAnnulerAjoutArticle
+			// 
 			this->bAnnulerAjoutArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bAnnulerAjoutArticle->BackColor = System::Drawing::SystemColors::Control;
-			this->bAnnulerAjoutArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2, System::Drawing::FontStyle::Bold,
+			this->bAnnulerAjoutArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->bAnnulerAjoutArticle->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->bAnnulerAjoutArticle->Location = System::Drawing::Point(3, 3);
@@ -279,6 +327,9 @@ namespace ProjectPOO {
 			this->bAnnulerAjoutArticle->Text = L"Annuler";
 			this->bAnnulerAjoutArticle->UseVisualStyleBackColor = false;
 			this->bAnnulerAjoutArticle->Click += gcnew System::EventHandler(this, &AjouterArticle::bAnnulerAjoutArticle_Click);
+			// 
+			// AjouterArticle_tableLayoutPanel1
+			// 
 			this->AjouterArticle_tableLayoutPanel1->ColumnCount = 4;
 			this->AjouterArticle_tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				155)));
@@ -331,11 +382,14 @@ namespace ProjectPOO {
 			this->AjouterArticle_tableLayoutPanel1->Size = System::Drawing::Size(1877, 1008);
 			this->AjouterArticle_tableLayoutPanel1->TabIndex = 2;
 			this->AjouterArticle_tableLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AjouterArticle::AjouterArticle_tableLayoutPanel1_Paint);
+			// 
+			// ResultatAjoutArticle
+			// 
 			this->ResultatAjoutArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->ResultatAjoutArticle->AutoSize = true;
-			this->ResultatAjoutArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8, System::Drawing::FontStyle::Regular,
+			this->ResultatAjoutArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ResultatAjoutArticle->Location = System::Drawing::Point(566, 0);
 			this->ResultatAjoutArticle->Name = L"ResultatAjoutArticle";
@@ -344,6 +398,9 @@ namespace ProjectPOO {
 			this->ResultatAjoutArticle->Text = L"label2";
 			this->ResultatAjoutArticle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->ResultatAjoutArticle->Click += gcnew System::EventHandler(this, &AjouterArticle::ResultatAjoutArticle_Click);
+			// 
+			// AjouterArticle
+			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1262, 977);
