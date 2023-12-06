@@ -9,7 +9,6 @@
     <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
-    <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="AjouterPersonnel.cpp" />
     <ClCompile Include="GestionCommandes.cpp" />
     <ClCompile Include="GestionStatistiques.cpp" />
@@ -28,7 +27,6 @@
     <ClInclude Include="Catalogue.h" />
     <ClInclude Include="GestionPersonnel.h" />
     <ClInclude Include="Personnel.h" />
-    <ClInclude Include="ModifierPersonnel.h" />
     <ClInclude Include="AjouterPersonnel.h" />
     <ClInclude Include="GestionCommandes.h" />
     <ClInclude Include="GestionStatistiques.h" />

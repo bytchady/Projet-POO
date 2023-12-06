@@ -10,7 +10,7 @@ namespace NS_Adresse {
     public:
         ServiceAdresse();
         ~ServiceAdresse();
-        System::Data::DataSet^ SelectAllServiceAdresse();
+        /*System::Data::DataSet^ SelectAllServiceAdresse();*/
         String^ InsertServiceAdresse(Adresse^ adresse);
         void DeleteServiceAdresse(Adresse^ adresse);
     };

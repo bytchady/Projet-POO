@@ -22,15 +22,29 @@ namespace ProjectPOO {
 	public ref class AjouterPersonnel : public System::Windows::Forms::Form
 	{
 	public:
-		AjouterPersonnel(void)
+		AjouterPersonnel(Personnel^ p)
 		{
 			InitializeComponent();
+			this->p = p;
+			this->textBox_NomPersonnel->Text = p->getNom_Personnel();
+			this->textBox_PrenomPersonnel->Text = p->getPrenom_Personnel();
+			this->dtp_date_naissance->Value = p->getNaissance_Personnel();
+			this->dtp_date_embauche->Value = p->getDate_Embauche();
+			this->textBox_Id_Superieur->Text = p->getId_Superieur()+"";
+			this->textBox_Nom_Rue_Personnel->Text = p->getAdresse()->getNom_rue();
+
+			if (p->getId_Personnel() != 0){
+				this->bAjouter->Text = "Modifier";
+			}
+
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
+		bool ok = false;
 
 	protected:
+		Personnel^ p;
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
@@ -41,21 +55,9 @@ namespace ProjectPOO {
 				delete components;
 			}
 		}
+
+
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	private: System::Windows::Forms::VScrollBar^ vScrollBar1;
@@ -74,7 +76,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox_Nom_Rue_Personnel;
 	private: System::Windows::Forms::TextBox^ textBox_CodePostalePersonnel;
 	private: System::Windows::Forms::TextBox^ textBox_NomVillePersonnel;
-	private: System::Windows::Forms::TextBox^ textBox_DateNaissance;
+
 
 
 
@@ -110,9 +112,11 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Label^ DateEmbauchePersonnel;
 
 	private: System::Windows::Forms::Label^ IdPersonnel1;
-	private: System::Windows::Forms::TextBox^ textBox_DateEmbauchePersonnel;
+
 	private: System::Windows::Forms::Label^ ComplementAdressePersonnel;
 	private: System::Windows::Forms::TextBox^ textBox_ComplementAdressePersonnel;
+	private: System::Windows::Forms::DateTimePicker^ dtp_date_naissance;
+	private: System::Windows::Forms::DateTimePicker^ dtp_date_embauche;
 
 
 
@@ -155,9 +159,7 @@ namespace ProjectPOO {
 			this->bAjouter = (gcnew System::Windows::Forms::Button());
 			this->textBox_Id_Superieur = (gcnew System::Windows::Forms::TextBox());
 			this->IdPersonnel1 = (gcnew System::Windows::Forms::Label());
-			this->textBox_DateEmbauchePersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->DateEmbauchePersonnel = (gcnew System::Windows::Forms::Label());
-			this->textBox_DateNaissance = (gcnew System::Windows::Forms::TextBox());
 			this->DateNaissancePersonnel = (gcnew System::Windows::Forms::Label());
 			this->textBox_NomVillePersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->NomVillePersonnel = (gcnew System::Windows::Forms::Label());
@@ -167,6 +169,8 @@ namespace ProjectPOO {
 			this->textBox_ComplementAdressePersonnel = (gcnew System::Windows::Forms::TextBox());
 			this->vScrollBar1 = (gcnew System::Windows::Forms::VScrollBar());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->dtp_date_naissance = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dtp_date_embauche = (gcnew System::Windows::Forms::DateTimePicker());
 			this->tableLayoutPanel2->SuspendLayout();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
@@ -190,9 +194,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->Controls->Add(this->tableLayoutPanel1, 0, 20);
 			this->tableLayoutPanel2->Controls->Add(this->textBox_Id_Superieur, 0, 19);
 			this->tableLayoutPanel2->Controls->Add(this->IdPersonnel1, 0, 18);
-			this->tableLayoutPanel2->Controls->Add(this->textBox_DateEmbauchePersonnel, 0, 17);
 			this->tableLayoutPanel2->Controls->Add(this->DateEmbauchePersonnel, 0, 16);
-			this->tableLayoutPanel2->Controls->Add(this->textBox_DateNaissance, 0, 15);
 			this->tableLayoutPanel2->Controls->Add(this->DateNaissancePersonnel, 0, 14);
 			this->tableLayoutPanel2->Controls->Add(this->textBox_NomVillePersonnel, 0, 13);
 			this->tableLayoutPanel2->Controls->Add(this->NomVillePersonnel, 0, 12);
@@ -200,6 +202,8 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->Controls->Add(this->CodePostalPersonnel, 0, 10);
 			this->tableLayoutPanel2->Controls->Add(this->ComplementAdressePersonnel, 0, 8);
 			this->tableLayoutPanel2->Controls->Add(this->textBox_ComplementAdressePersonnel, 0, 9);
+			this->tableLayoutPanel2->Controls->Add(this->dtp_date_naissance, 0, 15);
+			this->tableLayoutPanel2->Controls->Add(this->dtp_date_embauche, 0, 17);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(288, 93);
 			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(2);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
@@ -409,18 +413,6 @@ namespace ProjectPOO {
 			this->IdPersonnel1->TabIndex = 22;
 			this->IdPersonnel1->Text = L"Supérieur (ID)";
 			// 
-			// textBox_DateEmbauchePersonnel
-			// 
-			this->textBox_DateEmbauchePersonnel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox_DateEmbauchePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_DateEmbauchePersonnel->Location = System::Drawing::Point(3, 670);
-			this->textBox_DateEmbauchePersonnel->Name = L"textBox_DateEmbauchePersonnel";
-			this->textBox_DateEmbauchePersonnel->Size = System::Drawing::Size(703, 38);
-			this->textBox_DateEmbauchePersonnel->TabIndex = 24;
-			// 
 			// DateEmbauchePersonnel
 			// 
 			this->DateEmbauchePersonnel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
@@ -432,19 +424,6 @@ namespace ProjectPOO {
 			this->DateEmbauchePersonnel->Size = System::Drawing::Size(225, 31);
 			this->DateEmbauchePersonnel->TabIndex = 23;
 			this->DateEmbauchePersonnel->Text = L"Date d\'embauche";
-			// 
-			// textBox_DateNaissance
-			// 
-			this->textBox_DateNaissance->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox_DateNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_DateNaissance->Location = System::Drawing::Point(2, 584);
-			this->textBox_DateNaissance->Margin = System::Windows::Forms::Padding(2);
-			this->textBox_DateNaissance->Name = L"textBox_DateNaissance";
-			this->textBox_DateNaissance->Size = System::Drawing::Size(705, 38);
-			this->textBox_DateNaissance->TabIndex = 16;
 			// 
 			// DateNaissancePersonnel
 			// 
@@ -555,6 +534,20 @@ namespace ProjectPOO {
 			this->label8->Text = L"Ajouter un personnel";
 			this->label8->Click += gcnew System::EventHandler(this, &AjouterPersonnel::label8_Click);
 			// 
+			// dateTimePicker1
+			// 
+			this->dtp_date_naissance->Location = System::Drawing::Point(3, 585);
+			this->dtp_date_naissance->Name = L"dateTimePicker1";
+			this->dtp_date_naissance->Size = System::Drawing::Size(200, 20);
+			this->dtp_date_naissance->TabIndex = 27;
+			// 
+			// dateTimePicker2
+			// 
+			this->dtp_date_embauche->Location = System::Drawing::Point(3, 670);
+			this->dtp_date_embauche->Name = L"dateTimePicker2";
+			this->dtp_date_embauche->Size = System::Drawing::Size(200, 20);
+			this->dtp_date_embauche->TabIndex = 28;
+			// 
 			// AjouterPersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -605,37 +598,38 @@ namespace ProjectPOO {
 			String::IsNullOrWhiteSpace(this->textBox_Nom_Rue_Personnel->Text) ||
 			String::IsNullOrWhiteSpace(this->textBox_CodePostalePersonnel->Text) ||
 			String::IsNullOrWhiteSpace(this->textBox_NomVillePersonnel->Text) ||
-			String::IsNullOrWhiteSpace(this->textBox_DateNaissance->Text) ||
-			String::IsNullOrWhiteSpace(this->textBox_DateEmbauchePersonnel->Text) ||
+			//String::IsNullOrWhiteSpace(this->textBox_DateNaissance->Text) ||
+			//String::IsNullOrWhiteSpace(this->textBox_DateEmbauchePersonnel->Text) ||
 			String::IsNullOrWhiteSpace(this->textBox_Id_Superieur->Text))
 			{
 
 			MessageBox::Show("Veuillez remplir tous les champs.", "Champs obligatoires", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
-		Personnel^ personnel = gcnew Personnel;
-		personnel->setNom_Personnel(this->textBox_NomPersonnel->Text);
-		personnel->setPrenom_Personnel(this->textBox_PrenomPersonnel->Text);
-		personnel->setNaissance_Personnel(DateTime::ParseExact(this->textBox_DateNaissance->Text, "dd/MM/yyyy", nullptr));
-		personnel->setDate_Embauche(DateTime::ParseExact(this->textBox_DateEmbauchePersonnel->Text, "dd/MM/yyyy", nullptr));
-		personnel->setId_Personnel_1(int::Parse(this->textBox_Id_Superieur->Text));
+		
+		p->setNom_Personnel(this->textBox_NomPersonnel->Text);
+		p->setPrenom_Personnel(this->textBox_PrenomPersonnel->Text);
+		p->setNaissance_Personnel(this->dtp_date_naissance->Value);
+		p->setDate_Embauche(this->dtp_date_embauche->Value);
+		p->setId_Superieur(int::Parse(this->textBox_Id_Superieur->Text));
 
+		p->getAdresse()->setNom_rue(this->NomRuePersonnel->Text);
+
+		/*
 		Adresse^ adresse = gcnew Adresse;
 		adresse->setNum_Rue(int::Parse(this->textBox_NumRuePersonnel->Text));
 		adresse->setNom_rue(this->textBox_Nom_Rue_Personnel->Text);
 		adresse->setComplement_Adr(this->textBox_ComplementAdressePersonnel->Text);
 		adresse->setCode_Postal(int::Parse(this->textBox_CodePostalePersonnel->Text));
 		adresse->setNom_Ville(this->textBox_NomVillePersonnel->Text);
-		
+		*/
 
-		ServiceAdresse^ serviceAdresse = gcnew ServiceAdresse();
-		String^ adresseId = serviceAdresse->InsertServiceAdresse(adresse);
-
-
-		ServicePersonnel^ servicePersonnel = gcnew ServicePersonnel();
-		servicePersonnel->InsertServicePersonnel(personnel, adresseId);
+		ok = true;
+		this->Close(); 
 		
 	}
+
+
 private: System::Void textBox_NomPersonnel_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 

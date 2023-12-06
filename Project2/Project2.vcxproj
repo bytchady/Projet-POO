@@ -134,7 +134,6 @@
     <ClCompile Include="GestionStatistiques.cpp" />
     <ClCompile Include="mainmenu.cpp" />
     <ClCompile Include="ModifierCommandes.cpp" />
-    <ClCompile Include="ModifierPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="ServiceAdresse.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
@@ -171,9 +170,6 @@
     <ClInclude Include="ModifierCommandes.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ModifierPersonnel.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="Personnel.h" />
     <ClInclude Include="ServiceAdresse.h" />
     <ClInclude Include="ServiceArticle.h" />
@@ -206,9 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierCommandes.resx">
       <DependentUpon>ModifierCommandes.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModifierPersonnel.resx">
-      <DependentUpon>ModifierPersonnel.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

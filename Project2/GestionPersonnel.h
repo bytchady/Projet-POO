@@ -1,6 +1,5 @@
 #pragma once
 #include "Personnel.h"
-#include "ModifierPersonnel.h"
 #include "AjouterPersonnel.h"
 
 
@@ -23,10 +22,25 @@ namespace ProjectPOO {
 		GestionPersonnel(void)
 		{
 			InitializeComponent();
-			Personnel^ p = gcnew Personnel();
-			p->setDate_Embauche(DateTime(2023, 12, 12));
+			//Personnel^ p = gcnew Personnel();
+			//p->setDate_Embauche(DateTime(2023, 12, 12));
 			//dateTimePicker1->Value = p->getDate_Embauche();
+
+			DataGridViewTextBoxColumn^ dgvtbc = gcnew DataGridViewTextBoxColumn();
+			dgvtbc->Name = "ID";
+			this->CataloguePersonnel->Columns->Add(dgvtbc);
+			DataGridViewTextBoxColumn^ dgvtbc2 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc2->Name = "Nom";
+			this->CataloguePersonnel->Columns->Add(dgvtbc2);
+
+			DataGridViewTextBoxColumn^ dgvtbc3 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc3->Name = "Date naissance";
+			this->CataloguePersonnel->Columns->Add(dgvtbc3);
+
+
 		}
+
+		NS_Personnel::ServicePersonnel^ servicepersonnel = gcnew NS_Personnel::ServicePersonnel();
 
 	protected:
 		/// <summary>
@@ -40,6 +54,17 @@ namespace ProjectPOO {
 			}
 		}
 
+	private:
+		/*void refresh() {
+			ServicePersonnel^ servicepersonnel = gcnew ServicePersonnel();
+			ServiceAdresse^ serviceadresse = gcnew ServiceAdresse();
+			System::Data::DataSet^ personnelDataSet = servicepersonnel->SelectAllServicePersonnel();
+			System::Data::DataSet^ adresseDataSet = serviceadresse->SelectAllServiceAdresse();
+			personnelDataSet->Tables[0]->Merge(adresseDataSet->Tables[0]);
+			CataloguePersonnel->DataSource = personnelDataSet;
+			CataloguePersonnel->DataMember = personnelDataSet->Tables[0]->TableName;
+		}*/
+
 	private: System::Windows::Forms::Button^ bretour;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ bsupprimer;
@@ -49,8 +74,13 @@ namespace ProjectPOO {
 
 
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ CataloguePersonnel;
+
+
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ bActualiser;
+
+
 
 	protected:
 
@@ -69,15 +99,16 @@ namespace ProjectPOO {
 		{
 			this->bretour = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->bActualiser = (gcnew System::Windows::Forms::Button());
 			this->bsupprimer = (gcnew System::Windows::Forms::Button());
 			this->bmodifier = (gcnew System::Windows::Forms::Button());
 			this->bajouter = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->CataloguePersonnel = (gcnew System::Windows::Forms::DataGridView());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CataloguePersonnel))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// bretour
@@ -89,7 +120,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bretour->Location = System::Drawing::Point(3, 3);
 			this->bretour->Name = L"bretour";
-			this->bretour->Size = System::Drawing::Size(212, 71);
+			this->bretour->Size = System::Drawing::Size(214, 71);
 			this->bretour->TabIndex = 1;
 			this->bretour->Text = L"Retour";
 			this->bretour->UseVisualStyleBackColor = true;
@@ -99,15 +130,16 @@ namespace ProjectPOO {
 			// 
 			this->tableLayoutPanel1->ColumnCount = 5;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				57.97872F)));
+				48.11715F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				42.02128F)));
+				51.88285F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				275)));
+				246)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				271)));
+				247)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				271)));
+				243)));
+			this->tableLayoutPanel1->Controls->Add(this->bActualiser, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bsupprimer, 3, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bmodifier, 2, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bretour, 0, 0);
@@ -120,6 +152,21 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->TabIndex = 2;
 			this->tableLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GestionPersonnel::tableLayoutPanel1_Paint);
 			// 
+			// bActualiser
+			// 
+			this->bActualiser->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->bActualiser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bActualiser->Location = System::Drawing::Point(223, 3);
+			this->bActualiser->Name = L"bActualiser";
+			this->bActualiser->Size = System::Drawing::Size(231, 71);
+			this->bActualiser->TabIndex = 5;
+			this->bActualiser->Text = L"Actualiser";
+			this->bActualiser->UseVisualStyleBackColor = true;
+			this->bActualiser->Click += gcnew System::EventHandler(this, &GestionPersonnel::bActualiser_Click);
+			// 
 			// bsupprimer
 			// 
 			this->bsupprimer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -127,12 +174,13 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bsupprimer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bsupprimer->Location = System::Drawing::Point(654, 3);
+			this->bsupprimer->Location = System::Drawing::Point(706, 3);
 			this->bsupprimer->Name = L"bsupprimer";
-			this->bsupprimer->Size = System::Drawing::Size(265, 71);
+			this->bsupprimer->Size = System::Drawing::Size(241, 71);
 			this->bsupprimer->TabIndex = 4;
 			this->bsupprimer->Text = L"Supprimer";
 			this->bsupprimer->UseVisualStyleBackColor = true;
+			this->bsupprimer->Click += gcnew System::EventHandler(this, &GestionPersonnel::bsupprimer_Click);
 			// 
 			// bmodifier
 			// 
@@ -141,9 +189,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bmodifier->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bmodifier->Location = System::Drawing::Point(379, 3);
+			this->bmodifier->Location = System::Drawing::Point(460, 3);
 			this->bmodifier->Name = L"bmodifier";
-			this->bmodifier->Size = System::Drawing::Size(269, 71);
+			this->bmodifier->Size = System::Drawing::Size(240, 71);
 			this->bmodifier->TabIndex = 3;
 			this->bmodifier->Text = L"Modifier";
 			this->bmodifier->UseVisualStyleBackColor = true;
@@ -156,9 +204,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bajouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bajouter->Location = System::Drawing::Point(925, 3);
+			this->bajouter->Location = System::Drawing::Point(953, 3);
 			this->bajouter->Name = L"bajouter";
-			this->bajouter->Size = System::Drawing::Size(266, 71);
+			this->bajouter->Size = System::Drawing::Size(238, 71);
 			this->bajouter->TabIndex = 2;
 			this->bajouter->Text = L"Ajouter";
 			this->bajouter->UseVisualStyleBackColor = true;
@@ -172,8 +220,8 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->ColumnCount = 1;
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
+			this->tableLayoutPanel2->Controls->Add(this->CataloguePersonnel, 0, 1);
 			this->tableLayoutPanel2->Controls->Add(this->tableLayoutPanel1, 0, 0);
-			this->tableLayoutPanel2->Controls->Add(this->dataGridView1, 0, 1);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(25, 113);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 2;
@@ -183,14 +231,18 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->TabIndex = 3;
 			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GestionPersonnel::tableLayoutPanel2_Paint);
 			// 
-			// dataGridView1
+			// CataloguePersonnel
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(3, 86);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(1194, 751);
-			this->dataGridView1->TabIndex = 3;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionPersonnel::dataGridView1_CellContentClick);
+			this->CataloguePersonnel->AllowUserToAddRows = false;
+			this->CataloguePersonnel->AllowUserToDeleteRows = false;
+			this->CataloguePersonnel->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->CataloguePersonnel->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->CataloguePersonnel->Location = System::Drawing::Point(3, 86);
+			this->CataloguePersonnel->Name = L"CataloguePersonnel";
+			this->CataloguePersonnel->ReadOnly = true;
+			this->CataloguePersonnel->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
+			this->CataloguePersonnel->Size = System::Drawing::Size(1194, 751);
+			this->CataloguePersonnel->TabIndex = 3;
 			// 
 			// label1
 			// 
@@ -218,7 +270,7 @@ namespace ProjectPOO {
 			this->Load += gcnew System::EventHandler(this, &GestionPersonnel::GestionPersonnel_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CataloguePersonnel))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -228,20 +280,92 @@ namespace ProjectPOO {
 		this->Close();
 	}
 	private: System::Void GestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
+		Reload();
 	}
+
+
+	private: void Reload() {
+
+		// Charger les données de servicepersonnel
+		List<Personnel^>^ personnels = servicepersonnel->SelectAllServicePersonnel();
+
+		this->CataloguePersonnel->Rows->Clear();
+		for each (Personnel ^ p in personnels) {
+			DataGridViewRow^ dgvr = gcnew DataGridViewRow();
+			DataGridViewTextBoxCell^ dgvc = gcnew DataGridViewTextBoxCell();
+			dgvc->Value = Convert::ToString(p->getId_Personnel());
+			dgvr->Cells->Add(dgvc);
+			DataGridViewTextBoxCell^ dgvc2 = gcnew DataGridViewTextBoxCell();
+			dgvc2->Value = p->getPrenom_Personnel();
+			dgvr->Cells->Add(dgvc2);
+			DataGridViewTextBoxCell^ dgvc3 = gcnew DataGridViewTextBoxCell();
+			dgvc3->Value = p->getNaissance_Personnel().ToString("dd/MM/yyyy");
+			dgvr->Cells->Add(dgvc3);
+			dgvr->Tag = p;
+			this->CataloguePersonnel->Rows->Add(dgvr);
+		}
+
+		// Charger les données de serviceadresse et fusionner en utilisant la colonne "ID"
+		/*System::Data::DataSet^ adresseDataSet = serviceadresse->SelectAllServiceAdresse();
+		personnelDataSet->Tables[0]->Merge(adresseDataSet->Tables[0]);*/
+
+		// Liaison des données
+		//CataloguePersonnel->DataSource = personnelDataSet;
+		//CataloguePersonnel->DataMember = personnelDataSet->Tables[0]->TableName;
+	}
+
 	private: System::Void tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 	private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
 	private: System::Void bmodifier_Click(System::Object^ sender, System::EventArgs^ e) {
-		ModifierPersonnel^ modifierpersonnel = gcnew ModifierPersonnel();
+		if (this->CataloguePersonnel->SelectedRows->Count != 1)
+			return;
+
+		Personnel^ p = (Personnel^)this->CataloguePersonnel->SelectedRows[0]->Tag;
+
+		AjouterPersonnel^ modifierpersonnel = gcnew AjouterPersonnel(p);
 		modifierpersonnel->ShowDialog();
+		if (modifierpersonnel->ok) {
+			servicepersonnel->UpdateServicePersonnel(p);
+			this->Reload();
+		}
 	}
 	private: System::Void bajouter_Click(System::Object^ sender, System::EventArgs^ e) {
-		AjouterPersonnel^ ajouterpersonnel = gcnew AjouterPersonnel();
+		Personnel^ p = gcnew Personnel();
+		AjouterPersonnel^ ajouterpersonnel = gcnew AjouterPersonnel(p);
 		ajouterpersonnel->ShowDialog();
+		if (ajouterpersonnel->ok) {
+			servicepersonnel->InsertServicePersonnel(p);
+			this->Reload();
+		}
 	}
-};
+	private: System::Void bsupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		if (CataloguePersonnel->SelectedRows->Count > 0) {
+			int rowIndex = CataloguePersonnel->SelectedRows[0]->Index;
+			int refPersonnel = Convert::ToInt32(CataloguePersonnel->Rows[rowIndex]->Cells["Id_Personnel"]->Value);
+			System::Windows::Forms::DialogResult result = MessageBox::Show("Êtes-vous sûr de vouloir supprimer ce Personnel ?", "Confirmation de suppression", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+			if (result == System::Windows::Forms::DialogResult::Yes) {
+
+				Personnel^ PersonnelToDelete = gcnew Personnel();
+				PersonnelToDelete->setId_Personnel(refPersonnel);
+				servicepersonnel->DeleteServicePersonnel(PersonnelToDelete);
+
+				this->Reload();
+				MessageBox::Show("Personnel supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
+			}
+		}
+		else {
+			MessageBox::Show("Veuillez sélectionner une ligne à supprimer.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+	}
+	private: System::Void bActualiser_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Reload();
+
+	}
+
+	};
 }
