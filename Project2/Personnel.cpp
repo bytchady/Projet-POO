@@ -1,41 +1,41 @@
 #include "Personnel.h"
 #include "Adresse.h"
 
-int Personnel::getId_Personnel() {
+int Personnel::getIdPersonnel() {
 	return this->Id_Personnel;
 }
 
-void Personnel::setId_Personnel(int Id_Personnel)
+void Personnel::setIdPersonnel(int Id_Personnel)
 {
 	this->Id_Personnel = Id_Personnel;
 }
 
-int Personnel::getId_Superieur()
+int Personnel::getIdSuperieur()
 {
 	return this->Id_Superieur;
 }
 
-void Personnel::setId_Superieur(int Id_Superieur)
+void Personnel::setIdSuperieur(int Id_Superieur)
 {
 	this->Id_Superieur = Id_Superieur;
 }
 
-String^ Personnel::getNom_Personnel()
+String^ Personnel::getNomPersonnel()
 {
 	return this->Nom_Personnel;
 }
 
-void Personnel::setNom_Personnel(String^ Nom_Personnel)
+void Personnel::setNomPersonnel(String^ Nom_Personnel)
 {
 	this->Nom_Personnel = Nom_Personnel;
 }
 
-String^ Personnel::getPrenom_Personnel()
+String^ Personnel::getPrenomPersonnel()
 {
 	return this->Prenom_Personnel;
 }
 
-void Personnel::setPrenom_Personnel(String^ Prenom_Personnel)
+void Personnel::setPrenomPersonnel(String^ Prenom_Personnel)
 {
 	this->Prenom_Personnel = Prenom_Personnel;
 }
@@ -51,17 +51,17 @@ void Personnel::setSupprimer(bool value)
 	this->Supprimer;
 }
 
-DateTime Personnel::getNaissance_Personnel()
+DateTime Personnel::getDateNaissance()
 {
-	return this->Naissance_Personnel;
+	return this->Date_Naissance;
 }
 
-void Personnel::setNaissance_Personnel(DateTime dateNaissance)
+void Personnel::setDateNaissance(DateTime dateNaissance)
 {
-	this->Naissance_Personnel = dateNaissance;
+	this->Date_Naissance = dateNaissance;
 }
 
-DateTime Personnel::getDate_Embauche()
+DateTime Personnel::getDateEmbauche()
 {
 	return this->Date_Embauche;
 }
@@ -71,12 +71,12 @@ Adresse^ Personnel::getAdresse()
 	return this->adresse;
 }
 
-void Personnel::setDate_Embauche(DateTime dateEmbauche)
+void Personnel::setDateEmbauche(DateTime dateEmbauche)
 {
 	this->Date_Embauche = dateEmbauche;
 }
 
-Adresse^ Personnel::setAdresse(Adresse^ Adresse)
+/*Adresse^ Personnel::setAdresse(Adresse^ Adresse)
 {
 	return this->adresse = Adresse;
-}
+}*/

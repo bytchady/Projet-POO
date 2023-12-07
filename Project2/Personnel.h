@@ -4,36 +4,40 @@
 using namespace std;
 using namespace System;
 
-ref class Personnel
+public ref class Personnel
 {
 private:
 	int Id_Personnel;
 	int Id_Superieur;
 	String^ Nom_Personnel;
 	String^ Prenom_Personnel;
-	DateTime Naissance_Personnel;
+	DateTime Date_Naissance;
 	DateTime Date_Embauche;
-	Adresse^ adresse;
+	Adresse^ adresse = gcnew Adresse();
 	bool Supprimer;
 
 public:
 
-	int getId_Personnel();
-	int getId_Superieur();
-	String^ getNom_Personnel();
-	String^ getPrenom_Personnel();
-	DateTime getNaissance_Personnel();
+	int getIdPersonnel();
+	int getIdSuperieur();
+	String^ getNomPersonnel();
+	String^ getPrenomPersonnel();
+	DateTime getDateNaissance();
 	bool getSupprimer();
-	DateTime  getDate_Embauche();
+	DateTime  getDateEmbauche();
 	Adresse^ getAdresse();
 
-	void setId_Superieur(int Id_Superieur);
-	void setNom_Personnel(String^ nom);
-	void setPrenom_Personnel(String^ prenom);
-	void setId_Personnel(int Id_Personnel);
+	void setIdSuperieur(int Id_Superieur);
+	void setNomPersonnel(String^ nom);
+	void setPrenomPersonnel(String^ prenom);
+	void setIdPersonnel(int Id_Personnel);
 	void setSupprimer(bool value);
-	void setNaissance_Personnel(DateTime dateNaissance);
-	void setDate_Embauche(DateTime dateEmbauche);
-	Adresse^ setAdresse(Adresse^ Adresse);
+	void setDateNaissance(DateTime dateNaissance);
+	void setDateEmbauche(DateTime dateEmbauche);
+	//Adresse^ setAdresse(Adresse^ Adresse);
+	void Personnel::setAdresse(Adresse^ adresse)
+	{
+		this->adresse = adresse;
+	}
 
 };

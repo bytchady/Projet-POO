@@ -1,6 +1,7 @@
 #pragma once
 #include "Personnel.h"
 #include "AjouterPersonnel.h"
+#include "Adresse.h"
 
 
 namespace ProjectPOO {
@@ -29,18 +30,51 @@ namespace ProjectPOO {
 			DataGridViewTextBoxColumn^ dgvtbc = gcnew DataGridViewTextBoxColumn();
 			dgvtbc->Name = "ID";
 			this->CataloguePersonnel->Columns->Add(dgvtbc);
+
 			DataGridViewTextBoxColumn^ dgvtbc2 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc2->Name = "Nom";
 			this->CataloguePersonnel->Columns->Add(dgvtbc2);
 
 			DataGridViewTextBoxColumn^ dgvtbc3 = gcnew DataGridViewTextBoxColumn();
-			dgvtbc3->Name = "Date naissance";
+			dgvtbc3->Name = "Prénom";
 			this->CataloguePersonnel->Columns->Add(dgvtbc3);
+
+			DataGridViewTextBoxColumn^ dgvtbc4 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc4->Name = "Numéro de la rue";
+			this->CataloguePersonnel->Columns->Add(dgvtbc4);
+
+			DataGridViewTextBoxColumn^ dgvtbc5 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc5->Name = "Nom de la rue";
+			this->CataloguePersonnel->Columns->Add(dgvtbc5);
+
+			DataGridViewTextBoxColumn^ dgvtbc6 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc6->Name = "Complement d'adresse";
+			this->CataloguePersonnel->Columns->Add(dgvtbc6);
+
+			DataGridViewTextBoxColumn^ dgvtbc7 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc7->Name = "Code postal";
+			this->CataloguePersonnel->Columns->Add(dgvtbc7);
+
+			DataGridViewTextBoxColumn^ dgvtbc8 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc8->Name = "Ville";
+			this->CataloguePersonnel->Columns->Add(dgvtbc8);
+
+			DataGridViewTextBoxColumn^ dgvtbc9 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc9->Name = "Date de naissance";
+			this->CataloguePersonnel->Columns->Add(dgvtbc9);
+
+			DataGridViewTextBoxColumn^ dgvtbc10 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc10->Name = "Date d'embauche";
+			this->CataloguePersonnel->Columns->Add(dgvtbc10);
+
+			DataGridViewTextBoxColumn^ dgvtbc11 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc11->Name = "ID supérieur";
+			this->CataloguePersonnel->Columns->Add(dgvtbc11);
 
 
 		}
 
-		NS_Personnel::ServicePersonnel^ servicepersonnel = gcnew NS_Personnel::ServicePersonnel();
+		ServicePersonnel^ servicepersonnel = gcnew ServicePersonnel();
 
 	protected:
 		/// <summary>
@@ -287,20 +321,58 @@ namespace ProjectPOO {
 	private: void Reload() {
 
 		// Charger les données de servicepersonnel
-		List<Personnel^>^ personnels = servicepersonnel->SelectAllServicePersonnel();
+		List<Personnel^>^ personnels = servicepersonnel->SelectAllPersonnel();
 
 		this->CataloguePersonnel->Rows->Clear();
 		for each (Personnel ^ p in personnels) {
 			DataGridViewRow^ dgvr = gcnew DataGridViewRow();
+
 			DataGridViewTextBoxCell^ dgvc = gcnew DataGridViewTextBoxCell();
-			dgvc->Value = Convert::ToString(p->getId_Personnel());
+			dgvc->Value = Convert::ToString(p->getIdPersonnel());
 			dgvr->Cells->Add(dgvc);
+
 			DataGridViewTextBoxCell^ dgvc2 = gcnew DataGridViewTextBoxCell();
-			dgvc2->Value = p->getPrenom_Personnel();
+			dgvc2->Value = p->getNomPersonnel();
 			dgvr->Cells->Add(dgvc2);
+
+			Adresse^ a = p->getAdresse();
+
 			DataGridViewTextBoxCell^ dgvc3 = gcnew DataGridViewTextBoxCell();
-			dgvc3->Value = p->getNaissance_Personnel().ToString("dd/MM/yyyy");
+			dgvc3->Value = p->getPrenomPersonnel();
 			dgvr->Cells->Add(dgvc3);
+
+			DataGridViewTextBoxCell^ dgvc4 = gcnew DataGridViewTextBoxCell();
+			dgvc4->Value = Convert::ToString(a->getNumRue());
+			dgvr->Cells->Add(dgvc4);
+
+			DataGridViewTextBoxCell^ dgvc5 = gcnew DataGridViewTextBoxCell();
+			dgvc5->Value = a->getNomrue();
+			dgvr->Cells->Add(dgvc5);
+
+			DataGridViewTextBoxCell^ dgvc6 = gcnew DataGridViewTextBoxCell();
+			dgvc6->Value = a->getComplementAdr();
+			dgvr->Cells->Add(dgvc6);
+
+			DataGridViewTextBoxCell^ dgvc7 = gcnew DataGridViewTextBoxCell();
+			dgvc7->Value = a->getCodePostal();
+			dgvr->Cells->Add(dgvc7);
+
+			DataGridViewTextBoxCell^ dgvc8 = gcnew DataGridViewTextBoxCell();
+			dgvc8->Value = a->getNomVille();
+			dgvr->Cells->Add(dgvc8);
+
+			DataGridViewTextBoxCell^ dgvc9 = gcnew DataGridViewTextBoxCell();
+			dgvc9->Value = p->getDateNaissance().ToString("dd/MM/yyyy");
+			dgvr->Cells->Add(dgvc9);
+
+			DataGridViewTextBoxCell^ dgvc10 = gcnew DataGridViewTextBoxCell();
+			dgvc10->Value = p->getDateEmbauche().ToString("dd/MM/yyyy");
+			dgvr->Cells->Add(dgvc10);
+
+			DataGridViewTextBoxCell^ dgvc11 = gcnew DataGridViewTextBoxCell();
+			dgvc11->Value = Convert::ToString(p->getIdSuperieur());
+			dgvr->Cells->Add(dgvc11);
+
 			dgvr->Tag = p;
 			this->CataloguePersonnel->Rows->Add(dgvr);
 		}
@@ -327,7 +399,7 @@ namespace ProjectPOO {
 		AjouterPersonnel^ modifierpersonnel = gcnew AjouterPersonnel(p);
 		modifierpersonnel->ShowDialog();
 		if (modifierpersonnel->ok) {
-			servicepersonnel->UpdateServicePersonnel(p);
+			servicepersonnel->UpdatePersonnel(p);
 			this->Reload();
 		}
 	}
@@ -336,7 +408,7 @@ namespace ProjectPOO {
 		AjouterPersonnel^ ajouterpersonnel = gcnew AjouterPersonnel(p);
 		ajouterpersonnel->ShowDialog();
 		if (ajouterpersonnel->ok) {
-			servicepersonnel->InsertServicePersonnel(p);
+			servicepersonnel->InsertPersonnel(p);
 			this->Reload();
 		}
 	}
@@ -350,8 +422,8 @@ namespace ProjectPOO {
 			if (result == System::Windows::Forms::DialogResult::Yes) {
 
 				Personnel^ PersonnelToDelete = gcnew Personnel();
-				PersonnelToDelete->setId_Personnel(refPersonnel);
-				servicepersonnel->DeleteServicePersonnel(PersonnelToDelete);
+				PersonnelToDelete->setIdPersonnel(refPersonnel);
+				servicepersonnel->DeletePersonnel(PersonnelToDelete);
 
 				this->Reload();
 				MessageBox::Show("Personnel supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);

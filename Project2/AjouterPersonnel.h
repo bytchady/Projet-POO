@@ -4,9 +4,6 @@
 #include "Adresse.h"
 #include "ServiceAdresse.h"
 
-using namespace NS_Personnel;
-using namespace NS_Adresse;
-
 namespace ProjectPOO {
 
 	using namespace System;
@@ -26,14 +23,22 @@ namespace ProjectPOO {
 		{
 			InitializeComponent();
 			this->p = p;
-			this->textBox_NomPersonnel->Text = p->getNom_Personnel();
-			this->textBox_PrenomPersonnel->Text = p->getPrenom_Personnel();
-			this->dtp_date_naissance->Value = p->getNaissance_Personnel();
-			this->dtp_date_embauche->Value = p->getDate_Embauche();
-			this->textBox_Id_Superieur->Text = p->getId_Superieur()+"";
-			this->textBox_Nom_Rue_Personnel->Text = p->getAdresse()->getNom_rue();
+			this->textBox_NomPersonnel->Text = p->getNomPersonnel();
+			this->textBox_PrenomPersonnel->Text = p->getPrenomPersonnel();
+			if (p->getDateNaissance() >= this->dtp_date_naissance->MinDate &&
+				p->getDateNaissance() <= this->dtp_date_naissance->MaxDate)
+			{
+				this->dtp_date_naissance->Value = p->getDateNaissance();
+			}
+			if (p->getDateEmbauche() >= this->dtp_date_embauche->MinDate &&
+				p->getDateEmbauche() <= this->dtp_date_embauche->MaxDate)
+			{
+				this->dtp_date_embauche->Value = p->getDateEmbauche();
+			}
+			this->textBox_Id_Superieur->Text = p->getIdSuperieur() + "";
+			this->textBox_Nom_Rue_Personnel->Text = p->getAdresse()->getNomrue();
 
-			if (p->getId_Personnel() != 0){
+			if (p->getIdPersonnel() != 0) {
 				this->bAjouter->Text = "Modifier";
 			}
 
@@ -58,44 +63,17 @@ namespace ProjectPOO {
 
 
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
-
-
 	private: System::Windows::Forms::VScrollBar^ vScrollBar1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ bAjouter;
 	private: System::Windows::Forms::Label^ NomPersonnel;
 	private: System::Windows::Forms::Label^ PrenomPersonnel;
-
-
-
-
-
 	private: System::Windows::Forms::TextBox^ textBox_PrenomPersonnel;
 	private: System::Windows::Forms::Label^ NumRuePersonnel;
 	private: System::Windows::Forms::TextBox^ textBox_NumRuePersonnel;
 	private: System::Windows::Forms::TextBox^ textBox_Nom_Rue_Personnel;
 	private: System::Windows::Forms::TextBox^ textBox_CodePostalePersonnel;
 	private: System::Windows::Forms::TextBox^ textBox_NomVillePersonnel;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	private: System::Windows::Forms::Button^ bAnnuler;
 	private: System::Windows::Forms::TextBox^ textBox_NomPersonnel;
@@ -121,14 +99,6 @@ namespace ProjectPOO {
 
 
 	protected:
-
-
-
-
-
-
-
-
 
 	protected:
 
@@ -167,10 +137,10 @@ namespace ProjectPOO {
 			this->CodePostalPersonnel = (gcnew System::Windows::Forms::Label());
 			this->ComplementAdressePersonnel = (gcnew System::Windows::Forms::Label());
 			this->textBox_ComplementAdressePersonnel = (gcnew System::Windows::Forms::TextBox());
-			this->vScrollBar1 = (gcnew System::Windows::Forms::VScrollBar());
-			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->dtp_date_naissance = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dtp_date_embauche = (gcnew System::Windows::Forms::DateTimePicker());
+			this->vScrollBar1 = (gcnew System::Windows::Forms::VScrollBar());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel2->SuspendLayout();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
@@ -483,9 +453,9 @@ namespace ProjectPOO {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->CodePostalPersonnel->Location = System::Drawing::Point(3, 384);
 			this->CodePostalPersonnel->Name = L"CodePostalPersonnel";
-			this->CodePostalPersonnel->Size = System::Drawing::Size(177, 31);
+			this->CodePostalPersonnel->Size = System::Drawing::Size(162, 31);
 			this->CodePostalPersonnel->TabIndex = 19;
-			this->CodePostalPersonnel->Text = L"Code Postale";
+			this->CodePostalPersonnel->Text = L"Code Postal";
 			this->CodePostalPersonnel->Click += gcnew System::EventHandler(this, &AjouterPersonnel::CodePostalPersonnel_Click);
 			// 
 			// ComplementAdressePersonnel
@@ -512,6 +482,20 @@ namespace ProjectPOO {
 			this->textBox_ComplementAdressePersonnel->Size = System::Drawing::Size(703, 38);
 			this->textBox_ComplementAdressePersonnel->TabIndex = 26;
 			// 
+			// dtp_date_naissance
+			// 
+			this->dtp_date_naissance->Location = System::Drawing::Point(3, 585);
+			this->dtp_date_naissance->Name = L"dtp_date_naissance";
+			this->dtp_date_naissance->Size = System::Drawing::Size(200, 20);
+			this->dtp_date_naissance->TabIndex = 27;
+			// 
+			// dtp_date_embauche
+			// 
+			this->dtp_date_embauche->Location = System::Drawing::Point(3, 670);
+			this->dtp_date_embauche->Name = L"dtp_date_embauche";
+			this->dtp_date_embauche->Size = System::Drawing::Size(200, 20);
+			this->dtp_date_embauche->TabIndex = 28;
+			// 
 			// vScrollBar1
 			// 
 			this->vScrollBar1->Dock = System::Windows::Forms::DockStyle::Right;
@@ -529,24 +513,10 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(399, 26);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(468, 55);
+			this->label8->Size = System::Drawing::Size(439, 55);
 			this->label8->TabIndex = 4;
-			this->label8->Text = L"Ajouter un personnel";
+			this->label8->Text = L"Gérer un personnel";
 			this->label8->Click += gcnew System::EventHandler(this, &AjouterPersonnel::label8_Click);
-			// 
-			// dateTimePicker1
-			// 
-			this->dtp_date_naissance->Location = System::Drawing::Point(3, 585);
-			this->dtp_date_naissance->Name = L"dateTimePicker1";
-			this->dtp_date_naissance->Size = System::Drawing::Size(200, 20);
-			this->dtp_date_naissance->TabIndex = 27;
-			// 
-			// dateTimePicker2
-			// 
-			this->dtp_date_embauche->Location = System::Drawing::Point(3, 670);
-			this->dtp_date_embauche->Name = L"dateTimePicker2";
-			this->dtp_date_embauche->Size = System::Drawing::Size(200, 20);
-			this->dtp_date_embauche->TabIndex = 28;
 			// 
 			// AjouterPersonnel
 			// 
@@ -601,19 +571,23 @@ namespace ProjectPOO {
 			//String::IsNullOrWhiteSpace(this->textBox_DateNaissance->Text) ||
 			//String::IsNullOrWhiteSpace(this->textBox_DateEmbauchePersonnel->Text) ||
 			String::IsNullOrWhiteSpace(this->textBox_Id_Superieur->Text))
-			{
+		{
 
 			MessageBox::Show("Veuillez remplir tous les champs.", "Champs obligatoires", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
-		
-		p->setNom_Personnel(this->textBox_NomPersonnel->Text);
-		p->setPrenom_Personnel(this->textBox_PrenomPersonnel->Text);
-		p->setNaissance_Personnel(this->dtp_date_naissance->Value);
-		p->setDate_Embauche(this->dtp_date_embauche->Value);
-		p->setId_Superieur(int::Parse(this->textBox_Id_Superieur->Text));
 
-		p->getAdresse()->setNom_rue(this->NomRuePersonnel->Text);
+		p->setNomPersonnel(this->textBox_NomPersonnel->Text);
+		p->setPrenomPersonnel(this->textBox_PrenomPersonnel->Text);
+		p->setDateNaissance(this->dtp_date_naissance->Value);
+		p->setDateEmbauche(this->dtp_date_embauche->Value);
+		p->setIdSuperieur(int::Parse(this->textBox_Id_Superieur->Text));
+
+		p->getAdresse()->setNomrue(this->textBox_Nom_Rue_Personnel->Text);
+		p->getAdresse()->setNumRue(Convert::ToInt32(this->textBox_NumRuePersonnel->Text));
+		p->getAdresse()->setComplementAdr(this->textBox_ComplementAdressePersonnel->Text);
+		p->getAdresse()->setNomVille(this->textBox_NomVillePersonnel->Text);
+		p->getAdresse()->setCodePostal(this->textBox_CodePostalePersonnel->Text);
 
 		/*
 		Adresse^ adresse = gcnew Adresse;
@@ -625,17 +599,17 @@ namespace ProjectPOO {
 		*/
 
 		ok = true;
-		this->Close(); 
-		
+		this->Close();
+
 	}
 
 
-private: System::Void textBox_NomPersonnel_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void textBox_NomPersonnel_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
 
-private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void CodePostalPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+	private: System::Void CodePostalPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }
