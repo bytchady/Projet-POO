@@ -1,10 +1,10 @@
 #pragma once
-#include "AjouterCommande1.h"
+#include "CommandeClient.h"
 #include "SupprimerCommandePopUp.h"
 #include "DetailCommande.h"
 #include "Commande.h"
 #include "ServiceCommande.h"
-using namespace NS_Commande;
+
 
 namespace ProjectPOO {
 
@@ -255,8 +255,8 @@ namespace ProjectPOO {
 		dc->ShowDialog();
 	}
 private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ e) {
-	AjouterCommande1^ A1 = gcnew AjouterCommande1();
-	A1->ShowDialog();
+	CommandeClient^ cc = gcnew CommandeClient();
+	cc->ShowDialog();
 }
 private: System::Void bModifier_Click(System::Object^ sender, System::EventArgs^ e) {
 }

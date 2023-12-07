@@ -1,6 +1,6 @@
 #pragma once
 
-namespace NS_Personnel {
+
     using namespace System;
 
     ref class Personnel
@@ -39,4 +39,4 @@ namespace NS_Personnel {
         String^ SelectPersonnel();
 
     };
-}
+

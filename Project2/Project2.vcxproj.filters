@@ -33,9 +33,13 @@
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="ServiceCommande.cpp" />
     <ClCompile Include="Acheter.cpp" />
-    <ClCompile Include="AjouterCommande1.cpp" />
+    <ClCompile Include="CommandeClient.cpp" />
     <ClCompile Include="AjouterCommande2.cpp" />
     <ClCompile Include="AjouterCommande3.cpp" />
+    <ClCompile Include="TypeAdresse.cpp" />
+    <ClCompile Include="ServiceTypeAdresse.cpp" />
+    <ClCompile Include="Panier.cpp" />
+    <ClCompile Include="ServicePanier.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adresse.h" />
@@ -70,8 +74,12 @@
     <ClInclude Include="Commande.h" />
     <ClInclude Include="ServiceCommande.h" />
     <ClInclude Include="Acheter.h" />
-    <ClInclude Include="AjouterCommande1.h" />
+    <ClInclude Include="CommandeClient.h" />
     <ClInclude Include="AjouterCommande2.h" />
     <ClInclude Include="AjouterCommande3.h" />
+    <ClInclude Include="TypeAdresse.h" />
+    <ClInclude Include="ServiceTypeAdresse.h" />
+    <ClInclude Include="Panier.h" />
+    <ClInclude Include="ServicePanier.h" />
   </ItemGroup>
 </Project>

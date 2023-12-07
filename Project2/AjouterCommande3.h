@@ -490,6 +490,7 @@ namespace ProjectPOO {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"AjouterCommande3";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
+			this->Load += gcnew System::EventHandler(this, &AjouterCommande3::AjouterCommande3_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();
@@ -509,5 +510,7 @@ namespace ProjectPOO {
 	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	};
+	private: System::Void AjouterCommande3_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

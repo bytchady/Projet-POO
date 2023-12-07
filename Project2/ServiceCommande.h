@@ -1,19 +1,19 @@
 #pragma once
 #include "BDD.h"
-#include "Commande.h"
+#include "Commande.h"  
+using namespace System::Collections::Generic;
+using namespace System::Data;
 
+public ref class ServiceCommande {  
+    BDD^ bdd;
 
-namespace NS_Commande {
-    public ref class ServiceCommande {
-    private:
-        BDD^ bdd;
-    public:
-        ServiceCommande();
-        ~ServiceCommande();
-        System::Data::DataSet^ SelectAllServiceCommande(String^);
-        void InsertServiceCommande(Commande^ commande);
-        void DeleteServiceCommande(Commande^ commande);
-        void UpdateServiceCommande(Commande^ commande);
-        bool CommandeExists(String^ refCommande);
-    };
-}
+public:
+    ServiceCommande(); 
+    ~ServiceCommande();  
+
+    List<Commande^>^ SelectAllCommande();  
+    void InsertCommande(Commande^ commande);  
+    void DeleteCommande(Commande^ commande);  
+    void UpdateCommande(Commande^ commande);  
+    //bool ArticleExists(int refArticle;
+};

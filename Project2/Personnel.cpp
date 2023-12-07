@@ -1,7 +1,7 @@
 #include "Personnel.h"
 #include "Adresse.h"
 
-namespace NS_Personnel {
+
 	int Personnel::getId_Personnel() {
 		return this->Id_Personnel;
 	}
@@ -108,4 +108,4 @@ namespace NS_Personnel {
 	{
 		return "SELECT * FROM Personnel";
 	}
-}
+

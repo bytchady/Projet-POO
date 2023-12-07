@@ -3,9 +3,8 @@
 #include "Personnel.h"
 #include "Adresse.h"
 
-using namespace NS_Adresse;
 
-namespace NS_Personnel {
+
     public ref class ServicePersonnel {
     private:
         BDD^ bdd;
@@ -17,4 +16,3 @@ namespace NS_Personnel {
         void DeleteServicePersonnel(Personnel^ personnel);
         void UpdateServicePersonnel(Personnel^ personnel);
     };
-}

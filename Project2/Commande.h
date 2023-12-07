@@ -2,7 +2,7 @@
 
 using namespace System;
 
-namespace NS_Commande {
+
 	public ref class Commande
 	{
     private:
@@ -11,49 +11,123 @@ namespace NS_Commande {
         float Total_TTC;
         float Total_HT;
         float Total_TVA;
-        String^ Date_Emission;
-        String^ Date_Livraison;
-        String^ Date_PaiementFinal;
+        DateTime Date_Emission;
+        DateTime Date_Livraison;
+        DateTime Date_PaiementFinal;
         float Remise_Commande;
         int Id_Personnel;
-        int Id_Adresse;
-        int Id_Adresse_1;
+        int Id_Livraison;
+        int Id_Facturation;
         int Id_Client;
         bool Supprimer;
 
     public:
-        void setRefCommande(String^ refCommande);
-        void setTotalTTC(float totalTTC);
-        void setTotalHT(float totalHT);
-        void setTotalTVA(float totalTVA);
-        void setDateEmission(String^ dateEmission);
-        void setDateLivraison(String^ dateLivraison);
-        void setDatePaiementFinal(String^ datePaiementFinal);
-        void setRemiseCommande(float remiseCommande);
-        void setIdPersonnel(int idPersonnel);
-        void setIdAdresse(int idLivraison);
-        void setIdAdresse1(int idFacturation);
-        void setIdClient(int idClient);
-        void setSupprimer(bool supprimer);
+        void setIdCommande(int idCommande) {
+            this->Id_Commande = idCommande;
+        }
+        void setRefCommande(String^ refCommande) {
+            this->Ref_Commande = refCommande;
+        }
 
-        String^ getRefCommande();
-        float getTotalTTC();
-        float getTotalHT();
-        float getTotalTVA();
-        String^ getDateEmission();
-        String^ getDateLivraison();
-        String^ getDatePaiementFinal();
-        float getRemiseCommande();
-        int getIdAdresse();
-        int getIdAdresse1();
-        int getIdClient();
-        bool getSupprimer();
+        void setTotalTTC(float totalTTC) {
+            this->Total_TTC = totalTTC;
+        }
 
-		String^ CreateCommande();
-        String^ UpdateCommande();
-        String^ SelectCommande();
-		String^ DeleteCommande();
-	};
-}
+        void setTotalHT(float totalHT) {
+            this->Total_HT = totalHT;
+        }
+
+        void setTotalTVA(float totalTVA) {
+            this->Total_TVA = totalTVA;
+        }
+
+        void setDateEmission(DateTime dateEmission) {
+            this->Date_Emission = dateEmission;
+        }
+
+        void setDateLivraison(DateTime dateLivraison) {
+            this->Date_Livraison = dateLivraison;
+        }
+
+        void setDatePaiementFinal(DateTime datePaiementFinal) {
+            this->Date_PaiementFinal = datePaiementFinal;
+        }
+
+        void setRemiseCommande(float remiseCommande) {
+            this->Remise_Commande = remiseCommande;
+        }
+
+        void setIdPersonnel(int idPersonnel) {
+            this->Id_Personnel = idPersonnel;
+        }
+
+        void setIdLivraison(int idLivraison) {
+            this->Id_Livraison = idLivraison;
+        }
+
+        void setIdFacturation(int idFacturation) {
+            this->Id_Facturation = idFacturation;
+        }
+
+        void setIdClient(int idClient) {
+            this->Id_Client = idClient;
+        }
+
+        void setSupprimer(bool supprimer) {
+            this->Supprimer = supprimer;
+        }
+
+        int getIdCommande() {
+            return this->Id_Commande;
+        }
+
+        String^ getRefCommande() {
+            return this->Ref_Commande;
+        }
+
+        float getTotalTTC() {
+            return this->Total_TTC;
+        }
+
+        float getTotalHT() {
+            return this->Total_HT;
+        }
+
+        float getTotalTVA() {
+            return this->Total_TVA;
+        }
+
+        DateTime getDateEmission() {
+            return this->Date_Emission;
+        }
+
+        DateTime getDateLivraison() {
+            return this->Date_Livraison;
+        }
+
+        DateTime getDatePaiementFinal() {
+            return this->Date_PaiementFinal;
+        }
+
+        float getRemiseCommande() {
+            return this->Remise_Commande;
+        }
+
+        int getIdLivraison() {
+            return this->Id_Livraison;
+        }
+
+        int getIdFacturation() {
+            return this->Id_Facturation;
+        }
+
+        int getIdClient() {
+            return this->Id_Client;
+        }
+
+        bool getSupprimer() {
+            return this->Supprimer;
+        }
+    };
 
 

@@ -1,17 +1,19 @@
 #pragma once
 #include "BDD.h"
-#include "Adresse.h"
+#include "Adresse.h" 
+using namespace System::Collections::Generic;
+using namespace System::Data;
 
+public ref class ServiceAdresse {
+private:
+    BDD^ bdd;
 
-namespace NS_Adresse {
-    public ref class ServiceAdresse {
-    private:
-        BDD^ bdd;
-    public:
-        ServiceAdresse();
-        ~ServiceAdresse();
-        System::Data::DataSet^ SelectAllServiceAdresse();
-        String^ InsertServiceAdresse(Adresse^ adresse);
-        void DeleteServiceAdresse(Adresse^ adresse);
-    };
-}
+public:
+    ServiceAdresse();
+    ~ServiceAdresse();
+
+    List<Adresse^>^ SelectAllAdresse();
+    void InsertAdresse(Adresse^ ad);
+    void DeleteAdresse(Adresse^ ad);
+    void UpdateAdresse(Adresse^ ad);
+};

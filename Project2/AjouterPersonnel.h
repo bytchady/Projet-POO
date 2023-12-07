@@ -4,9 +4,6 @@
 #include "Adresse.h"
 #include "ServiceAdresse.h"
 
-using namespace NS_Personnel;
-using namespace NS_Adresse;
-
 namespace ProjectPOO {
 
 	using namespace System;
@@ -606,17 +603,17 @@ namespace ProjectPOO {
 		Adresse^ adresse = gcnew Adresse;
 		personnel->setNom_Personnel(this->textBox_NomPersonnel->Text);
 		personnel->setPrenom_Personnel(this->textBox_PrenomPersonnel->Text);
-		adresse->setNum_Rue(int::Parse(this->textBox_NumRuePersonnel->Text));
-		adresse->setNom_rue(this->textBox_Nom_Rue_Personnel->Text);
-		adresse->setComplement_Adr(this->textBox_ComplementAdressePersonnel->Text);
-		adresse->setCode_Postal(int::Parse(this->textBox_CodePostalePersonnel->Text));
-		adresse->setNom_Ville(this->textBox_NomVillePersonnel->Text);
+		adresse->setNumRue(int::Parse(this->textBox_NumRuePersonnel->Text));
+		adresse->setNomrue(this->textBox_Nom_Rue_Personnel->Text);
+		adresse->setComplementAdr(this->textBox_ComplementAdressePersonnel->Text);
+		adresse->setCodePostal(this->textBox_CodePostalePersonnel->Text);
+		adresse->setNomVille(this->textBox_NomVillePersonnel->Text);
 		personnel->setNaissance_Personnel(DateTime::Parse(this->textBox_DateNaissance->Text));
 		personnel->setDate_Embauche(DateTime::Parse(this->textBox_DateEmbauchePersonnel->Text));
 		personnel->setId_Personnel_1(int::Parse(this->textBox_Id_Superieur->Text));
 
 		ServiceAdresse^ serviceAdresse = gcnew ServiceAdresse();
-		serviceAdresse->InsertServiceAdresse(adresse);
+		serviceAdresse->InsertAdresse(adresse);
 	}
 	private: System::Void textBox_NomPersonnel_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}

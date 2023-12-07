@@ -1,7 +1,7 @@
 #pragma once
 #include "AjouterCommande3.h"
 #include "ServiceArticle.h"
-using namespace NS_Article;
+
 namespace ProjectPOO {
 
 	using namespace System;
@@ -134,7 +134,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				3.667745F)));
 			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				411)));
+				412)));
 			this->tableLayoutPanel4->Controls->Add(this->CatalogueListeArticle, 0, 0);
 			this->tableLayoutPanel4->Controls->Add(this->tableLayoutPanel5, 2, 0);
 			this->tableLayoutPanel4->Location = System::Drawing::Point(4, 57);
@@ -158,7 +158,7 @@ namespace ProjectPOO {
 			this->CatalogueListeArticle->Margin = System::Windows::Forms::Padding(4);
 			this->CatalogueListeArticle->Name = L"CatalogueListeArticle";
 			this->CatalogueListeArticle->RowHeadersWidth = 51;
-			this->CatalogueListeArticle->Size = System::Drawing::Size(1179, 951);
+			this->CatalogueListeArticle->Size = System::Drawing::Size(1178, 951);
 			this->CatalogueListeArticle->TabIndex = 2;
 			this->CatalogueListeArticle->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AjouterCommande2::CatalogueListeArticle_CellContentClick);
 			// 
@@ -174,7 +174,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel5->Controls->Add(this->bSupprimerArticle, 0, 2);
 			this->tableLayoutPanel5->Controls->Add(this->bAjouterArticle, 0, 3);
 			this->tableLayoutPanel5->Controls->Add(this->tableLayoutPanel6, 0, 1);
-			this->tableLayoutPanel5->Location = System::Drawing::Point(1236, 4);
+			this->tableLayoutPanel5->Location = System::Drawing::Point(1235, 4);
 			this->tableLayoutPanel5->Margin = System::Windows::Forms::Padding(4);
 			this->tableLayoutPanel5->Name = L"tableLayoutPanel5";
 			this->tableLayoutPanel5->RowCount = 4;
@@ -182,7 +182,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 30.7947F)));
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 57)));
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 57)));
-			this->tableLayoutPanel5->Size = System::Drawing::Size(404, 951);
+			this->tableLayoutPanel5->Size = System::Drawing::Size(405, 951);
 			this->tableLayoutPanel5->TabIndex = 3;
 			// 
 			// CataloguePanierVisual
@@ -196,7 +196,7 @@ namespace ProjectPOO {
 			this->CataloguePanierVisual->Margin = System::Windows::Forms::Padding(4);
 			this->CataloguePanierVisual->Name = L"CataloguePanierVisual";
 			this->CataloguePanierVisual->RowHeadersWidth = 51;
-			this->CataloguePanierVisual->Size = System::Drawing::Size(396, 571);
+			this->CataloguePanierVisual->Size = System::Drawing::Size(397, 571);
 			this->CataloguePanierVisual->TabIndex = 3;
 			// 
 			// bSupprimerArticle
@@ -209,7 +209,7 @@ namespace ProjectPOO {
 			this->bSupprimerArticle->Location = System::Drawing::Point(4, 840);
 			this->bSupprimerArticle->Margin = System::Windows::Forms::Padding(4);
 			this->bSupprimerArticle->Name = L"bSupprimerArticle";
-			this->bSupprimerArticle->Size = System::Drawing::Size(396, 49);
+			this->bSupprimerArticle->Size = System::Drawing::Size(397, 49);
 			this->bSupprimerArticle->TabIndex = 4;
 			this->bSupprimerArticle->Text = L"Supprimer Article";
 			this->bSupprimerArticle->UseVisualStyleBackColor = true;
@@ -224,7 +224,7 @@ namespace ProjectPOO {
 			this->bAjouterArticle->Location = System::Drawing::Point(4, 897);
 			this->bAjouterArticle->Margin = System::Windows::Forms::Padding(4);
 			this->bAjouterArticle->Name = L"bAjouterArticle";
-			this->bAjouterArticle->Size = System::Drawing::Size(396, 50);
+			this->bAjouterArticle->Size = System::Drawing::Size(397, 50);
 			this->bAjouterArticle->TabIndex = 5;
 			this->bAjouterArticle->Text = L"Ajouter Article";
 			this->bAjouterArticle->UseVisualStyleBackColor = true;
@@ -239,12 +239,12 @@ namespace ProjectPOO {
 				30.61225F)));
 			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				69.38776F)));
-			this->tableLayoutPanel6->Controls->Add(this->lTotalPrixTTC, 1, 2);
 			this->tableLayoutPanel6->Controls->Add(this->lTotalTVA, 1, 1);
 			this->tableLayoutPanel6->Controls->Add(this->label_PrixTVA, 0, 1);
 			this->tableLayoutPanel6->Controls->Add(this->label_PrixHT, 0, 0);
 			this->tableLayoutPanel6->Controls->Add(this->label_PrixTTC, 0, 2);
 			this->tableLayoutPanel6->Controls->Add(this->lTotalPrixHT, 1, 0);
+			this->tableLayoutPanel6->Controls->Add(this->lTotalPrixTTC, 1, 2);
 			this->tableLayoutPanel6->Location = System::Drawing::Point(4, 583);
 			this->tableLayoutPanel6->Margin = System::Windows::Forms::Padding(4);
 			this->tableLayoutPanel6->Name = L"tableLayoutPanel6";
@@ -252,7 +252,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 73)));
-			this->tableLayoutPanel6->Size = System::Drawing::Size(396, 249);
+			this->tableLayoutPanel6->Size = System::Drawing::Size(397, 249);
 			this->tableLayoutPanel6->TabIndex = 6;
 			// 
 			// lTotalPrixTTC
@@ -262,10 +262,12 @@ namespace ProjectPOO {
 			this->lTotalPrixTTC->AutoSize = true;
 			this->lTotalPrixTTC->BackColor = System::Drawing::Color::White;
 			this->lTotalPrixTTC->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->lTotalPrixTTC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->lTotalPrixTTC->Location = System::Drawing::Point(125, 176);
 			this->lTotalPrixTTC->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lTotalPrixTTC->Name = L"lTotalPrixTTC";
-			this->lTotalPrixTTC->Size = System::Drawing::Size(267, 18);
+			this->lTotalPrixTTC->Size = System::Drawing::Size(268, 27);
 			this->lTotalPrixTTC->TabIndex = 5;
 			// 
 			// lTotalTVA
@@ -275,10 +277,12 @@ namespace ProjectPOO {
 			this->lTotalTVA->AutoSize = true;
 			this->lTotalTVA->BackColor = System::Drawing::Color::White;
 			this->lTotalTVA->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->lTotalTVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->lTotalTVA->Location = System::Drawing::Point(125, 88);
 			this->lTotalTVA->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lTotalTVA->Name = L"lTotalTVA";
-			this->lTotalTVA->Size = System::Drawing::Size(267, 18);
+			this->lTotalTVA->Size = System::Drawing::Size(268, 27);
 			this->lTotalTVA->TabIndex = 4;
 			// 
 			// label_PrixTVA
@@ -321,10 +325,12 @@ namespace ProjectPOO {
 			this->lTotalPrixHT->AutoSize = true;
 			this->lTotalPrixHT->BackColor = System::Drawing::Color::White;
 			this->lTotalPrixHT->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->lTotalPrixHT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->lTotalPrixHT->Location = System::Drawing::Point(125, 0);
 			this->lTotalPrixHT->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lTotalPrixHT->Name = L"lTotalPrixHT";
-			this->lTotalPrixHT->Size = System::Drawing::Size(267, 18);
+			this->lTotalPrixHT->Size = System::Drawing::Size(268, 27);
 			this->lTotalPrixHT->TabIndex = 3;
 			// 
 			// tableLayoutPanel3
@@ -338,7 +344,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				33.81443F)));
 			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				386)));
+				387)));
 			this->tableLayoutPanel3->Controls->Add(this->bAnnuler, 2, 0);
 			this->tableLayoutPanel3->Controls->Add(this->bSuivant, 1, 0);
 			this->tableLayoutPanel3->Location = System::Drawing::Point(4, 1081);
@@ -356,10 +362,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bAnnuler->Location = System::Drawing::Point(1261, 4);
+			this->bAnnuler->Location = System::Drawing::Point(1260, 4);
 			this->bAnnuler->Margin = System::Windows::Forms::Padding(4);
 			this->bAnnuler->Name = L"bAnnuler";
-			this->bAnnuler->Size = System::Drawing::Size(379, 89);
+			this->bAnnuler->Size = System::Drawing::Size(380, 89);
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
@@ -372,7 +378,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bSuivant->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bSuivant->Location = System::Drawing::Point(836, 4);
+			this->bSuivant->Location = System::Drawing::Point(835, 4);
 			this->bSuivant->Margin = System::Windows::Forms::Padding(4);
 			this->bSuivant->Name = L"bSuivant";
 			this->bSuivant->Size = System::Drawing::Size(417, 89);
@@ -434,13 +440,9 @@ namespace ProjectPOO {
 		ac3->ShowDialog();
 	}
 	private: System::Void CatalogueListeArticle_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	
+
 	}
-private: System::Void AjouterCommande2_Load(System::Object^ sender, System::EventArgs^ e) {
-	ServiceArticle^ serviceArticle = gcnew ServiceArticle();
-	System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceArticle();
-	CatalogueListeArticle->DataSource = dataSet;
-	CatalogueListeArticle->DataMember = dataSet->Tables[0]->TableName;
-}
-};
+	private: System::Void AjouterCommande2_Load(System::Object^ sender, System::EventArgs^ e) {
+	};
+	};
 }

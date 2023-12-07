@@ -130,7 +130,7 @@
     <ClCompile Include="AjouterAdresse.cpp" />
     <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="AjouterClient.cpp" />
-    <ClCompile Include="AjouterCommande1.cpp" />
+    <ClCompile Include="CommandeClient.cpp" />
     <ClCompile Include="AjouterCommande2.cpp" />
     <ClCompile Include="AjouterCommande3.cpp" />
     <ClCompile Include="AjouterPersonnel.cpp" />
@@ -149,12 +149,15 @@
     <ClCompile Include="ModifierAdresse.cpp" />
     <ClCompile Include="ModifierCommande.cpp" />
     <ClCompile Include="ModifierPersonnel.cpp" />
+    <ClCompile Include="Panier.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="ServiceAdresse.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
     <ClCompile Include="ServiceClient.cpp" />
     <ClCompile Include="ServiceCommande.cpp" />
+    <ClCompile Include="ServicePanier.cpp" />
     <ClCompile Include="ServicePersonnel.cpp" />
+    <ClCompile Include="ServiceTypeAdresse.cpp" />
     <ClCompile Include="Stat1.cpp" />
     <ClCompile Include="Stat2.cpp" />
     <ClCompile Include="Stat3.cpp" />
@@ -162,6 +165,7 @@
     <ClCompile Include="Statistiques.cpp" />
     <ClCompile Include="SupprimerClientPopUp.cpp" />
     <ClCompile Include="SupprimerCommandePopUp.cpp" />
+    <ClCompile Include="TypeAdresse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Acheter.h" />
@@ -175,7 +179,7 @@
     <ClInclude Include="AjouterClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="AjouterCommande1.h">
+    <ClInclude Include="CommandeClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AjouterCommande2.h">
@@ -221,12 +225,15 @@
     <ClInclude Include="ModifierPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Panier.h" />
     <ClInclude Include="Personnel.h" />
     <ClInclude Include="ServiceAdresse.h" />
     <ClInclude Include="ServiceArticle.h" />
     <ClInclude Include="ServiceClient.h" />
     <ClInclude Include="ServiceCommande.h" />
+    <ClInclude Include="ServicePanier.h" />
     <ClInclude Include="ServicePersonnel.h" />
+    <ClInclude Include="ServiceTypeAdresse.h" />
     <ClInclude Include="Stat1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -248,6 +255,7 @@
     <ClInclude Include="SupprimerCommandePopUp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TypeAdresse.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AjouterAdresse.resx">
@@ -259,8 +267,8 @@
     <EmbeddedResource Include="AjouterClient.resx">
       <DependentUpon>AjouterClient.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjouterCommande1.resx">
-      <DependentUpon>AjouterCommande1.h</DependentUpon>
+    <EmbeddedResource Include="CommandeClient.resx">
+      <DependentUpon>CommandeClient.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AjouterCommande2.resx">
       <DependentUpon>AjouterCommande2.h</DependentUpon>

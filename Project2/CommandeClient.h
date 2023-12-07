@@ -1,5 +1,6 @@
 #pragma once
-
+#include "ServiceClient.h"
+#include "ServiceCommande.h"
 
 namespace ProjectPOO {
 
@@ -13,22 +14,47 @@ namespace ProjectPOO {
 	/// <summary>
 	/// Description résumée de AjouterCommande1
 	/// </summary>
-	public ref class AjouterCommande1 : public System::Windows::Forms::Form
+	public ref class CommandeClient : public System::Windows::Forms::Form
 	{
 	public:
-		AjouterCommande1(void)
+		CommandeClient(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
-		}
+			DataGridViewTextBoxColumn^ dgvtbc = gcnew DataGridViewTextBoxColumn();
+			dgvtbc->Name = "Numero Client";
+			this->CatalogueListeClient->Columns->Add(dgvtbc);
 
+			DataGridViewTextBoxColumn^ dgvtbc2 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc2->Name = "Nom";
+			this->CatalogueListeClient->Columns->Add(dgvtbc2);
+
+			DataGridViewTextBoxColumn^ dgvtbc3 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc3->Name = "prenom";
+			this->CatalogueListeClient->Columns->Add(dgvtbc3);
+
+			DataGridViewTextBoxColumn^ dgvtbc4 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc4->Name = "Adresses de livraisons";
+			this->CatalogueListeClient->Columns->Add(dgvtbc4);
+
+			DataGridViewTextBoxColumn^ dgvtbc5 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc5->Name = "Adresses de facturations";
+			this->CatalogueListeClient->Columns->Add(dgvtbc5);
+
+			DataGridViewTextBoxColumn^ dgvtbc6 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc6->Name = "Id_Client";
+			dgvtbc6->Visible = false;
+			this->CatalogueListeClient->Columns->Add(dgvtbc6);
+		}
+		ServiceCommande^ scmd = gcnew ServiceCommande();
+		ServiceClient^ scl = gcnew ServiceClient();
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~AjouterCommande1()
+		~CommandeClient()
 		{
 			if (components)
 			{
@@ -128,7 +154,7 @@ namespace ProjectPOO {
 			this->bRetour->TabIndex = 0;
 			this->bRetour->Text = L"Retour";
 			this->bRetour->UseVisualStyleBackColor = true;
-			this->bRetour->Click += gcnew System::EventHandler(this, &AjouterCommande1::bRetour_Click);
+			this->bRetour->Click += gcnew System::EventHandler(this, &CommandeClient::bRetour_Click);
 			// 
 			// bCommander
 			// 
@@ -144,7 +170,7 @@ namespace ProjectPOO {
 			this->bCommander->TabIndex = 1;
 			this->bCommander->Text = L"Commander";
 			this->bCommander->UseVisualStyleBackColor = true;
-			this->bCommander->Click += gcnew System::EventHandler(this, &AjouterCommande1::bCommander_Click);
+			this->bCommander->Click += gcnew System::EventHandler(this, &CommandeClient::bCommander_Click);
 			// 
 			// CatalogueListeClient
 			// 
@@ -160,7 +186,7 @@ namespace ProjectPOO {
 			this->CatalogueListeClient->RowHeadersWidth = 51;
 			this->CatalogueListeClient->Size = System::Drawing::Size(1644, 749);
 			this->CatalogueListeClient->TabIndex = 2;
-			this->CatalogueListeClient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AjouterCommande1::dataGridView1_CellContentClick);
+			this->CatalogueListeClient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CommandeClient::dataGridView1_CellContentClick);
 			// 
 			// AjouterCommande1
 			// 
@@ -175,7 +201,7 @@ namespace ProjectPOO {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Commande";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
-			this->Load += gcnew System::EventHandler(this, &AjouterCommande1::AjouterCommande1_Load);
+			this->Load += gcnew System::EventHandler(this, &CommandeClient::AjouterCommande1_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueListeClient))->EndInit();
@@ -197,10 +223,6 @@ namespace ProjectPOO {
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 private: System::Void AjouterCommande1_Load(System::Object^ sender, System::EventArgs^ e) {
-	//ServiceClient^ serviceClient = gcnew ServiceClient();
-	/*System::Data::DataSet^ dataSet = serviceClient->SelectAllClient();
-	CatalogueListeClient->DataSource = dataSet;
-	CatalogueListeClient->DataMember = dataSet->Tables[0]->TableName;*/
 }
 };
 }

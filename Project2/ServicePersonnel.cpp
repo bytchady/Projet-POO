@@ -3,11 +3,7 @@
 #include "BDD.h"
 #include "Adresse.h"
 
-using namespace NS_Adresse;
 
-
-
-namespace NS_Personnel {
 
     ServicePersonnel::ServicePersonnel() {
         bdd = gcnew BDD();
@@ -38,4 +34,4 @@ namespace NS_Personnel {
         System::Diagnostics::Debug::WriteLine("Requête SQL générée : " + query);
         bdd->executeNonQuery(query);
     }
-}
+
