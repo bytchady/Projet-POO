@@ -1,19 +1,18 @@
 #pragma once
 #include "BDD.h"
 #include "Client.h"
+using namespace System::Data;
+using namespace  System::Collections::Generic;
 
-
-namespace NS_Client {
-    public ref class ServiceClient {
+public ref class ServiceClient {
     private:
         BDD^ bdd;
     public:
         ServiceClient();
         ~ServiceClient();
-        System::Data::DataSet^ SelectAllServiceClient();
-        bool InsertServiceClient(Client^ client);
-        void DeleteServiceClient(Client^ client);
-        void UpdateServiceClient(Client^ client);
-        bool ClientExists(String^ num_client);
-    };
-}
+        List<Client^>^ ServiceClient::SelectAllClient();
+        void InsertClient(Client^ c);
+        void DeleteClient(Client^ c);
+        void UpdateClient(Client^ c);
+};
+

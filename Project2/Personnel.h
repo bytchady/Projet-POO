@@ -1,7 +1,6 @@
 #pragma once
 
 namespace NS_Personnel {
-    using namespace std;
     using namespace System;
 
     ref class Personnel

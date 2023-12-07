@@ -42,7 +42,7 @@ int BDD::executeNonQuery(String^ sql)
 {
     System::Diagnostics::Debug::WriteLine("REQSQL: " + sql);
     SqlCommand^ command = gcnew SqlCommand(sql, this->connection);
-    // Execution!
+    // Execution
     int affectedrows = command->ExecuteNonQuery();
     return affectedrows;
 }

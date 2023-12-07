@@ -1,5 +1,7 @@
 #pragma once
 
+
+
 namespace ProjectPOO {
 
 	using namespace System;
@@ -10,12 +12,12 @@ namespace ProjectPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de ModifierCommande
+	/// Description résumée de ModifierCommandes
 	/// </summary>
-	public ref class ModifierCommande : public System::Windows::Forms::Form
+	public ref class ModifierCommandes : public System::Windows::Forms::Form
 	{
 	public:
-		ModifierCommande(void)
+		ModifierCommandes(void)
 		{
 			InitializeComponent();
 			//
@@ -27,39 +29,64 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~ModifierCommande()
+		~ModifierCommandes()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel4;
-	private: System::Windows::Forms::Button^ bModifierArticle;
 
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel5;
-	private: System::Windows::Forms::Button^ bValider;
-	private: System::Windows::Forms::Button^ bAnnuler;
-	private: System::Windows::Forms::Label^ label1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::VScrollBar^ vScrollBar1;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: System::Windows::Forms::Button^ bAjouter;
+	private: System::Windows::Forms::Label^ l;
+
+
+
+
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::TextBox^ textBox7;
-	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::Button^ bAnnuler;
 	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ lCommande;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
+	private: System::Windows::Forms::Button^ button1;
+
+	protected:
+
+
+
+
+
+
 
 
 
@@ -69,7 +96,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -78,54 +105,34 @@ namespace ProjectPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->tableLayoutPanel4 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->bModifierArticle = (gcnew System::Windows::Forms::Button());
-			this->tableLayoutPanel5 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->bValider = (gcnew System::Windows::Forms::Button());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->bAnnuler = (gcnew System::Windows::Forms::Button());
-			this->tableLayoutPanel1->SuspendLayout();
+			this->bAjouter = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->l = (gcnew System::Windows::Forms::Label());
+			this->vScrollBar1 = (gcnew System::Windows::Forms::VScrollBar());
+			this->lCommande = (gcnew System::Windows::Forms::Label());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel2->SuspendLayout();
-			this->tableLayoutPanel3->SuspendLayout();
+			this->tableLayoutPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
-			this->tableLayoutPanel4->SuspendLayout();
-			this->tableLayoutPanel5->SuspendLayout();
+			this->tableLayoutPanel3->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// tableLayoutPanel1
-			// 
-			this->tableLayoutPanel1->ColumnCount = 2;
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel2, 0, 0);
-			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel3, 1, 0);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(13, 13);
-			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
-			this->tableLayoutPanel1->RowCount = 1;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(1239, 960);
-			this->tableLayoutPanel1->TabIndex = 0;
 			// 
 			// tableLayoutPanel2
 			// 
@@ -134,242 +141,295 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->tableLayoutPanel2->ColumnCount = 1;
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel2->Controls->Add(this->textBox8, 0, 15);
-			this->tableLayoutPanel2->Controls->Add(this->textBox7, 0, 13);
-			this->tableLayoutPanel2->Controls->Add(this->textBox6, 0, 11);
-			this->tableLayoutPanel2->Controls->Add(this->textBox5, 0, 9);
-			this->tableLayoutPanel2->Controls->Add(this->textBox4, 0, 7);
-			this->tableLayoutPanel2->Controls->Add(this->textBox3, 0, 5);
-			this->tableLayoutPanel2->Controls->Add(this->textBox2, 0, 3);
-			this->tableLayoutPanel2->Controls->Add(this->label1, 0, 0);
+				20.61495F)));
 			this->tableLayoutPanel2->Controls->Add(this->label2, 0, 2);
+			this->tableLayoutPanel2->Controls->Add(this->textBox2, 0, 3);
 			this->tableLayoutPanel2->Controls->Add(this->label3, 0, 4);
+			this->tableLayoutPanel2->Controls->Add(this->textBox3, 0, 5);
 			this->tableLayoutPanel2->Controls->Add(this->label4, 0, 6);
+			this->tableLayoutPanel2->Controls->Add(this->textBox4, 0, 7);
 			this->tableLayoutPanel2->Controls->Add(this->label5, 0, 8);
+			this->tableLayoutPanel2->Controls->Add(this->textBox5, 0, 9);
 			this->tableLayoutPanel2->Controls->Add(this->label6, 0, 10);
+			this->tableLayoutPanel2->Controls->Add(this->textBox6, 0, 11);
 			this->tableLayoutPanel2->Controls->Add(this->label7, 0, 12);
-			this->tableLayoutPanel2->Controls->Add(this->label8, 0, 14);
+			this->tableLayoutPanel2->Controls->Add(this->textBox7, 0, 13);
+			this->tableLayoutPanel2->Controls->Add(this->tableLayoutPanel1, 0, 14);
 			this->tableLayoutPanel2->Controls->Add(this->textBox1, 0, 1);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(3, 3);
+			this->tableLayoutPanel2->Controls->Add(this->l, 0, 0);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(52, 142);
+			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
-			this->tableLayoutPanel2->RowCount = 16;
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 77.23577F)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 22.76423F)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 88)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 28)));
+			this->tableLayoutPanel2->RowCount = 15;
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 64.16185F)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 35.83815F)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 76)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 80)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 64)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 46)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 85)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 30)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 73)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 52)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 75)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 74)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 73)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 91)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 31)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 93)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 32)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 89)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 29)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 78)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 29)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 85)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 42)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(613, 954);
-			this->tableLayoutPanel2->TabIndex = 0;
-			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ModifierCommande::tableLayoutPanel2_Paint);
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 110)));
+			this->tableLayoutPanel2->Size = System::Drawing::Size(716, 1057);
+			this->tableLayoutPanel2->TabIndex = 2;
+			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ModifierCommandes::tableLayoutPanel2_Paint);
 			// 
-			// textBox8
+			// label2
 			// 
-			this->textBox8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox8->Location = System::Drawing::Point(3, 914);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(607, 22);
-			this->textBox8->TabIndex = 15;
-			// 
-			// textBox7
-			// 
-			this->textBox7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox7->Location = System::Drawing::Point(3, 800);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(607, 22);
-			this->textBox7->TabIndex = 14;
-			// 
-			// textBox6
-			// 
-			this->textBox6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox6->Location = System::Drawing::Point(3, 693);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(607, 22);
-			this->textBox6->TabIndex = 13;
-			// 
-			// textBox5
-			// 
-			this->textBox5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox5->Location = System::Drawing::Point(3, 572);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(607, 22);
-			this->textBox5->TabIndex = 12;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox4->Location = System::Drawing::Point(3, 448);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(607, 22);
-			this->textBox4->TabIndex = 11;
-			// 
-			// textBox3
-			// 
-			this->textBox3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox3->Location = System::Drawing::Point(3, 327);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(607, 22);
-			this->textBox3->TabIndex = 10;
+			this->label2->AutoSize = true;
+			this->label2->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(3, 144);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(710, 39);
+			this->label2->TabIndex = 3;
+			this->label2->Text = L"Total HT";
 			// 
 			// textBox2
 			// 
 			this->textBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox2->Location = System::Drawing::Point(3, 214);
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->Location = System::Drawing::Point(3, 185);
+			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(607, 22);
-			this->textBox2->TabIndex = 9;
-			// 
-			// label1
-			// 
-			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(3, 70);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(111, 25);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Référence";
-			// 
-			// label2
-			// 
-			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(3, 186);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(94, 25);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Total HT";
+			this->textBox2->Size = System::Drawing::Size(710, 46);
+			this->textBox2->TabIndex = 11;
 			// 
 			// label3
 			// 
-			this->label3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(3, 299);
+			this->label3->Location = System::Drawing::Point(3, 288);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(107, 25);
-			this->label3->TabIndex = 2;
+			this->label3->Size = System::Drawing::Size(710, 39);
+			this->label3->TabIndex = 4;
 			this->label3->Text = L"Total TVA";
+			this->label3->Click += gcnew System::EventHandler(this, &ModifierCommandes::label3_Click);
+			// 
+			// textBox3
+			// 
+			this->textBox3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox3->Location = System::Drawing::Point(3, 329);
+			this->textBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(710, 46);
+			this->textBox3->TabIndex = 12;
 			// 
 			// label4
 			// 
-			this->label4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(3, 420);
+			this->label4->Location = System::Drawing::Point(3, 419);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(107, 25);
-			this->label4->TabIndex = 3;
+			this->label4->Size = System::Drawing::Size(710, 39);
+			this->label4->TabIndex = 5;
 			this->label4->Text = L"Total TTC";
+			this->label4->Click += gcnew System::EventHandler(this, &ModifierCommandes::label4_Click);
+			// 
+			// textBox4
+			// 
+			this->textBox4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox4->Location = System::Drawing::Point(3, 460);
+			this->textBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(710, 46);
+			this->textBox4->TabIndex = 13;
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &ModifierCommandes::textBox4_TextChanged);
 			// 
 			// label5
 			// 
-			this->label5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label5->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(3, 544);
+			this->label5->Location = System::Drawing::Point(3, 542);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(198, 25);
-			this->label5->TabIndex = 4;
-			this->label5->Text = L"Date de commande";
+			this->label5->Size = System::Drawing::Size(710, 39);
+			this->label5->TabIndex = 6;
+			this->label5->Text = L"Total Commande";
+			// 
+			// textBox5
+			// 
+			this->textBox5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox5->Location = System::Drawing::Point(3, 583);
+			this->textBox5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(710, 46);
+			this->textBox5->TabIndex = 14;
 			// 
 			// label6
 			// 
-			this->label6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(3, 665);
+			this->label6->Location = System::Drawing::Point(3, 669);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(245, 25);
-			this->label6->TabIndex = 5;
-			this->label6->Text = L"Date de livraison prévue";
+			this->label6->Size = System::Drawing::Size(710, 39);
+			this->label6->TabIndex = 7;
+			this->label6->Text = L"Date livraison prévue";
+			// 
+			// textBox6
+			// 
+			this->textBox6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->textBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox6->Location = System::Drawing::Point(3, 710);
+			this->textBox6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(710, 46);
+			this->textBox6->TabIndex = 15;
 			// 
 			// label7
 			// 
-			this->label7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label7->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(3, 772);
+			this->label7->Location = System::Drawing::Point(3, 816);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(231, 25);
-			this->label7->TabIndex = 6;
-			this->label7->Text = L"Date(s) de paiement(s)";
+			this->label7->Size = System::Drawing::Size(710, 39);
+			this->label7->TabIndex = 8;
+			this->label7->Text = L"Date paiement";
 			// 
-			// label8
+			// textBox7
 			// 
-			this->label8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->textBox7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(3, 886);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(111, 25);
-			this->label8->TabIndex = 7;
-			this->label8->Text = L"Référence";
+			this->textBox7->Location = System::Drawing::Point(3, 857);
+			this->textBox7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(710, 46);
+			this->textBox7->TabIndex = 16;
+			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->tableLayoutPanel1->ColumnCount = 2;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel1->Controls->Add(this->bAnnuler, 1, 0);
+			this->tableLayoutPanel1->Controls->Add(this->bAjouter, 0, 0);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(4, 950);
+			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(4);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 1;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(708, 103);
+			this->tableLayoutPanel1->TabIndex = 4;
+			// 
+			// bAnnuler
+			// 
+			this->bAnnuler->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bAnnuler->Location = System::Drawing::Point(358, 4);
+			this->bAnnuler->Margin = System::Windows::Forms::Padding(4);
+			this->bAnnuler->Name = L"bAnnuler";
+			this->bAnnuler->Size = System::Drawing::Size(346, 95);
+			this->bAnnuler->TabIndex = 1;
+			this->bAnnuler->Text = L"Annuler";
+			this->bAnnuler->UseVisualStyleBackColor = true;
+			this->bAnnuler->Click += gcnew System::EventHandler(this, &ModifierCommandes::bAnnuler_Click);
+			// 
+			// bAjouter
+			// 
+			this->bAjouter->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->bAjouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bAjouter->Location = System::Drawing::Point(4, 4);
+			this->bAjouter->Margin = System::Windows::Forms::Padding(4);
+			this->bAjouter->Name = L"bAjouter";
+			this->bAjouter->Size = System::Drawing::Size(346, 95);
+			this->bAjouter->TabIndex = 0;
+			this->bAjouter->Text = L"Valider";
+			this->bAjouter->UseVisualStyleBackColor = true;
+			this->bAjouter->Click += gcnew System::EventHandler(this, &ModifierCommandes::bValider_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox1->Location = System::Drawing::Point(3, 98);
+			this->textBox1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->Location = System::Drawing::Point(3, 71);
+			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(607, 22);
-			this->textBox1->TabIndex = 8;
+			this->textBox1->Size = System::Drawing::Size(710, 46);
+			this->textBox1->TabIndex = 10;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &ModifierCommandes::textBox1_TextChanged);
 			// 
-			// tableLayoutPanel3
+			// l
 			// 
-			this->tableLayoutPanel3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->tableLayoutPanel3->ColumnCount = 1;
-			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel3->Controls->Add(this->dataGridView1, 0, 1);
-			this->tableLayoutPanel3->Controls->Add(this->tableLayoutPanel4, 0, 2);
-			this->tableLayoutPanel3->Controls->Add(this->tableLayoutPanel5, 0, 3);
-			this->tableLayoutPanel3->Location = System::Drawing::Point(622, 3);
-			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
-			this->tableLayoutPanel3->RowCount = 4;
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 27.84431F)));
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 72.15569F)));
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 77)));
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 228)));
-			this->tableLayoutPanel3->Size = System::Drawing::Size(614, 954);
-			this->tableLayoutPanel3->TabIndex = 1;
+			this->l->AutoSize = true;
+			this->l->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->l->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->l->Location = System::Drawing::Point(3, 30);
+			this->l->Name = L"l";
+			this->l->Size = System::Drawing::Size(710, 39);
+			this->l->TabIndex = 2;
+			this->l->Text = L"Référence";
+			this->l->Click += gcnew System::EventHandler(this, &ModifierCommandes::label1_Click);
+			// 
+			// vScrollBar1
+			// 
+			this->vScrollBar1->Dock = System::Windows::Forms::DockStyle::Right;
+			this->vScrollBar1->Location = System::Drawing::Point(1661, 0);
+			this->vScrollBar1->Name = L"vScrollBar1";
+			this->vScrollBar1->Size = System::Drawing::Size(22, 1055);
+			this->vScrollBar1->TabIndex = 3;
+			this->vScrollBar1->Value = 50;
+			this->vScrollBar1->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &ModifierCommandes::vScrollBar1_Scroll);
+			// 
+			// lCommande
+			// 
+			this->lCommande->AutoSize = true;
+			this->lCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lCommande->Location = System::Drawing::Point(483, 33);
+			this->lCommande->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lCommande->Name = L"lCommande";
+			this->lCommande->Size = System::Drawing::Size(670, 69);
+			this->lCommande->TabIndex = 4;
+			this->lCommande->Text = L"Modifier une commande";
+			this->lCommande->Click += gcnew System::EventHandler(this, &ModifierCommandes::label8_Click);
 			// 
 			// dataGridView1
 			// 
@@ -377,119 +437,97 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(3, 183);
+			this->dataGridView1->Location = System::Drawing::Point(4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(608, 462);
-			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->Size = System::Drawing::Size(788, 696);
+			this->dataGridView1->TabIndex = 5;
 			// 
-			// tableLayoutPanel4
+			// tableLayoutPanel3
 			// 
-			this->tableLayoutPanel4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->tableLayoutPanel4->ColumnCount = 3;
-			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				42.78607F)));
-			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				57.21393F)));
-			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				184)));
-			this->tableLayoutPanel4->Controls->Add(this->bModifierArticle, 1, 0);
-			this->tableLayoutPanel4->Location = System::Drawing::Point(3, 651);
-			this->tableLayoutPanel4->Name = L"tableLayoutPanel4";
-			this->tableLayoutPanel4->RowCount = 1;
-			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel4->Size = System::Drawing::Size(608, 71);
-			this->tableLayoutPanel4->TabIndex = 1;
-			// 
-			// bModifierArticle
-			// 
-			this->bModifierArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->bModifierArticle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bModifierArticle->Location = System::Drawing::Point(184, 3);
-			this->bModifierArticle->Name = L"bModifierArticle";
-			this->bModifierArticle->Size = System::Drawing::Size(236, 65);
-			this->bModifierArticle->TabIndex = 2;
-			this->bModifierArticle->Text = L"Modifier Article";
-			this->bModifierArticle->UseVisualStyleBackColor = true;
-			// 
-			// tableLayoutPanel5
-			// 
-			this->tableLayoutPanel5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->tableLayoutPanel5->ColumnCount = 2;
-			this->tableLayoutPanel5->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+			this->tableLayoutPanel3->ColumnCount = 1;
+			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
-			this->tableLayoutPanel5->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel5->Controls->Add(this->bValider, 0, 1);
-			this->tableLayoutPanel5->Controls->Add(this->bAnnuler, 1, 1);
-			this->tableLayoutPanel5->Location = System::Drawing::Point(3, 728);
-			this->tableLayoutPanel5->Name = L"tableLayoutPanel5";
-			this->tableLayoutPanel5->RowCount = 2;
-			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 69.0583F)));
-			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 30.9417F)));
-			this->tableLayoutPanel5->Size = System::Drawing::Size(608, 223);
-			this->tableLayoutPanel5->TabIndex = 2;
+			this->tableLayoutPanel3->Controls->Add(this->button1, 0, 1);
+			this->tableLayoutPanel3->Controls->Add(this->dataGridView1, 0, 0);
+			this->tableLayoutPanel3->Location = System::Drawing::Point(823, 142);
+			this->tableLayoutPanel3->Margin = System::Windows::Forms::Padding(4);
+			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
+			this->tableLayoutPanel3->RowCount = 2;
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 88.13559F)));
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 11.86441F)));
+			this->tableLayoutPanel3->Size = System::Drawing::Size(796, 799);
+			this->tableLayoutPanel3->TabIndex = 6;
 			// 
-			// bValider
+			// button1
 			// 
-			this->bValider->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->bValider->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bValider->Location = System::Drawing::Point(3, 157);
-			this->bValider->Name = L"bValider";
-			this->bValider->Size = System::Drawing::Size(298, 63);
-			this->bValider->TabIndex = 0;
-			this->bValider->Text = L"Valider";
-			this->bValider->UseVisualStyleBackColor = true;
+			this->button1->Location = System::Drawing::Point(4, 708);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(788, 87);
+			this->button1->TabIndex = 6;
+			this->button1->Text = L"Modifier Article";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ModifierCommandes::button1_Click);
 			// 
-			// bAnnuler
+			// ModifierCommandes
 			// 
-			this->bAnnuler->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->bAnnuler->Location = System::Drawing::Point(307, 157);
-			this->bAnnuler->Name = L"bAnnuler";
-			this->bAnnuler->Size = System::Drawing::Size(298, 63);
-			this->bAnnuler->TabIndex = 1;
-			this->bAnnuler->Text = L"Annuler";
-			this->bAnnuler->UseVisualStyleBackColor = true;
-			this->bAnnuler->Click += gcnew System::EventHandler(this, &ModifierCommande::bAnnuler_Click);
-			// 
-			// ModifierCommande
-			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1264, 985);
-			this->Controls->Add(this->tableLayoutPanel1);
-			this->MaximumSize = System::Drawing::Size(1280, 1024);
-			this->MinimumSize = System::Drawing::Size(1280, 1024);
-			this->Name = L"ModifierCommande";
+			this->ClientSize = System::Drawing::Size(1683, 1055);
+			this->Controls->Add(this->tableLayoutPanel3);
+			this->Controls->Add(this->lCommande);
+			this->Controls->Add(this->vScrollBar1);
+			this->Controls->Add(this->tableLayoutPanel2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->MaximumSize = System::Drawing::Size(1701, 1249);
+			this->MinimumSize = System::Drawing::Size(1701, 1018);
+			this->Name = L"ModifierCommandes";
+			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"ModifierCommande";
-			this->tableLayoutPanel1->ResumeLayout(false);
+			this->Text = L"Ajouter un personnel";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
+			this->Load += gcnew System::EventHandler(this, &ModifierCommandes::AjouterCommandes_Load);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();
-			this->tableLayoutPanel3->ResumeLayout(false);
+			this->tableLayoutPanel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
-			this->tableLayoutPanel4->ResumeLayout(false);
-			this->tableLayoutPanel5->ResumeLayout(false);
+			this->tableLayoutPanel3->ResumeLayout(false);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
+	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void vScrollBar1_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
+	}
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
 	private: System::Void tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
-private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
+	private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AjouterCommandes_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void bValider_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
 };
 }

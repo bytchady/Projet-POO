@@ -125,10 +125,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Acheter.cpp" />
     <ClCompile Include="Adresse.cpp" />
     <ClCompile Include="AjouterAdresse.cpp" />
     <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="AjouterClient.cpp" />
+    <ClCompile Include="AjouterCommande1.cpp" />
+    <ClCompile Include="AjouterCommande2.cpp" />
+    <ClCompile Include="AjouterCommande3.cpp" />
     <ClCompile Include="AjouterPersonnel.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="BDD.cpp" />
@@ -136,7 +140,9 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="DetailCommande.cpp" />
-    <ClCompile Include="GestionClient.cpp" />
+    <ClCompile Include="GestionClient.cpp">
+      <FileType>CppCode</FileType>
+    </ClCompile>
     <ClCompile Include="GestionCommande.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="mainmenu.cpp" />
@@ -147,6 +153,7 @@
     <ClCompile Include="ServiceAdresse.cpp" />
     <ClCompile Include="ServiceArticle.cpp" />
     <ClCompile Include="ServiceClient.cpp" />
+    <ClCompile Include="ServiceCommande.cpp" />
     <ClCompile Include="ServicePersonnel.cpp" />
     <ClCompile Include="Stat1.cpp" />
     <ClCompile Include="Stat2.cpp" />
@@ -157,6 +164,7 @@
     <ClCompile Include="SupprimerCommandePopUp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Acheter.h" />
     <ClInclude Include="Adresse.h" />
     <ClInclude Include="AjouterAdresse.h">
       <FileType>CppForm</FileType>
@@ -165,6 +173,15 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AjouterClient.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AjouterCommande1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AjouterCommande2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AjouterCommande3.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AjouterPersonnel.h">
@@ -182,6 +199,7 @@
     </ClInclude>
     <ClInclude Include="GestionClient.h">
       <FileType>CppForm</FileType>
+      <DeploymentContent>false</DeploymentContent>
     </ClInclude>
     <ClInclude Include="GestionCommande.h">
       <FileType>CppForm</FileType>
@@ -197,7 +215,7 @@
     <ClInclude Include="ModifierAdresse.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ModifierCommandes.h">
+    <ClInclude Include="ModifierCommande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModifierPersonnel.h">
@@ -207,6 +225,7 @@
     <ClInclude Include="ServiceAdresse.h" />
     <ClInclude Include="ServiceArticle.h" />
     <ClInclude Include="ServiceClient.h" />
+    <ClInclude Include="ServiceCommande.h" />
     <ClInclude Include="ServicePersonnel.h" />
     <ClInclude Include="Stat1.h">
       <FileType>CppForm</FileType>
@@ -240,6 +259,15 @@
     <EmbeddedResource Include="AjouterClient.resx">
       <DependentUpon>AjouterClient.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AjouterCommande1.resx">
+      <DependentUpon>AjouterCommande1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouterCommande2.resx">
+      <DependentUpon>AjouterCommande2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouterCommande3.resx">
+      <DependentUpon>AjouterCommande3.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AjouterPersonnel.resx">
       <DependentUpon>AjouterPersonnel.h</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +293,9 @@
       <DependentUpon>ModifierAdresse.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierCommande.resx">
+      <DependentUpon>ModifierCommande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierCommandes.resx">
       <DependentUpon>ModifierCommande.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifierPersonnel.resx">

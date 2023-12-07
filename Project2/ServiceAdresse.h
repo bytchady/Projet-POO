@@ -11,7 +11,7 @@ namespace NS_Adresse {
         ServiceAdresse();
         ~ServiceAdresse();
         System::Data::DataSet^ SelectAllServiceAdresse();
-        void InsertServiceAdresse(Adresse^ adresse);
+        String^ InsertServiceAdresse(Adresse^ adresse);
         void DeleteServiceAdresse(Adresse^ adresse);
     };
 }

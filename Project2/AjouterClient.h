@@ -2,7 +2,6 @@
 #include "Client.h"
 #include "ServiceClient.h"
 
-using namespace NS_Client;
 namespace ProjectPOO {
 
 	using namespace System;
@@ -17,14 +16,23 @@ namespace ProjectPOO {
 	/// </summary>
 	public ref class AjouterClient : public System::Windows::Forms::Form
 	{
+		Client^ c;
 	public:
-		AjouterClient(void)
+		AjouterClient(Client^ c)
 		{
 			InitializeComponent();
-			//
-			//TODO: ajoutez ici le code du constructeur
-			//
+			this->c = c;
+			this->textBox_NumClient->Text = c->getNumClient();
+			this->textBox_NomClient->Text = c->getNomClient();
+			this->textBox_PrenomClient->Text = c->getPrenomClient();
+			this->dtp_DateNaissance->Value = (c->getNaissanceClient() != DateTime::MinValue) ? c->getNaissanceClient() : this->dtp_DateNaissance->MinDate;
+
+			if (c->getIdClient() != 0) {
+				this->bValider->Text = "Modifier";
+			}
+
 		}
+		bool ok = false;
 
 	protected:
 		/// <summary>
@@ -51,8 +59,10 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox_NomClient;
 	private: System::Windows::Forms::TextBox^ textBox_NumClient;
 	private: System::Windows::Forms::TextBox^ textBox_PrenomClient;
-	private: System::Windows::Forms::TextBox^ textBox_NaissanceClient;
-	private: System::Windows::Forms::Label^ ResultatAjouterClient;
+
+
+	private: System::Windows::Forms::DateTimePicker^ dtp_DateNaissance;
+
 
 
 
@@ -83,10 +93,9 @@ namespace ProjectPOO {
 			this->PrenomClient = (gcnew System::Windows::Forms::Label());
 			this->NaissanceClient = (gcnew System::Windows::Forms::Label());
 			this->textBox_PrenomClient = (gcnew System::Windows::Forms::TextBox());
-			this->textBox_NaissanceClient = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_NomClient = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_NumClient = (gcnew System::Windows::Forms::TextBox());
-			this->ResultatAjouterClient = (gcnew System::Windows::Forms::Label());
+			this->dtp_DateNaissance = (gcnew System::Windows::Forms::DateTimePicker());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
@@ -112,10 +121,9 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->Controls->Add(this->PrenomClient, 1, 4);
 			this->tableLayoutPanel1->Controls->Add(this->NaissanceClient, 1, 5);
 			this->tableLayoutPanel1->Controls->Add(this->textBox_PrenomClient, 2, 4);
-			this->tableLayoutPanel1->Controls->Add(this->textBox_NaissanceClient, 2, 5);
 			this->tableLayoutPanel1->Controls->Add(this->textBox_NomClient, 2, 3);
 			this->tableLayoutPanel1->Controls->Add(this->textBox_NumClient, 2, 2);
-			this->tableLayoutPanel1->Controls->Add(this->ResultatAjouterClient, 2, 1);
+			this->tableLayoutPanel1->Controls->Add(this->dtp_DateNaissance, 2, 5);
 			this->tableLayoutPanel1->Location = System::Drawing::Point(12, 5);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 10;
@@ -234,19 +242,6 @@ namespace ProjectPOO {
 			this->textBox_PrenomClient->Size = System::Drawing::Size(606, 38);
 			this->textBox_PrenomClient->TabIndex = 6;
 			// 
-			// textBox_NaissanceClient
-			// 
-			this->textBox_NaissanceClient->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->textBox_NaissanceClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_NaissanceClient->Location = System::Drawing::Point(566, 328);
-			this->textBox_NaissanceClient->Name = L"textBox_NaissanceClient";
-			this->textBox_NaissanceClient->Size = System::Drawing::Size(606, 38);
-			this->textBox_NaissanceClient->TabIndex = 9;
-			this->textBox_NaissanceClient->TextChanged += gcnew System::EventHandler(this, &AjouterClient::textBox_NaissanceClient_TextChanged);
-			// 
 			// textBox_NomClient
 			// 
 			this->textBox_NomClient->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -258,7 +253,6 @@ namespace ProjectPOO {
 			this->textBox_NomClient->Name = L"textBox_NomClient";
 			this->textBox_NomClient->Size = System::Drawing::Size(606, 38);
 			this->textBox_NomClient->TabIndex = 7;
-			this->textBox_NomClient->TextChanged += gcnew System::EventHandler(this, &AjouterClient::textBox_NomClient_TextChanged);
 			// 
 			// textBox_NumClient
 			// 
@@ -272,21 +266,17 @@ namespace ProjectPOO {
 			this->textBox_NumClient->Size = System::Drawing::Size(606, 38);
 			this->textBox_NumClient->TabIndex = 8;
 			// 
-			// ResultatAjouterClient
+			// dtp_DateNaissance
 			// 
-			this->ResultatAjouterClient->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->dtp_DateNaissance->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->ResultatAjouterClient->AutoSize = true;
-			this->ResultatAjouterClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+			this->dtp_DateNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->ResultatAjouterClient->Location = System::Drawing::Point(566, 65);
-			this->ResultatAjouterClient->Name = L"ResultatAjouterClient";
-			this->ResultatAjouterClient->Size = System::Drawing::Size(606, 65);
-			this->ResultatAjouterClient->TabIndex = 10;
-			this->ResultatAjouterClient->Text = L"label1";
-			this->ResultatAjouterClient->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->ResultatAjouterClient->Click += gcnew System::EventHandler(this, &AjouterClient::ResulatAjouterClient_Click);
+			this->dtp_DateNaissance->Location = System::Drawing::Point(566, 328);
+			this->dtp_DateNaissance->Name = L"dtp_DateNaissance";
+			this->dtp_DateNaissance->Size = System::Drawing::Size(606, 38);
+			this->dtp_DateNaissance->TabIndex = 11;
 			// 
 			// tabControl1
 			// 
@@ -322,11 +312,14 @@ namespace ProjectPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1262, 977);
+			this->ClientSize = System::Drawing::Size(1683, 977);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->tableLayoutPanel1);
+			this->MaximumSize = System::Drawing::Size(1701, 1024);
+			this->MinimumSize = System::Drawing::Size(1701, 1018);
 			this->Name = L"AjouterClient";
 			this->Text = L"Ajouter Client";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &AjouterClient::AjouterClient_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel1->PerformLayout();
@@ -335,50 +328,26 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
-	private: System::Void textBox_NomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void bValider_Click(System::Object^ sender, System::EventArgs^ e) {
+		c->setNumClient(this->textBox_NumClient->Text);
+		c->setNomClient(this->textBox_NomClient->Text);
+		c->setPrenomClient(this->textBox_PrenomClient->Text);
+		c->setNaissanceClient(this->dtp_DateNaissance->Value);
+
 		if (String::IsNullOrWhiteSpace(this->textBox_NumClient->Text) ||
 			String::IsNullOrWhiteSpace(this->textBox_NomClient->Text) ||
 			String::IsNullOrWhiteSpace(this->textBox_PrenomClient->Text) ||
-			String::IsNullOrWhiteSpace(this->textBox_NaissanceClient->Text)){
+			(this->dtp_DateNaissance->Value == DateTime::MinValue)) {
 			MessageBox::Show("Veuillez remplir tous les champs.", "Champs obligatoires", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
-		Client^ client = gcnew Client;
-		client->setNumeroClient(Convert::ToString(this->textBox_NumClient->Text));
-		client->setNomClient(Convert::ToString(this->textBox_NomClient->Text));
-		client->setPrenomClient(Convert::ToString(this->textBox_PrenomClient->Text));
-		client->setNaissanceClient(Convert::ToString(this->textBox_NaissanceClient->Text));
-
-		//Verifer si le numero client existe deja dans la bdd
-		ServiceClient^ serviceClient = gcnew ServiceClient();
-		if (serviceClient->ClientExists(client->getNumeroClient())) {
-			MessageBox::Show("Ce numéro existe déjà. Veuillez choisir un autre numéro client.", "Erreur de numéro client",
-				MessageBoxButtons::OK, MessageBoxIcon::Error);
-			return;
-		}
-
-		//Verifer l'ajout a ete effectuer
-		if (serviceClient->InsertServiceClient(client)) {
-			this->ResultatAjouterClient->Text = "Client ajouté avec succès";
-		}
-		else {
-			this->ResultatAjouterClient->Text = "Erreur d'ajout du client";
-		}
+		ok = true;
+		this->Close();
 	}
-private: System::Void AjouterClient_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->ResultatAjouterClient->Text = "";
-}
-private: System::Void textBox_NaissanceClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (String::IsNullOrWhiteSpace(this->textBox_NaissanceClient->Text)) {
-		MessageBox::Show("Le Format de la date est yyyy/mm/dd", "Format de la cellule", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-	};
-}
 private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
-private: System::Void ResulatAjouterClient_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void AjouterClient_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

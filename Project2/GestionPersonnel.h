@@ -87,9 +87,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bretour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bretour->Location = System::Drawing::Point(3, 3);
+			this->bretour->Location = System::Drawing::Point(4, 4);
+			this->bretour->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bretour->Name = L"bretour";
-			this->bretour->Size = System::Drawing::Size(212, 71);
+			this->bretour->Size = System::Drawing::Size(282, 86);
 			this->bretour->TabIndex = 1;
 			this->bretour->Text = L"Retour";
 			this->bretour->UseVisualStyleBackColor = true;
@@ -103,20 +104,21 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				42.02128F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				275)));
+				367)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				271)));
+				361)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				271)));
+				363)));
 			this->tableLayoutPanel1->Controls->Add(this->bsupprimer, 3, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bmodifier, 2, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bretour, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bajouter, 4, 0);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(3, 3);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(4, 4);
+			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(1194, 77);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(1592, 94);
 			this->tableLayoutPanel1->TabIndex = 2;
 			this->tableLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GestionPersonnel::tableLayoutPanel1_Paint);
 			// 
@@ -127,9 +129,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bsupprimer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bsupprimer->Location = System::Drawing::Point(654, 3);
+			this->bsupprimer->Location = System::Drawing::Point(871, 4);
+			this->bsupprimer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bsupprimer->Name = L"bsupprimer";
-			this->bsupprimer->Size = System::Drawing::Size(265, 71);
+			this->bsupprimer->Size = System::Drawing::Size(353, 86);
 			this->bsupprimer->TabIndex = 4;
 			this->bsupprimer->Text = L"Supprimer";
 			this->bsupprimer->UseVisualStyleBackColor = true;
@@ -141,9 +144,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bmodifier->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bmodifier->Location = System::Drawing::Point(379, 3);
+			this->bmodifier->Location = System::Drawing::Point(504, 4);
+			this->bmodifier->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bmodifier->Name = L"bmodifier";
-			this->bmodifier->Size = System::Drawing::Size(269, 71);
+			this->bmodifier->Size = System::Drawing::Size(359, 86);
 			this->bmodifier->TabIndex = 3;
 			this->bmodifier->Text = L"Modifier";
 			this->bmodifier->UseVisualStyleBackColor = true;
@@ -156,9 +160,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bajouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bajouter->Location = System::Drawing::Point(925, 3);
+			this->bajouter->Location = System::Drawing::Point(1232, 4);
+			this->bajouter->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bajouter->Name = L"bajouter";
-			this->bajouter->Size = System::Drawing::Size(266, 71);
+			this->bajouter->Size = System::Drawing::Size(356, 86);
 			this->bajouter->TabIndex = 2;
 			this->bajouter->Text = L"Ajouter";
 			this->bajouter->UseVisualStyleBackColor = true;
@@ -174,21 +179,24 @@ namespace ProjectPOO {
 				50)));
 			this->tableLayoutPanel2->Controls->Add(this->tableLayoutPanel1, 0, 0);
 			this->tableLayoutPanel2->Controls->Add(this->dataGridView1, 0, 1);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(25, 113);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(33, 139);
+			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 2;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 757)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(1200, 840);
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 932)));
+			this->tableLayoutPanel2->Size = System::Drawing::Size(1600, 1034);
 			this->tableLayoutPanel2->TabIndex = 3;
 			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GestionPersonnel::tableLayoutPanel2_Paint);
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(3, 86);
+			this->dataGridView1->Location = System::Drawing::Point(4, 106);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(1194, 751);
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->Size = System::Drawing::Size(1592, 924);
 			this->dataGridView1->TabIndex = 3;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionPersonnel::dataGridView1_CellContentClick);
 			// 
@@ -197,24 +205,27 @@ namespace ProjectPOO {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(352, 35);
+			this->label1->Location = System::Drawing::Point(469, 43);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(481, 55);
+			this->label1->Size = System::Drawing::Size(597, 69);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Gestion du personnel";
 			// 
 			// GestionPersonnel
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1264, 985);
+			this->ClientSize = System::Drawing::Size(1683, 1055);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->tableLayoutPanel2);
-			this->MaximumSize = System::Drawing::Size(1280, 1024);
-			this->MinimumSize = System::Drawing::Size(1280, 1024);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->MaximumSize = System::Drawing::Size(1701, 1249);
+			this->MinimumSize = System::Drawing::Size(1701, 1018);
 			this->Name = L"GestionPersonnel";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Gestion Personnel";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &GestionPersonnel::GestionPersonnel_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);

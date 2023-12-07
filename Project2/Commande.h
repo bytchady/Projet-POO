@@ -15,13 +15,13 @@ namespace NS_Commande {
         String^ Date_Livraison;
         String^ Date_PaiementFinal;
         float Remise_Commande;
+        int Id_Personnel;
         int Id_Adresse;
         int Id_Adresse_1;
         int Id_Client;
         bool Supprimer;
 
     public:
-        void setIdCommande(int idCommande);
         void setRefCommande(String^ refCommande);
         void setTotalTTC(float totalTTC);
         void setTotalHT(float totalHT);
@@ -30,12 +30,12 @@ namespace NS_Commande {
         void setDateLivraison(String^ dateLivraison);
         void setDatePaiementFinal(String^ datePaiementFinal);
         void setRemiseCommande(float remiseCommande);
-        void setIdAdresse(int idAdresse);
-        void setIdAdresse1(int idAdresse1);
+        void setIdPersonnel(int idPersonnel);
+        void setIdAdresse(int idLivraison);
+        void setIdAdresse1(int idFacturation);
         void setIdClient(int idClient);
         void setSupprimer(bool supprimer);
 
-        int getIdCommande();
         String^ getRefCommande();
         float getTotalTTC();
         float getTotalHT();
@@ -51,7 +51,7 @@ namespace NS_Commande {
 
 		String^ CreateCommande();
         String^ UpdateCommande();
-        DataSet^ SelectCommande();
+        String^ SelectCommande();
 		String^ DeleteCommande();
 	};
 }

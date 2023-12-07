@@ -1,9 +1,8 @@
 #pragma once
 #include "AjouterClient.h"
+#include "Client.h"
 
-using namespace NS_Client;
 namespace ProjectPOO {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -21,8 +20,23 @@ namespace ProjectPOO {
 		GestionClient(void)
 		{
 			InitializeComponent();
+			this->Reload();
 		}
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Id_Client;
+	public:
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ NumClient;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ NomClient;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PrenomClient;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ NaissanceClient;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PremierAchat;
 
+	public:
+
+
+
+
+
+		ServiceClient^ serviceclient = gcnew ServiceClient();
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -51,6 +65,11 @@ namespace ProjectPOO {
 
 
 
+
+
+
+
+
 	protected:
 
 	private:
@@ -74,6 +93,12 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->CatalogueClient = (gcnew System::Windows::Forms::DataGridView());
 			this->Titre = (gcnew System::Windows::Forms::Label());
+			this->Id_Client = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->NumClient = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->NomClient = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->PrenomClient = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->NaissanceClient = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->PremierAchat = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueClient))->BeginInit();
@@ -101,15 +126,15 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				150)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				100)));
+				187)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				170)));
+				300)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				170)));
+				300)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				170)));
+				300)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				410)));
+				379)));
 			this->tableLayoutPanel1->Controls->Add(this->bsupprimer, 3, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bRetour, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bajouter, 4, 0);
@@ -119,9 +144,8 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(1170, 72);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(1616, 72);
 			this->tableLayoutPanel1->TabIndex = 2;
-			this->tableLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GestionClient::tableLayoutPanel1_Paint);
 			// 
 			// bsupprimer
 			// 
@@ -130,10 +154,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bsupprimer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bsupprimer->Location = System::Drawing::Point(424, 4);
+			this->bsupprimer->Location = System::Drawing::Point(641, 4);
 			this->bsupprimer->Margin = System::Windows::Forms::Padding(4);
 			this->bsupprimer->Name = L"bsupprimer";
-			this->bsupprimer->Size = System::Drawing::Size(162, 64);
+			this->bsupprimer->Size = System::Drawing::Size(292, 64);
 			this->bsupprimer->TabIndex = 4;
 			this->bsupprimer->Text = L"Supprimer";
 			this->bsupprimer->UseVisualStyleBackColor = true;
@@ -146,10 +170,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bajouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bajouter->Location = System::Drawing::Point(594, 4);
+			this->bajouter->Location = System::Drawing::Point(941, 4);
 			this->bajouter->Margin = System::Windows::Forms::Padding(4);
 			this->bajouter->Name = L"bajouter";
-			this->bajouter->Size = System::Drawing::Size(162, 64);
+			this->bajouter->Size = System::Drawing::Size(292, 64);
 			this->bajouter->TabIndex = 2;
 			this->bajouter->Text = L"Ajouter";
 			this->bajouter->UseVisualStyleBackColor = true;
@@ -162,10 +186,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bmodifier->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bmodifier->Location = System::Drawing::Point(254, 4);
+			this->bmodifier->Location = System::Drawing::Point(341, 4);
 			this->bmodifier->Margin = System::Windows::Forms::Padding(4);
 			this->bmodifier->Name = L"bmodifier";
-			this->bmodifier->Size = System::Drawing::Size(162, 64);
+			this->bmodifier->Size = System::Drawing::Size(292, 64);
 			this->bmodifier->TabIndex = 3;
 			this->bmodifier->Text = L"Modifier";
 			this->bmodifier->UseVisualStyleBackColor = true;
@@ -178,11 +202,11 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->tableLayoutPanel2->ColumnCount = 2;
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				1178)));
+				1624)));
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				422)));
-			this->tableLayoutPanel2->Controls->Add(this->CatalogueClient, 0, 1);
+				397)));
 			this->tableLayoutPanel2->Controls->Add(this->tableLayoutPanel1, 0, 0);
+			this->tableLayoutPanel2->Controls->Add(this->CatalogueClient, 0, 1);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(13, 127);
 			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(4);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
@@ -190,51 +214,93 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 80)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 700)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(1600, 1031);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(2021, 1031);
 			this->tableLayoutPanel2->TabIndex = 3;
-			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GestionClient::tableLayoutPanel2_Paint);
 			// 
 			// CatalogueClient
 			// 
+			this->CatalogueClient->AllowUserToAddRows = false;
+			this->CatalogueClient->AllowUserToDeleteRows = false;
 			this->CatalogueClient->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->CatalogueClient->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->CatalogueClient->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->CatalogueClient->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+				this->Id_Client,
+					this->NumClient, this->NomClient, this->PrenomClient, this->NaissanceClient, this->PremierAchat
+			});
 			this->CatalogueClient->Location = System::Drawing::Point(4, 84);
 			this->CatalogueClient->Margin = System::Windows::Forms::Padding(4);
 			this->CatalogueClient->Name = L"CatalogueClient";
+			this->CatalogueClient->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
 			this->CatalogueClient->RowHeadersWidth = 51;
-			this->CatalogueClient->Size = System::Drawing::Size(1170, 692);
+			this->CatalogueClient->Size = System::Drawing::Size(1616, 692);
 			this->CatalogueClient->TabIndex = 3;
-			this->CatalogueClient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionClient::dataGridView1_CellContentClick);
 			// 
 			// Titre
 			// 
 			this->Titre->AutoSize = true;
 			this->Titre->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Titre->Location = System::Drawing::Point(363, 21);
+			this->Titre->Location = System::Drawing::Point(414, 9);
 			this->Titre->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->Titre->Name = L"Titre";
 			this->Titre->Size = System::Drawing::Size(536, 69);
 			this->Titre->TabIndex = 4;
 			this->Titre->Text = L"Gestion des clients";
 			// 
+			// Id_Client
+			// 
+			this->Id_Client->HeaderText = L"Id client";
+			this->Id_Client->MinimumWidth = 6;
+			this->Id_Client->Name = L"Id_Client";
+			this->Id_Client->Visible = false;
+			// 
+			// NumClient
+			// 
+			this->NumClient->HeaderText = L"Numero Client";
+			this->NumClient->MinimumWidth = 6;
+			this->NumClient->Name = L"NumClient";
+			// 
+			// NomClient
+			// 
+			this->NomClient->HeaderText = L"Nom";
+			this->NomClient->MinimumWidth = 6;
+			this->NomClient->Name = L"NomClient";
+			// 
+			// PrenomClient
+			// 
+			this->PrenomClient->HeaderText = L"Prenom";
+			this->PrenomClient->MinimumWidth = 6;
+			this->PrenomClient->Name = L"PrenomClient";
+			// 
+			// NaissanceClient
+			// 
+			this->NaissanceClient->HeaderText = L"Date de Naissance";
+			this->NaissanceClient->MinimumWidth = 6;
+			this->NaissanceClient->Name = L"NaissanceClient";
+			// 
+			// PremierAchat
+			// 
+			this->PremierAchat->HeaderText = L"Date du premier achat";
+			this->PremierAchat->MinimumWidth = 6;
+			this->PremierAchat->Name = L"PremierAchat";
+			// 
 			// GestionClient
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1262, 977);
+			this->ClientSize = System::Drawing::Size(1683, 977);
 			this->Controls->Add(this->Titre);
 			this->Controls->Add(this->tableLayoutPanel2);
 			this->Margin = System::Windows::Forms::Padding(4);
-			this->MaximumSize = System::Drawing::Size(1280, 1024);
-			this->MinimumSize = System::Drawing::Size(1280, 1018);
+			this->MaximumSize = System::Drawing::Size(1701, 1024);
+			this->MinimumSize = System::Drawing::Size(1701, 1018);
 			this->Name = L"GestionClient";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Gestion Client";
-			this->Load += gcnew System::EventHandler(this, &GestionClient::GestionClient_Load);
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueClient))->EndInit();
@@ -243,114 +309,88 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
+	private:
+		void Reload() {
+			List<Client^>^ Clients = serviceclient->SelectAllClient();
+
+			this->CatalogueClient->Rows->Clear();
+			for each (Client ^ c in Clients) {
+				DataGridViewRow^ dgvr = gcnew DataGridViewRow();
+				// Ajouter les colonnes correspondant à votre table Client
+				DataGridViewTextBoxCell^ dgvc1 = gcnew DataGridViewTextBoxCell();
+				dgvc1->Value = c->getIdClient();
+				dgvr->Cells->Add(dgvc1);
+
+				// Ajouter les colonnes correspondant à votre table Client
+				DataGridViewTextBoxCell^ dgvc2 = gcnew DataGridViewTextBoxCell();
+				dgvc2->Value = c->getNumClient();
+				dgvr->Cells->Add(dgvc2);
+
+				DataGridViewTextBoxCell^ dgvc3 = gcnew DataGridViewTextBoxCell();
+				dgvc3->Value = c->getNomClient();
+				dgvr->Cells->Add(dgvc3);
+
+				DataGridViewTextBoxCell^ dgvc4 = gcnew DataGridViewTextBoxCell();
+				dgvc4->Value = c->getPrenomClient();
+				dgvr->Cells->Add(dgvc4);
+
+				DataGridViewTextBoxCell^ dgvc5 = gcnew DataGridViewTextBoxCell();
+				dgvc5->Value = c->getNaissanceClient().ToString("dd/MM/yyyy");
+				dgvr->Cells->Add(dgvc5);
+
+				/*DataGridViewTextBoxCell^ dgvc6 = gcnew DataGridViewTextBoxCell();
+				dgvc6->Value = c->getPremierAchat().ToString("dd/MM/yyyy");
+				dgvr->Cells->Add(dgvc6);*/
+
+				dgvr->Tag = c;
+				this->CatalogueClient->Rows->Add(dgvr);
+			}
+		}
+
 	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e) {
-		ServiceClient^ serviceClient = gcnew ServiceClient();
-		System::Data::DataSet^ dataSet = serviceClient->SelectAllServiceClient();
-		CatalogueClient->DataSource = dataSet;
-		CatalogueClient->DataMember = dataSet->Tables[0]->TableName;
-
-	}
-	private: System::Void tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
-	private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
 	private: System::Void bmodifier_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (CatalogueClient->SelectedRows->Count > 0) {
-			// Obtenez l'index de la première ligne sélectionnée
-			int rowIndex = CatalogueClient->SelectedRows[0]->Index;
+		if (this->CatalogueClient->SelectedRows->Count != 1)
+			return;
 
-			// Créez un nouvel objet Article avec les données de la ligne sélectionnée
-			Client^ client = gcnew Client;
-			Object^ numclientvalue = CatalogueClient->Rows[rowIndex]->Cells["Numero_Client"]->Value;
-			if (numclientvalue != DBNull::Value) {
-				String^ numClientString = Convert::ToString(numclientvalue);
-				client->setNumeroClient(numClientString);
-			}
-			else {
-				MessageBox::Show("Veuillez saisir une valeur pour le numéro client.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				return;
-			}
-			Object^ nomclientvalue = CatalogueClient->Rows[rowIndex]->Cells["Nom_Client"]->Value;
-			if (nomclientvalue != DBNull::Value) {
-				String^ nomClientString = Convert::ToString(nomclientvalue);
-				client->setNomClient(nomClientString);
-			}
-			else {
-				MessageBox::Show("Veuillez saisir une valeur pour le nom du client.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				return;
-			};
-			Object^ prenomclientvalue = CatalogueClient->Rows[rowIndex]->Cells["Prenom_Client"]->Value;
-			if (prenomclientvalue != DBNull::Value) {
-				String^ prenomClientString = Convert::ToString(prenomclientvalue);
-				client->setPrenomClient(prenomClientString);
-			}
-			else {
-				MessageBox::Show("Veuillez saisir une valeur pour le prenom du client.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				return;
-			};
-			Object^ naissanceclientvalue = CatalogueClient->Rows[rowIndex]->Cells["Naissance_Client"]->Value;
-			if (naissanceclientvalue != DBNull::Value) {
-				DateTime naissanceClientDate = Convert::ToDateTime(naissanceclientvalue);
-				String^ naissanceClientString = naissanceClientDate.ToString("yyyy-MM-dd");
-				// Ajoutez des guillemets simples autour de la date dans la requête SQL
-				client->setNaissanceClient("'" + naissanceClientString + "'");
-			}
-			else {
-				MessageBox::Show("Veuillez saisir une valeur pour la date de naissance du client.", "Données manquantes", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				return;
-			}
-			;
-			// Mettre à jour l'article dans la base de données
-			ServiceClient^ serviceArticle = gcnew ServiceClient();
-			serviceArticle->UpdateServiceClient(client);
-			// Rafraîchir le DataGridView après la mise à jour
-			System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceClient();
-			CatalogueClient->DataSource = dataSet;
-			CatalogueClient->DataMember = dataSet->Tables[0]->TableName;
+		Client^ c = (Client^)this->CatalogueClient->SelectedRows[0]->Tag;
 
-			MessageBox::Show("Modification terminée avec succès", "Mise à jour ", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		else {
-			MessageBox::Show("Veuillez sélectionner une ligne à modifier.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		AjouterClient^ modifierclient = gcnew AjouterClient(c);
+		modifierclient->ShowDialog();
+		if (modifierclient->ok) {
+			serviceclient->UpdateClient(c);
+			this->Reload();
 		}
 	}
 	private: System::Void bajouter_Click(System::Object^ sender, System::EventArgs^ e) {
-		AjouterClient^ ajouterClient = gcnew AjouterClient();
-		ajouterClient->ShowDialog();
-
-		ServiceClient^ serviceClient = gcnew ServiceClient();
-		System::Data::DataSet^ dataSet = serviceClient->SelectAllServiceClient();
-		CatalogueClient->DataSource = dataSet;
-		CatalogueClient->DataMember = dataSet->Tables[0]->TableName;
+		Client^ c = gcnew Client();
+		AjouterClient^ ajouterclient = gcnew AjouterClient(c);
+		ajouterclient->ShowDialog();
+		if (ajouterclient->ok) {
+			serviceclient->InsertClient(c);
+			this->Reload();
+		}
 	}
 	private: System::Void bsupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (CatalogueClient->SelectedRows->Count > 0) {
 			int rowIndex = CatalogueClient->SelectedRows[0]->Index;
-			String^ refClient = Convert::ToString(CatalogueClient->Rows[rowIndex]->Cells["Numero_Client"]->Value);
+			int idClient = Convert::ToInt32(CatalogueClient->Rows[rowIndex]->Cells["Id_Client"]->Value);
+
 			System::Windows::Forms::DialogResult result = MessageBox::Show("Êtes-vous sûr de vouloir supprimer ce client ?", "Confirmation de suppression", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 
 			if (result == System::Windows::Forms::DialogResult::Yes) {
-				ServiceClient^ serviceClient = gcnew ServiceClient();
 				Client^ clientToDelete = gcnew Client();
-				clientToDelete->setNumeroClient(refClient);
-				serviceClient->DeleteServiceClient(clientToDelete);
-
-				System::Data::DataSet^ dataSet = serviceClient->SelectAllServiceClient();
-				CatalogueClient->DataSource = dataSet;
-				CatalogueClient->DataMember = dataSet->Tables[0]->TableName;
-
+				clientToDelete->setIdClient(idClient);
+				serviceclient->DeleteClient(clientToDelete);
+				this->Reload();
 				MessageBox::Show("Client supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);
 			}
 		}
 		else {
 			MessageBox::Show("Veuillez sélectionner une ligne à supprimer.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
-	}
-
+	};
 	};
 }
+

@@ -1,12 +1,11 @@
 #include "Commande.h"
-#include"BDD.h"
+#include "BDD.h"
+#include "Adresse.h"
+#include "Client.h"
+
+using namespace NS_Adresse;
 
 namespace NS_Commande {
-    void Commande::setIdCommande(int idCommande)
-    {
-        this->Id_Commande = idCommande;
-    }
-
     void Commande::setRefCommande(System::String^ refCommande)
     {
         this->Ref_Commande = refCommande;
@@ -47,14 +46,18 @@ namespace NS_Commande {
         this->Remise_Commande = remiseCommande;
     }
 
-    void Commande::setIdAdresse(int idAdresse)
+    void Commande::setIdPersonnel(int idPersonnel)
     {
-        this->Id_Adresse = idAdresse;
+        this->Id_Adresse = idPersonnel;
+    }
+    void Commande::setIdAdresse(int idLivraison)
+    {
+        this->Id_Adresse = idLivraison;
     }
 
-    void Commande::setIdAdresse1(int idAdresse1)
+    void Commande::setIdAdresse1(int idFacturation)
     {
-        this->Id_Adresse_1 = idAdresse1;
+        this->Id_Adresse_1 = idFacturation;
     }
 
     void Commande::setIdClient(int idClient)
@@ -65,11 +68,6 @@ namespace NS_Commande {
     void Commande::setSupprimer(bool supprimer)
     {
         this->Supprimer = supprimer;
-    }
-
-    int Commande::getIdCommande()
-    {
-        return this->Id_Commande;
     }
 
     System::String^ Commande::getRefCommande()
@@ -134,48 +132,51 @@ namespace NS_Commande {
 
     String^ Commande::CreateCommande()
     {
-        // Définissez votre logique d'insertion ici en utilisant la classe BDD.
-        // Vous pouvez utiliser les attributs de la classe Commande pour construire votre requête SQL.
+        return "DECLARE @Ref_Commande varchar(50); SET @ref_command = '" + Ref_Commande +
+            "'; DECLARE @Total_TTC float; SET @Total_TTC  = '" + Convert::ToString(Total_TTC) +
+            "' DECLARE @Total_HT float; SET @date_emission = '" + Convert::ToString(Total_HT) +
+            "'; DECLARE @Total_TVA float; SET @Total_TVA = '" + Convert::ToString(Total_TVA) +
+            "'; DECLARE @Date_Emission date; SET @Date_Emission ='" + Date_Emission +
+            "'; DECLARE @Date_Livraison date; SET @Date_Livraison ='" + Date_Livraison +
+            "'; DECLARE @Date_PaiementFinal date; SET @Date_PaiementFinal ='" + Date_PaiementFinal +
+            "'; DECLARE @Remise_Commande float; SET @Remise_Commande = '" + Convert::ToString(Remise_Commande) +
+            "'; DECLARE @Id_Personnel int; SET @Id_Personnel = '" + Convert::ToString(Id_Personnel) +
+            "'; DECLARE @Id_Adresse int; SET @Id_Adresse = '" + Convert::ToString(Id_Adresse) +
+            "'; DECLARE @Id_Adresse_1 int; SET @Id_Adresse_1 = '" + Convert::ToString(Id_Adresse_1) +
+            "'; DECLARE @Id_Client int; SET @Id_Client = '" + Convert::ToString(Id_Client) +
+            "DECLARE @Supprimer bit; SET @Supprimer = 0; "
 
-        // Exemple basique :
-        String^ sql = "INSERT INTO Commande (Ref_Commande, Total_TTC, Total_HT, Total_TVA, Date_Emission, Date_Livraison, Date_PaiementFinal, Remise_Commande, Id_Adresse, Id_Adresse_1, Id_Client, Supprimer) "
-            "VALUES ('" + Ref_Commande + "', " + Convert::ToString(Total_TTC) + ", " + Convert::ToString(Total_HT) + ", " + Convert::ToString(Total_TVA) + ", '" + Date_Emission + "', '" + Date_Livraison + "', '" + Date_PaiementFinal + "', "
-            + Convert::ToString(Remise_Commande) + ", " + Convert::ToString(Id_Adresse) + ", " + Convert::ToString(Id_Adresse_1) + ", " + Convert::ToString(Id_Client) + ", 0)";
-
-        return BDD().executeInsert(sql).ToString();
+            "'INSERT INTO Commande (Ref_Commande, Total_TTC,Total_HT ,Total_TVA ,Date_Emission ,Date_Livraison ,Date_PaiementFinal,Remise_Commande ,Id_Personnel, Id_Adresse, Id_Adresse_1, Id_Client, Supprimer) "
+            "VALUES(@ref_command,@Total_TTC ,@Total_HT,@Total_TVA,@Date_Emission,@Date_Livraison,@Date_PaiementFinal,@Remise_Commande,@Id_Personnel, @Id_Adresse, @Id_Adresse_1, @Id_Client, Supprimer) ";
     }
 
     String^ Commande::UpdateCommande()
     {
-        // Définissez votre logique de mise à jour ici en utilisant la classe BDD.
-        // Vous pouvez utiliser les attributs de la classe Commande pour construire votre requête SQL.
-
-        // Exemple basique :
-        String^ sql = "UPDATE Commande SET Total_TTC = " + Convert::ToString(Total_TTC) + ", Total_HT = " + Convert::ToString(Total_HT) + ", Total_TVA = " + Convert::ToString(Total_TVA) + ", "
-            "Date_Emission = '" + Date_Emission + "', Date_Livraison = '" + Date_Livraison + "', Date_PaiementFinal = '" + Date_PaiementFinal + "', Remise_Commande = " + Convert::ToString(Remise_Commande) + ", "
-            "Id_Adresse = " + Convert::ToString(Id_Adresse) + ", Id_Adresse_1 = " + Convert::ToString(Id_Adresse_1) + ", Id_Client = " + Convert::ToString(Id_Client) + " WHERE Id_Commande = " + Convert::ToString(Id_Commande);
-
-        return Convert::ToString(BDD().executeNonQuery(sql));
+        return "UPDATE Commande SET Ref_Commande = " + Ref_Commande +
+            ", Total_TTC = " + Convert::ToString(Total_TTC )+
+            ", Total_HT = " + Convert::ToString(Total_HT) +
+            ", Total_TVA = " + Convert::ToString(Total_TVA) +
+            ", Date_Emission = " + Date_Emission +
+            ", Date_Livraison = " + Date_Livraison +
+            ", Date_PaiementFinal = " + Date_PaiementFinal +
+            ", Remise_Commande =" + Convert::ToString(Remise_Commande) +
+            ", Id_Personnel = " + Id_Personnel +
+            ", Id_Adresse = " + Id_Adresse +
+            ", Id_Adresse_1 = " + Id_Adresse_1 +
+            ", Id_Client = " + Id_Client +
+            ", Supprimer = 0"
+            " WHERE Ref_Commande = " + Ref_Commande + ";";
     }
 
     String^ Commande::DeleteCommande()
     {
-        // Définissez votre logique de suppression ici en utilisant la classe BDD.
-        // Vous pouvez utiliser l'attribut Id_Commande de la classe Commande pour construire votre requête SQL.
-
-        // Exemple basique :
-        String^ sql = "UPDATE Commande SET Supprimer = 1 WHERE Id_Commande = " + Convert::ToString(Id_Commande);
-
-        return Convert::ToString(BDD().executeNonQuery(sql));
+        return "UPDATE Commande SET Supprimer = 1 WHERE Ref_Commande = " + Ref_Commande;
     }
 
-    DataSet^ Commande::SelectCommande()
+    String^ Commande::SelectCommande()
     {
-        // Définissez votre logique de sélection ici en utilisant la classe BDD.
-
-        // Exemple basique :
-        String^ sql = "SELECT * FROM Commande WHERE Supprimer = 0";
-
-        return BDD().executeQuery(sql);
+        return "SELECT * FROM Commande WHERE Supprimer = 0";
     }
+
 }
+

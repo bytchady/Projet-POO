@@ -33,5 +33,3 @@ namespace NS_Adresse {
 		String^ DeleteAdresse();
 	};
 }
-
-
