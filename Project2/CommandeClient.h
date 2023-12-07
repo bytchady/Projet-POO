@@ -23,9 +23,9 @@ namespace ProjectPOO {
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
-			DataGridViewTextBoxColumn^ dgvtbc = gcnew DataGridViewTextBoxColumn();
-			dgvtbc->Name = "Numero Client";
-			this->CatalogueListeClient->Columns->Add(dgvtbc);
+			DataGridViewTextBoxColumn^ dgvtbc1 = gcnew DataGridViewTextBoxColumn();
+			dgvtbc1->Name = "Numero Client";
+			this->CatalogueListeClient->Columns->Add(dgvtbc1);
 
 			DataGridViewTextBoxColumn^ dgvtbc2 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc2->Name = "Nom";
@@ -47,6 +47,8 @@ namespace ProjectPOO {
 			dgvtbc6->Name = "Id_Client";
 			dgvtbc6->Visible = false;
 			this->CatalogueListeClient->Columns->Add(dgvtbc6);
+
+			this->Reload();
 		}
 		ServiceCommande^ scmd = gcnew ServiceCommande();
 		ServiceClient^ scl = gcnew ServiceClient();
@@ -209,9 +211,53 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
+	private:void Reload() {
+		List<Client^>^ Clients = scl->SelectAllClient();
+
+		this->CatalogueListeClient->Rows->Clear();
+		for each (Client ^ c in Clients) {
+			DataGridViewRow^ dgvr = gcnew DataGridViewRow();
+			DataGridViewTextBoxCell^ dgvc1 = gcnew DataGridViewTextBoxCell();
+			dgvc1->Value = c->getNumClient();
+			dgvr->Cells->Add(dgvc1);
+
+			// Ajouter les colonnes correspondant à votre table Client
+			DataGridViewTextBoxCell^ dgvc2 = gcnew DataGridViewTextBoxCell();
+			dgvc2->Value = c->getNomClient();
+			dgvr->Cells->Add(dgvc2);
+
+			DataGridViewTextBoxCell^ dgvc3 = gcnew DataGridViewTextBoxCell();
+			dgvc3->Value = c->getPrenomClient();
+			dgvr->Cells->Add(dgvc3);
+
+			/*DataGridViewTextBoxCell^ dgvc4 = gcnew DataGridViewTextBoxCell();
+			dgvc4->Value = c->getPrenomClient();
+			dgvr->Cells->Add(dgvc4);
+
+			DataGridViewTextBoxCell^ dgvc5 = gcnew DataGridViewTextBoxCell();
+			dgvc5->Value = c->getNaissanceClient().ToString("dd/MM/yyyy");
+			dgvr->Cells->Add(dgvc5);*/
+
+			DataGridViewTextBoxCell^ dgvc6 = gcnew DataGridViewTextBoxCell();
+			dgvc6->Value = c->getIdClient();
+			dgvr->Cells->Add(dgvc6);
+
+			dgvr->Tag = c;
+			this->CatalogueListeClient->Rows->Add(dgvr);
+		}
+	}
 	private: System::Void bCommander_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*AjouterCommande2^ ac2 = gcnew AjouterCommande2();
-		ac2->ShowDialog();*/
+		/*if (this->CatalogueListeClient->SelectedRows->Count != 1)
+			return;
+
+		Client^ c = (Client^)this->CatalogueListeClient->SelectedRows[0]->Tag;
+
+		AjouterClient^ modifierclient = gcnew AjouterClient(c);
+		modifierclient->ShowDialog();
+		if (modifierclient->ok) {
+			scl->UpdateClient(c);
+			this->Reload();
+		}*/
 	}
 	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();

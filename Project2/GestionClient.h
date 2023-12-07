@@ -309,8 +309,7 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
-	private:
-		void Reload() {
+	private:void Reload() {
 			List<Client^>^ Clients = serviceclient->SelectAllClient();
 
 			this->CatalogueClient->Rows->Clear();

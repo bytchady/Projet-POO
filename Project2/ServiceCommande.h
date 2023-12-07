@@ -12,6 +12,7 @@ public:
     ~ServiceCommande();  
 
     List<Commande^>^ SelectAllCommande();  
+    String^ GenerateCommandReference(String^ prenom, String^ nom, int annee, String^ ville);
     void InsertCommande(Commande^ commande);  
     void DeleteCommande(Commande^ commande);  
     void UpdateCommande(Commande^ commande);  

@@ -26,40 +26,40 @@ namespace ProjectPOO {
 			//
 			DataGridViewTextBoxColumn^ dgvtbc = gcnew DataGridViewTextBoxColumn();
 			dgvtbc->Name = "Reference de l'article";
-			this->CatalogueListeClient->Columns->Add(dgvtbc);
+			this->CatalogueArticle->Columns->Add(dgvtbc);
 
 			DataGridViewTextBoxColumn^ dgvtbc2 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc2->Name = "Nom";
-			this->CatalogueListeClient->Columns->Add(dgvtbc2);
+			this->CatalogueArticle->Columns->Add(dgvtbc2);
 
 			DataGridViewTextBoxColumn^ dgvtbc3 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc3->Name = "Nature";
-			this->CatalogueListeClient->Columns->Add(dgvtbc3);
+			this->CatalogueArticle->Columns->Add(dgvtbc3);
 
 			DataGridViewTextBoxColumn^ dgvtbc4 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc4->Name = "Couleur";
-			this->CatalogueListeClient->Columns->Add(dgvtbc4);
+			this->CatalogueArticle->Columns->Add(dgvtbc4);
 
 			DataGridViewTextBoxColumn^ dgvtbc5 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc5->Name = "Stock";
-			this->CatalogueListeClient->Columns->Add(dgvtbc5);
+			this->CatalogueArticle->Columns->Add(dgvtbc5);
 
 			DataGridViewTextBoxColumn^ dgvtbc6 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc6->Name = "Seuil de reapprovisionnement";
-			this->CatalogueListeClient->Columns->Add(dgvtbc6);
+			this->CatalogueArticle->Columns->Add(dgvtbc6);
 
 			DataGridViewTextBoxColumn^ dgvtbc7 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc7->Name = "Prix HT";
-			this->CatalogueListeClient->Columns->Add(dgvtbc7);
+			this->CatalogueArticle->Columns->Add(dgvtbc7);
 
 			DataGridViewTextBoxColumn^ dgvtbc8 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc8->Name = "Taux TVA";
-			this->CatalogueListeClient->Columns->Add(dgvtbc8);
+			this->CatalogueArticle->Columns->Add(dgvtbc8);
 
 			DataGridViewTextBoxColumn^ dgvtbc9 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc9->Name = "Id_Article";
 			dgvtbc9->Visible = false;
-			this->CatalogueListeClient->Columns->Add(dgvtbc9);
+			this->CatalogueArticle->Columns->Add(dgvtbc9);
 
 		}
 		ServiceArticle^ servicearticle = gcnew ServiceArticle();
@@ -83,7 +83,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ bSupprimer;
 	private: System::Windows::Forms::Button^ bAjouter;
 	private: System::Windows::Forms::Button^ bModifier;
-	private: System::Windows::Forms::DataGridView^ CatalogueListeClient;
+	private: System::Windows::Forms::DataGridView^ CatalogueArticle;
+
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -103,11 +104,11 @@ namespace ProjectPOO {
 			this->bSupprimer = (gcnew System::Windows::Forms::Button());
 			this->bAjouter = (gcnew System::Windows::Forms::Button());
 			this->bModifier = (gcnew System::Windows::Forms::Button());
-			this->CatalogueListeClient = (gcnew System::Windows::Forms::DataGridView());
+			this->CatalogueArticle = (gcnew System::Windows::Forms::DataGridView());
 			this->bRetour = (gcnew System::Windows::Forms::Button());
 			this->Catalogue_tableLayoutPanel1->SuspendLayout();
 			this->Catalogue_tableLayoutPanel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueListeClient))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueArticle))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Catalogue_tableLayoutPanel1
@@ -120,10 +121,10 @@ namespace ProjectPOO {
 			this->Catalogue_tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				20)));
 			this->Catalogue_tableLayoutPanel1->Controls->Add(this->Catalogue_tableLayoutPanel2, 0, 1);
-			this->Catalogue_tableLayoutPanel1->Controls->Add(this->CatalogueListeClient, 0, 2);
+			this->Catalogue_tableLayoutPanel1->Controls->Add(this->CatalogueArticle, 0, 2);
 			this->Catalogue_tableLayoutPanel1->Controls->Add(this->bRetour, 0, 0);
 			this->Catalogue_tableLayoutPanel1->Location = System::Drawing::Point(12, 14);
-			this->Catalogue_tableLayoutPanel1->Margin = System::Windows::Forms::Padding(15, 15, 15, 15);
+			this->Catalogue_tableLayoutPanel1->Margin = System::Windows::Forms::Padding(15);
 			this->Catalogue_tableLayoutPanel1->Name = L"Catalogue_tableLayoutPanel1";
 			this->Catalogue_tableLayoutPanel1->RowCount = 4;
 			this->Catalogue_tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute,
@@ -211,21 +212,22 @@ namespace ProjectPOO {
 			// 
 			// CatalogueArticle
 			// 
-			this->CatalogueListeClient->AllowUserToAddRows = false;
-			this->CatalogueListeClient->AllowUserToDeleteRows = false;
-			this->CatalogueListeClient->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->CatalogueArticle->AllowUserToAddRows = false;
+			this->CatalogueArticle->AllowUserToDeleteRows = false;
+			this->CatalogueArticle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->CatalogueListeClient->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
-			this->CatalogueListeClient->BackgroundColor = System::Drawing::SystemColors::ControlLight;
-			this->CatalogueListeClient->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->CatalogueListeClient->Location = System::Drawing::Point(3, 132);
-			this->CatalogueListeClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->CatalogueListeClient->Name = L"CatalogueArticle";
-			this->CatalogueListeClient->RowHeadersWidth = 60;
-			this->CatalogueListeClient->RowTemplate->Height = 24;
-			this->CatalogueListeClient->Size = System::Drawing::Size(1215, 792);
-			this->CatalogueListeClient->TabIndex = 7;
+			this->CatalogueArticle->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->CatalogueArticle->BackgroundColor = System::Drawing::SystemColors::ControlLight;
+			this->CatalogueArticle->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->CatalogueArticle->Location = System::Drawing::Point(3, 132);
+			this->CatalogueArticle->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->CatalogueArticle->Name = L"CatalogueArticle";
+			this->CatalogueArticle->RowHeadersWidth = 60;
+			this->CatalogueArticle->RowTemplate->Height = 24;
+			this->CatalogueArticle->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
+			this->CatalogueArticle->Size = System::Drawing::Size(1215, 792);
+			this->CatalogueArticle->TabIndex = 7;
 			// 
 			// bRetour
 			// 
@@ -257,7 +259,7 @@ namespace ProjectPOO {
 			this->Load += gcnew System::EventHandler(this, &Catalogue::Catalogue_Load);
 			this->Catalogue_tableLayoutPanel1->ResumeLayout(false);
 			this->Catalogue_tableLayoutPanel2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueListeClient))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueArticle))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -269,7 +271,7 @@ namespace ProjectPOO {
 	private: void Reload() {
 		List<Article^>^ articles = servicearticle->SelectAllArticle();
 		//TODO : ToString les chiffres ?
-		this->CatalogueListeClient->Rows->Clear();
+		this->CatalogueArticle->Rows->Clear();
 		for each (Article ^ a in articles) {
 			DataGridViewRow^ dgvr = gcnew DataGridViewRow();
 			DataGridViewTextBoxCell^ dgvc1 = gcnew DataGridViewTextBoxCell();
@@ -309,7 +311,7 @@ namespace ProjectPOO {
 			dgvr->Cells->Add(dgvc9);
 
 			dgvr->Tag = a;
-			this->CatalogueListeClient->Rows->Add(dgvr);
+			this->CatalogueArticle->Rows->Add(dgvr);
 		}
 	}
 
@@ -347,12 +349,12 @@ namespace ProjectPOO {
 	}
 
 	private: System::Void bModifier_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->CatalogueListeClient->SelectedRows->Count != 1) {
+		if (this->CatalogueArticle->SelectedRows->Count != 1) {
 			MessageBox::Show("Veuillez sélectionner une ligne à modifier.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);;
 		}
 
 		else {
-			Article^ a = (Article^)this->CatalogueListeClient->SelectedRows[0]->Tag;
+			Article^ a = (Article^)this->CatalogueArticle->SelectedRows[0]->Tag;
 			AjouterArticle^ modifierarticle = gcnew AjouterArticle(a);
 			modifierarticle->ShowDialog();
 
@@ -498,9 +500,9 @@ namespace ProjectPOO {
    }*/
 
 	private: System::Void bSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (CatalogueListeClient->SelectedRows->Count > 0) {
-			int rowIndex = CatalogueListeClient->SelectedRows[0]->Index;
-			int idArticle = Convert::ToInt32(CatalogueListeClient->Rows[rowIndex]->Cells["Id_Article"]->Value);
+		if (CatalogueArticle->SelectedRows->Count > 0) {
+			int rowIndex = CatalogueArticle->SelectedRows[0]->Index;
+			int idArticle = Convert::ToInt32(CatalogueArticle->Rows[rowIndex]->Cells["Id_Article"]->Value);
 			System::Windows::Forms::DialogResult result = MessageBox::Show("Êtes-vous sûr de vouloir supprimer cet article ?", "Confirmation de suppression", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 
 			if (result == System::Windows::Forms::DialogResult::Yes) {

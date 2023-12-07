@@ -1,4 +1,7 @@
 #pragma once
+#include"Adresse.h"
+#include"Personnel.h"
+#include"Client.h"
 
 using namespace System;
 
@@ -15,13 +18,33 @@ using namespace System;
         DateTime Date_Livraison;
         DateTime Date_PaiementFinal;
         float Remise_Commande;
-        int Id_Personnel;
-        int Id_Livraison;
-        int Id_Facturation;
-        int Id_Client;
+        Personnel^ personnel = gcnew Personnel();
+        Adresse^ livraison = gcnew Adresse();
+        Adresse^ facturation = gcnew Adresse();
+        Client^ client = gcnew Client();
         bool Supprimer;
 
     public:
+        void setPersonnel(Personnel^ personnel)
+        {
+            this->personnel = personnel;
+        }
+
+        void setLivraison(Adresse^ livraison)
+        {
+            this->livraison = livraison;
+        }
+
+        void setFacturation(Adresse^ facturation)
+        {
+            this->facturation = facturation;
+        }
+
+        void setClient(Client^ client)
+        {
+            this->client = client;
+        }
+
         void setIdCommande(int idCommande) {
             this->Id_Commande = idCommande;
         }
@@ -55,22 +78,6 @@ using namespace System;
 
         void setRemiseCommande(float remiseCommande) {
             this->Remise_Commande = remiseCommande;
-        }
-
-        void setIdPersonnel(int idPersonnel) {
-            this->Id_Personnel = idPersonnel;
-        }
-
-        void setIdLivraison(int idLivraison) {
-            this->Id_Livraison = idLivraison;
-        }
-
-        void setIdFacturation(int idFacturation) {
-            this->Id_Facturation = idFacturation;
-        }
-
-        void setIdClient(int idClient) {
-            this->Id_Client = idClient;
         }
 
         void setSupprimer(bool supprimer) {
@@ -113,16 +120,24 @@ using namespace System;
             return this->Remise_Commande;
         }
 
-        int getIdLivraison() {
-            return this->Id_Livraison;
+        Personnel^ getPersonnel()
+        {
+            return this->personnel;
         }
 
-        int getIdFacturation() {
-            return this->Id_Facturation;
+        Adresse^ getLivraison()
+        {
+            return this->livraison;
         }
 
-        int getIdClient() {
-            return this->Id_Client;
+        Adresse^ getFacturation()
+        {
+            return this->facturation;
+        }
+
+        Client^ getClient()
+        {
+            return this->client;
         }
 
         bool getSupprimer() {
