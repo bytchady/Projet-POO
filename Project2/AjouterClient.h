@@ -107,9 +107,9 @@ namespace ProjectPOO {
 			// 
 			this->tableLayoutPanel1->ColumnCount = 4;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				116)));
+				155)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				306)));
+				408)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				90.81481F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
@@ -124,21 +124,21 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->Controls->Add(this->textBox_NomClient, 2, 3);
 			this->tableLayoutPanel1->Controls->Add(this->textBox_NumClient, 2, 2);
 			this->tableLayoutPanel1->Controls->Add(this->dtp_DateNaissance, 2, 5);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(9, 4);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(12, 5);
+			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 10;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(928, 780);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(1237, 960);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
 			// bAnnuler
@@ -148,10 +148,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bAnnuler->Location = System::Drawing::Point(2, 2);
-			this->bAnnuler->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bAnnuler->Location = System::Drawing::Point(3, 2);
+			this->bAnnuler->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->bAnnuler->Name = L"bAnnuler";
-			this->bAnnuler->Size = System::Drawing::Size(112, 49);
+			this->bAnnuler->Size = System::Drawing::Size(149, 61);
 			this->bAnnuler->TabIndex = 0;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
@@ -164,10 +164,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bValider->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bValider->Location = System::Drawing::Point(2, 214);
-			this->bValider->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->bValider->Location = System::Drawing::Point(3, 262);
+			this->bValider->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->bValider->Name = L"bValider";
-			this->bValider->Size = System::Drawing::Size(112, 49);
+			this->bValider->Size = System::Drawing::Size(149, 61);
 			this->bValider->TabIndex = 1;
 			this->bValider->Text = L"Valider";
 			this->bValider->UseVisualStyleBackColor = true;
@@ -181,10 +181,9 @@ namespace ProjectPOO {
 			this->NumClient->AutoSize = true;
 			this->NumClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NumClient->Location = System::Drawing::Point(118, 106);
-			this->NumClient->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->NumClient->Location = System::Drawing::Point(158, 130);
 			this->NumClient->Name = L"NumClient";
-			this->NumClient->Size = System::Drawing::Size(302, 53);
+			this->NumClient->Size = System::Drawing::Size(402, 65);
 			this->NumClient->TabIndex = 2;
 			this->NumClient->Text = L"Numero client";
 			this->NumClient->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -197,10 +196,9 @@ namespace ProjectPOO {
 			this->NomClient->AutoSize = true;
 			this->NomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NomClient->Location = System::Drawing::Point(118, 159);
-			this->NomClient->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->NomClient->Location = System::Drawing::Point(158, 195);
 			this->NomClient->Name = L"NomClient";
-			this->NomClient->Size = System::Drawing::Size(302, 53);
+			this->NomClient->Size = System::Drawing::Size(402, 65);
 			this->NomClient->TabIndex = 3;
 			this->NomClient->Text = L"Nom";
 			this->NomClient->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -213,10 +211,9 @@ namespace ProjectPOO {
 			this->PrenomClient->AutoSize = true;
 			this->PrenomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->PrenomClient->Location = System::Drawing::Point(118, 212);
-			this->PrenomClient->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->PrenomClient->Location = System::Drawing::Point(158, 260);
 			this->PrenomClient->Name = L"PrenomClient";
-			this->PrenomClient->Size = System::Drawing::Size(302, 53);
+			this->PrenomClient->Size = System::Drawing::Size(402, 65);
 			this->PrenomClient->TabIndex = 4;
 			this->PrenomClient->Text = L"Prenom";
 			this->PrenomClient->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -229,10 +226,9 @@ namespace ProjectPOO {
 			this->NaissanceClient->AutoSize = true;
 			this->NaissanceClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NaissanceClient->Location = System::Drawing::Point(118, 265);
-			this->NaissanceClient->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->NaissanceClient->Location = System::Drawing::Point(158, 325);
 			this->NaissanceClient->Name = L"NaissanceClient";
-			this->NaissanceClient->Size = System::Drawing::Size(302, 53);
+			this->NaissanceClient->Size = System::Drawing::Size(402, 65);
 			this->NaissanceClient->TabIndex = 5;
 			this->NaissanceClient->Text = L"Date de naissance";
 			this->NaissanceClient->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -244,10 +240,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_PrenomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_PrenomClient->Location = System::Drawing::Point(424, 214);
-			this->textBox_PrenomClient->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox_PrenomClient->Location = System::Drawing::Point(566, 262);
+			this->textBox_PrenomClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox_PrenomClient->Name = L"textBox_PrenomClient";
-			this->textBox_PrenomClient->Size = System::Drawing::Size(455, 32);
+			this->textBox_PrenomClient->Size = System::Drawing::Size(606, 32);
 			this->textBox_PrenomClient->TabIndex = 6;
 			// 
 			// textBox_NomClient
@@ -257,10 +253,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_NomClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_NomClient->Location = System::Drawing::Point(424, 161);
-			this->textBox_NomClient->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox_NomClient->Location = System::Drawing::Point(566, 197);
+			this->textBox_NomClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox_NomClient->Name = L"textBox_NomClient";
-			this->textBox_NomClient->Size = System::Drawing::Size(455, 32);
+			this->textBox_NomClient->Size = System::Drawing::Size(606, 32);
 			this->textBox_NomClient->TabIndex = 7;
 			// 
 			// textBox_NumClient
@@ -270,10 +266,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_NumClient->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_NumClient->Location = System::Drawing::Point(424, 108);
-			this->textBox_NumClient->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox_NumClient->Location = System::Drawing::Point(566, 132);
+			this->textBox_NumClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox_NumClient->Name = L"textBox_NumClient";
-			this->textBox_NumClient->Size = System::Drawing::Size(455, 32);
+			this->textBox_NumClient->Size = System::Drawing::Size(606, 32);
 			this->textBox_NumClient->TabIndex = 8;
 			// 
 			// dtp_DateNaissance
@@ -283,29 +279,29 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->dtp_DateNaissance->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dtp_DateNaissance->Location = System::Drawing::Point(424, 267);
-			this->dtp_DateNaissance->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dtp_DateNaissance->Location = System::Drawing::Point(566, 327);
+			this->dtp_DateNaissance->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dtp_DateNaissance->Name = L"dtp_DateNaissance";
-			this->dtp_DateNaissance->Size = System::Drawing::Size(455, 32);
+			this->dtp_DateNaissance->Size = System::Drawing::Size(606, 32);
 			this->dtp_DateNaissance->TabIndex = 11;
 			// 
 			// tabControl1
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
-			this->tabControl1->Location = System::Drawing::Point(142, 206);
-			this->tabControl1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabControl1->Location = System::Drawing::Point(189, 254);
+			this->tabControl1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(6, 6);
+			this->tabControl1->Size = System::Drawing::Size(8, 7);
 			this->tabControl1->TabIndex = 1;
 			// 
 			// tabPage1
 			// 
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
-			this->tabPage1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabPage1->Location = System::Drawing::Point(4, 25);
+			this->tabPage1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tabPage1->Size = System::Drawing::Size(0, 0);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"tabPage1";
@@ -313,10 +309,10 @@ namespace ProjectPOO {
 			// 
 			// tabPage2
 			// 
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabPage2->Location = System::Drawing::Point(4, 25);
+			this->tabPage2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->tabPage2->Size = System::Drawing::Size(0, 0);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"tabPage2";
@@ -324,15 +320,17 @@ namespace ProjectPOO {
 			// 
 			// AjouterClient
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1264, 985);
+			this->ClientSize = System::Drawing::Size(1685, 1061);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->tableLayoutPanel1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->MaximumSize = System::Drawing::Size(1280, 1024);
-			this->MinimumSize = System::Drawing::Size(1280, 1024);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->MaximumSize = System::Drawing::Size(1701, 1251);
+			this->MinimumSize = System::Drawing::Size(1701, 1030);
 			this->Name = L"AjouterClient";
+			this->ShowInTaskbar = false;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Ajouter Client";
 			this->Load += gcnew System::EventHandler(this, &AjouterClient::AjouterClient_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
