@@ -133,7 +133,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				225)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				284)));
+				285)));
 			this->tableLayoutPanel1->Controls->Add(this->bsupprimer, 3, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bRetour, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bajouter, 4, 0);
@@ -228,6 +228,7 @@ namespace ProjectPOO {
 			this->CatalogueClient->Name = L"CatalogueClient";
 			this->CatalogueClient->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
 			this->CatalogueClient->RowHeadersWidth = 51;
+			this->CatalogueClient->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->CatalogueClient->Size = System::Drawing::Size(1212, 563);
 			this->CatalogueClient->TabIndex = 3;
 			// 

@@ -10,12 +10,12 @@ namespace ProjectPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de AjouterCommande3
+	/// Description résumée de CommandeRecap
 	/// </summary>
-	public ref class AjouterCommande3 : public System::Windows::Forms::Form
+	public ref class CommandeRecap : public System::Windows::Forms::Form
 	{
 	public:
-		AjouterCommande3(void)
+		CommandeRecap(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~AjouterCommande3()
+		~CommandeRecap()
 		{
 			if (components)
 			{
@@ -44,16 +44,21 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Label^ Show_Livraison;
 
 	private: System::Windows::Forms::Label^ Show_Prenom;
+	private: System::Windows::Forms::Label^ Nom;
+	private: System::Windows::Forms::Label^ Prenom;
+	private: System::Windows::Forms::Label^ livraison;
+	private: System::Windows::Forms::Label^ facturation;
+	private: System::Windows::Forms::Label^ dateLivraison;
 
-	private: System::Windows::Forms::Label^ NomAddCommande3;
 
-	private: System::Windows::Forms::Label^ PrenomAddCommande3;
 
-	private: System::Windows::Forms::Label^ livraisonAddCommande3;
 
-	private: System::Windows::Forms::Label^ facturationAddCommande3;
 
-	private: System::Windows::Forms::Label^ dateLivraisonAddCommande3;
+
+
+
+
+
 	private: System::Windows::Forms::Label^ Show_Nom;
 
 
@@ -66,7 +71,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel4;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel5;
 	private: System::Windows::Forms::Label^ Show_PrixTTC;
-	private: System::Windows::Forms::Label^ PrixAddCommande3;
+	private: System::Windows::Forms::Label^ Prix;
+
 
 
 
@@ -93,11 +99,11 @@ namespace ProjectPOO {
 			this->Sow_Facturation = (gcnew System::Windows::Forms::Label());
 			this->Show_Livraison = (gcnew System::Windows::Forms::Label());
 			this->Show_Prenom = (gcnew System::Windows::Forms::Label());
-			this->NomAddCommande3 = (gcnew System::Windows::Forms::Label());
-			this->PrenomAddCommande3 = (gcnew System::Windows::Forms::Label());
-			this->livraisonAddCommande3 = (gcnew System::Windows::Forms::Label());
-			this->facturationAddCommande3 = (gcnew System::Windows::Forms::Label());
-			this->dateLivraisonAddCommande3 = (gcnew System::Windows::Forms::Label());
+			this->Nom = (gcnew System::Windows::Forms::Label());
+			this->Prenom = (gcnew System::Windows::Forms::Label());
+			this->livraison = (gcnew System::Windows::Forms::Label());
+			this->facturation = (gcnew System::Windows::Forms::Label());
+			this->dateLivraison = (gcnew System::Windows::Forms::Label());
 			this->Show_Nom = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->CataloguePanier = (gcnew System::Windows::Forms::DataGridView());
@@ -105,7 +111,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel4 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->tableLayoutPanel5 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->Show_PrixTTC = (gcnew System::Windows::Forms::Label());
-			this->PrixAddCommande3 = (gcnew System::Windows::Forms::Label());
+			this->Prix = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel6 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->bValiderCommande = (gcnew System::Windows::Forms::Button());
 			this->bAnnuler = (gcnew System::Windows::Forms::Button());
@@ -150,11 +156,11 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->Controls->Add(this->Sow_Facturation, 1, 3);
 			this->tableLayoutPanel2->Controls->Add(this->Show_Livraison, 1, 2);
 			this->tableLayoutPanel2->Controls->Add(this->Show_Prenom, 1, 1);
-			this->tableLayoutPanel2->Controls->Add(this->NomAddCommande3, 0, 0);
-			this->tableLayoutPanel2->Controls->Add(this->PrenomAddCommande3, 0, 1);
-			this->tableLayoutPanel2->Controls->Add(this->livraisonAddCommande3, 0, 2);
-			this->tableLayoutPanel2->Controls->Add(this->facturationAddCommande3, 0, 3);
-			this->tableLayoutPanel2->Controls->Add(this->dateLivraisonAddCommande3, 0, 4);
+			this->tableLayoutPanel2->Controls->Add(this->Nom, 0, 0);
+			this->tableLayoutPanel2->Controls->Add(this->Prenom, 0, 1);
+			this->tableLayoutPanel2->Controls->Add(this->livraison, 0, 2);
+			this->tableLayoutPanel2->Controls->Add(this->facturation, 0, 3);
+			this->tableLayoutPanel2->Controls->Add(this->dateLivraison, 0, 4);
 			this->tableLayoutPanel2->Controls->Add(this->Show_Nom, 1, 0);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(3, 29);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
@@ -166,7 +172,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 37)));
 			this->tableLayoutPanel2->Size = System::Drawing::Size(1233, 225);
 			this->tableLayoutPanel2->TabIndex = 0;
-			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AjouterCommande3::tableLayoutPanel2_Paint);
+			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &CommandeRecap::tableLayoutPanel2_Paint);
 			// 
 			// Show_DateLivraison
 			// 
@@ -224,65 +230,65 @@ namespace ProjectPOO {
 			this->Show_Prenom->Size = System::Drawing::Size(963, 27);
 			this->Show_Prenom->TabIndex = 6;
 			// 
-			// NomAddCommande3
+			// Nom
 			// 
-			this->NomAddCommande3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->NomAddCommande3->AutoSize = true;
-			this->NomAddCommande3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->NomAddCommande3->Location = System::Drawing::Point(193, 63);
-			this->NomAddCommande3->Name = L"NomAddCommande3";
-			this->NomAddCommande3->Size = System::Drawing::Size(68, 25);
-			this->NomAddCommande3->TabIndex = 0;
-			this->NomAddCommande3->Text = L"Nom :";
+			this->Nom->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->Nom->AutoSize = true;
+			this->Nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Nom->Location = System::Drawing::Point(193, 63);
+			this->Nom->Name = L"Nom";
+			this->Nom->Size = System::Drawing::Size(68, 25);
+			this->Nom->TabIndex = 0;
+			this->Nom->Text = L"Nom :";
 			// 
-			// PrenomAddCommande3
+			// Prenom
 			// 
-			this->PrenomAddCommande3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->PrenomAddCommande3->AutoSize = true;
-			this->PrenomAddCommande3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->PrenomAddCommande3->Location = System::Drawing::Point(163, 92);
-			this->PrenomAddCommande3->Name = L"PrenomAddCommande3";
-			this->PrenomAddCommande3->Size = System::Drawing::Size(98, 25);
-			this->PrenomAddCommande3->TabIndex = 1;
-			this->PrenomAddCommande3->Text = L"Prénom :";
+			this->Prenom->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->Prenom->AutoSize = true;
+			this->Prenom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Prenom->Location = System::Drawing::Point(163, 92);
+			this->Prenom->Name = L"Prenom";
+			this->Prenom->Size = System::Drawing::Size(98, 25);
+			this->Prenom->TabIndex = 1;
+			this->Prenom->Text = L"Prénom :";
 			// 
-			// livraisonAddCommande3
+			// livraison
 			// 
-			this->livraisonAddCommande3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->livraisonAddCommande3->AutoSize = true;
-			this->livraisonAddCommande3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->livraisonAddCommande3->Location = System::Drawing::Point(42, 126);
-			this->livraisonAddCommande3->Name = L"livraisonAddCommande3";
-			this->livraisonAddCommande3->Size = System::Drawing::Size(219, 25);
-			this->livraisonAddCommande3->TabIndex = 2;
-			this->livraisonAddCommande3->Text = L"Adresse de livraison :";
+			this->livraison->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->livraison->AutoSize = true;
+			this->livraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->livraison->Location = System::Drawing::Point(42, 126);
+			this->livraison->Name = L"livraison";
+			this->livraison->Size = System::Drawing::Size(219, 25);
+			this->livraison->TabIndex = 2;
+			this->livraison->Text = L"Adresse de livraison :";
 			// 
-			// facturationAddCommande3
+			// facturation
 			// 
-			this->facturationAddCommande3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->facturationAddCommande3->AutoSize = true;
-			this->facturationAddCommande3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->facturationAddCommande3->Location = System::Drawing::Point(21, 162);
-			this->facturationAddCommande3->Name = L"facturationAddCommande3";
-			this->facturationAddCommande3->Size = System::Drawing::Size(240, 25);
-			this->facturationAddCommande3->TabIndex = 3;
-			this->facturationAddCommande3->Text = L"Adresse de facturation :";
+			this->facturation->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->facturation->AutoSize = true;
+			this->facturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->facturation->Location = System::Drawing::Point(21, 162);
+			this->facturation->Name = L"facturation";
+			this->facturation->Size = System::Drawing::Size(240, 25);
+			this->facturation->TabIndex = 3;
+			this->facturation->Text = L"Adresse de facturation :";
 			// 
-			// dateLivraisonAddCommande3
+			// dateLivraison
 			// 
-			this->dateLivraisonAddCommande3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->dateLivraisonAddCommande3->AutoSize = true;
-			this->dateLivraisonAddCommande3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dateLivraisonAddCommande3->Location = System::Drawing::Point(4, 200);
-			this->dateLivraisonAddCommande3->Name = L"dateLivraisonAddCommande3";
-			this->dateLivraisonAddCommande3->Size = System::Drawing::Size(257, 25);
-			this->dateLivraisonAddCommande3->TabIndex = 4;
-			this->dateLivraisonAddCommande3->Text = L"Date de livraison prévue :";
+			this->dateLivraison->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->dateLivraison->AutoSize = true;
+			this->dateLivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateLivraison->Location = System::Drawing::Point(4, 200);
+			this->dateLivraison->Name = L"dateLivraison";
+			this->dateLivraison->Size = System::Drawing::Size(257, 25);
+			this->dateLivraison->TabIndex = 4;
+			this->dateLivraison->Text = L"Date de livraison prévue :";
 			// 
 			// Show_Nom
 			// 
@@ -369,7 +375,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel5->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				90.62755F)));
 			this->tableLayoutPanel5->Controls->Add(this->Show_PrixTTC, 1, 0);
-			this->tableLayoutPanel5->Controls->Add(this->PrixAddCommande3, 0, 0);
+			this->tableLayoutPanel5->Controls->Add(this->Prix, 0, 0);
 			this->tableLayoutPanel5->Location = System::Drawing::Point(3, 3);
 			this->tableLayoutPanel5->Name = L"tableLayoutPanel5";
 			this->tableLayoutPanel5->RowCount = 1;
@@ -391,18 +397,18 @@ namespace ProjectPOO {
 			this->Show_PrixTTC->Size = System::Drawing::Size(1107, 27);
 			this->Show_PrixTTC->TabIndex = 3;
 			// 
-			// PrixAddCommande3
+			// Prix
 			// 
-			this->PrixAddCommande3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+			this->Prix->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->PrixAddCommande3->AutoSize = true;
-			this->PrixAddCommande3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->PrixAddCommande3->Location = System::Drawing::Point(3, 43);
-			this->PrixAddCommande3->Name = L"PrixAddCommande3";
-			this->PrixAddCommande3->Size = System::Drawing::Size(108, 25);
-			this->PrixAddCommande3->TabIndex = 2;
-			this->PrixAddCommande3->Text = L"Prix TTC :";
+			this->Prix->AutoSize = true;
+			this->Prix->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Prix->Location = System::Drawing::Point(3, 43);
+			this->Prix->Name = L"Prix";
+			this->Prix->Size = System::Drawing::Size(108, 25);
+			this->Prix->TabIndex = 2;
+			this->Prix->Text = L"Prix TTC :";
 			// 
 			// tableLayoutPanel6
 			// 
@@ -453,9 +459,9 @@ namespace ProjectPOO {
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
-			this->bAnnuler->Click += gcnew System::EventHandler(this, &AjouterCommande3::bAnnuler_Click);
+			this->bAnnuler->Click += gcnew System::EventHandler(this, &CommandeRecap::bAnnuler_Click);
 			// 
-			// AjouterCommande3
+			// CommandeRecap
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -463,10 +469,9 @@ namespace ProjectPOO {
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->MaximumSize = System::Drawing::Size(1280, 1024);
 			this->MinimumSize = System::Drawing::Size(1280, 1024);
-			this->Name = L"AjouterCommande3";
+			this->Name = L"CommandeRecap";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"AjouterCommande3";
-			this->Load += gcnew System::EventHandler(this, &AjouterCommande3::AjouterCommande3_Load);
+			this->Text = L"Recapitulatif de commande";
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();
@@ -485,8 +490,6 @@ namespace ProjectPOO {
 	}
 	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
-	}
-	private: System::Void AjouterCommande3_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }

@@ -185,33 +185,33 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->Controls->Add(this->textBox_ComplementAdressePersonnel, 0, 9);
 			this->tableLayoutPanel2->Controls->Add(this->dtp_date_naissance, 0, 15);
 			this->tableLayoutPanel2->Controls->Add(this->dtp_date_embauche, 0, 17);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(365, 107);
-			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(274, 87);
+			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 21;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 64.81481F)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 35.18518F)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 79)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 21)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 73)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 33)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 59)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 52)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 53)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 54)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 54)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 57)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 64)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 91)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 82)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(945, 1105);
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 17)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 59)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 27)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 48)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 39)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 43)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 42)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 39)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 43)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 39)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 44)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 44)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 46)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 52)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 74)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 67)));
+			this->tableLayoutPanel2->Size = System::Drawing::Size(709, 898);
 			this->tableLayoutPanel2->TabIndex = 2;
 			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AjouterPersonnel::tableLayoutPanel2_Paint);
 			// 
@@ -221,9 +221,10 @@ namespace ProjectPOO {
 			this->PrenomPersonnel->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->PrenomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->PrenomPersonnel->Location = System::Drawing::Point(3, 115);
+			this->PrenomPersonnel->Location = System::Drawing::Point(2, 87);
+			this->PrenomPersonnel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->PrenomPersonnel->Name = L"PrenomPersonnel";
-			this->PrenomPersonnel->Size = System::Drawing::Size(939, 31);
+			this->PrenomPersonnel->Size = System::Drawing::Size(705, 31);
 			this->PrenomPersonnel->TabIndex = 3;
 			this->PrenomPersonnel->Text = L"Prenom";
 			// 
@@ -233,9 +234,10 @@ namespace ProjectPOO {
 			this->NumRuePersonnel->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->NumRuePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->NumRuePersonnel->Location = System::Drawing::Point(3, 209);
+			this->NumRuePersonnel->Location = System::Drawing::Point(2, 163);
+			this->NumRuePersonnel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NumRuePersonnel->Name = L"NumRuePersonnel";
-			this->NumRuePersonnel->Size = System::Drawing::Size(939, 31);
+			this->NumRuePersonnel->Size = System::Drawing::Size(705, 31);
 			this->NumRuePersonnel->TabIndex = 4;
 			this->NumRuePersonnel->Text = L"Numero de la rue ";
 			this->NumRuePersonnel->Click += gcnew System::EventHandler(this, &AjouterPersonnel::label3_Click);
@@ -245,10 +247,10 @@ namespace ProjectPOO {
 			this->textBox_NomPersonnel->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->textBox_NomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_NomPersonnel->Location = System::Drawing::Point(3, 46);
-			this->textBox_NomPersonnel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox_NomPersonnel->Location = System::Drawing::Point(2, 37);
+			this->textBox_NomPersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox_NomPersonnel->Name = L"textBox_NomPersonnel";
-			this->textBox_NomPersonnel->Size = System::Drawing::Size(939, 38);
+			this->textBox_NomPersonnel->Size = System::Drawing::Size(705, 38);
 			this->textBox_NomPersonnel->TabIndex = 10;
 			this->textBox_NomPersonnel->TextChanged += gcnew System::EventHandler(this, &AjouterPersonnel::textBox_NomPersonnel_TextChanged);
 			// 
@@ -258,9 +260,10 @@ namespace ProjectPOO {
 			this->NomPersonnel->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->NomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NomPersonnel->Location = System::Drawing::Point(3, 13);
+			this->NomPersonnel->Location = System::Drawing::Point(2, 4);
+			this->NomPersonnel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomPersonnel->Name = L"NomPersonnel";
-			this->NomPersonnel->Size = System::Drawing::Size(939, 31);
+			this->NomPersonnel->Size = System::Drawing::Size(705, 31);
 			this->NomPersonnel->TabIndex = 2;
 			this->NomPersonnel->Text = L"Nom";
 			this->NomPersonnel->Click += gcnew System::EventHandler(this, &AjouterPersonnel::label1_Click);
@@ -272,10 +275,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_PrenomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_PrenomPersonnel->Location = System::Drawing::Point(3, 148);
-			this->textBox_PrenomPersonnel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox_PrenomPersonnel->Location = System::Drawing::Point(2, 120);
+			this->textBox_PrenomPersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox_PrenomPersonnel->Name = L"textBox_PrenomPersonnel";
-			this->textBox_PrenomPersonnel->Size = System::Drawing::Size(939, 38);
+			this->textBox_PrenomPersonnel->Size = System::Drawing::Size(705, 38);
 			this->textBox_PrenomPersonnel->TabIndex = 11;
 			// 
 			// textBox_NumRuePersonnel
@@ -285,10 +288,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_NumRuePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_NumRuePersonnel->Location = System::Drawing::Point(3, 242);
-			this->textBox_NumRuePersonnel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox_NumRuePersonnel->Location = System::Drawing::Point(2, 196);
+			this->textBox_NumRuePersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox_NumRuePersonnel->Name = L"textBox_NumRuePersonnel";
-			this->textBox_NumRuePersonnel->Size = System::Drawing::Size(939, 38);
+			this->textBox_NumRuePersonnel->Size = System::Drawing::Size(705, 38);
 			this->textBox_NumRuePersonnel->TabIndex = 12;
 			// 
 			// textBox_Nom_Rue_Personnel
@@ -298,10 +301,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_Nom_Rue_Personnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_Nom_Rue_Personnel->Location = System::Drawing::Point(3, 334);
-			this->textBox_Nom_Rue_Personnel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox_Nom_Rue_Personnel->Location = System::Drawing::Point(2, 271);
+			this->textBox_Nom_Rue_Personnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox_Nom_Rue_Personnel->Name = L"textBox_Nom_Rue_Personnel";
-			this->textBox_Nom_Rue_Personnel->Size = System::Drawing::Size(939, 38);
+			this->textBox_Nom_Rue_Personnel->Size = System::Drawing::Size(705, 38);
 			this->textBox_Nom_Rue_Personnel->TabIndex = 13;
 			this->textBox_Nom_Rue_Personnel->TextChanged += gcnew System::EventHandler(this, &AjouterPersonnel::textBox4_TextChanged);
 			// 
@@ -311,8 +314,7 @@ namespace ProjectPOO {
 			this->NomRuePersonnel->AutoSize = true;
 			this->NomRuePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->NomRuePersonnel->Location = System::Drawing::Point(4, 301);
-			this->NomRuePersonnel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->NomRuePersonnel->Location = System::Drawing::Point(3, 238);
 			this->NomRuePersonnel->Name = L"NomRuePersonnel";
 			this->NomRuePersonnel->Size = System::Drawing::Size(182, 31);
 			this->NomRuePersonnel->TabIndex = 18;
@@ -329,12 +331,11 @@ namespace ProjectPOO {
 				50)));
 			this->tableLayoutPanel1->Controls->Add(this->bAnnuler, 1, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bAjouter, 0, 0);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(4, 1019);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(3, 828);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(937, 79);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(703, 64);
 			this->tableLayoutPanel1->TabIndex = 4;
 			this->tableLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AjouterPersonnel::tableLayoutPanel1_Paint);
 			// 
@@ -345,10 +346,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bAnnuler->Location = System::Drawing::Point(472, 4);
-			this->bAnnuler->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->bAnnuler->Location = System::Drawing::Point(354, 3);
 			this->bAnnuler->Name = L"bAnnuler";
-			this->bAnnuler->Size = System::Drawing::Size(461, 71);
+			this->bAnnuler->Size = System::Drawing::Size(346, 58);
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
@@ -361,10 +361,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bAjouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bAjouter->Location = System::Drawing::Point(4, 4);
-			this->bAjouter->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->bAjouter->Location = System::Drawing::Point(3, 3);
 			this->bAjouter->Name = L"bAjouter";
-			this->bAjouter->Size = System::Drawing::Size(460, 71);
+			this->bAjouter->Size = System::Drawing::Size(345, 58);
 			this->bAjouter->TabIndex = 0;
 			this->bAjouter->Text = L"Ajouter";
 			this->bAjouter->UseVisualStyleBackColor = true;
@@ -377,10 +376,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_Id_Superieur->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_Id_Superieur->Location = System::Drawing::Point(3, 951);
-			this->textBox_Id_Superieur->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox_Id_Superieur->Location = System::Drawing::Point(2, 773);
+			this->textBox_Id_Superieur->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox_Id_Superieur->Name = L"textBox_Id_Superieur";
-			this->textBox_Id_Superieur->Size = System::Drawing::Size(939, 38);
+			this->textBox_Id_Superieur->Size = System::Drawing::Size(705, 38);
 			this->textBox_Id_Superieur->TabIndex = 17;
 			// 
 			// IdPersonnel1
@@ -389,8 +388,7 @@ namespace ProjectPOO {
 			this->IdPersonnel1->AutoSize = true;
 			this->IdPersonnel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->IdPersonnel1->Location = System::Drawing::Point(4, 918);
-			this->IdPersonnel1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->IdPersonnel1->Location = System::Drawing::Point(3, 740);
 			this->IdPersonnel1->Name = L"IdPersonnel1";
 			this->IdPersonnel1->Size = System::Drawing::Size(184, 31);
 			this->IdPersonnel1->TabIndex = 22;
@@ -402,8 +400,7 @@ namespace ProjectPOO {
 			this->DateEmbauchePersonnel->AutoSize = true;
 			this->DateEmbauchePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->DateEmbauchePersonnel->Location = System::Drawing::Point(4, 811);
-			this->DateEmbauchePersonnel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->DateEmbauchePersonnel->Location = System::Drawing::Point(3, 653);
 			this->DateEmbauchePersonnel->Name = L"DateEmbauchePersonnel";
 			this->DateEmbauchePersonnel->Size = System::Drawing::Size(225, 31);
 			this->DateEmbauchePersonnel->TabIndex = 23;
@@ -415,8 +412,7 @@ namespace ProjectPOO {
 			this->DateNaissancePersonnel->AutoSize = true;
 			this->DateNaissancePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->DateNaissancePersonnel->Location = System::Drawing::Point(4, 707);
-			this->DateNaissancePersonnel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->DateNaissancePersonnel->Location = System::Drawing::Point(3, 568);
 			this->DateNaissancePersonnel->Name = L"DateNaissancePersonnel";
 			this->DateNaissancePersonnel->Size = System::Drawing::Size(239, 31);
 			this->DateNaissancePersonnel->TabIndex = 21;
@@ -429,10 +425,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_NomVillePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_NomVillePersonnel->Location = System::Drawing::Point(3, 638);
-			this->textBox_NomVillePersonnel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox_NomVillePersonnel->Location = System::Drawing::Point(2, 518);
+			this->textBox_NomVillePersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox_NomVillePersonnel->Name = L"textBox_NomVillePersonnel";
-			this->textBox_NomVillePersonnel->Size = System::Drawing::Size(939, 38);
+			this->textBox_NomVillePersonnel->Size = System::Drawing::Size(705, 38);
 			this->textBox_NomVillePersonnel->TabIndex = 15;
 			// 
 			// NomVillePersonnel
@@ -441,8 +437,7 @@ namespace ProjectPOO {
 			this->NomVillePersonnel->AutoSize = true;
 			this->NomVillePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->NomVillePersonnel->Location = System::Drawing::Point(4, 605);
-			this->NomVillePersonnel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->NomVillePersonnel->Location = System::Drawing::Point(3, 485);
 			this->NomVillePersonnel->Name = L"NomVillePersonnel";
 			this->NomVillePersonnel->Size = System::Drawing::Size(65, 31);
 			this->NomVillePersonnel->TabIndex = 20;
@@ -455,10 +450,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_CodePostalePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_CodePostalePersonnel->Location = System::Drawing::Point(3, 535);
-			this->textBox_CodePostalePersonnel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox_CodePostalePersonnel->Location = System::Drawing::Point(2, 434);
+			this->textBox_CodePostalePersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox_CodePostalePersonnel->Name = L"textBox_CodePostalePersonnel";
-			this->textBox_CodePostalePersonnel->Size = System::Drawing::Size(939, 38);
+			this->textBox_CodePostalePersonnel->Size = System::Drawing::Size(705, 38);
 			this->textBox_CodePostalePersonnel->TabIndex = 14;
 			// 
 			// CodePostalPersonnel
@@ -467,8 +462,7 @@ namespace ProjectPOO {
 			this->CodePostalPersonnel->AutoSize = true;
 			this->CodePostalPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->CodePostalPersonnel->Location = System::Drawing::Point(4, 502);
-			this->CodePostalPersonnel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->CodePostalPersonnel->Location = System::Drawing::Point(3, 401);
 			this->CodePostalPersonnel->Name = L"CodePostalPersonnel";
 			this->CodePostalPersonnel->Size = System::Drawing::Size(162, 31);
 			this->CodePostalPersonnel->TabIndex = 19;
@@ -481,8 +475,7 @@ namespace ProjectPOO {
 			this->ComplementAdressePersonnel->AutoSize = true;
 			this->ComplementAdressePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->ComplementAdressePersonnel->Location = System::Drawing::Point(4, 402);
-			this->ComplementAdressePersonnel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->ComplementAdressePersonnel->Location = System::Drawing::Point(3, 320);
 			this->ComplementAdressePersonnel->Name = L"ComplementAdressePersonnel";
 			this->ComplementAdressePersonnel->Size = System::Drawing::Size(291, 31);
 			this->ComplementAdressePersonnel->TabIndex = 25;
@@ -495,34 +488,31 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox_ComplementAdressePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->textBox_ComplementAdressePersonnel->Location = System::Drawing::Point(4, 437);
-			this->textBox_ComplementAdressePersonnel->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox_ComplementAdressePersonnel->Location = System::Drawing::Point(3, 354);
 			this->textBox_ComplementAdressePersonnel->Name = L"textBox_ComplementAdressePersonnel";
-			this->textBox_ComplementAdressePersonnel->Size = System::Drawing::Size(937, 38);
+			this->textBox_ComplementAdressePersonnel->Size = System::Drawing::Size(703, 38);
 			this->textBox_ComplementAdressePersonnel->TabIndex = 26;
 			// 
 			// dtp_date_naissance
 			// 
-			this->dtp_date_naissance->Location = System::Drawing::Point(4, 742);
-			this->dtp_date_naissance->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dtp_date_naissance->Location = System::Drawing::Point(3, 602);
 			this->dtp_date_naissance->Name = L"dtp_date_naissance";
-			this->dtp_date_naissance->Size = System::Drawing::Size(265, 22);
+			this->dtp_date_naissance->Size = System::Drawing::Size(200, 20);
 			this->dtp_date_naissance->TabIndex = 27;
 			// 
 			// dtp_date_embauche
 			// 
-			this->dtp_date_embauche->Location = System::Drawing::Point(4, 846);
-			this->dtp_date_embauche->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dtp_date_embauche->Location = System::Drawing::Point(3, 687);
 			this->dtp_date_embauche->Name = L"dtp_date_embauche";
-			this->dtp_date_embauche->Size = System::Drawing::Size(265, 22);
+			this->dtp_date_embauche->Size = System::Drawing::Size(200, 20);
 			this->dtp_date_embauche->TabIndex = 28;
 			// 
 			// vScrollBar1
 			// 
 			this->vScrollBar1->Dock = System::Windows::Forms::DockStyle::Right;
-			this->vScrollBar1->Location = System::Drawing::Point(1663, 0);
+			this->vScrollBar1->Location = System::Drawing::Point(1242, 0);
 			this->vScrollBar1->Name = L"vScrollBar1";
-			this->vScrollBar1->Size = System::Drawing::Size(22, 1061);
+			this->vScrollBar1->Size = System::Drawing::Size(22, 862);
 			this->vScrollBar1->TabIndex = 3;
 			this->vScrollBar1->Value = 50;
 			this->vScrollBar1->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &AjouterPersonnel::vScrollBar1_Scroll);
@@ -532,8 +522,7 @@ namespace ProjectPOO {
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(532, 32);
-			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label8->Location = System::Drawing::Point(399, 26);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(439, 55);
 			this->label8->TabIndex = 4;
@@ -542,15 +531,15 @@ namespace ProjectPOO {
 			// 
 			// AjouterPersonnel
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1685, 1061);
+			this->ClientSize = System::Drawing::Size(1264, 862);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->vScrollBar1);
 			this->Controls->Add(this->tableLayoutPanel2);
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->MaximumSize = System::Drawing::Size(1701, 1251);
-			this->MinimumSize = System::Drawing::Size(1701, 1030);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->MaximumSize = System::Drawing::Size(1280, 1024);
+			this->MinimumSize = System::Drawing::Size(1280, 844);
 			this->Name = L"AjouterPersonnel";
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

@@ -131,8 +131,8 @@
     <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="AjouterClient.cpp" />
     <ClCompile Include="CommandeClient.cpp" />
-    <ClCompile Include="AjouterCommande2.cpp" />
-    <ClCompile Include="AjouterCommande3.cpp" />
+    <ClCompile Include="CommandeArticle.cpp" />
+    <ClCompile Include="CommandeRecap.cpp" />
     <ClCompile Include="AjouterPersonnel.cpp" />
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="BDD.cpp" />
@@ -182,10 +182,10 @@
     <ClInclude Include="CommandeClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="AjouterCommande2.h">
+    <ClInclude Include="CommandeArticle.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="AjouterCommande3.h">
+    <ClInclude Include="CommandeRecap.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AjouterPersonnel.h">
@@ -270,11 +270,11 @@
     <EmbeddedResource Include="CommandeClient.resx">
       <DependentUpon>CommandeClient.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjouterCommande2.resx">
-      <DependentUpon>AjouterCommande2.h</DependentUpon>
+    <EmbeddedResource Include="CommandeArticle.resx">
+      <DependentUpon>CommandeArticle.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjouterCommande3.resx">
-      <DependentUpon>AjouterCommande3.h</DependentUpon>
+    <EmbeddedResource Include="CommandeRecap.resx">
+      <DependentUpon>CommandeRecap.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AjouterPersonnel.resx">
       <DependentUpon>AjouterPersonnel.h</DependentUpon>
