@@ -45,17 +45,9 @@ void ServiceArticle::InsertArticle(Article^ article) {
 void ServiceArticle::UpdateArticle(Article^ article) {
     String^ prixHT = article->getPrixHT().ToString(System::Globalization::CultureInfo::InvariantCulture);
     String^ tauxTVA = article->getTauxTVA().ToString(System::Globalization::CultureInfo::InvariantCulture);
+
     bdd->executeNonQuery("UPDATE Article SET Ref_Article = '" + article->getRefArticle() + "', Nom_Article = '" + article->getNom() + "', Nature_Article = '" + article->getNature() + "', Couleur_Article = '" + article->getCouleur() + "', Stock_Article = '" + article->getStock() + "', Quantite_Reapprovisionnement = '" + article->getQuantiteReapprovisionnement() + "', Prix_HT = '" + prixHT + "', Taux_TVA = '" + tauxTVA + "', Supprimer = 0 WHERE Id_Article = '" + article->getIdArticle() + "';");
 }
-    /*
-     bool ServiceArticle::ArticleExists(int refArticle) {
-         // Construire la requête SQL pour vérifier l'existence de la référence de l'article
-         String^ checkQuery = "SELECT Ref_Article FROM Article WHERE Ref_Article = " + Convert::ToString(refArticle);
-         System::Data::DataSet^ result = bdd->executeQuery(checkQuery);
-
-         // Vérifier si le DataSet contient des lignes
-         return result != nullptr && result->Tables[0]->Rows->Count > 0;
-     }    */
 void ServiceArticle::DeleteArticle(Article^ article) {
-bdd->executeNonQuery("UPDATE Article SET Supprimer = 1 WHERE Id_Article = " + article->getIdArticle());
+    bdd->executeNonQuery("UPDATE Article SET Supprimer = 1 WHERE Id_Article = " + article->getIdArticle());
 }

@@ -157,26 +157,26 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->Controls->Add(this->tableLayoutPanel1, 0, 14);
 			this->tableLayoutPanel2->Controls->Add(this->textBox1, 0, 1);
 			this->tableLayoutPanel2->Controls->Add(this->l, 0, 0);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(52, 142);
-			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(39, 115);
+			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 15;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 64.16185F)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 35.83815F)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 76)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 80)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 64)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 46)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 85)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 73)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 65)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 52)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 75)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 37)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 69)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 59)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 42)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 61)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 60)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 59)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 74)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 73)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 91)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 110)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(716, 1057);
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 89)));
+			this->tableLayoutPanel2->Size = System::Drawing::Size(537, 987);
 			this->tableLayoutPanel2->TabIndex = 2;
 			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ModifierCommandes::tableLayoutPanel2_Paint);
 			// 
@@ -186,9 +186,10 @@ namespace ProjectPOO {
 			this->label2->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(3, 144);
+			this->label2->Location = System::Drawing::Point(2, 247);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(710, 39);
+			this->label2->Size = System::Drawing::Size(533, 31);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Total HT";
 			// 
@@ -199,10 +200,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(3, 185);
-			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox2->Location = System::Drawing::Point(2, 280);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(710, 46);
+			this->textBox2->Size = System::Drawing::Size(533, 38);
 			this->textBox2->TabIndex = 11;
 			// 
 			// label3
@@ -211,9 +212,10 @@ namespace ProjectPOO {
 			this->label3->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(3, 288);
+			this->label3->Location = System::Drawing::Point(2, 364);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(710, 39);
+			this->label3->Size = System::Drawing::Size(533, 31);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Total TVA";
 			this->label3->Click += gcnew System::EventHandler(this, &ModifierCommandes::label3_Click);
@@ -225,10 +227,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(3, 329);
-			this->textBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox3->Location = System::Drawing::Point(2, 397);
+			this->textBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(710, 46);
+			this->textBox3->Size = System::Drawing::Size(533, 38);
 			this->textBox3->TabIndex = 12;
 			// 
 			// label4
@@ -237,9 +239,10 @@ namespace ProjectPOO {
 			this->label4->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(3, 419);
+			this->label4->Location = System::Drawing::Point(2, 470);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(710, 39);
+			this->label4->Size = System::Drawing::Size(533, 31);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Total TTC";
 			this->label4->Click += gcnew System::EventHandler(this, &ModifierCommandes::label4_Click);
@@ -251,10 +254,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(3, 460);
-			this->textBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox4->Location = System::Drawing::Point(2, 503);
+			this->textBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(710, 46);
+			this->textBox4->Size = System::Drawing::Size(533, 38);
 			this->textBox4->TabIndex = 13;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &ModifierCommandes::textBox4_TextChanged);
 			// 
@@ -264,9 +267,10 @@ namespace ProjectPOO {
 			this->label5->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(3, 542);
+			this->label5->Location = System::Drawing::Point(2, 570);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(710, 39);
+			this->label5->Size = System::Drawing::Size(533, 31);
 			this->label5->TabIndex = 6;
 			this->label5->Text = L"Total Commande";
 			// 
@@ -277,10 +281,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox5->Location = System::Drawing::Point(3, 583);
-			this->textBox5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox5->Location = System::Drawing::Point(2, 603);
+			this->textBox5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(710, 46);
+			this->textBox5->Size = System::Drawing::Size(533, 38);
 			this->textBox5->TabIndex = 14;
 			// 
 			// label6
@@ -289,9 +293,10 @@ namespace ProjectPOO {
 			this->label6->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(3, 669);
+			this->label6->Location = System::Drawing::Point(2, 673);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(710, 39);
+			this->label6->Size = System::Drawing::Size(533, 31);
 			this->label6->TabIndex = 7;
 			this->label6->Text = L"Date livraison prévue";
 			// 
@@ -302,10 +307,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox6->Location = System::Drawing::Point(3, 710);
-			this->textBox6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox6->Location = System::Drawing::Point(2, 706);
+			this->textBox6->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(710, 46);
+			this->textBox6->Size = System::Drawing::Size(533, 38);
 			this->textBox6->TabIndex = 15;
 			// 
 			// label7
@@ -314,9 +319,10 @@ namespace ProjectPOO {
 			this->label7->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(3, 816);
+			this->label7->Location = System::Drawing::Point(2, 792);
+			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(710, 39);
+			this->label7->Size = System::Drawing::Size(533, 31);
 			this->label7->TabIndex = 8;
 			this->label7->Text = L"Date paiement";
 			// 
@@ -327,10 +333,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox7->Location = System::Drawing::Point(3, 857);
-			this->textBox7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox7->Location = System::Drawing::Point(2, 825);
+			this->textBox7->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(710, 46);
+			this->textBox7->Size = System::Drawing::Size(533, 38);
 			this->textBox7->TabIndex = 16;
 			// 
 			// tableLayoutPanel1
@@ -343,12 +349,11 @@ namespace ProjectPOO {
 				50)));
 			this->tableLayoutPanel1->Controls->Add(this->bAnnuler, 1, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bAjouter, 0, 0);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(4, 950);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(4);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(3, 900);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(708, 103);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(531, 84);
 			this->tableLayoutPanel1->TabIndex = 4;
 			// 
 			// bAnnuler
@@ -358,10 +363,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bAnnuler->Location = System::Drawing::Point(358, 4);
-			this->bAnnuler->Margin = System::Windows::Forms::Padding(4);
+			this->bAnnuler->Location = System::Drawing::Point(268, 3);
 			this->bAnnuler->Name = L"bAnnuler";
-			this->bAnnuler->Size = System::Drawing::Size(346, 95);
+			this->bAnnuler->Size = System::Drawing::Size(260, 78);
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
@@ -374,10 +378,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bAjouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bAjouter->Location = System::Drawing::Point(4, 4);
-			this->bAjouter->Margin = System::Windows::Forms::Padding(4);
+			this->bAjouter->Location = System::Drawing::Point(3, 3);
 			this->bAjouter->Name = L"bAjouter";
-			this->bAjouter->Size = System::Drawing::Size(346, 95);
+			this->bAjouter->Size = System::Drawing::Size(259, 78);
 			this->bAjouter->TabIndex = 0;
 			this->bAjouter->Text = L"Valider";
 			this->bAjouter->UseVisualStyleBackColor = true;
@@ -388,10 +391,10 @@ namespace ProjectPOO {
 			this->textBox1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(3, 71);
-			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox1->Location = System::Drawing::Point(2, 141);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(710, 46);
+			this->textBox1->Size = System::Drawing::Size(533, 38);
 			this->textBox1->TabIndex = 10;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &ModifierCommandes::textBox1_TextChanged);
 			// 
@@ -401,9 +404,10 @@ namespace ProjectPOO {
 			this->l->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->l->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->l->Location = System::Drawing::Point(3, 30);
+			this->l->Location = System::Drawing::Point(2, 108);
+			this->l->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->l->Name = L"l";
-			this->l->Size = System::Drawing::Size(710, 39);
+			this->l->Size = System::Drawing::Size(533, 31);
 			this->l->TabIndex = 2;
 			this->l->Text = L"Référence";
 			this->l->Click += gcnew System::EventHandler(this, &ModifierCommandes::label1_Click);
@@ -411,9 +415,9 @@ namespace ProjectPOO {
 			// vScrollBar1
 			// 
 			this->vScrollBar1->Dock = System::Windows::Forms::DockStyle::Right;
-			this->vScrollBar1->Location = System::Drawing::Point(1661, 0);
+			this->vScrollBar1->Location = System::Drawing::Point(1242, 0);
 			this->vScrollBar1->Name = L"vScrollBar1";
-			this->vScrollBar1->Size = System::Drawing::Size(22, 1055);
+			this->vScrollBar1->Size = System::Drawing::Size(22, 985);
 			this->vScrollBar1->TabIndex = 3;
 			this->vScrollBar1->Value = 50;
 			this->vScrollBar1->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &ModifierCommandes::vScrollBar1_Scroll);
@@ -423,10 +427,9 @@ namespace ProjectPOO {
 			this->lCommande->AutoSize = true;
 			this->lCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lCommande->Location = System::Drawing::Point(483, 33);
-			this->lCommande->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lCommande->Location = System::Drawing::Point(362, 27);
 			this->lCommande->Name = L"lCommande";
-			this->lCommande->Size = System::Drawing::Size(670, 69);
+			this->lCommande->Size = System::Drawing::Size(540, 55);
 			this->lCommande->TabIndex = 4;
 			this->lCommande->Text = L"Modifier une commande";
 			this->lCommande->Click += gcnew System::EventHandler(this, &ModifierCommandes::label8_Click);
@@ -437,11 +440,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(4, 4);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
+			this->dataGridView1->Location = System::Drawing::Point(3, 3);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(788, 696);
+			this->dataGridView1->Size = System::Drawing::Size(591, 565);
 			this->dataGridView1->TabIndex = 5;
 			// 
 			// tableLayoutPanel3
@@ -451,13 +453,12 @@ namespace ProjectPOO {
 				50)));
 			this->tableLayoutPanel3->Controls->Add(this->button1, 0, 1);
 			this->tableLayoutPanel3->Controls->Add(this->dataGridView1, 0, 0);
-			this->tableLayoutPanel3->Location = System::Drawing::Point(823, 142);
-			this->tableLayoutPanel3->Margin = System::Windows::Forms::Padding(4);
+			this->tableLayoutPanel3->Location = System::Drawing::Point(617, 115);
 			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
 			this->tableLayoutPanel3->RowCount = 2;
 			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 88.13559F)));
 			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 11.86441F)));
-			this->tableLayoutPanel3->Size = System::Drawing::Size(796, 799);
+			this->tableLayoutPanel3->Size = System::Drawing::Size(597, 649);
 			this->tableLayoutPanel3->TabIndex = 6;
 			// 
 			// button1
@@ -467,10 +468,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(4, 708);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Location = System::Drawing::Point(3, 574);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(788, 87);
+			this->button1->Size = System::Drawing::Size(591, 72);
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"Modifier Article";
 			this->button1->UseVisualStyleBackColor = true;
@@ -478,21 +478,20 @@ namespace ProjectPOO {
 			// 
 			// ModifierCommandes
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1683, 1055);
+			this->ClientSize = System::Drawing::Size(1264, 985);
 			this->Controls->Add(this->tableLayoutPanel3);
 			this->Controls->Add(this->lCommande);
 			this->Controls->Add(this->vScrollBar1);
 			this->Controls->Add(this->tableLayoutPanel2);
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->MaximumSize = System::Drawing::Size(1701, 1249);
-			this->MinimumSize = System::Drawing::Size(1701, 1018);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->MaximumSize = System::Drawing::Size(1280, 1024);
+			this->MinimumSize = System::Drawing::Size(1280, 1024);
 			this->Name = L"ModifierCommandes";
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Ajouter un personnel";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &ModifierCommandes::AjouterCommandes_Load);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();

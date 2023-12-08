@@ -5,7 +5,7 @@ public ref class Adresse
 {
 private:
     int Id_Adresse;
-    int Num_Rue;
+    String^ Num_Rue;
     String^ Nom_rue;
     String^ Complement_Adr;
     String^ Nom_Ville;
@@ -17,7 +17,7 @@ public:
         return this->Id_Adresse;
     }
 
-    int getNumRue() {
+    String^ getNumRue() {
         return this->Num_Rue;
     }
 
@@ -45,7 +45,7 @@ public:
         this->Id_Adresse = Id_Adresse;
     }
 
-    void setNumRue(int Num_Rue) {
+    void setNumRue(String^ Num_Rue) {
         this->Num_Rue = Num_Rue;
     }
 

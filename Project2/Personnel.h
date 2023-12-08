@@ -1,42 +1,43 @@
 #pragma once
+#include "Adresse.h"
 
+using namespace std;
+using namespace System;
 
-    using namespace System;
+public ref class Personnel
+{
+private:
+	int Id_Personnel;
+	int Id_Superieur;
+	String^ Nom_Personnel;
+	String^ Prenom_Personnel;
+	DateTime Date_Naissance;
+	DateTime Date_Embauche;
+	Adresse^ adresse = gcnew Adresse();
+	bool Supprimer;
 
-    ref class Personnel
-    {
-    private:
-        int Id_Personnel;
-        int Id_Personnel_1;
-        String^ Nom_Personnel;
-        String^ Prenom_Personnel;
-        DateTime Naissance_Personnel;
-        DateTime Date_Embauche;
-        int Id_Adresse;
-        bool Supprimer;
+public:
 
-    public:
+	int getIdPersonnel();
+	int getIdSuperieur();
+	String^ getNomPersonnel();
+	String^ getPrenomPersonnel();
+	DateTime getDateNaissance();
+	bool getSupprimer();
+	DateTime  getDateEmbauche();
+	Adresse^ getAdresse();
 
-        int getId_Personnel();
-        int getId_Personnel_1();
-        String^ getNom_Personnel();
-        String^ getPrenom_Personnel();
-        DateTime getNaissance_Personnel();
-        bool getSupprimer();
-        DateTime getDate_Embauche();
+	void setIdSuperieur(int Id_Superieur);
+	void setNomPersonnel(String^ nom);
+	void setPrenomPersonnel(String^ prenom);
+	void setIdPersonnel(int Id_Personnel);
+	void setSupprimer(bool value);
+	void setDateNaissance(DateTime dateNaissance);
+	void setDateEmbauche(DateTime dateEmbauche);
+	//Adresse^ setAdresse(Adresse^ Adresse);
+	void Personnel::setAdresse(Adresse^ adresse)
+	{
+		this->adresse = adresse;
+	}
 
-        void setId_Personnel_1(int Id_Superieur);
-        void setNom_Personnel(String^ nom);
-        void setPrenom_Personnel(String^ prenom);
-        void setId_Personnel(int Id_Personnel);
-        void setSupprimer(bool value);
-        void setNaissance_Personnel(DateTime date);
-        void setDate_Embauche(DateTime date);
-
-        String^ CreatePersonnel();
-        String^ UpdatePersonnel();
-        String^ DeletePersonnel();
-        String^ SelectPersonnel();
-
-    };
-
+};

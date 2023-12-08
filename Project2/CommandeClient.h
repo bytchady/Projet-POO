@@ -105,15 +105,14 @@ namespace ProjectPOO {
 				100)));
 			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel2, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->CatalogueListeClient, 0, 2);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(17, 16);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(4);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(13, 13);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 4;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 100)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 100)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 757)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 143)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(1652, 1260);
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 81)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 81)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 615)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 116)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(1239, 1152);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
 			// tableLayoutPanel2
@@ -127,19 +126,18 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				42.90123F)));
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				303)));
+				227)));
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				320)));
+				240)));
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				594)));
+				446)));
 			this->tableLayoutPanel2->Controls->Add(this->bRetour, 0, 0);
 			this->tableLayoutPanel2->Controls->Add(this->bCommander, 3, 0);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(4, 4);
-			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(4);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(3, 3);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 1;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(1644, 92);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(1233, 75);
 			this->tableLayoutPanel2->TabIndex = 0;
 			// 
 			// bRetour
@@ -149,10 +147,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bRetour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bRetour->Location = System::Drawing::Point(4, 4);
-			this->bRetour->Margin = System::Windows::Forms::Padding(4);
+			this->bRetour->Location = System::Drawing::Point(3, 3);
 			this->bRetour->Name = L"bRetour";
-			this->bRetour->Size = System::Drawing::Size(235, 84);
+			this->bRetour->Size = System::Drawing::Size(176, 69);
 			this->bRetour->TabIndex = 0;
 			this->bRetour->Text = L"Retour";
 			this->bRetour->UseVisualStyleBackColor = true;
@@ -165,10 +162,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bCommander->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bCommander->Location = System::Drawing::Point(733, 4);
-			this->bCommander->Margin = System::Windows::Forms::Padding(4);
+			this->bCommander->Location = System::Drawing::Point(549, 3);
 			this->bCommander->Name = L"bCommander";
-			this->bCommander->Size = System::Drawing::Size(312, 84);
+			this->bCommander->Size = System::Drawing::Size(234, 69);
 			this->bCommander->TabIndex = 1;
 			this->bCommander->Text = L"Commander";
 			this->bCommander->UseVisualStyleBackColor = true;
@@ -182,27 +178,24 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->CatalogueListeClient->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->CatalogueListeClient->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->CatalogueListeClient->Location = System::Drawing::Point(4, 204);
-			this->CatalogueListeClient->Margin = System::Windows::Forms::Padding(4);
+			this->CatalogueListeClient->Location = System::Drawing::Point(3, 165);
 			this->CatalogueListeClient->Name = L"CatalogueListeClient";
 			this->CatalogueListeClient->RowHeadersWidth = 51;
-			this->CatalogueListeClient->Size = System::Drawing::Size(1644, 749);
+			this->CatalogueListeClient->Size = System::Drawing::Size(1233, 609);
 			this->CatalogueListeClient->TabIndex = 2;
 			this->CatalogueListeClient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CommandeClient::dataGridView1_CellContentClick);
 			// 
-			// AjouterCommande1
+			// CommandeClient
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1683, 1055);
+			this->ClientSize = System::Drawing::Size(1264, 985);
 			this->Controls->Add(this->tableLayoutPanel1);
-			this->Margin = System::Windows::Forms::Padding(4);
-			this->MaximumSize = System::Drawing::Size(1701, 1249);
-			this->MinimumSize = System::Drawing::Size(1701, 1018);
-			this->Name = L"AjouterCommande1";
+			this->MaximumSize = System::Drawing::Size(1280, 1024);
+			this->MinimumSize = System::Drawing::Size(1280, 1024);
+			this->Name = L"CommandeClient";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Commande";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &CommandeClient::AjouterCommande1_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);

@@ -11,7 +11,11 @@ ServicePanier::~ServicePanier() {
 }
 
 List<Panier^>^ ServicePanier::SelectAllPanier() {
-    DataSet^ ds = bdd->executeQuery("SELECT * FROM Acheter");
+    DataSet^ ds = bdd->executeQuery("SELECT * FROM Acheter ach"
+        "JOIN Article AS art ON ach.Id_Article = art.Id_Article"
+        "JOIN Commande AS cmd ON ach.Id_Commande = cmd.Id_Commande"
+       " WHERE cmd.Supprimer = 0"
+        "AND art.Supprimer = 0;");
 
     List<Panier^>^ list = gcnew List<Panier^>();
 

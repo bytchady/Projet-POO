@@ -2,6 +2,7 @@
 #include "BDD.h"
 #include "Adresse.h"
 #include "ServiceAdresse.h" 
+
 using namespace System::Data;
 using namespace System::Collections::Generic;
 
@@ -22,7 +23,7 @@ List<Adresse^>^ ServiceAdresse::SelectAllAdresse() {
     {
         Adresse^ ad = gcnew Adresse();
         ad->setIdAdresse((int)row["Id_Adresse"]);
-        ad->setNumRue((int)row["Num_Rue"]);
+        ad->setNumRue((String^)row["Num_Rue"]);
         ad->setNomrue((String^)row["Nom_Rue"]);
         ad->setComplementAdr((String^)row["Complement_Adr"]);
         ad->setNomVille((String^)row["Nom_Ville"]);

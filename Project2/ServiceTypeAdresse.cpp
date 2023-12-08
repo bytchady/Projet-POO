@@ -12,7 +12,12 @@ ServiceTypeAdresse::~ServiceTypeAdresse() {
 }
 
 List<TypeAdresse^>^ ServiceTypeAdresse::SelectAllTypeAdresse() {
-    DataSet^ ds = bdd->executeQuery("SELECT * FROM TypeAdresse");
+    DataSet^ ds = bdd->executeQuery("SELECT * FROM Posseder p"
+        "JOIN Client cl ON p.Id_Client = cl.Id_Client"
+        "JOIN Adresse ad ON p.Id_Adresse = ad.Id_Adresse"
+        "WHERE cl.Supprimer = 0"
+        "AND ad.Supprimer = 0;"
+    );
 
     List<TypeAdresse^>^ list = gcnew List<TypeAdresse^>();
 
@@ -30,9 +35,9 @@ List<TypeAdresse^>^ ServiceTypeAdresse::SelectAllTypeAdresse() {
             adresse->setIdAdresse((int)row["Id_Adresse"]);
 
         if (row->IsNull("Num_Rue"))
-            adresse->setNumRue(0);
+            adresse->setNumRue("");
         else
-            adresse->setNumRue((int)row["Num_Rue"]);
+            adresse->setNumRue((String^)row["Num_Rue"]);
 
         adresse->setNomrue((String^)row["Nom_Rue"]);
         adresse->setComplementAdr((String^)row["Complement_Adresse"]);

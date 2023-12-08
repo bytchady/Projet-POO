@@ -18,7 +18,7 @@
     <ClCompile Include="ModifierAdresse.cpp" />
     <ClCompile Include="SupprimerClientPopUp.cpp" />
     <ClCompile Include="AjouterAdresse.cpp" />
-    <ClCompile Include="GestionCommande.cpp" />
+    <ClCompile Include="HistoriqueCommande.cpp" />
     <ClCompile Include="ModifierCommande.cpp" />
     <ClCompile Include="SupprimerCommandePopUp.cpp" />
     <ClCompile Include="DetailCommande.cpp" />
@@ -51,7 +51,7 @@
     <ClInclude Include="Catalogue.h" />
     <ClInclude Include="DetailCommande.h" />
     <ClInclude Include="GestionClient.h" />
-    <ClInclude Include="GestionCommande.h" />
+    <ClInclude Include="HistoriqueCommande.h" />
     <ClInclude Include="GestionPersonnel.h" />
     <ClInclude Include="mainmenu.h" />
     <ClInclude Include="ModifierAdresse.h" />
