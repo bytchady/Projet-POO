@@ -112,7 +112,7 @@ namespace ProjectPOO {
 
 
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ bActualiser;
+
 
 
 
@@ -133,7 +133,6 @@ namespace ProjectPOO {
 		{
 			this->bretour = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->bActualiser = (gcnew System::Windows::Forms::Button());
 			this->bsupprimer = (gcnew System::Windows::Forms::Button());
 			this->bmodifier = (gcnew System::Windows::Forms::Button());
 			this->bajouter = (gcnew System::Windows::Forms::Button());
@@ -154,7 +153,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bretour->Location = System::Drawing::Point(3, 3);
 			this->bretour->Name = L"bretour";
-			this->bretour->Size = System::Drawing::Size(214, 71);
+			this->bretour->Size = System::Drawing::Size(213, 71);
 			this->bretour->TabIndex = 1;
 			this->bretour->Text = L"Retour";
 			this->bretour->UseVisualStyleBackColor = true;
@@ -172,8 +171,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				247)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				243)));
-			this->tableLayoutPanel1->Controls->Add(this->bActualiser, 0, 0);
+				244)));
 			this->tableLayoutPanel1->Controls->Add(this->bsupprimer, 3, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bmodifier, 2, 0);
 			this->tableLayoutPanel1->Controls->Add(this->bretour, 0, 0);
@@ -186,21 +184,6 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->TabIndex = 2;
 			this->tableLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GestionPersonnel::tableLayoutPanel1_Paint);
 			// 
-			// bActualiser
-			// 
-			this->bActualiser->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->bActualiser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->bActualiser->Location = System::Drawing::Point(223, 3);
-			this->bActualiser->Name = L"bActualiser";
-			this->bActualiser->Size = System::Drawing::Size(231, 71);
-			this->bActualiser->TabIndex = 5;
-			this->bActualiser->Text = L"Actualiser";
-			this->bActualiser->UseVisualStyleBackColor = true;
-			this->bActualiser->Click += gcnew System::EventHandler(this, &GestionPersonnel::bActualiser_Click);
-			// 
 			// bsupprimer
 			// 
 			this->bsupprimer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -208,7 +191,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bsupprimer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bsupprimer->Location = System::Drawing::Point(706, 3);
+			this->bsupprimer->Location = System::Drawing::Point(705, 3);
 			this->bsupprimer->Name = L"bsupprimer";
 			this->bsupprimer->Size = System::Drawing::Size(241, 71);
 			this->bsupprimer->TabIndex = 4;
@@ -223,7 +206,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bmodifier->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bmodifier->Location = System::Drawing::Point(460, 3);
+			this->bmodifier->Location = System::Drawing::Point(459, 3);
 			this->bmodifier->Name = L"bmodifier";
 			this->bmodifier->Size = System::Drawing::Size(240, 71);
 			this->bmodifier->TabIndex = 3;
@@ -238,9 +221,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bajouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bajouter->Location = System::Drawing::Point(953, 3);
+			this->bajouter->Location = System::Drawing::Point(952, 3);
 			this->bajouter->Name = L"bajouter";
-			this->bajouter->Size = System::Drawing::Size(238, 71);
+			this->bajouter->Size = System::Drawing::Size(239, 71);
 			this->bajouter->TabIndex = 2;
 			this->bajouter->Text = L"Ajouter";
 			this->bajouter->UseVisualStyleBackColor = true;
@@ -416,7 +399,7 @@ namespace ProjectPOO {
 
 		if (CataloguePersonnel->SelectedRows->Count > 0) {
 			int rowIndex = CataloguePersonnel->SelectedRows[0]->Index;
-			int refPersonnel = Convert::ToInt32(CataloguePersonnel->Rows[rowIndex]->Cells["Id_Personnel"]->Value);
+			int refPersonnel = Convert::ToInt32(CataloguePersonnel->Rows[rowIndex]->Cells["ID"]->Value);
 			System::Windows::Forms::DialogResult result = MessageBox::Show("Êtes-vous sûr de vouloir supprimer ce Personnel ?", "Confirmation de suppression", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 
 			if (result == System::Windows::Forms::DialogResult::Yes) {

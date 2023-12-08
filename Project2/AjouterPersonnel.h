@@ -25,26 +25,37 @@ namespace ProjectPOO {
 			this->p = p;
 			this->textBox_NomPersonnel->Text = p->getNomPersonnel();
 			this->textBox_PrenomPersonnel->Text = p->getPrenomPersonnel();
+			this->textBox_NumRuePersonnel->Text = p->getAdresse()->getNumRue();
+			this->textBox_Nom_Rue_Personnel->Text = p->getAdresse()->getNomrue();
+			this->textBox_ComplementAdressePersonnel->Text = p->getAdresse()->getComplementAdr();
+			this->textBox_CodePostalePersonnel->Text = p->getAdresse()->getCodePostal();
+			this->textBox_NomVillePersonnel->Text = p->getAdresse()->getNomVille();
 			if (p->getDateNaissance() >= this->dtp_date_naissance->MinDate &&
 				p->getDateNaissance() <= this->dtp_date_naissance->MaxDate)
 			{
+
 				this->dtp_date_naissance->Value = p->getDateNaissance();
+
 			}
-			if (p->getDateEmbauche() >= this->dtp_date_embauche->MinDate &&
+			if (p->getDateEmbauche() >= this->dtp_date_embauche->MinDate&&
 				p->getDateEmbauche() <= this->dtp_date_embauche->MaxDate)
 			{
 				this->dtp_date_embauche->Value = p->getDateEmbauche();
 			}
 			this->textBox_Id_Superieur->Text = p->getIdSuperieur() + "";
-			this->textBox_Nom_Rue_Personnel->Text = p->getAdresse()->getNomrue();
 
-			if (p->getIdPersonnel() != 0) {
-				this->bAjouter->Text = "Modifier";
-			}
+				//Manque le mapping ici des autres champs de l'entité vers l'interface (UI), jte laisse gérer la suite HF ! ++
+
+
+
+				if (p->getIdPersonnel() != 0) {
+					this->bAjouter->Text = "Modifier";
+				}
 
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
+			
 		}
 		bool ok = false;
 
@@ -584,7 +595,7 @@ namespace ProjectPOO {
 		p->setIdSuperieur(int::Parse(this->textBox_Id_Superieur->Text));
 
 		p->getAdresse()->setNomrue(this->textBox_Nom_Rue_Personnel->Text);
-		p->getAdresse()->setNumRue(Convert::ToInt32(this->textBox_NumRuePersonnel->Text));
+		p->getAdresse()->setNumRue(this->textBox_NumRuePersonnel->Text);
 		p->getAdresse()->setComplementAdr(this->textBox_ComplementAdressePersonnel->Text);
 		p->getAdresse()->setNomVille(this->textBox_NomVillePersonnel->Text);
 		p->getAdresse()->setCodePostal(this->textBox_CodePostalePersonnel->Text);
