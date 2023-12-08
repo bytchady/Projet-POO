@@ -18,17 +18,12 @@ using namespace System;
         DateTime Date_Livraison;
         DateTime Date_PaiementFinal;
         float Remise_Commande;
-        Personnel^ personnel = gcnew Personnel();
         Adresse^ livraison = gcnew Adresse();
         Adresse^ facturation = gcnew Adresse();
         Client^ client = gcnew Client();
         bool Supprimer;
 
     public:
-        void setPersonnel(Personnel^ personnel)
-        {
-            this->personnel = personnel;
-        }
 
         void setLivraison(Adresse^ livraison)
         {
@@ -118,11 +113,6 @@ using namespace System;
 
         float getRemiseCommande() {
             return this->Remise_Commande;
-        }
-
-        Personnel^ getPersonnel()
-        {
-            return this->personnel;
         }
 
         Adresse^ getLivraison()
