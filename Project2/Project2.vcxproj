@@ -130,6 +130,8 @@
     <ClCompile Include="AjouterAdresse.cpp" />
     <ClCompile Include="AjouterArticle.cpp" />
     <ClCompile Include="AjouterClient.cpp" />
+    <ClCompile Include="CommandeFacturation.cpp" />
+    <ClCompile Include="CommandeLivrison.cpp" />
     <ClCompile Include="CommandeClient.cpp" />
     <ClCompile Include="CommandeArticle.cpp" />
     <ClCompile Include="CommandeRecap.cpp" />
@@ -177,6 +179,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AjouterClient.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CommandeFacturation.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CommandeLivraison.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CommandeClient.h">
@@ -266,6 +274,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AjouterClient.resx">
       <DependentUpon>AjouterClient.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandeFacturation.resx">
+      <DependentUpon>CommandeFacturation.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandeLivraison.resx">
+      <DependentUpon>CommandeLivraison.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandeClient.resx">
       <DependentUpon>CommandeClient.h</DependentUpon>
