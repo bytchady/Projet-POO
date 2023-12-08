@@ -1,4 +1,6 @@
 #pragma once
+#include "Commande.h"
+#include "ServiceCommande.h"
 
 namespace ProjectPOO {
 
@@ -14,13 +16,19 @@ namespace ProjectPOO {
 	/// </summary>
 	public ref class CommandeRecap : public System::Windows::Forms::Form
 	{
+		Commande^ cmd;
+		ServiceCommande^ scmd;
 	public:
 		CommandeRecap(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: ajoutez ici le code du constructeur
-			//
+			/*his->cmd = cmd;
+			this->scmd = scmd;
+
+			this->Show_Nom->Text = cmd->getNomClient();
+			this->textBox_NomClient->Text = c->getNomClient();
+			this->textBox_PrenomClient->Text = c->getPrenomClient();
+			this->dtp_DateNaissance->Value = (c->getNaissanceClient() != DateTime::MinValue) ? c->getNaissanceClient() : this->dtp_DateNaissance->MinDate;*/
 		}
 
 	protected:
@@ -172,7 +180,6 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 37)));
 			this->tableLayoutPanel2->Size = System::Drawing::Size(1233, 225);
 			this->tableLayoutPanel2->TabIndex = 0;
-			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &CommandeRecap::tableLayoutPanel2_Paint);
 			// 
 			// Show_DateLivraison
 			// 
@@ -445,6 +452,7 @@ namespace ProjectPOO {
 			this->bValiderCommande->TabIndex = 0;
 			this->bValiderCommande->Text = L"Valider Commande";
 			this->bValiderCommande->UseVisualStyleBackColor = true;
+			this->bValiderCommande->Click += gcnew System::EventHandler(this, &CommandeRecap::bValiderCommande_Click);
 			// 
 			// bAnnuler
 			// 
@@ -486,10 +494,10 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
-	private: System::Void tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
 	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+private: System::Void bValiderCommande_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

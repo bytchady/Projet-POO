@@ -1,7 +1,7 @@
 #pragma once
 #include "ServiceClient.h"
 #include "ServiceCommande.h"
-#include "CommandeArticle.h"
+#include "CommandeLivraison.h"
 
 namespace ProjectPOO {
 
@@ -53,6 +53,7 @@ namespace ProjectPOO {
 		}
 		ServiceCommande^ scmd = gcnew ServiceCommande();
 		ServiceClient^ scl = gcnew ServiceClient();
+		Commande^ cmd = gcnew Commande();
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -131,7 +132,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				240)));
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				448)));
+				449)));
 			this->tableLayoutPanel2->Controls->Add(this->bRetour, 0, 0);
 			this->tableLayoutPanel2->Controls->Add(this->bCommander, 3, 0);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(3, 3);
@@ -163,7 +164,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bCommander->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bCommander->Location = System::Drawing::Point(547, 3);
+			this->bCommander->Location = System::Drawing::Point(546, 3);
 			this->bCommander->Name = L"bCommander";
 			this->bCommander->Size = System::Drawing::Size(234, 69);
 			this->bCommander->TabIndex = 1;
@@ -240,24 +241,40 @@ namespace ProjectPOO {
 			this->CatalogueListeClient->Rows->Add(dgvr);
 		}
 	}
+		   private:
+			   int selectedClientId;
+
+public:
+	property int SelectedClientId {
+		int get() {
+			return selectedClientId;
+		}
+		void set(int value) {
+			selectedClientId = value;
+		}
+	}
 	private: System::Void bCommander_Click(System::Object^ sender, System::EventArgs^ e) {
-		CommandeArticle^ Ca = gcnew CommandeArticle();
-		Ca->ShowDialog();
-		/*if (this->CatalogueListeClient->SelectedRows->Count != 1)
+		/*CommandeArticle^ nouvellecommande = gcnew CommandeArticle();
+		nouvellecommande->ShowDialog();
+		if (this->CatalogueListeClient->SelectedRows->Count != 1)
 			return;
-
 		Commande^ cmd = (Commande^)this->CatalogueListeClient->SelectedRows[0]->Tag;
-
-		AjouterClient^ modifierclient = gcnew AjouterClient(c);
-		modifierclient->ShowDialog();
-		if (modifierclient->ok) {
-			scl->UpdateClient(c);
-			this->Reload();
+		if (nouvellecommande->) {
+			
 		}*/
+
+
+		// Mettez à jour l'ID du client sélectionné
+		/*if (this->CatalogueListeClient->SelectedRows->Count == 1) {
+			cmd = (Commande^)this->CatalogueListeClient->SelectedRows[0]->Tag;
+			this->SelectedClientId = cmd->getClient()->getIdClient();
+		}*/
+		CommandeLivraison^ cl = gcnew CommandeLivraison();
+		cl->ShowDialog();
+	
 	}
 	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-
 };
 }
