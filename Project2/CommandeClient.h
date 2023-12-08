@@ -1,6 +1,7 @@
 #pragma once
 #include "ServiceClient.h"
 #include "ServiceCommande.h"
+#include "CommandeArticle.h"
 
 namespace ProjectPOO {
 
@@ -12,7 +13,7 @@ namespace ProjectPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de AjouterCommande1
+	/// Description résumée de CommandeClient
 	/// </summary>
 	public ref class CommandeClient : public System::Windows::Forms::Form
 	{
@@ -130,7 +131,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				240)));
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				446)));
+				448)));
 			this->tableLayoutPanel2->Controls->Add(this->bRetour, 0, 0);
 			this->tableLayoutPanel2->Controls->Add(this->bCommander, 3, 0);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(3, 3);
@@ -149,7 +150,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bRetour->Location = System::Drawing::Point(3, 3);
 			this->bRetour->Name = L"bRetour";
-			this->bRetour->Size = System::Drawing::Size(176, 69);
+			this->bRetour->Size = System::Drawing::Size(175, 69);
 			this->bRetour->TabIndex = 0;
 			this->bRetour->Text = L"Retour";
 			this->bRetour->UseVisualStyleBackColor = true;
@@ -162,7 +163,7 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bCommander->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bCommander->Location = System::Drawing::Point(549, 3);
+			this->bCommander->Location = System::Drawing::Point(547, 3);
 			this->bCommander->Name = L"bCommander";
 			this->bCommander->Size = System::Drawing::Size(234, 69);
 			this->bCommander->TabIndex = 1;
@@ -173,6 +174,7 @@ namespace ProjectPOO {
 			// CatalogueListeClient
 			// 
 			this->CatalogueListeClient->AllowUserToAddRows = false;
+			this->CatalogueListeClient->AllowUserToDeleteRows = false;
 			this->CatalogueListeClient->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -181,9 +183,9 @@ namespace ProjectPOO {
 			this->CatalogueListeClient->Location = System::Drawing::Point(3, 165);
 			this->CatalogueListeClient->Name = L"CatalogueListeClient";
 			this->CatalogueListeClient->RowHeadersWidth = 51;
+			this->CatalogueListeClient->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->CatalogueListeClient->Size = System::Drawing::Size(1233, 609);
 			this->CatalogueListeClient->TabIndex = 2;
-			this->CatalogueListeClient->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CommandeClient::dataGridView1_CellContentClick);
 			// 
 			// CommandeClient
 			// 
@@ -195,8 +197,7 @@ namespace ProjectPOO {
 			this->MinimumSize = System::Drawing::Size(1280, 1024);
 			this->Name = L"CommandeClient";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Commande";
-			this->Load += gcnew System::EventHandler(this, &CommandeClient::AjouterCommande1_Load);
+			this->Text = L"Liste des Clients";
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueListeClient))->EndInit();
@@ -240,10 +241,12 @@ namespace ProjectPOO {
 		}
 	}
 	private: System::Void bCommander_Click(System::Object^ sender, System::EventArgs^ e) {
+		CommandeArticle^ Ca = gcnew CommandeArticle();
+		Ca->ShowDialog();
 		/*if (this->CatalogueListeClient->SelectedRows->Count != 1)
 			return;
 
-		Client^ c = (Client^)this->CatalogueListeClient->SelectedRows[0]->Tag;
+		Commande^ cmd = (Commande^)this->CatalogueListeClient->SelectedRows[0]->Tag;
 
 		AjouterClient^ modifierclient = gcnew AjouterClient(c);
 		modifierclient->ShowDialog();
@@ -255,13 +258,6 @@ namespace ProjectPOO {
 	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	private: System::Void bAjouterClient_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*AjouterClient^ ac = gcnew AjouterClient();
-		ac->ShowDialog();*/
-	}
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
-private: System::Void AjouterCommande1_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+
 };
 }
