@@ -89,10 +89,7 @@ void ServiceCommande::InsertCommande(Commande^ commande) {
     String^ totalTVA = commande->getTotalTVA().ToString(System::Globalization::CultureInfo::InvariantCulture);
     String^ remiseCommande = commande->getRemiseCommande().ToString(System::Globalization::CultureInfo::InvariantCulture);
 
-    String^ refCommande = GenerateCommandReference(commande->getClient()->getPrenomClient(),
-        commande->getClient()->getNomClient(),
-        commande->getDateEmission().Year,
-        commande->getLivraison()->getNomVille());
+    String^ refCommande = GenerateCommandReference(commande->getClient()->getPrenomClient(),commande->getClient()->getNomClient(),commande->getDateEmission().Year, commande->getLivraison()->getNomVille());
 
     int id_commande = bdd->executeInsert("INSERT INTO Commande (Ref_Commande, Total_TTC, Total_HT, Total_TVA, Date_Emission, Date_Livraison, Date_PaiementFinal, Remise_Commande, Supprimer, Id_Personnel, Id_Adresse, Id_Adresse_1, Id_Client) VALUES ('" + refCommande + "','" + totalTTC + "','" + totalHT + "','" + totalTVA + "','" + commande->getDateEmission() + "','" + commande->getDateLivraison() + "','" + commande->getDatePaiementFinal() + "','" + remiseCommande + "','" + commande->getSupprimer() + commande->getLivraison() + "','" + commande->getFacturation() + "','" + commande->getClient() + "');");
     commande->setIdCommande(id_commande);

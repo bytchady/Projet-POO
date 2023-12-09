@@ -24,12 +24,14 @@ List<Adresse^>^ ServiceAdresse::SelectAllAdresse() {
         Adresse^ ad = gcnew Adresse();
         ad->setIdAdresse((int)row["Id_Adresse"]);
         ad->setNumRue((String^)row["Num_Rue"]);
-        ad->setNomrue((String^)row["Nom_Rue"]);
+        ad->setNomRue((String^)row["Nom_Rue"]);
         ad->setComplementAdr((String^)row["Complement_Adr"]);
         ad->setNomVille((String^)row["Nom_Ville"]);
         ad->setCodePostal((String^)row["Code_Postal"]);
-        ad->setSupprimer((bool)row["Supprimer"]);
-
+        if (row->IsNull("Supprimer"))
+            ad->setSupprimer(0);
+        else
+            ad->setSupprimer((bool)row["Supprimer"]);
         list->Add(ad);
     }
 
@@ -38,7 +40,7 @@ List<Adresse^>^ ServiceAdresse::SelectAllAdresse() {
 
 void ServiceAdresse::InsertAdresse(Adresse^ ad) {
     int id_adresse = bdd->executeInsert("INSERT INTO Adresse (Num_Rue, Nom_Rue, Complement_Adr, Nom_Ville, Code_Postal, Supprimer) VALUES ('" +
-        ad->getNumRue() + "', '" + ad->getNomrue() + "', '" + ad->getComplementAdr() + "', '" +
+        ad->getNumRue() + "', '" + ad->getNomRue() + "', '" + ad->getComplementAdr() + "', '" +
         ad->getNomVille() + "', '" + ad->getCodePostal() + "', '" + ad->getSupprimer() + "')");
 
     ad->setIdAdresse(id_adresse);
@@ -46,7 +48,7 @@ void ServiceAdresse::InsertAdresse(Adresse^ ad) {
 
 void ServiceAdresse::UpdateAdresse(Adresse^ ad) {
     bdd->executeNonQuery("UPDATE Adresse SET Num_Rue = '" + ad->getNumRue() +
-        "', Nom_Rue = '" + ad->getNomrue() +
+        "', Nom_Rue = '" + ad->getNomRue() +
         "', Complement_Adr = '" + ad->getComplementAdr() +
         "', Nom_Ville = '" + ad->getNomVille() +
         "', Code_Postal = '" + ad->getCodePostal() +

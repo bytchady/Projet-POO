@@ -13,8 +13,8 @@ public:
     ServiceTypeAdresse();
     ~ServiceTypeAdresse();
 
-    List<TypeAdresse^>^ SelectAllTypeAdresse();
+    List<TypeAdresse^>^ SelectAllLivraisonAdresse(TypeAdresse^ typeAdresse);
+    List<TypeAdresse^>^ SelectAllFacturationAdresse(TypeAdresse^ typeAdresse);
     void InsertTypeAdresse(TypeAdresse^ typeAdresse);
-    void UpdateTypeAdresse(TypeAdresse^ typeAdresse);
 };
 

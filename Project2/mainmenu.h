@@ -215,7 +215,7 @@ namespace ProjectPOO {
 			this->Name = L"mainmenu";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Menu";
-			this->Load += gcnew System::EventHandler(this, &mainmenu::MyForm_Load);
+			this->Load += gcnew System::EventHandler(this, &mainmenu::mainmenu_Load);
 			this->tabmenu->ResumeLayout(false);
 			this->tabmenu->PerformLayout();
 			this->ResumeLayout(false);
@@ -244,7 +244,7 @@ namespace ProjectPOO {
 		Statistiques^ s = gcnew Statistiques();
 		s->ShowDialog();
 	}
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void mainmenu_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }

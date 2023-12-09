@@ -21,7 +21,7 @@ public:
         return this->Num_Rue;
     }
 
-    String^ getNomrue() {
+    String^ getNomRue() {
         return this->Nom_rue;
     }
 
@@ -49,7 +49,7 @@ public:
         this->Num_Rue = Num_Rue;
     }
 
-    void setNomrue(String^ Nom_rue) {
+    void setNomRue(String^ Nom_rue) {
         this->Nom_rue = Nom_rue;
     }
 

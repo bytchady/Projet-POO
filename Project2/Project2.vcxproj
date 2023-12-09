@@ -125,7 +125,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Acheter.cpp" />
     <ClCompile Include="Adresse.cpp" />
     <ClCompile Include="AjouterAdresse.cpp" />
     <ClCompile Include="AjouterArticle.cpp" />
@@ -170,7 +169,6 @@
     <ClCompile Include="TypeAdresse.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Acheter.h" />
     <ClInclude Include="Adresse.h" />
     <ClInclude Include="AjouterAdresse.h">
       <FileType>CppForm</FileType>

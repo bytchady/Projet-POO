@@ -89,15 +89,6 @@ namespace ProjectPOO {
 		}
 
 	private:
-		/*void refresh() {
-			ServicePersonnel^ servicepersonnel = gcnew ServicePersonnel();
-			ServiceAdresse^ serviceadresse = gcnew ServiceAdresse();
-			System::Data::DataSet^ personnelDataSet = servicepersonnel->SelectAllServicePersonnel();
-			System::Data::DataSet^ adresseDataSet = serviceadresse->SelectAllServiceAdresse();
-			personnelDataSet->Tables[0]->Merge(adresseDataSet->Tables[0]);
-			CataloguePersonnel->DataSource = personnelDataSet;
-			CataloguePersonnel->DataMember = personnelDataSet->Tables[0]->TableName;
-		}*/
 
 	private: System::Windows::Forms::Button^ bretour;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
@@ -298,7 +289,7 @@ namespace ProjectPOO {
 		this->Close();
 	}
 	private: System::Void GestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
-		Reload();
+		this->Reload();
 	}
 
 
@@ -330,7 +321,7 @@ namespace ProjectPOO {
 			dgvr->Cells->Add(dgvc4);
 
 			DataGridViewTextBoxCell^ dgvc5 = gcnew DataGridViewTextBoxCell();
-			dgvc5->Value = a->getNomrue();
+			dgvc5->Value = a->getNomRue();
 			dgvr->Cells->Add(dgvc5);
 
 			DataGridViewTextBoxCell^ dgvc6 = gcnew DataGridViewTextBoxCell();

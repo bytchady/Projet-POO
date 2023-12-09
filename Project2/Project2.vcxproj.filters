@@ -32,7 +32,6 @@
     <ClCompile Include="AjouterClient.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="ServiceCommande.cpp" />
-    <ClCompile Include="Acheter.cpp" />
     <ClCompile Include="CommandeClient.cpp" />
     <ClCompile Include="CommandeArticle.cpp" />
     <ClCompile Include="CommandeRecap.cpp" />
@@ -75,7 +74,6 @@
     <ClInclude Include="AjouterClient.h" />
     <ClInclude Include="Commande.h" />
     <ClInclude Include="ServiceCommande.h" />
-    <ClInclude Include="Acheter.h" />
     <ClInclude Include="CommandeClient.h" />
     <ClInclude Include="CommandeArticle.h" />
     <ClInclude Include="CommandeRecap.h" />

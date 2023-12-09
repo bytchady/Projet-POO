@@ -27,8 +27,13 @@ namespace ProjectPOO {
 			this->textBox_NumClient->Text = c->getNumClient();
 			this->textBox_NomClient->Text = c->getNomClient();
 			this->textBox_PrenomClient->Text = c->getPrenomClient();
-			this->dtp_DateNaissance->Value = (c->getNaissanceClient() != DateTime::MinValue) ? c->getNaissanceClient() : this->dtp_DateNaissance->MinDate;
+			if (c->getNaissanceClient() >= this->dtp_DateNaissance->MinDate &&
+				c->getNaissanceClient() <= this->dtp_DateNaissance->MaxDate)
+			{
 
+				this->dtp_DateNaissance->Value = c->getNaissanceClient();
+
+			}
 			if (c->getIdClient() != 0) {
 				this->bValider->Text = "Modifier";
 			}
@@ -338,7 +343,6 @@ namespace ProjectPOO {
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Ajouter Client";
-			this->Load += gcnew System::EventHandler(this, &AjouterClient::AjouterClient_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
@@ -365,8 +369,6 @@ namespace ProjectPOO {
 
 private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
-}
-private: System::Void AjouterClient_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

@@ -241,37 +241,18 @@ namespace ProjectPOO {
 			this->CatalogueListeClient->Rows->Add(dgvr);
 		}
 	}
-		   private:
-			   int selectedClientId;
+		   
+			   
 
-public:
-	property int SelectedClientId {
-		int get() {
-			return selectedClientId;
-		}
-		void set(int value) {
-			selectedClientId = value;
-		}
-	}
+
+
 	private: System::Void bCommander_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*CommandeArticle^ nouvellecommande = gcnew CommandeArticle();
-		nouvellecommande->ShowDialog();
-		if (this->CatalogueListeClient->SelectedRows->Count != 1)
-			return;
-		Commande^ cmd = (Commande^)this->CatalogueListeClient->SelectedRows[0]->Tag;
-		if (nouvellecommande->) {
-			
-		}*/
-
-
-		// Mettez à jour l'ID du client sélectionné
-		/*if (this->CatalogueListeClient->SelectedRows->Count == 1) {
-			cmd = (Commande^)this->CatalogueListeClient->SelectedRows[0]->Tag;
-			this->SelectedClientId = cmd->getClient()->getIdClient();
-		}*/
-		CommandeLivraison^ cl = gcnew CommandeLivraison();
-		cl->ShowDialog();
-	
+		if (this->CatalogueListeClient->SelectedRows->Count == 1) {
+			Client^ c = (Client^)this->CatalogueListeClient->SelectedRows[0]->Tag;
+			//c->getIdClient(); 
+			CommandeLivraison^ nouvellecommande = gcnew CommandeLivraison(c->getIdClient());
+			nouvellecommande->ShowDialog();
+		}
 	}
 	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();

@@ -32,7 +32,7 @@ List<Personnel^>^ ServicePersonnel::SelectAllPersonnel() {
 		else
 			a->setNumRue((String^)row["Num_Rue"]);
 
-		a->setNomrue((String^)row["Nom_Rue"]);
+		a->setNomRue((String^)row["Nom_Rue"]);
 		a->setComplementAdr((String^)row["Complement_Adr"]);
 		a->setNomVille((String^)row["Nom_Ville"]);
 		a->setCodePostal((String^)row["Code_Postal"]);
