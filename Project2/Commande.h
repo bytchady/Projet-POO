@@ -1,7 +1,7 @@
 #pragma once
 #include"Adresse.h"
-#include"Personnel.h"
 #include"Client.h"
+//#include "TypeAdresse.h"
 
 using namespace System;
 
@@ -24,22 +24,6 @@ using namespace System;
         bool Supprimer;
 
     public:
-
-        void setLivraison(Adresse^ livraison)
-        {
-            this->livraison = livraison;
-        }
-
-        void setFacturation(Adresse^ facturation)
-        {
-            this->facturation = facturation;
-        }
-
-        void setClient(Client^ client)
-        {
-            this->client = client;
-        }
-
         void setIdCommande(int idCommande) {
             this->Id_Commande = idCommande;
         }
@@ -73,6 +57,21 @@ using namespace System;
 
         void setRemiseCommande(float remiseCommande) {
             this->Remise_Commande = remiseCommande;
+        }
+
+        void setLivraison(Adresse^ livraison)
+        {
+            this->livraison = livraison;
+        }
+
+        void setFacturation(Adresse^ facturation)
+        {
+            this->facturation = facturation;
+        }
+
+        void setClient(Client^ client)
+        {
+            this->client = client;
         }
 
         void setSupprimer(bool supprimer) {

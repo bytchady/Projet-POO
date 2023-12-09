@@ -11,7 +11,7 @@ public:
     ServiceCommande(); 
     ~ServiceCommande();  
 
-    List<Commande^>^ SelectAllCommande();  
+    List<Commande^>^ SelectCommandeClient(Commande^ commande);  
     String^ GenerateCommandReference(String^ prenom, String^ nom, int annee, String^ ville);
     void InsertCommande(Commande^ commande);  
     void DeleteCommande(Commande^ commande);  

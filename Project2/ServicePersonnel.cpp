@@ -44,12 +44,6 @@ List<Personnel^>^ ServicePersonnel::SelectAllPersonnel() {
 		p->setIdPersonnel((int)row["Id_Personnel"]);
 		p->setNomPersonnel((String^)row["Nom_Personnel"]);
 		p->setPrenomPersonnel((String^)row["Prenom_Personnel"]);
-
-		/*if (row->IsNull("Id_Adresse"))
-			p->setIdPersonnel((int)row["Id_Personnel"]);
-		else
-			p->setIdPersonnel((int)row["Id_Personnel"]);*/
-
 		p->setSupprimer((bool)row["Supprimer"]);
 		p->setDateNaissance((DateTime)row["Date_Naissance"]);
 		p->setDateEmbauche((DateTime)row["Date_Embauche"]);

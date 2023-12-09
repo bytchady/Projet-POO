@@ -3,7 +3,7 @@
 #include "Adresse.h"
 #include "ServiceTypeAdresse.h"
 #include "ServiceAdresse.h"
-
+#include "Commande.h"
 
 
 namespace ProjectPOO {
@@ -27,10 +27,9 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel4;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel5;
 	private: System::Windows::Forms::Button^ bAjouter;
-		  
-
+	private:
+		int idClient;
 	public:
-		// Le constructeur peut être modifié pour accepter l'ID du client
 		CommandeLivraison(int idClient) {
 			InitializeComponent();
 			DataGridViewTextBoxColumn^ dgvtbc1 = gcnew DataGridViewTextBoxColumn();
@@ -67,6 +66,7 @@ namespace ProjectPOO {
 			DataGridViewTextBoxColumn^ dgvtbc8 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc8->Name = "Ville";
 			this->CatalogueLivraison->Columns->Add(dgvtbc8);
+			this->idClient = idClient;
 
 			ta->getClient()->setIdClient(idClient);
 			if (ta != nullptr) {
@@ -543,13 +543,36 @@ namespace ProjectPOO {
 		this->Close();
 	}
 	private: System::Void bSuivant_Click(System::Object^ sender, System::EventArgs^ e) {
-		CommandeFacturation^ cf = gcnew CommandeFacturation();
-		cf->ShowDialog();
+		Commande^ cmd = gcnew Commande();
+		if (this->CatalogueLivraison->SelectedRows->Count == 1) {
+			Adresse^ adresselivraison = (Adresse^)this->CatalogueLivraison->SelectedRows[0]->Tag;
+			if (adresselivraison != nullptr) {
+				// Appeler setClient avec le client sélectionné
+				cmd->setLivraison(adresselivraison);
+				int idAdresse = adresselivraison->getIdAdresse();
+				String^ numRue = adresselivraison->getNumRue();
+				String^ nomRue = adresselivraison->getNomRue();
+				String^ complementAdr = adresselivraison->getComplementAdr();
+				String^ nomVille = adresselivraison->getNomVille();
+				String^ codePostal = adresselivraison->getCodePostal();
+
+				if (cmd != nullptr) {
+					cmd->getLivraison()->setIdAdresse(idAdresse);
+					cmd->getLivraison()->setNumRue(numRue);
+					cmd->getLivraison()->setNomRue(nomRue);
+					cmd->getLivraison()->setComplementAdr(complementAdr);
+					cmd->getLivraison()->setNomVille(nomVille);
+					cmd->getLivraison()->setCodePostal(codePostal);
+
+					TypeAdresse^ livraison = (TypeAdresse^)this->CatalogueLivraison->SelectedRows[0]->Tag;
+					CommandeFacturation^ nouvellecommande = gcnew CommandeFacturation(idClient, livraison->getAdresse()->getIdAdresse());
+					nouvellecommande->ShowDialog();
+				}
+			}
+		}
 	}
 
 	private: void Reload() {
-
-
 		// Maintenant, appelez la fonction avec l'objet créé
 		List<TypeAdresse^>^ livraison = sta->SelectAllLivraisonAdresse(ta);
 
@@ -608,7 +631,7 @@ private: System::Void bSupprimer_Click(System::Object^ sender, System::EventArgs
 			adressetodelete->setIdAdresse(idadresse);
 			sa->DeleteAdresse(adressetodelete);
 			this->Reload();
-			MessageBox::Show("Client supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			MessageBox::Show("Adresse supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
 	}
 	else {
@@ -617,6 +640,7 @@ private: System::Void bSupprimer_Click(System::Object^ sender, System::EventArgs
 }
 private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ e) {
 	Adresse^ nouvelleadresse = gcnew Adresse();
+	TypeAdresse^ nouvelleadrLivraison = gcnew TypeAdresse();
 	nouvelleadresse->setNumRue(this->textBox_NumRue->Text);
 	nouvelleadresse->setNomRue(this->textBox_NomRue->Text);
 	nouvelleadresse->setNomVille(this->textBox_NomVille->Text);
@@ -625,9 +649,10 @@ private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ 
 	sa->InsertAdresse(nouvelleadresse);
 	
 	String^ typeadresse = "Livraison";
-	ta->setTypeAdresse(typeadresse);
-	ta->setAdresse(nouvelleadresse)/*->setIdAdresse(nouvelleadresse)*/;
-	/*ta->getClient()->setIdClient(idClient);*/
+	nouvelleadrLivraison->setTypeAdresse(typeadresse);
+	nouvelleadrLivraison->setAdresse(nouvelleadresse);
+	nouvelleadrLivraison->getAdresse()->getIdAdresse();
+	nouvelleadrLivraison->getClient()->setIdClient(this->idClient);
 
 	if (String::IsNullOrWhiteSpace(this->textBox_NumRue->Text) ||
 		String::IsNullOrWhiteSpace(this->textBox_NomRue->Text) ||
@@ -637,7 +662,10 @@ private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ 
 		MessageBox::Show("Veuillez remplir tous les champs.", "Champs obligatoires", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		return;
 	}
-	this->Reload();
+	if (nouvelleadrLivraison) {
+		sta->InsertTypeAdresse(nouvelleadrLivraison);
+		this->Reload();
+	}
 }
 };
 }

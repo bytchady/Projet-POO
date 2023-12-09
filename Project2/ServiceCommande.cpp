@@ -1,6 +1,7 @@
 #include "ServiceCommande.h"
 #include "Commande.h"
-
+#include "Adresse.h"
+#include "Client.h"
 
 ServiceCommande::ServiceCommande() {
     bdd = gcnew BDD();
@@ -10,52 +11,87 @@ ServiceCommande::~ServiceCommande() {
     delete bdd;
 }
 
-List<Commande^>^ ServiceCommande::SelectAllCommande() {
-    DataSet^ ds = bdd->executeQuery("SELECT FROM Commande cmd"
+List<Commande^>^ ServiceCommande::SelectCommandeClient(Commande^ commande) {
+    String^ query = "SELECT * FROM Commande cmd"
         "JOIN Client cl ON cmd.Id_Client = cl.Id_Client"
-        "JOIN Acheter ach ON cmd.Id_Commande = ach.Id_Commande"
+        "JOIN Posseder pl ON cmd.Id_Adresse = pl.Id_Adresse"
+        "JOIN Posseder pf ON cmd.Id_Adresse_1 = pf.Id_Adresse"
         "JOIN Adresse adl ON cmd.Id_Adresse = adl.Id_Adresse"
         "JOIN Adresse adf ON cmd.Id_Adresse_1 = adf.Id_Adresse"
-        "JOIN Personnel p ON cmd.Id_Personnel = p.Id_Personnel"
-        "WHERE cmd.Supprimer = 0"
-        "AND cl.Supprimer = 0"
+        "WHERE cl.Supprimer = 0"
+        "AND cl.Id_Client = " + commande->getClient()->getIdClient() +
+        "AND pl.Id_Client = " + commande->getClient()->getIdClient() +
+        "AND pf.Id_Client = " + commande->getClient()->getIdClient() +
+        "AND cmd.Supprimer = 0"
         "AND adl.Supprimer = 0"
-        "AND adf.Supprimer = 0"
-        "AND p.Supprimer = 0; ");
+        "AND adf.Supprimer = 0;";
+
+    System::Diagnostics::Debug::WriteLine(query);
+
+    DataSet^ ds = bdd->executeQuery(query);
 
     List<Commande^>^ list = gcnew List<Commande^>();
 
     for each (DataRow ^ row in ds->Tables[0]->Rows) {
         Commande^ cmd = gcnew Commande();
-        Adresse^ a = gcnew Adresse();
+        Adresse^ livraison = gcnew Adresse();
+        Adresse^ facturation = gcnew Adresse();
         Client^ cl = gcnew Client();
 
-        cmd->setLivraison(a);
-        if (row->IsNull("Id_Adresse"))
-            a->setIdAdresse(0);
-        else
-            a->setIdAdresse((int)row["Id_Adresse"]);
-        if (row->IsNull("Id_Adresse_1"))
-            a->setIdAdresse(0);
-        else
-            
+        cmd->setLivraison(livraison);
+        cmd->setFacturation(facturation);
         cmd->setClient(cl);
+
+        if (row->IsNull("Id_Commande"))
+            cmd->setIdCommande(0);
+        else
+            cmd->setIdCommande((int)row["Id_Commande"]);
+        
+        if (row->IsNull("Ref_Commande"))
+            cmd->setRefCommande("");
+        else
+            cmd->setRefCommande((String^)row["Ref_Commande"]);
+
+        if (row->IsNull("Total_TTC"))
+            cmd->setTotalTTC(0);
+        else
+            cmd->setTotalTTC(Convert::ToSingle(row["Total_TTC"]));
+
+        if (row->IsNull("Total_HT"))
+            cmd->setTotalHT(0);
+        else
+            cmd->setTotalHT(Convert::ToSingle(row["Total_HT"]));
+
+        if (row->IsNull("Total_TVA"))
+            cmd->setTotalTVA(0);
+        else
+            cmd->setTotalTVA(Convert::ToSingle(row["Total_TVA"]));
+
+        cmd->setDateEmission(row->IsNull("Date_Emission") ? DateTime::MinValue : Convert::ToDateTime(row["Date_Emission"]));
+        cmd->setDateLivraison(row->IsNull("Date_Livraison") ? DateTime::MinValue : Convert::ToDateTime(row["Date_Livraison"]));
+        cmd->setDatePaiementFinal(row->IsNull("Date_PaiementFinal") ? DateTime::MinValue : Convert::ToDateTime(row["Date_PaiementFinal"]));
+
+        if (row->IsNull("Remise_Commande"))
+            cmd->setRemiseCommande(0);
+        else
+            cmd->setRemiseCommande(Convert::ToSingle(row["Remise_Commande"]));
+        cmd->setSupprimer((bool)row["Supprimer"]);
+      
+        if (row->IsNull("Id_Adresse"))
+            livraison->setIdAdresse(0);
+        else
+            livraison->setIdAdresse((int)row["Id_Adresse"]);
+
+        if (row->IsNull("Id_Adresse_1"))
+            facturation->setIdAdresse(0);
+        else
+            facturation->setIdAdresse((int)row["Id_Adresse_1"]);
+
         if (row->IsNull("Id_Client"))
             cl->setIdClient(0);
         else
             cl->setIdClient((int)row["Id_Client"]);
-
-    
-        cmd->setIdCommande((int)row["Id_Commande"]);
-        cmd->setRefCommande((String^)row["Ref_Commande"]);
-        cmd->setTotalTTC(Convert::ToSingle(row["Total_TTC"]));
-        cmd->setTotalHT(Convert::ToSingle(row["Total_HT"]));
-        cmd->setTotalTVA(Convert::ToSingle(row["Total_TVA"]));
-        cmd->setDateEmission(Convert::ToDateTime(row["Date_Emission"]));
-        cmd->setDateLivraison(Convert::ToDateTime(row["Date_Livraison"]));
-        cmd->setDatePaiementFinal(Convert::ToDateTime(row["Date_PaiementFinal"]));
-        cmd->setRemiseCommande(Convert::ToSingle(row["Remise_Commande"]));
-        cmd->setSupprimer((bool)row["Supprimer"]);
+       
 
         list->Add(cmd);
     }

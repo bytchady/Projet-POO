@@ -1,5 +1,5 @@
 #pragma once
-#include "CommandeClient.h"
+#include "CommandeArticle.h"
 #include "SupprimerCommandePopUp.h"
 #include "DetailCommande.h"
 #include "Commande.h"
@@ -246,8 +246,8 @@ namespace ProjectPOO {
 		dc->ShowDialog();
 	}
 private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ e) {
-	CommandeClient^ cc = gcnew CommandeClient();
-	cc->ShowDialog();
+	CommandeArticle^ ca = gcnew CommandeArticle();
+	ca->ShowDialog();
 }
 private: System::Void bModifier_Click(System::Object^ sender, System::EventArgs^ e) {
 }

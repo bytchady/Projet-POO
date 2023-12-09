@@ -1,5 +1,5 @@
 #pragma once
-#include "CommandeRecap.h"
+#include "CommandeClient.h"
 #include "ServiceArticle.h"
 
 namespace ProjectPOO {
@@ -416,8 +416,8 @@ namespace ProjectPOO {
 		this->Close();
 	}
 	private: System::Void bSuivant_Click(System::Object^ sender, System::EventArgs^ e) {
-		CommandeRecap^ Cr = gcnew CommandeRecap();
-		Cr->ShowDialog();
+		CommandeClient^ cc = gcnew CommandeClient();
+		cc->ShowDialog();
 	}
 	private: System::Void CatalogueListeArticle_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 

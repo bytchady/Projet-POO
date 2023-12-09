@@ -2,6 +2,8 @@
 #include "ServiceClient.h"
 #include "ServiceCommande.h"
 #include "CommandeLivraison.h"
+#include "Commande.h"
+
 
 namespace ProjectPOO {
 
@@ -37,23 +39,14 @@ namespace ProjectPOO {
 			this->CatalogueListeClient->Columns->Add(dgvtbc3);
 
 			DataGridViewTextBoxColumn^ dgvtbc4 = gcnew DataGridViewTextBoxColumn();
-			dgvtbc4->Name = "Adresses de livraisons";
+			dgvtbc4->Name = "Id_Client";
+			dgvtbc4->Visible = false;
 			this->CatalogueListeClient->Columns->Add(dgvtbc4);
-
-			DataGridViewTextBoxColumn^ dgvtbc5 = gcnew DataGridViewTextBoxColumn();
-			dgvtbc5->Name = "Adresses de facturations";
-			this->CatalogueListeClient->Columns->Add(dgvtbc5);
-
-			DataGridViewTextBoxColumn^ dgvtbc6 = gcnew DataGridViewTextBoxColumn();
-			dgvtbc6->Name = "Id_Client";
-			dgvtbc6->Visible = false;
-			this->CatalogueListeClient->Columns->Add(dgvtbc6);
 
 			this->Reload();
 		}
 		ServiceCommande^ scmd = gcnew ServiceCommande();
 		ServiceClient^ scl = gcnew ServiceClient();
-		Commande^ cmd = gcnew Commande();
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -225,33 +218,35 @@ namespace ProjectPOO {
 			dgvc3->Value = c->getPrenomClient();
 			dgvr->Cells->Add(dgvc3);
 
-			/*DataGridViewTextBoxCell^ dgvc4 = gcnew DataGridViewTextBoxCell();
-			dgvc4->Value = c->getPrenomClient();
+			DataGridViewTextBoxCell^ dgvc4 = gcnew DataGridViewTextBoxCell();
+			dgvc4->Value = c->getIdClient();
 			dgvr->Cells->Add(dgvc4);
-
-			DataGridViewTextBoxCell^ dgvc5 = gcnew DataGridViewTextBoxCell();
-			dgvc5->Value = c->getNaissanceClient().ToString("dd/MM/yyyy");
-			dgvr->Cells->Add(dgvc5);*/
-
-			DataGridViewTextBoxCell^ dgvc6 = gcnew DataGridViewTextBoxCell();
-			dgvc6->Value = c->getIdClient();
-			dgvr->Cells->Add(dgvc6);
 
 			dgvr->Tag = c;
 			this->CatalogueListeClient->Rows->Add(dgvr);
 		}
 	}
-		   
-			   
-
-
-
 	private: System::Void bCommander_Click(System::Object^ sender, System::EventArgs^ e) {
+		// Créer une nouvelle instance de Commande
+		Commande^ cmd = gcnew Commande();
 		if (this->CatalogueListeClient->SelectedRows->Count == 1) {
 			Client^ c = (Client^)this->CatalogueListeClient->SelectedRows[0]->Tag;
-			//c->getIdClient(); 
-			CommandeLivraison^ nouvellecommande = gcnew CommandeLivraison(c->getIdClient());
-			nouvellecommande->ShowDialog();
+			if (c != nullptr) {
+				// Appeler setClient avec le client sélectionné
+				cmd->setClient(c);
+				int idClient = c->getIdClient();
+				String^ nomClient = c->getNomClient();
+				String^ prenomClient = c->getPrenomClient();
+
+				if (cmd != nullptr) {
+					cmd->getClient()->setIdClient(idClient);
+					cmd->getClient()->setNomClient(nomClient);
+					cmd->getClient()->setPrenomClient(prenomClient);
+
+					CommandeLivraison^ nouvellecommande = gcnew CommandeLivraison(c->getIdClient());
+					nouvellecommande->ShowDialog();
+				}
+			}
 		}
 	}
 	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {

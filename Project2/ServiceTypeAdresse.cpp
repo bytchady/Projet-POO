@@ -81,15 +81,14 @@ List<TypeAdresse^>^ ServiceTypeAdresse::SelectAllLivraisonAdresse(TypeAdresse^ t
 }
 
 List<TypeAdresse^>^ ServiceTypeAdresse::SelectAllFacturationAdresse(TypeAdresse^ typeAdresse) {
-    String^ query = ("SELECT * FROM Posseder p"
-        "JOIN Client cl ON p.Id_Client = cl.Id_Client"
-        "JOIN Adresse ad ON p.Id_Adresse = ad.Id_Adresse"
-        "WHERE cl.Supprimer = 0"
-        "AND ad.Supprimer = 0"
+    String^ query = "SELECT * FROM Posseder p "
+        "JOIN Client cl ON p.Id_Client = cl.Id_Client "
+        "JOIN Adresse ad ON p.Id_Adresse = ad.Id_Adresse "
+        "WHERE cl.Supprimer = 0 "
+        "AND ad.Supprimer = 0 "
         "AND cl.Id_Client = " + typeAdresse->getClient()->getIdClient() +
-        "AND p.Type_Adresse like '%Livraison%';");
-
-    // Afficher la requête dans la fenêtre de sortie de Visual Studio
+        " AND p.Type_Adresse like '%Facturation%';";
+    
     System::Diagnostics::Debug::WriteLine(query);
 
     // Exécuter la requête et récupérer le DataSet
@@ -115,10 +114,26 @@ List<TypeAdresse^>^ ServiceTypeAdresse::SelectAllFacturationAdresse(TypeAdresse^
         else
             adresse->setNumRue((String^)row["Num_Rue"]);
 
-        adresse->setNomRue((String^)row["Nom_Rue"]);
-        adresse->setComplementAdr((String^)row["Complement_Adresse"]);
-        adresse->setNomVille((String^)row["Nom_Ville"]);
-        adresse->setCodePostal((String^)row["Code_Postal"]);
+        if (row->IsNull("Nom_Rue"))
+            adresse->setNomRue("");
+        else
+            adresse->setNomRue((String^)row["Nom_Rue"]);
+
+        if (row->IsNull("Complement_Adr"))
+            adresse->setComplementAdr("");
+        else
+            adresse->setComplementAdr((String^)row["Complement_Adr"]);
+
+        if (row->IsNull("Nom_Ville"))
+            adresse->setNomVille("");
+        else
+            adresse->setNomVille((String^)row["Nom_Ville"]);
+
+        if (row->IsNull("Code_Postal"))
+            adresse->setCodePostal("");
+        else
+            adresse->setCodePostal((String^)row["Code_Postal"]);
+
 
         if (row->IsNull("Id_Client"))
             client->setIdClient(0);
@@ -134,7 +149,9 @@ List<TypeAdresse^>^ ServiceTypeAdresse::SelectAllFacturationAdresse(TypeAdresse^
 }
 
 void ServiceTypeAdresse::InsertTypeAdresse(TypeAdresse^ typeAdresse) {
-    bdd->executeInsert("INSERT INTO TypeAdresse (Id_Client, Id_Adresse, Type_Adresse) VALUES ('" + typeAdresse->getClient()->getIdClient() + "','" + typeAdresse->getAdresse()->getIdAdresse() + "','" + typeAdresse->getTypeAdresse() + "');");
+    String^ query = "INSERT INTO Posseder (Id_Client, Id_Adresse, Type_Adresse) VALUES ('" + typeAdresse->getClient()->getIdClient() + "','" + typeAdresse->getAdresse()->getIdAdresse() + "','" + typeAdresse->getTypeAdresse() + "');";
+    System::Diagnostics::Debug::WriteLine(query);
+    bdd->executeNonQuery(query);
 }
 
 
