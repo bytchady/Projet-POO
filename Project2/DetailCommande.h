@@ -107,6 +107,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel2->Size = System::Drawing::Size(1233, 66);
 			this->tableLayoutPanel2->TabIndex = 3;
+			this->tableLayoutPanel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &DetailCommande::tableLayoutPanel2_Paint);
 			// 
 			// bRetour
 			// 
@@ -146,6 +147,7 @@ namespace ProjectPOO {
 			this->dataGridView2->RowTemplate->Height = 24;
 			this->dataGridView2->Size = System::Drawing::Size(1233, 284);
 			this->dataGridView2->TabIndex = 1;
+			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &DetailCommande::dataGridView2_CellContentClick);
 			// 
 			// dataGridView1
 			// 
@@ -158,6 +160,7 @@ namespace ProjectPOO {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(1233, 243);
 			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &DetailCommande::dataGridView1_CellContentClick);
 			// 
 			// DetailCommande
 			// 
@@ -182,5 +185,11 @@ namespace ProjectPOO {
 	private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+private: System::Void dataGridView2_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
 };
 }

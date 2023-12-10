@@ -1,5 +1,5 @@
 #pragma once
-#include "CommandeClient.h"
+#include "CommandeLivraison.h"
 #include "ServiceArticle.h"
 
 namespace ProjectPOO {
@@ -16,10 +16,15 @@ namespace ProjectPOO {
 	/// </summary>
 	public ref class CommandeArticle : public System::Windows::Forms::Form
 	{
+	private:
+		Commande^ commande;
+		Client^ client;
 	public:
-		CommandeArticle(void)
+		CommandeArticle(Client^ c, Commande^ cmd)
 		{
 			InitializeComponent();
+			this->client = c;
+			this->commande = cmd;
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
@@ -416,8 +421,9 @@ namespace ProjectPOO {
 		this->Close();
 	}
 	private: System::Void bSuivant_Click(System::Object^ sender, System::EventArgs^ e) {
-		CommandeClient^ cc = gcnew CommandeClient();
-		cc->ShowDialog();
+		CommandeLivraison^ nouvellecommande = gcnew CommandeLivraison(client,commande);
+		nouvellecommande->ShowDialog();
+		this->Close();
 	}
 	private: System::Void CatalogueListeArticle_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 

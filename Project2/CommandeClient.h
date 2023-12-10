@@ -1,7 +1,7 @@
 #pragma once
 #include "ServiceClient.h"
 #include "ServiceCommande.h"
-#include "CommandeLivraison.h"
+#include "CommandeArticle.h"
 #include "Commande.h"
 
 
@@ -19,6 +19,8 @@ namespace ProjectPOO {
 	/// </summary>
 	public ref class CommandeClient : public System::Windows::Forms::Form
 	{
+	private:
+		ServiceClient^ scl = gcnew ServiceClient();
 	public:
 		CommandeClient(void)
 		{
@@ -45,8 +47,6 @@ namespace ProjectPOO {
 
 			this->Reload();
 		}
-		ServiceCommande^ scmd = gcnew ServiceCommande();
-		ServiceClient^ scl = gcnew ServiceClient();
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -228,23 +228,27 @@ namespace ProjectPOO {
 	}
 	private: System::Void bCommander_Click(System::Object^ sender, System::EventArgs^ e) {
 		// Créer une nouvelle instance de Commande
-		Commande^ cmd = gcnew Commande();
+		Commande^ commande = gcnew Commande();
 		if (this->CatalogueListeClient->SelectedRows->Count == 1) {
-			Client^ c = (Client^)this->CatalogueListeClient->SelectedRows[0]->Tag;
-			if (c != nullptr) {
+			Client^ client = (Client^)this->CatalogueListeClient->SelectedRows[0]->Tag;
+			if (client != nullptr) {
 				// Appeler setClient avec le client sélectionné
-				cmd->setClient(c);
-				int idClient = c->getIdClient();
-				String^ nomClient = c->getNomClient();
-				String^ prenomClient = c->getPrenomClient();
+				commande->setClient(client);
+				int idClient = client->getIdClient();
+				String^ nomClient = client->getNomClient();
+				String^ prenomClient = client->getPrenomClient();
 
-				if (cmd != nullptr) {
-					cmd->getClient()->setIdClient(idClient);
-					cmd->getClient()->setNomClient(nomClient);
-					cmd->getClient()->setPrenomClient(prenomClient);
+				if (commande != nullptr) {
+					commande->getClient()->setIdClient(idClient);
+					commande->getClient()->setNomClient(nomClient);
+					commande->getClient()->setPrenomClient(prenomClient);
 
-					CommandeLivraison^ nouvellecommande = gcnew CommandeLivraison(c->getIdClient());
+					//CommandeLivraison^ nouvellecommande = gcnew CommandeLivraison(c,cmd);
+
+					CommandeArticle^ nouvellecommande = gcnew CommandeArticle(client, commande);
 					nouvellecommande->ShowDialog();
+
+					this->Close();
 				}
 			}
 		}

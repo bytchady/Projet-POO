@@ -1,7 +1,7 @@
 #include "ServiceCommande.h"
 #include "Commande.h"
 #include "Adresse.h"
-#include "Client.h"
+//#include "Client.h"
 
 ServiceCommande::ServiceCommande() {
     bdd = gcnew BDD();
@@ -11,20 +11,17 @@ ServiceCommande::~ServiceCommande() {
     delete bdd;
 }
 
-List<Commande^>^ ServiceCommande::SelectCommandeClient(Commande^ commande) {
+List<Commande^>^ ServiceCommande::SelectAllCommande() {
     String^ query = "SELECT * FROM Commande cmd"
-        "JOIN Client cl ON cmd.Id_Client = cl.Id_Client"
-        "JOIN Posseder pl ON cmd.Id_Adresse = pl.Id_Adresse"
-        "JOIN Posseder pf ON cmd.Id_Adresse_1 = pf.Id_Adresse"
-        "JOIN Adresse adl ON cmd.Id_Adresse = adl.Id_Adresse"
-        "JOIN Adresse adf ON cmd.Id_Adresse_1 = adf.Id_Adresse"
-        "WHERE cl.Supprimer = 0"
-        "AND cl.Id_Client = " + commande->getClient()->getIdClient() +
-        "AND pl.Id_Client = " + commande->getClient()->getIdClient() +
-        "AND pf.Id_Client = " + commande->getClient()->getIdClient() +
-        "AND cmd.Supprimer = 0"
-        "AND adl.Supprimer = 0"
-        "AND adf.Supprimer = 0;";
+        " JOIN Client cl ON cmd.Id_Client = cl.Id_Client"
+        " JOIN Posseder pl ON cmd.Id_Adresse = pl.Id_Adresse"
+        " JOIN Posseder pf ON cmd.Id_Adresse_1 = pf.Id_Adresse"
+        " JOIN Adresse adl ON cmd.Id_Adresse = adl.Id_Adresse"
+        " JOIN Adresse adf ON cmd.Id_Adresse_1 = adf.Id_Adresse"
+        " WHERE cl.Supprimer = 0"
+        " AND cmd.Supprimer = 0"
+        " AND adl.Supprimer = 0"
+        " AND adf.Supprimer = 0;";
 
     System::Diagnostics::Debug::WriteLine(query);
 
@@ -127,8 +124,14 @@ void ServiceCommande::InsertCommande(Commande^ commande) {
 
     String^ refCommande = GenerateCommandReference(commande->getClient()->getPrenomClient(),commande->getClient()->getNomClient(),commande->getDateEmission().Year, commande->getLivraison()->getAdresse()->getNomVille());
 
-    int id_commande = bdd->executeInsert("INSERT INTO Commande (Ref_Commande, Total_TTC, Total_HT, Total_TVA, Date_Emission, Date_Livraison, Date_PaiementFinal, Remise_Commande, Supprimer, Id_Personnel, Id_Adresse, Id_Adresse_1, Id_Client) VALUES ('" + refCommande + "','" + totalTTC + "','" + totalHT + "','" + totalTVA + "','" + commande->getDateEmission() + "','" + commande->getDateLivraison() + "','" + commande->getDatePaiementFinal() + "','" + remiseCommande + "','" + commande->getSupprimer() + commande->getLivraison() + "','" + commande->getFacturation() + "','" + commande->getClient() + "');");
+    int id_commande = bdd->executeInsert("INSERT INTO Commande "
+        "(Ref_Commande, Total_TTC, Total_HT, Total_TVA, Date_Emission, "
+        "Date_Livraison, Date_PaiementFinal, Remise_Commande, Supprimer, "
+        "Id_Adresse, Id_Adresse_1, Id_Client) "
+        "VALUES ('" + refCommande + "','" + totalTTC + "','" + totalHT + "','" + totalTVA + "','" + commande->getDateEmission().ToString("yyyy-MM-dd") + "', '" + commande->getDateLivraison().ToString("yyyy-MM-dd") + "','" + commande->getDatePaiementFinal().ToString("yyyy-MM-dd") + "','" + remiseCommande + "','" + commande->getSupprimer() + "','" +
+        Convert::ToString(commande->getLivraison()->getAdresse()->getIdAdresse()) + "','" + Convert::ToString(commande->getFacturation()->getAdresse()->getIdAdresse()) + "','" + Convert::ToString(commande->getClient()->getIdClient()) + "')");
     commande->setIdCommande(id_commande);
+
 }
 
 

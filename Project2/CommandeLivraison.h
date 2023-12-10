@@ -19,19 +19,21 @@ namespace ProjectPOO {
 	/// Description résumée de CommandeLivraison
 	/// </summary>
 	public ref class CommandeLivraison : public System::Windows::Forms::Form {
-		Client^ c;
+	private: 
+		Commande^ commande;
+		Client^ client;
 		Adresse^ ad;
+		int idClient;
+		TypeAdresse^ typeLivraison = gcnew TypeAdresse();
 		ServiceAdresse^ sa = gcnew ServiceAdresse();
 	private: System::Windows::Forms::Button^ bSupprimer;
-		   TypeAdresse^ ta = gcnew TypeAdresse();
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel4;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel5;
 	private: System::Windows::Forms::Button^ bAjouter;
-	private:
-		int idClient;
 	public:
-		CommandeLivraison(int idClient) {
+		CommandeLivraison(Client^ c,Commande^ cmd) {
 			InitializeComponent();
+			this->commande = cmd;
+			this-> client = c;
 			DataGridViewTextBoxColumn^ dgvtbc1 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc1->Name = "ID_Client";
 			dgvtbc1->Visible = false;
@@ -66,21 +68,23 @@ namespace ProjectPOO {
 			DataGridViewTextBoxColumn^ dgvtbc8 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc8->Name = "Ville";
 			this->CatalogueLivraison->Columns->Add(dgvtbc8);
+			typeLivraison->setClient(client);
+	
+			int idClient = typeLivraison->getClient()->getIdClient();
 			this->idClient = idClient;
-
-			ta->getClient()->setIdClient(idClient);
-			if (ta != nullptr) {
-				this->textBox_NumRue->Text = ta->getAdresse()->getNumRue();
-				this->textBox_NomRue->Text = ta->getAdresse()->getNomRue();
-				this->textBox_NomVille->Text = ta->getAdresse()->getNomVille();
-				this->textBox_CodePostal->Text = ta->getAdresse()->getCodePostal();
-				this->textBox_ComplementAdresse->Text = ta->getAdresse()->getComplementAdr();
+			if (typeLivraison != nullptr) {
+				this->textBox_NumRue->Text = typeLivraison->getAdresse()->getNumRue();
+				this->textBox_NomRue->Text = typeLivraison->getAdresse()->getNomRue();
+				this->textBox_NomVille->Text = typeLivraison->getAdresse()->getNomVille();
+				this->textBox_CodePostal->Text = typeLivraison->getAdresse()->getCodePostal();
+				this->textBox_ComplementAdresse->Text = typeLivraison->getAdresse()->getComplementAdr();
 			}
 
 			this->Reload();
 		}
 
 		ServiceTypeAdresse^ sta = gcnew ServiceTypeAdresse();
+
 
 	protected:
 		/// <summary>
@@ -138,7 +142,6 @@ namespace ProjectPOO {
 			this->NomRue = (gcnew System::Windows::Forms::Label());
 			this->textBox_NomVille = (gcnew System::Windows::Forms::TextBox());
 			this->textBox_CodePostal = (gcnew System::Windows::Forms::TextBox());
-			this->tableLayoutPanel4 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->tableLayoutPanel5 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->bAjouter = (gcnew System::Windows::Forms::Button());
 			this->CatalogueLivraison = (gcnew System::Windows::Forms::DataGridView());
@@ -173,9 +176,8 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->Controls->Add(this->NomRue, 0, 3);
 			this->tableLayoutPanel2->Controls->Add(this->textBox_NomVille, 0, 6);
 			this->tableLayoutPanel2->Controls->Add(this->textBox_CodePostal, 0, 8);
-			this->tableLayoutPanel2->Controls->Add(this->tableLayoutPanel4, 0, 0);
 			this->tableLayoutPanel2->Controls->Add(this->tableLayoutPanel5, 0, 11);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(139, 58);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(138, 58);
 			this->tableLayoutPanel2->Margin = System::Windows::Forms::Padding(2);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 12;
@@ -191,7 +193,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 49)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 49)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 16)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(579, 672);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(576, 672);
 			this->tableLayoutPanel2->TabIndex = 2;
 			// 
 			// CodePostal
@@ -205,7 +207,7 @@ namespace ProjectPOO {
 			this->CodePostal->Location = System::Drawing::Point(2, 343);
 			this->CodePostal->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->CodePostal->Name = L"CodePostal";
-			this->CodePostal->Size = System::Drawing::Size(575, 49);
+			this->CodePostal->Size = System::Drawing::Size(572, 49);
 			this->CodePostal->TabIndex = 3;
 			this->CodePostal->Text = L"Code Postal";
 			this->CodePostal->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -221,7 +223,7 @@ namespace ProjectPOO {
 			this->ComplementAdresse->Location = System::Drawing::Point(2, 441);
 			this->ComplementAdresse->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->ComplementAdresse->Name = L"ComplementAdresse";
-			this->ComplementAdresse->Size = System::Drawing::Size(575, 49);
+			this->ComplementAdresse->Size = System::Drawing::Size(572, 49);
 			this->ComplementAdresse->TabIndex = 4;
 			this->ComplementAdresse->Text = L"Complement d\'Adresse";
 			this->ComplementAdresse->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -236,7 +238,7 @@ namespace ProjectPOO {
 			this->textBox_NomRue->Location = System::Drawing::Point(2, 198);
 			this->textBox_NomRue->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_NomRue->Name = L"textBox_NomRue";
-			this->textBox_NomRue->Size = System::Drawing::Size(575, 31);
+			this->textBox_NomRue->Size = System::Drawing::Size(572, 31);
 			this->textBox_NomRue->TabIndex = 6;
 			// 
 			// textBox_ComplementAdresse
@@ -249,7 +251,7 @@ namespace ProjectPOO {
 			this->textBox_ComplementAdresse->Location = System::Drawing::Point(2, 492);
 			this->textBox_ComplementAdresse->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_ComplementAdresse->Name = L"textBox_ComplementAdresse";
-			this->textBox_ComplementAdresse->Size = System::Drawing::Size(575, 31);
+			this->textBox_ComplementAdresse->Size = System::Drawing::Size(572, 31);
 			this->textBox_ComplementAdresse->TabIndex = 9;
 			// 
 			// NumRue
@@ -263,7 +265,7 @@ namespace ProjectPOO {
 			this->NumRue->Location = System::Drawing::Point(2, 49);
 			this->NumRue->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NumRue->Name = L"NumRue";
-			this->NumRue->Size = System::Drawing::Size(575, 49);
+			this->NumRue->Size = System::Drawing::Size(572, 49);
 			this->NumRue->TabIndex = 1;
 			this->NumRue->Text = L"Numero Rue";
 			this->NumRue->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -278,7 +280,7 @@ namespace ProjectPOO {
 			this->textBox_NumRue->Location = System::Drawing::Point(2, 100);
 			this->textBox_NumRue->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_NumRue->Name = L"textBox_NumRue";
-			this->textBox_NumRue->Size = System::Drawing::Size(575, 31);
+			this->textBox_NumRue->Size = System::Drawing::Size(572, 31);
 			this->textBox_NumRue->TabIndex = 5;
 			// 
 			// NomVille
@@ -292,7 +294,7 @@ namespace ProjectPOO {
 			this->NomVille->Location = System::Drawing::Point(2, 245);
 			this->NomVille->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomVille->Name = L"NomVille";
-			this->NomVille->Size = System::Drawing::Size(575, 49);
+			this->NomVille->Size = System::Drawing::Size(572, 49);
 			this->NomVille->TabIndex = 2;
 			this->NomVille->Text = L"Nom Ville";
 			this->NomVille->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -308,7 +310,7 @@ namespace ProjectPOO {
 			this->NomRue->Location = System::Drawing::Point(2, 147);
 			this->NomRue->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomRue->Name = L"NomRue";
-			this->NomRue->Size = System::Drawing::Size(575, 49);
+			this->NomRue->Size = System::Drawing::Size(572, 49);
 			this->NomRue->TabIndex = 0;
 			this->NomRue->Text = L"Nom Rue";
 			this->NomRue->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -323,7 +325,7 @@ namespace ProjectPOO {
 			this->textBox_NomVille->Location = System::Drawing::Point(2, 296);
 			this->textBox_NomVille->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_NomVille->Name = L"textBox_NomVille";
-			this->textBox_NomVille->Size = System::Drawing::Size(575, 31);
+			this->textBox_NomVille->Size = System::Drawing::Size(572, 31);
 			this->textBox_NomVille->TabIndex = 7;
 			// 
 			// textBox_CodePostal
@@ -336,23 +338,8 @@ namespace ProjectPOO {
 			this->textBox_CodePostal->Location = System::Drawing::Point(2, 394);
 			this->textBox_CodePostal->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_CodePostal->Name = L"textBox_CodePostal";
-			this->textBox_CodePostal->Size = System::Drawing::Size(575, 31);
+			this->textBox_CodePostal->Size = System::Drawing::Size(572, 31);
 			this->textBox_CodePostal->TabIndex = 8;
-			// 
-			// tableLayoutPanel4
-			// 
-			this->tableLayoutPanel4->ColumnCount = 2;
-			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel4->Location = System::Drawing::Point(3, 3);
-			this->tableLayoutPanel4->Name = L"tableLayoutPanel4";
-			this->tableLayoutPanel4->RowCount = 2;
-			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel4->Size = System::Drawing::Size(200, 43);
-			this->tableLayoutPanel4->TabIndex = 10;
 			// 
 			// tableLayoutPanel5
 			// 
@@ -369,7 +356,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel5->Name = L"tableLayoutPanel5";
 			this->tableLayoutPanel5->RowCount = 1;
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel5->Size = System::Drawing::Size(573, 127);
+			this->tableLayoutPanel5->Size = System::Drawing::Size(570, 127);
 			this->tableLayoutPanel5->TabIndex = 11;
 			// 
 			// bAjouter
@@ -381,7 +368,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bAjouter->Location = System::Drawing::Point(3, 3);
 			this->bAjouter->Name = L"bAjouter";
-			this->bAjouter->Size = System::Drawing::Size(276, 121);
+			this->bAjouter->Size = System::Drawing::Size(273, 121);
 			this->bAjouter->TabIndex = 0;
 			this->bAjouter->Text = L"Ajouter";
 			this->bAjouter->UseVisualStyleBackColor = true;
@@ -396,12 +383,12 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->CatalogueLivraison->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->CatalogueLivraison->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->CatalogueLivraison->Location = System::Drawing::Point(722, 58);
+			this->CatalogueLivraison->Location = System::Drawing::Point(718, 58);
 			this->CatalogueLivraison->Margin = System::Windows::Forms::Padding(2);
 			this->CatalogueLivraison->Name = L"CatalogueLivraison";
 			this->CatalogueLivraison->RowTemplate->Height = 24;
 			this->CatalogueLivraison->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->CatalogueLivraison->Size = System::Drawing::Size(527, 672);
+			this->CatalogueLivraison->Size = System::Drawing::Size(531, 672);
 			this->CatalogueLivraison->TabIndex = 1;
 			// 
 			// bRetour
@@ -414,7 +401,7 @@ namespace ProjectPOO {
 			this->bRetour->Location = System::Drawing::Point(2, 2);
 			this->bRetour->Margin = System::Windows::Forms::Padding(2);
 			this->bRetour->Name = L"bRetour";
-			this->bRetour->Size = System::Drawing::Size(133, 52);
+			this->bRetour->Size = System::Drawing::Size(132, 52);
 			this->bRetour->TabIndex = 0;
 			this->bRetour->Text = L"Retour";
 			this->bRetour->UseVisualStyleBackColor = true;
@@ -431,7 +418,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				80.93159F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				530)));
+				534)));
 			this->tableLayoutPanel1->Controls->Add(this->bRetour, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->CatalogueLivraison, 2, 1);
 			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel2, 1, 1);
@@ -457,10 +444,10 @@ namespace ProjectPOO {
 			this->AdrExistant->AutoSize = true;
 			this->AdrExistant->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AdrExistant->Location = System::Drawing::Point(722, 0);
+			this->AdrExistant->Location = System::Drawing::Point(718, 0);
 			this->AdrExistant->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->AdrExistant->Name = L"AdrExistant";
-			this->AdrExistant->Size = System::Drawing::Size(527, 56);
+			this->AdrExistant->Size = System::Drawing::Size(531, 56);
 			this->AdrExistant->TabIndex = 4;
 			this->AdrExistant->Text = L"Adresses de Livraison";
 			this->AdrExistant->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -477,12 +464,12 @@ namespace ProjectPOO {
 				50)));
 			this->tableLayoutPanel3->Controls->Add(this->bSuivant, 1, 0);
 			this->tableLayoutPanel3->Controls->Add(this->bSupprimer, 0, 0);
-			this->tableLayoutPanel3->Location = System::Drawing::Point(722, 734);
+			this->tableLayoutPanel3->Location = System::Drawing::Point(718, 734);
 			this->tableLayoutPanel3->Margin = System::Windows::Forms::Padding(2);
 			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
 			this->tableLayoutPanel3->RowCount = 1;
 			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel3->Size = System::Drawing::Size(527, 69);
+			this->tableLayoutPanel3->Size = System::Drawing::Size(531, 69);
 			this->tableLayoutPanel3->TabIndex = 3;
 			// 
 			// bSuivant
@@ -492,10 +479,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bSuivant->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bSuivant->Location = System::Drawing::Point(265, 2);
+			this->bSuivant->Location = System::Drawing::Point(267, 2);
 			this->bSuivant->Margin = System::Windows::Forms::Padding(2);
 			this->bSuivant->Name = L"bSuivant";
-			this->bSuivant->Size = System::Drawing::Size(260, 65);
+			this->bSuivant->Size = System::Drawing::Size(262, 65);
 			this->bSuivant->TabIndex = 0;
 			this->bSuivant->Text = L"Suivant";
 			this->bSuivant->UseVisualStyleBackColor = true;
@@ -510,7 +497,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bSupprimer->Location = System::Drawing::Point(3, 3);
 			this->bSupprimer->Name = L"bSupprimer";
-			this->bSupprimer->Size = System::Drawing::Size(257, 63);
+			this->bSupprimer->Size = System::Drawing::Size(259, 63);
 			this->bSupprimer->TabIndex = 1;
 			this->bSupprimer->Text = L"Supprimer";
 			this->bSupprimer->UseVisualStyleBackColor = true;
@@ -523,7 +510,7 @@ namespace ProjectPOO {
 			this->ClientSize = System::Drawing::Size(1264, 862);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->MaximumSize = System::Drawing::Size(1280, 1024);
-			this->MinimumSize = System::Drawing::Size(1280, 1024);
+			this->MinimumSize = System::Drawing::Size(1280, 844);
 			this->Name = L"CommandeLivraison";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Adresse de Livraison";
@@ -543,12 +530,11 @@ namespace ProjectPOO {
 		this->Close();
 	}
 	private: System::Void bSuivant_Click(System::Object^ sender, System::EventArgs^ e) {
-		Commande^ cmd = gcnew Commande();
 		if (this->CatalogueLivraison->SelectedRows->Count == 1) {
 			TypeAdresse^ livraison = (TypeAdresse^)this->CatalogueLivraison->SelectedRows[0]->Tag;
 			if (livraison != nullptr) {
 				// Appeler setClient avec le client sélectionné
-				cmd->setLivraison(livraison);
+				commande->setLivraison(livraison);
 				int idAdresse = livraison->getAdresse()->getIdAdresse();
 				String^ numRue = livraison->getAdresse()->getNumRue();
 				String^ nomRue = livraison->getAdresse()->getNomRue();
@@ -556,16 +542,18 @@ namespace ProjectPOO {
 				String^ nomVille = livraison->getAdresse()->getNomVille();
 				String^ codePostal = livraison->getAdresse()->getCodePostal();
 
-				if (cmd != nullptr) {
-					cmd->getLivraison()->getAdresse()->setIdAdresse(idAdresse);
-					cmd->getLivraison()->getAdresse()->setNumRue(numRue);
-					cmd->getLivraison()->getAdresse()->setNomRue(nomRue);
-					cmd->getLivraison()->getAdresse()->setComplementAdr(complementAdr);
-					cmd->getLivraison()->getAdresse()->setNomVille(nomVille);
-					cmd->getLivraison()->getAdresse()->setCodePostal(codePostal);
-			
-					CommandeFacturation^ nouvellecommande = gcnew CommandeFacturation(idClient, livraison->getAdresse()->getIdAdresse());
+				if (commande != nullptr) {
+					commande->getLivraison()->getAdresse()->setIdAdresse(idAdresse);
+					commande->getLivraison()->getAdresse()->setNumRue(numRue);
+					commande->getLivraison()->getAdresse()->setNomRue(nomRue);
+					commande->getLivraison()->getAdresse()->setComplementAdr(complementAdr);
+					commande->getLivraison()->getAdresse()->setNomVille(nomVille);
+					commande->getLivraison()->getAdresse()->setCodePostal(codePostal);
+
+					CommandeFacturation^ nouvellecommande = gcnew CommandeFacturation(client, commande);
 					nouvellecommande->ShowDialog();
+
+					this->Close();
 				}
 			}
 		}
@@ -573,7 +561,7 @@ namespace ProjectPOO {
 
 	private: void Reload() {
 		// Maintenant, appelez la fonction avec l'objet créé
-		List<TypeAdresse^>^ livraison = sta->SelectAllLivraisonAdresse(ta);
+		List<TypeAdresse^>^ livraison = sta->SelectAllLivraisonAdresse(typeLivraison);
 
 		this->CatalogueLivraison->Rows->Clear();
 		for each (TypeAdresse ^ ta in livraison) {
@@ -646,12 +634,12 @@ private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ 
 	nouvelleadresse->setCodePostal(this->textBox_CodePostal->Text);
 	nouvelleadresse->setComplementAdr(this->textBox_ComplementAdresse->Text);
 	sa->InsertAdresse(nouvelleadresse);
-	
+
 	String^ typeadresse = "Livraison";
 	nouvelleadrLivraison->setTypeAdresse(typeadresse);
 	nouvelleadrLivraison->setAdresse(nouvelleadresse);
 	nouvelleadrLivraison->getAdresse()->getIdAdresse();
-	nouvelleadrLivraison->getClient()->setIdClient(this->idClient);
+	nouvelleadrLivraison->getClient()->setIdClient(idClient);
 
 	if (String::IsNullOrWhiteSpace(this->textBox_NumRue->Text) ||
 		String::IsNullOrWhiteSpace(this->textBox_NomRue->Text) ||

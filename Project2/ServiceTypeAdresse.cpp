@@ -13,11 +13,11 @@ ServiceTypeAdresse::~ServiceTypeAdresse() {
 
 List<TypeAdresse^>^ ServiceTypeAdresse::SelectAllLivraisonAdresse(TypeAdresse^ typeAdresse) {
     String^ query = "SELECT * FROM Posseder p "
-        "JOIN Client cl ON p.Id_Client = cl.Id_Client "
-        "JOIN Adresse ad ON p.Id_Adresse = ad.Id_Adresse "
-        "WHERE cl.Supprimer = 0 "
-        "AND ad.Supprimer = 0 "
-        "AND cl.Id_Client = " + typeAdresse->getClient()->getIdClient() +
+        " JOIN Client cl ON p.Id_Client = cl.Id_Client "
+        " JOIN Adresse ad ON p.Id_Adresse = ad.Id_Adresse "
+        " WHERE cl.Supprimer = 0 "
+        " AND ad.Supprimer = 0 "
+        " AND cl.Id_Client = " + typeAdresse->getClient()->getIdClient() +
         " AND p.Type_Adresse like '%Livraison%';";
 
     // Afficher la requête dans la fenêtre de sortie de Visual Studio

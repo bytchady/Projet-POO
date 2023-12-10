@@ -39,8 +39,8 @@
     <ClCompile Include="ServiceTypeAdresse.cpp" />
     <ClCompile Include="Panier.cpp" />
     <ClCompile Include="ServicePanier.cpp" />
-    <ClCompile Include="CommandeLivrison.cpp" />
     <ClCompile Include="CommandeFacturation.cpp" />
+    <ClCompile Include="CommandeLivraison.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adresse.h" />
@@ -81,7 +81,7 @@
     <ClInclude Include="ServiceTypeAdresse.h" />
     <ClInclude Include="Panier.h" />
     <ClInclude Include="ServicePanier.h" />
-    <ClInclude Include="CommandeLivraison.h" />
     <ClInclude Include="CommandeFacturation.h" />
+    <ClInclude Include="CommandeLivraison.h" />
   </ItemGroup>
 </Project>

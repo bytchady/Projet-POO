@@ -454,7 +454,7 @@ namespace ProjectPOO {
 		}
 		if (textBox_TvaArticle->Text->Contains(".") ||
 			textBox_PrixHTArticle->Text->Contains(".")) {
-			MessageBox::Show("Les points ne sont autorisés dans aucun champ.", "Erreur de saisie", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Les points ne sont autorisés dans les champs numériques.", "Erreur de saisie", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		else {
 			a->setRefArticle(int::Parse(this->textBox_RefArticle->Text));
