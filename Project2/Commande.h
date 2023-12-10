@@ -1,7 +1,6 @@
 #pragma once
-#include"Adresse.h"
 #include"Client.h"
-//#include "TypeAdresse.h"
+#include "TypeAdresse.h"
 
 using namespace System;
 
@@ -18,8 +17,8 @@ using namespace System;
         DateTime Date_Livraison;
         DateTime Date_PaiementFinal;
         float Remise_Commande;
-        Adresse^ livraison = gcnew Adresse();
-        Adresse^ facturation = gcnew Adresse();
+        TypeAdresse^ livraison = gcnew TypeAdresse();
+        TypeAdresse^ facturation = gcnew TypeAdresse();
         Client^ client = gcnew Client();
         bool Supprimer;
 
@@ -59,12 +58,12 @@ using namespace System;
             this->Remise_Commande = remiseCommande;
         }
 
-        void setLivraison(Adresse^ livraison)
+        void setLivraison(TypeAdresse^ livraison)
         {
             this->livraison = livraison;
         }
 
-        void setFacturation(Adresse^ facturation)
+        void setFacturation(TypeAdresse^ facturation)
         {
             this->facturation = facturation;
         }
@@ -114,12 +113,12 @@ using namespace System;
             return this->Remise_Commande;
         }
 
-        Adresse^ getLivraison()
+        TypeAdresse^ getLivraison()
         {
             return this->livraison;
         }
 
-        Adresse^ getFacturation()
+        TypeAdresse^ getFacturation()
         {
             return this->facturation;
         }

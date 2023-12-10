@@ -34,8 +34,8 @@ List<Commande^>^ ServiceCommande::SelectCommandeClient(Commande^ commande) {
 
     for each (DataRow ^ row in ds->Tables[0]->Rows) {
         Commande^ cmd = gcnew Commande();
-        Adresse^ livraison = gcnew Adresse();
-        Adresse^ facturation = gcnew Adresse();
+        TypeAdresse^ livraison = gcnew TypeAdresse();
+        TypeAdresse^ facturation = gcnew TypeAdresse();
         Client^ cl = gcnew Client();
 
         cmd->setLivraison(livraison);
@@ -78,14 +78,14 @@ List<Commande^>^ ServiceCommande::SelectCommandeClient(Commande^ commande) {
         cmd->setSupprimer((bool)row["Supprimer"]);
       
         if (row->IsNull("Id_Adresse"))
-            livraison->setIdAdresse(0);
+            livraison->getAdresse()->setIdAdresse(0);
         else
-            livraison->setIdAdresse((int)row["Id_Adresse"]);
+            livraison->getAdresse()->setIdAdresse((int)row["Id_Adresse"]);
 
         if (row->IsNull("Id_Adresse_1"))
-            facturation->setIdAdresse(0);
+            facturation->getAdresse()->setIdAdresse(0);
         else
-            facturation->setIdAdresse((int)row["Id_Adresse_1"]);
+            facturation->getAdresse()->setIdAdresse((int)row["Id_Adresse_1"]);
 
         if (row->IsNull("Id_Client"))
             cl->setIdClient(0);
@@ -125,7 +125,7 @@ void ServiceCommande::InsertCommande(Commande^ commande) {
     String^ totalTVA = commande->getTotalTVA().ToString(System::Globalization::CultureInfo::InvariantCulture);
     String^ remiseCommande = commande->getRemiseCommande().ToString(System::Globalization::CultureInfo::InvariantCulture);
 
-    String^ refCommande = GenerateCommandReference(commande->getClient()->getPrenomClient(),commande->getClient()->getNomClient(),commande->getDateEmission().Year, commande->getLivraison()->getNomVille());
+    String^ refCommande = GenerateCommandReference(commande->getClient()->getPrenomClient(),commande->getClient()->getNomClient(),commande->getDateEmission().Year, commande->getLivraison()->getAdresse()->getNomVille());
 
     int id_commande = bdd->executeInsert("INSERT INTO Commande (Ref_Commande, Total_TTC, Total_HT, Total_TVA, Date_Emission, Date_Livraison, Date_PaiementFinal, Remise_Commande, Supprimer, Id_Personnel, Id_Adresse, Id_Adresse_1, Id_Client) VALUES ('" + refCommande + "','" + totalTTC + "','" + totalHT + "','" + totalTVA + "','" + commande->getDateEmission() + "','" + commande->getDateLivraison() + "','" + commande->getDatePaiementFinal() + "','" + remiseCommande + "','" + commande->getSupprimer() + commande->getLivraison() + "','" + commande->getFacturation() + "','" + commande->getClient() + "');");
     commande->setIdCommande(id_commande);

@@ -523,7 +523,7 @@ namespace ProjectPOO {
 			this->ClientSize = System::Drawing::Size(1264, 862);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->MaximumSize = System::Drawing::Size(1280, 1024);
-			this->MinimumSize = System::Drawing::Size(1280, 844);
+			this->MinimumSize = System::Drawing::Size(1280, 1024);
 			this->Name = L"CommandeLivraison";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Adresse de Livraison";
@@ -545,26 +545,25 @@ namespace ProjectPOO {
 	private: System::Void bSuivant_Click(System::Object^ sender, System::EventArgs^ e) {
 		Commande^ cmd = gcnew Commande();
 		if (this->CatalogueLivraison->SelectedRows->Count == 1) {
-			Adresse^ adresselivraison = (Adresse^)this->CatalogueLivraison->SelectedRows[0]->Tag;
-			if (adresselivraison != nullptr) {
+			TypeAdresse^ livraison = (TypeAdresse^)this->CatalogueLivraison->SelectedRows[0]->Tag;
+			if (livraison != nullptr) {
 				// Appeler setClient avec le client sélectionné
-				cmd->setLivraison(adresselivraison);
-				int idAdresse = adresselivraison->getIdAdresse();
-				String^ numRue = adresselivraison->getNumRue();
-				String^ nomRue = adresselivraison->getNomRue();
-				String^ complementAdr = adresselivraison->getComplementAdr();
-				String^ nomVille = adresselivraison->getNomVille();
-				String^ codePostal = adresselivraison->getCodePostal();
+				cmd->setLivraison(livraison);
+				int idAdresse = livraison->getAdresse()->getIdAdresse();
+				String^ numRue = livraison->getAdresse()->getNumRue();
+				String^ nomRue = livraison->getAdresse()->getNomRue();
+				String^ complementAdr = livraison->getAdresse()->getComplementAdr();
+				String^ nomVille = livraison->getAdresse()->getNomVille();
+				String^ codePostal = livraison->getAdresse()->getCodePostal();
 
 				if (cmd != nullptr) {
-					cmd->getLivraison()->setIdAdresse(idAdresse);
-					cmd->getLivraison()->setNumRue(numRue);
-					cmd->getLivraison()->setNomRue(nomRue);
-					cmd->getLivraison()->setComplementAdr(complementAdr);
-					cmd->getLivraison()->setNomVille(nomVille);
-					cmd->getLivraison()->setCodePostal(codePostal);
-
-					TypeAdresse^ livraison = (TypeAdresse^)this->CatalogueLivraison->SelectedRows[0]->Tag;
+					cmd->getLivraison()->getAdresse()->setIdAdresse(idAdresse);
+					cmd->getLivraison()->getAdresse()->setNumRue(numRue);
+					cmd->getLivraison()->getAdresse()->setNomRue(nomRue);
+					cmd->getLivraison()->getAdresse()->setComplementAdr(complementAdr);
+					cmd->getLivraison()->getAdresse()->setNomVille(nomVille);
+					cmd->getLivraison()->getAdresse()->setCodePostal(codePostal);
+			
 					CommandeFacturation^ nouvellecommande = gcnew CommandeFacturation(idClient, livraison->getAdresse()->getIdAdresse());
 					nouvellecommande->ShowDialog();
 				}
