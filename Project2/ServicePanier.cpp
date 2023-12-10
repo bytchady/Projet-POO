@@ -2,6 +2,7 @@
 #include "Article.h"
 #include "Commande.h"
 
+
 ServicePanier::ServicePanier() {
     bdd = gcnew BDD();
 }
@@ -10,12 +11,13 @@ ServicePanier::~ServicePanier() {
     delete bdd;
 }
 
-List<Panier^>^ ServicePanier::SelectAllPanier() {
-    DataSet^ ds = bdd->executeQuery("SELECT * FROM Acheter ach"
-        "JOIN Article AS art ON ach.Id_Article = art.Id_Article"
-        "JOIN Commande AS cmd ON ach.Id_Commande = cmd.Id_Commande"
-       " WHERE cmd.Supprimer = 0"
-        "AND art.Supprimer = 0;");
+List<Panier^>^ ServicePanier::SelectAllArticle(Panier^ panier) {
+    DataSet^ ds = bdd->executeQuery("SELECT * FROM Acheter ach "
+        " JOIN Article AS art ON ach.Id_Article = art.Id_Article "
+        " JOIN Commande AS cmd ON ach.Id_Commande = cmd.Id_Commande "
+        " WHERE cmd.Supprimer = 0 "
+        " AND art.Supprimer = 0 "
+        " AND cmd.Id_Commande = " + panier->getCommande()->getIdCommande() + ";");
 
     List<Panier^>^ list = gcnew List<Panier^>();
 

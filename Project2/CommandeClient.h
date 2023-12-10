@@ -243,8 +243,6 @@ namespace ProjectPOO {
 					commande->getClient()->setNomClient(nomClient);
 					commande->getClient()->setPrenomClient(prenomClient);
 
-					//CommandeLivraison^ nouvellecommande = gcnew CommandeLivraison(c,cmd);
-
 					CommandeArticle^ nouvellecommande = gcnew CommandeArticle(client, commande);
 					nouvellecommande->ShowDialog();
 

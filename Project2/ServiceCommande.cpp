@@ -141,7 +141,18 @@ void ServiceCommande::UpdateCommande(Commande^ commande) {
     String^ totalTVA = commande->getTotalTVA().ToString(System::Globalization::CultureInfo::InvariantCulture);
     String^ remiseCommande = commande->getRemiseCommande().ToString(System::Globalization::CultureInfo::InvariantCulture);
 
-    bdd->executeNonQuery("UPDATE Commande SET Ref_Commande = '" + commande->getRefCommande() + "', Total_TTC = '" + totalTTC + "', Total_HT = '" + totalHT + "', Total_TVA = '" + totalTVA + "', Date_Emission = '" + commande->getDateEmission() + "', Date_Livraison = '" + commande->getDateLivraison() + "', Date_PaiementFinal = '" + commande->getDatePaiementFinal() + "', Remise_Commande = '" + remiseCommande + "', Supprimer = 0,Id_Adresse = '" + commande->getLivraison() + "', Id_Adresse_1 = '" + commande->getFacturation() + "', Id_Client = '" + commande->getClient() + "' WHERE Id_Commande = '" + commande->getIdCommande() + "';");
+    bdd->executeNonQuery("UPDATE Commande SET Ref_Commande = '" + commande->getRefCommande() +
+        "', Total_TTC = '" + totalTTC + 
+        "', Total_HT = '" + totalHT + 
+        "', Total_TVA = '" + totalTVA + 
+        "', Date_Emission = '" + commande->getDateEmission() + 
+        "', Date_Livraison = '" + commande->getDateLivraison() + 
+        "', Date_PaiementFinal = '" + commande->getDatePaiementFinal() + 
+        "', Remise_Commande = '" + remiseCommande + 
+        "', Supprimer = 0,Id_Adresse = '" + commande->getLivraison() + 
+        "', Id_Adresse_1 = '" + commande->getFacturation() + 
+        "', Id_Client = '" + commande->getClient() + 
+        "' WHERE Id_Commande = '" + commande->getIdCommande() + "';");
 }
 
 void ServiceCommande::DeleteCommande(Commande^ commande) {

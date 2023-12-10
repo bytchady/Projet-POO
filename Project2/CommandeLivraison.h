@@ -4,6 +4,7 @@
 #include "ServiceTypeAdresse.h"
 #include "ServiceAdresse.h"
 #include "Commande.h"
+#include "Panier.h"
 
 
 namespace ProjectPOO {
@@ -22,6 +23,7 @@ namespace ProjectPOO {
 	private: 
 		Commande^ commande;
 		Client^ client;
+		Panier^ nouveauPanier;
 		Adresse^ ad;
 		int idClient;
 		TypeAdresse^ typeLivraison = gcnew TypeAdresse();
@@ -30,10 +32,11 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel5;
 	private: System::Windows::Forms::Button^ bAjouter;
 	public:
-		CommandeLivraison(Client^ c,Commande^ cmd) {
+		CommandeLivraison(Panier^ p, Client^ c,Commande^ cmd) {
 			InitializeComponent();
 			this->commande = cmd;
-			this-> client = c;
+			this->client = c;
+			this->nouveauPanier = p;
 			DataGridViewTextBoxColumn^ dgvtbc1 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc1->Name = "ID_Client";
 			dgvtbc1->Visible = false;
@@ -193,7 +196,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 49)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 49)));
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 16)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(576, 672);
+			this->tableLayoutPanel2->Size = System::Drawing::Size(573, 672);
 			this->tableLayoutPanel2->TabIndex = 2;
 			// 
 			// CodePostal
@@ -207,7 +210,7 @@ namespace ProjectPOO {
 			this->CodePostal->Location = System::Drawing::Point(2, 343);
 			this->CodePostal->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->CodePostal->Name = L"CodePostal";
-			this->CodePostal->Size = System::Drawing::Size(572, 49);
+			this->CodePostal->Size = System::Drawing::Size(569, 49);
 			this->CodePostal->TabIndex = 3;
 			this->CodePostal->Text = L"Code Postal";
 			this->CodePostal->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -223,7 +226,7 @@ namespace ProjectPOO {
 			this->ComplementAdresse->Location = System::Drawing::Point(2, 441);
 			this->ComplementAdresse->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->ComplementAdresse->Name = L"ComplementAdresse";
-			this->ComplementAdresse->Size = System::Drawing::Size(572, 49);
+			this->ComplementAdresse->Size = System::Drawing::Size(569, 49);
 			this->ComplementAdresse->TabIndex = 4;
 			this->ComplementAdresse->Text = L"Complement d\'Adresse";
 			this->ComplementAdresse->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -238,7 +241,7 @@ namespace ProjectPOO {
 			this->textBox_NomRue->Location = System::Drawing::Point(2, 198);
 			this->textBox_NomRue->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_NomRue->Name = L"textBox_NomRue";
-			this->textBox_NomRue->Size = System::Drawing::Size(572, 31);
+			this->textBox_NomRue->Size = System::Drawing::Size(569, 31);
 			this->textBox_NomRue->TabIndex = 6;
 			// 
 			// textBox_ComplementAdresse
@@ -251,7 +254,7 @@ namespace ProjectPOO {
 			this->textBox_ComplementAdresse->Location = System::Drawing::Point(2, 492);
 			this->textBox_ComplementAdresse->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_ComplementAdresse->Name = L"textBox_ComplementAdresse";
-			this->textBox_ComplementAdresse->Size = System::Drawing::Size(572, 31);
+			this->textBox_ComplementAdresse->Size = System::Drawing::Size(569, 31);
 			this->textBox_ComplementAdresse->TabIndex = 9;
 			// 
 			// NumRue
@@ -265,7 +268,7 @@ namespace ProjectPOO {
 			this->NumRue->Location = System::Drawing::Point(2, 49);
 			this->NumRue->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NumRue->Name = L"NumRue";
-			this->NumRue->Size = System::Drawing::Size(572, 49);
+			this->NumRue->Size = System::Drawing::Size(569, 49);
 			this->NumRue->TabIndex = 1;
 			this->NumRue->Text = L"Numero Rue";
 			this->NumRue->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -280,7 +283,7 @@ namespace ProjectPOO {
 			this->textBox_NumRue->Location = System::Drawing::Point(2, 100);
 			this->textBox_NumRue->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_NumRue->Name = L"textBox_NumRue";
-			this->textBox_NumRue->Size = System::Drawing::Size(572, 31);
+			this->textBox_NumRue->Size = System::Drawing::Size(569, 31);
 			this->textBox_NumRue->TabIndex = 5;
 			// 
 			// NomVille
@@ -294,7 +297,7 @@ namespace ProjectPOO {
 			this->NomVille->Location = System::Drawing::Point(2, 245);
 			this->NomVille->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomVille->Name = L"NomVille";
-			this->NomVille->Size = System::Drawing::Size(572, 49);
+			this->NomVille->Size = System::Drawing::Size(569, 49);
 			this->NomVille->TabIndex = 2;
 			this->NomVille->Text = L"Nom Ville";
 			this->NomVille->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -310,7 +313,7 @@ namespace ProjectPOO {
 			this->NomRue->Location = System::Drawing::Point(2, 147);
 			this->NomRue->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomRue->Name = L"NomRue";
-			this->NomRue->Size = System::Drawing::Size(572, 49);
+			this->NomRue->Size = System::Drawing::Size(569, 49);
 			this->NomRue->TabIndex = 0;
 			this->NomRue->Text = L"Nom Rue";
 			this->NomRue->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -325,7 +328,7 @@ namespace ProjectPOO {
 			this->textBox_NomVille->Location = System::Drawing::Point(2, 296);
 			this->textBox_NomVille->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_NomVille->Name = L"textBox_NomVille";
-			this->textBox_NomVille->Size = System::Drawing::Size(572, 31);
+			this->textBox_NomVille->Size = System::Drawing::Size(569, 31);
 			this->textBox_NomVille->TabIndex = 7;
 			// 
 			// textBox_CodePostal
@@ -338,7 +341,7 @@ namespace ProjectPOO {
 			this->textBox_CodePostal->Location = System::Drawing::Point(2, 394);
 			this->textBox_CodePostal->Margin = System::Windows::Forms::Padding(2);
 			this->textBox_CodePostal->Name = L"textBox_CodePostal";
-			this->textBox_CodePostal->Size = System::Drawing::Size(572, 31);
+			this->textBox_CodePostal->Size = System::Drawing::Size(569, 31);
 			this->textBox_CodePostal->TabIndex = 8;
 			// 
 			// tableLayoutPanel5
@@ -356,7 +359,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel5->Name = L"tableLayoutPanel5";
 			this->tableLayoutPanel5->RowCount = 1;
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel5->Size = System::Drawing::Size(570, 127);
+			this->tableLayoutPanel5->Size = System::Drawing::Size(567, 127);
 			this->tableLayoutPanel5->TabIndex = 11;
 			// 
 			// bAjouter
@@ -368,7 +371,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bAjouter->Location = System::Drawing::Point(3, 3);
 			this->bAjouter->Name = L"bAjouter";
-			this->bAjouter->Size = System::Drawing::Size(273, 121);
+			this->bAjouter->Size = System::Drawing::Size(270, 121);
 			this->bAjouter->TabIndex = 0;
 			this->bAjouter->Text = L"Ajouter";
 			this->bAjouter->UseVisualStyleBackColor = true;
@@ -383,12 +386,12 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->CatalogueLivraison->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->CatalogueLivraison->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->CatalogueLivraison->Location = System::Drawing::Point(718, 58);
+			this->CatalogueLivraison->Location = System::Drawing::Point(715, 58);
 			this->CatalogueLivraison->Margin = System::Windows::Forms::Padding(2);
 			this->CatalogueLivraison->Name = L"CatalogueLivraison";
 			this->CatalogueLivraison->RowTemplate->Height = 24;
 			this->CatalogueLivraison->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->CatalogueLivraison->Size = System::Drawing::Size(531, 672);
+			this->CatalogueLivraison->Size = System::Drawing::Size(534, 672);
 			this->CatalogueLivraison->TabIndex = 1;
 			// 
 			// bRetour
@@ -418,7 +421,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				80.93159F)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				534)));
+				537)));
 			this->tableLayoutPanel1->Controls->Add(this->bRetour, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->CatalogueLivraison, 2, 1);
 			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel2, 1, 1);
@@ -444,10 +447,10 @@ namespace ProjectPOO {
 			this->AdrExistant->AutoSize = true;
 			this->AdrExistant->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AdrExistant->Location = System::Drawing::Point(718, 0);
+			this->AdrExistant->Location = System::Drawing::Point(715, 0);
 			this->AdrExistant->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->AdrExistant->Name = L"AdrExistant";
-			this->AdrExistant->Size = System::Drawing::Size(531, 56);
+			this->AdrExistant->Size = System::Drawing::Size(534, 56);
 			this->AdrExistant->TabIndex = 4;
 			this->AdrExistant->Text = L"Adresses de Livraison";
 			this->AdrExistant->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -464,12 +467,12 @@ namespace ProjectPOO {
 				50)));
 			this->tableLayoutPanel3->Controls->Add(this->bSuivant, 1, 0);
 			this->tableLayoutPanel3->Controls->Add(this->bSupprimer, 0, 0);
-			this->tableLayoutPanel3->Location = System::Drawing::Point(718, 734);
+			this->tableLayoutPanel3->Location = System::Drawing::Point(715, 734);
 			this->tableLayoutPanel3->Margin = System::Windows::Forms::Padding(2);
 			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
 			this->tableLayoutPanel3->RowCount = 1;
 			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel3->Size = System::Drawing::Size(531, 69);
+			this->tableLayoutPanel3->Size = System::Drawing::Size(534, 69);
 			this->tableLayoutPanel3->TabIndex = 3;
 			// 
 			// bSuivant
@@ -479,10 +482,10 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bSuivant->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bSuivant->Location = System::Drawing::Point(267, 2);
+			this->bSuivant->Location = System::Drawing::Point(269, 2);
 			this->bSuivant->Margin = System::Windows::Forms::Padding(2);
 			this->bSuivant->Name = L"bSuivant";
-			this->bSuivant->Size = System::Drawing::Size(262, 65);
+			this->bSuivant->Size = System::Drawing::Size(263, 65);
 			this->bSuivant->TabIndex = 0;
 			this->bSuivant->Text = L"Suivant";
 			this->bSuivant->UseVisualStyleBackColor = true;
@@ -497,7 +500,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bSupprimer->Location = System::Drawing::Point(3, 3);
 			this->bSupprimer->Name = L"bSupprimer";
-			this->bSupprimer->Size = System::Drawing::Size(259, 63);
+			this->bSupprimer->Size = System::Drawing::Size(261, 63);
 			this->bSupprimer->TabIndex = 1;
 			this->bSupprimer->Text = L"Supprimer";
 			this->bSupprimer->UseVisualStyleBackColor = true;
@@ -550,7 +553,7 @@ namespace ProjectPOO {
 					commande->getLivraison()->getAdresse()->setNomVille(nomVille);
 					commande->getLivraison()->getAdresse()->setCodePostal(codePostal);
 
-					CommandeFacturation^ nouvellecommande = gcnew CommandeFacturation(client, commande);
+					CommandeFacturation^ nouvellecommande = gcnew CommandeFacturation(nouveauPanier, client, commande);
 					nouvellecommande->ShowDialog();
 
 					this->Close();

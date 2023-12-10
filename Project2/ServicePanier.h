@@ -13,7 +13,7 @@ public:
     ServicePanier();
     ~ServicePanier();
 
-    List<Panier^>^ SelectAllPanier();
+    List<Panier^>^ SelectAllArticle(Panier^ panier);
     void InsertPanier(Panier^ panier);
     void UpdatePanier(Panier^ panier);
     void DeletePanier(Panier^ panier);
