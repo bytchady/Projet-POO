@@ -68,7 +68,6 @@ namespace ProjectPOO {
 			{
 				this->dtp_Emission->Value = commande->getDateEmission();
 			}
-			//this->Reload();
 		}
 
 	protected:
@@ -483,34 +482,6 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
-		/*private: void Reload() {
-			/*List<Commande^>^ recapCommande = scmd->SelectCommandeClient(commande);
-			this->Show_Nom->Text = "";
-			this->Show_Prenom->Text = "";
-			this->Show_Livraison->Text = "";
-			this->Show_Facturation->Text = "";
-			for each (Commande ^ cmd in recapCommande) {
-				this->Show_Nom->Text = commande->getClient()->getNomClient();
-				this->Show_Prenom->Text = commande->getClient()->getPrenomClient();
-
-				Adresse^ livraisonAdresse = cmd->getLivraison()->getAdresse();
-				String^ livraisonString = String::Format("{0} {1} {2}, {3} {4}",
-					livraisonAdresse->getNumRue(),
-					livraisonAdresse->getNomRue(),
-					livraisonAdresse->getComplementAdr(),
-					livraisonAdresse->getCodePostal(),
-					livraisonAdresse->getNomVille());
-
-				this->Show_Livraison->Text = livraisonString;
-
-				this->Show_Facturation->Text = String::Format("{0} {1} {2}, {3} {4}",
-					cmd->getFacturation()->getAdresse()->getNumRue(),
-					cmd->getFacturation()->getAdresse()->getNomRue(),
-					cmd->getFacturation()->getAdresse()->getComplementAdr(),
-					cmd->getFacturation()->getAdresse()->getCodePostal(),
-					cmd->getFacturation()->getAdresse()->getNomVille());
-			}
-		}*/
 	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}

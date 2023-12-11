@@ -1,6 +1,5 @@
 #pragma once
 #include "CommandeClient.h"
-#include "SupprimerCommandePopUp.h"
 #include "DetailCommande.h"
 #include "Commande.h"
 #include "ServiceCommande.h"
@@ -28,6 +27,7 @@ namespace ProjectPOO {
 			InitializeComponent();
 			DataGridViewTextBoxColumn^ dgvtbc1 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc1->Name = "Id_Commande";
+			dgvtbc1->Visible = false;
 			this->CatalogueCommande->Columns->Add(dgvtbc1);
 
 			DataGridViewTextBoxColumn^ dgvtbc2 = gcnew DataGridViewTextBoxColumn();
@@ -303,8 +303,23 @@ private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void bModifier_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void bSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-	SupprimerCommandePopUp^ sc = gcnew SupprimerCommandePopUp();
-	sc->ShowDialog();
+	if (CatalogueCommande->SelectedRows->Count > 0) {
+		int rowIndex = CatalogueCommande->SelectedRows[0]->Index;
+		int idcommande = Convert::ToInt32(CatalogueCommande->Rows[rowIndex]->Cells["Id_Commande"]->Value);
+
+		System::Windows::Forms::DialogResult result = MessageBox::Show("Êtes-vous sûr de vouloir supprimer cet adresse ?", "Confirmation de suppression", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+		if (result == System::Windows::Forms::DialogResult::Yes) {
+			Commande^ Commandetodelete = gcnew Commande();
+			Commandetodelete->setIdCommande(idcommande);
+			scm->DeleteCommande(Commandetodelete);
+			this->Reload();
+			MessageBox::Show("Adresse supprimé avec succès.", "Suppression", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+	}
+	else {
+		MessageBox::Show("Veuillez sélectionner une ligne à supprimer.", "Aucune ligne sélectionnée", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
 }
 private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
