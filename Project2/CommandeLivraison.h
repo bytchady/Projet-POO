@@ -4,7 +4,6 @@
 #include "ServiceTypeAdresse.h"
 #include "ServiceAdresse.h"
 #include "Commande.h"
-#include "Panier.h"
 
 
 namespace ProjectPOO {
@@ -23,7 +22,6 @@ namespace ProjectPOO {
 	private: 
 		Commande^ commande;
 		Client^ client;
-		Panier^ nouveauPanier;
 		Adresse^ ad;
 		int idClient;
 		TypeAdresse^ typeLivraison = gcnew TypeAdresse();
@@ -32,11 +30,11 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel5;
 	private: System::Windows::Forms::Button^ bAjouter;
 	public:
-		CommandeLivraison(Panier^ p, Client^ c,Commande^ cmd) {
+		CommandeLivraison(Client^ c, Commande^ cmd) {
 			InitializeComponent();
 			this->commande = cmd;
 			this->client = c;
-			this->nouveauPanier = p;
+
 			DataGridViewTextBoxColumn^ dgvtbc1 = gcnew DataGridViewTextBoxColumn();
 			dgvtbc1->Name = "ID_Client";
 			dgvtbc1->Visible = false;
@@ -553,7 +551,7 @@ namespace ProjectPOO {
 					commande->getLivraison()->getAdresse()->setNomVille(nomVille);
 					commande->getLivraison()->getAdresse()->setCodePostal(codePostal);
 
-					CommandeFacturation^ nouvellecommande = gcnew CommandeFacturation(nouveauPanier, client, commande);
+					CommandeFacturation^ nouvellecommande = gcnew CommandeFacturation(client, commande);
 					nouvellecommande->ShowDialog();
 
 					this->Close();

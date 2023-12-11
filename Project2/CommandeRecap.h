@@ -1,8 +1,6 @@
 #pragma once
 #include "Commande.h"
 #include "ServiceCommande.h"
-#include "Panier.h"
-#include "ServicePanier.h"
 
 
 namespace ProjectPOO {
@@ -29,16 +27,13 @@ namespace ProjectPOO {
 		int idAdresseFacturation;
 		Commande^ commande;
 		Client^ client;
-		Panier^ nouveauPanier;
 		ServiceCommande^ scmd = gcnew ServiceCommande();
-		//ServicePanier^ sp ;
 	public:
-		CommandeRecap(Panier^ p, Client^ c, Commande^ cmd)
+		CommandeRecap(Client^ c, Commande^ cmd)
 		{
 			InitializeComponent();
 			this->commande = cmd;
 			this->client = c;
-			this->nouveauPanier = p;
 
 			this->Show_Nom->Text = Convert::ToString(commande->getClient()->getNomClient());
 			this->Show_Prenom->Text = Convert::ToString(commande->getClient()->getPrenomClient());
@@ -169,9 +164,6 @@ namespace ProjectPOO {
 			this->tableLayoutPanel6->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// tableLayoutPanel1
-			// 
 			this->tableLayoutPanel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -184,15 +176,12 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->Location = System::Drawing::Point(13, 13);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 4;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10.10417F)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 89.89584F)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10.10417)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 89.89584)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 332)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 403)));
 			this->tableLayoutPanel1->Size = System::Drawing::Size(1239, 960);
 			this->tableLayoutPanel1->TabIndex = 0;
-			// 
-			// tableLayoutPanel3
-			// 
 			this->tableLayoutPanel3->ColumnCount = 1;
 			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
@@ -202,13 +191,10 @@ namespace ProjectPOO {
 			this->tableLayoutPanel3->Location = System::Drawing::Point(3, 227);
 			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
 			this->tableLayoutPanel3->RowCount = 2;
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 7.620818F)));
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 92.37918F)));
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 7.620818)));
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 92.37918)));
 			this->tableLayoutPanel3->Size = System::Drawing::Size(1233, 326);
 			this->tableLayoutPanel3->TabIndex = 1;
-			// 
-			// CataloguePanier
-			// 
 			this->CataloguePanier->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -218,21 +204,15 @@ namespace ProjectPOO {
 			this->CataloguePanier->RowHeadersWidth = 51;
 			this->CataloguePanier->Size = System::Drawing::Size(1227, 296);
 			this->CataloguePanier->TabIndex = 0;
-			// 
-			// TitrePanier
-			// 
 			this->TitrePanier->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->TitrePanier->AutoSize = true;
-			this->TitrePanier->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TitrePanier->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->TitrePanier->Location = System::Drawing::Point(3, 0);
 			this->TitrePanier->Name = L"TitrePanier";
 			this->TitrePanier->Size = System::Drawing::Size(86, 24);
 			this->TitrePanier->TabIndex = 1;
 			this->TitrePanier->Text = L"Panier :";
-			// 
-			// tableLayoutPanel4
-			// 
 			this->tableLayoutPanel4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -244,21 +224,18 @@ namespace ProjectPOO {
 			this->tableLayoutPanel4->Location = System::Drawing::Point(3, 559);
 			this->tableLayoutPanel4->Name = L"tableLayoutPanel4";
 			this->tableLayoutPanel4->RowCount = 2;
-			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 28.34467F)));
-			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 71.65533F)));
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 28.34467)));
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 71.65533)));
 			this->tableLayoutPanel4->Size = System::Drawing::Size(1233, 398);
 			this->tableLayoutPanel4->TabIndex = 2;
-			// 
-			// tableLayoutPanel5
-			// 
 			this->tableLayoutPanel5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->tableLayoutPanel5->ColumnCount = 2;
 			this->tableLayoutPanel5->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				9.372453F)));
+				9.372453)));
 			this->tableLayoutPanel5->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				90.62755F)));
+				90.62755)));
 			this->tableLayoutPanel5->Controls->Add(this->Show_PrixTTC, 1, 0);
 			this->tableLayoutPanel5->Controls->Add(this->Prix, 0, 0);
 			this->tableLayoutPanel5->Location = System::Drawing::Point(3, 3);
@@ -267,86 +244,68 @@ namespace ProjectPOO {
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel5->Size = System::Drawing::Size(1227, 106);
 			this->tableLayoutPanel5->TabIndex = 0;
-			// 
-			// Show_PrixTTC
-			// 
 			this->Show_PrixTTC->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->Show_PrixTTC->AutoSize = true;
 			this->Show_PrixTTC->BackColor = System::Drawing::Color::White;
 			this->Show_PrixTTC->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->Show_PrixTTC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Show_PrixTTC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Show_PrixTTC->Location = System::Drawing::Point(117, 79);
 			this->Show_PrixTTC->Name = L"Show_PrixTTC";
 			this->Show_PrixTTC->Size = System::Drawing::Size(1107, 27);
 			this->Show_PrixTTC->TabIndex = 3;
-			// 
-			// Prix
-			// 
 			this->Prix->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->Prix->AutoSize = true;
-			this->Prix->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Prix->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Prix->Location = System::Drawing::Point(3, 81);
 			this->Prix->Name = L"Prix";
 			this->Prix->Size = System::Drawing::Size(108, 25);
 			this->Prix->TabIndex = 2;
 			this->Prix->Text = L"Prix TTC :";
-			// 
-			// tableLayoutPanel6
-			// 
 			this->tableLayoutPanel6->ColumnCount = 3;
 			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				67.06783F)));
+				67.06783)));
 			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				32.93217F)));
+				32.93217)));
 			this->tableLayoutPanel6->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				291)));
+				290)));
 			this->tableLayoutPanel6->Controls->Add(this->bValiderCommande, 1, 1);
 			this->tableLayoutPanel6->Controls->Add(this->bAnnuler, 2, 1);
 			this->tableLayoutPanel6->Location = System::Drawing::Point(3, 115);
 			this->tableLayoutPanel6->Name = L"tableLayoutPanel6";
 			this->tableLayoutPanel6->RowCount = 3;
-			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 46.82081F)));
-			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 53.17919F)));
+			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 46.82081)));
+			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 53.17919)));
 			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 47)));
 			this->tableLayoutPanel6->Size = System::Drawing::Size(1227, 202);
 			this->tableLayoutPanel6->TabIndex = 1;
-			// 
-			// bValiderCommande
-			// 
 			this->bValiderCommande->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->bValiderCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+			this->bValiderCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->bValiderCommande->Location = System::Drawing::Point(630, 75);
+			this->bValiderCommande->Location = System::Drawing::Point(631, 75);
 			this->bValiderCommande->Name = L"bValiderCommande";
 			this->bValiderCommande->Size = System::Drawing::Size(302, 76);
 			this->bValiderCommande->TabIndex = 0;
 			this->bValiderCommande->Text = L"Valider Commande";
 			this->bValiderCommande->UseVisualStyleBackColor = true;
 			this->bValiderCommande->Click += gcnew System::EventHandler(this, &CommandeRecap::bValiderCommande_Click);
-			// 
-			// bAnnuler
-			// 
 			this->bAnnuler->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bAnnuler->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bAnnuler->Location = System::Drawing::Point(938, 75);
+			this->bAnnuler->Location = System::Drawing::Point(939, 75);
 			this->bAnnuler->Name = L"bAnnuler";
-			this->bAnnuler->Size = System::Drawing::Size(286, 76);
+			this->bAnnuler->Size = System::Drawing::Size(285, 76);
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
 			this->bAnnuler->Click += gcnew System::EventHandler(this, &CommandeRecap::bAnnuler_Click);
-			// 
-			// tableLayoutPanel2
-			// 
 			this->tableLayoutPanel2->ColumnCount = 2;
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				100)));
@@ -377,116 +336,89 @@ namespace ProjectPOO {
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
 			this->tableLayoutPanel2->Size = System::Drawing::Size(1233, 196);
 			this->tableLayoutPanel2->TabIndex = 0;
-			// 
-			// Show_Facturation
-			// 
 			this->Show_Facturation->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->Show_Facturation->AutoSize = true;
 			this->Show_Facturation->BackColor = System::Drawing::Color::White;
 			this->Show_Facturation->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->Show_Facturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+			this->Show_Facturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Show_Facturation->Location = System::Drawing::Point(267, 101);
 			this->Show_Facturation->Name = L"Show_Facturation";
 			this->Show_Facturation->Size = System::Drawing::Size(963, 27);
 			this->Show_Facturation->TabIndex = 8;
-			// 
-			// Show_Livraison
-			// 
 			this->Show_Livraison->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->Show_Livraison->AutoSize = true;
 			this->Show_Livraison->BackColor = System::Drawing::Color::White;
 			this->Show_Livraison->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->Show_Livraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Show_Livraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Show_Livraison->Location = System::Drawing::Point(267, 69);
 			this->Show_Livraison->Name = L"Show_Livraison";
 			this->Show_Livraison->Size = System::Drawing::Size(963, 27);
 			this->Show_Livraison->TabIndex = 7;
-			// 
-			// Show_Prenom
-			// 
 			this->Show_Prenom->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->Show_Prenom->AutoSize = true;
 			this->Show_Prenom->BackColor = System::Drawing::Color::White;
 			this->Show_Prenom->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->Show_Prenom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Show_Prenom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Show_Prenom->Location = System::Drawing::Point(267, 37);
 			this->Show_Prenom->Name = L"Show_Prenom";
 			this->Show_Prenom->Size = System::Drawing::Size(963, 27);
 			this->Show_Prenom->TabIndex = 6;
-			// 
-			// Nom
-			// 
 			this->Nom->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->Nom->AutoSize = true;
-			this->Nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Nom->Location = System::Drawing::Point(207, 12);
 			this->Nom->Name = L"Nom";
 			this->Nom->Size = System::Drawing::Size(54, 20);
 			this->Nom->TabIndex = 0;
 			this->Nom->Text = L"Nom :";
-			// 
-			// Prenom
-			// 
 			this->Prenom->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->Prenom->AutoSize = true;
-			this->Prenom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Prenom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Prenom->Location = System::Drawing::Point(184, 44);
 			this->Prenom->Name = L"Prenom";
 			this->Prenom->Size = System::Drawing::Size(77, 20);
 			this->Prenom->TabIndex = 1;
 			this->Prenom->Text = L"Prénom :";
-			// 
-			// livraison
-			// 
 			this->livraison->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->livraison->AutoSize = true;
-			this->livraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->livraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->livraison->Location = System::Drawing::Point(90, 76);
 			this->livraison->Name = L"livraison";
 			this->livraison->Size = System::Drawing::Size(171, 20);
 			this->livraison->TabIndex = 2;
 			this->livraison->Text = L"Adresse de livraison :";
-			// 
-			// facturation
-			// 
 			this->facturation->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->facturation->AutoSize = true;
-			this->facturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->facturation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->facturation->Location = System::Drawing::Point(73, 108);
 			this->facturation->Name = L"facturation";
 			this->facturation->Size = System::Drawing::Size(188, 20);
 			this->facturation->TabIndex = 3;
 			this->facturation->Text = L"Adresse de facturation :";
-			// 
-			// Show_Nom
-			// 
 			this->Show_Nom->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->Show_Nom->AutoSize = true;
 			this->Show_Nom->BackColor = System::Drawing::Color::White;
 			this->Show_Nom->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->Show_Nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Show_Nom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Show_Nom->Location = System::Drawing::Point(267, 5);
 			this->Show_Nom->Name = L"Show_Nom";
 			this->Show_Nom->Size = System::Drawing::Size(963, 27);
 			this->Show_Nom->TabIndex = 5;
-			// 
-			// DateEmission
-			// 
 			this->DateEmission->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->DateEmission->AutoSize = true;
-			this->DateEmission->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DateEmission->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->DateEmission->Location = System::Drawing::Point(122, 172);
 			this->DateEmission->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
@@ -495,51 +427,39 @@ namespace ProjectPOO {
 			this->DateEmission->TabIndex = 9;
 			this->DateEmission->Text = L"Date d\'émission :";
 			this->DateEmission->TextAlign = System::Drawing::ContentAlignment::BottomRight;
-			// 
-			// dtp_Livraison
-			// 
 			this->dtp_Livraison->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->dtp_Livraison->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+			this->dtp_Livraison->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dtp_Livraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->dtp_Livraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dtp_Livraison->Location = System::Drawing::Point(266, 130);
 			this->dtp_Livraison->Margin = System::Windows::Forms::Padding(2);
 			this->dtp_Livraison->Name = L"dtp_Livraison";
 			this->dtp_Livraison->Size = System::Drawing::Size(965, 29);
 			this->dtp_Livraison->TabIndex = 10;
-			// 
-			// dtp_Emission
-			// 
 			this->dtp_Emission->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->dtp_Emission->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+			this->dtp_Emission->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dtp_Emission->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->dtp_Emission->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dtp_Emission->Location = System::Drawing::Point(266, 162);
 			this->dtp_Emission->Margin = System::Windows::Forms::Padding(2);
 			this->dtp_Emission->Name = L"dtp_Emission";
 			this->dtp_Emission->Size = System::Drawing::Size(965, 29);
 			this->dtp_Emission->TabIndex = 11;
-			// 
-			// dateLivraison
-			// 
 			this->dateLivraison->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->dateLivraison->AutoSize = true;
-			this->dateLivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->dateLivraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dateLivraison->Location = System::Drawing::Point(61, 140);
 			this->dateLivraison->Name = L"dateLivraison";
 			this->dateLivraison->Size = System::Drawing::Size(200, 20);
 			this->dateLivraison->TabIndex = 4;
 			this->dateLivraison->Text = L"Date de livraison prévue :";
-			// 
-			// CommandeRecap
-			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1264, 862);
@@ -563,34 +483,34 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
-	/*private: void Reload() {
-		/*List<Commande^>^ recapCommande = scmd->SelectCommandeClient(commande);
-		this->Show_Nom->Text = "";
-		this->Show_Prenom->Text = "";
-		this->Show_Livraison->Text = "";
-		this->Show_Facturation->Text = "";
-		for each (Commande ^ cmd in recapCommande) {
-			this->Show_Nom->Text = commande->getClient()->getNomClient();
-			this->Show_Prenom->Text = commande->getClient()->getPrenomClient();
+		/*private: void Reload() {
+			/*List<Commande^>^ recapCommande = scmd->SelectCommandeClient(commande);
+			this->Show_Nom->Text = "";
+			this->Show_Prenom->Text = "";
+			this->Show_Livraison->Text = "";
+			this->Show_Facturation->Text = "";
+			for each (Commande ^ cmd in recapCommande) {
+				this->Show_Nom->Text = commande->getClient()->getNomClient();
+				this->Show_Prenom->Text = commande->getClient()->getPrenomClient();
 
-			Adresse^ livraisonAdresse = cmd->getLivraison()->getAdresse();
-			String^ livraisonString = String::Format("{0} {1} {2}, {3} {4}",
-				livraisonAdresse->getNumRue(),
-				livraisonAdresse->getNomRue(),
-				livraisonAdresse->getComplementAdr(),
-				livraisonAdresse->getCodePostal(),
-				livraisonAdresse->getNomVille());
+				Adresse^ livraisonAdresse = cmd->getLivraison()->getAdresse();
+				String^ livraisonString = String::Format("{0} {1} {2}, {3} {4}",
+					livraisonAdresse->getNumRue(),
+					livraisonAdresse->getNomRue(),
+					livraisonAdresse->getComplementAdr(),
+					livraisonAdresse->getCodePostal(),
+					livraisonAdresse->getNomVille());
 
-			this->Show_Livraison->Text = livraisonString;
+				this->Show_Livraison->Text = livraisonString;
 
-			this->Show_Facturation->Text = String::Format("{0} {1} {2}, {3} {4}",
-				cmd->getFacturation()->getAdresse()->getNumRue(),
-				cmd->getFacturation()->getAdresse()->getNomRue(),
-				cmd->getFacturation()->getAdresse()->getComplementAdr(),
-				cmd->getFacturation()->getAdresse()->getCodePostal(),
-				cmd->getFacturation()->getAdresse()->getNomVille());
-		}
-	}*/
+				this->Show_Facturation->Text = String::Format("{0} {1} {2}, {3} {4}",
+					cmd->getFacturation()->getAdresse()->getNumRue(),
+					cmd->getFacturation()->getAdresse()->getNomRue(),
+					cmd->getFacturation()->getAdresse()->getComplementAdr(),
+					cmd->getFacturation()->getAdresse()->getCodePostal(),
+					cmd->getFacturation()->getAdresse()->getNomVille());
+			}
+		}*/
 	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
@@ -612,6 +532,6 @@ namespace ProjectPOO {
 			this->Close();
 		}
 	}
-	
-};
+
+	};
 }

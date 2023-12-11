@@ -253,7 +253,6 @@ namespace ProjectPOO {
 			this->Name = L"HistoriqueCommande";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Liste des commandes";
-			this->Load += gcnew System::EventHandler(this, &HistoriqueCommande::HistoriqueCommande_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CatalogueCommande))->EndInit();
@@ -299,6 +298,7 @@ private: System::Void bDetail_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void bAjouter_Click(System::Object^ sender, System::EventArgs^ e) {
 	CommandeClient^ cc = gcnew CommandeClient();
 	cc->ShowDialog();
+	this->Reload();
 }
 private: System::Void bModifier_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -308,12 +308,6 @@ private: System::Void bSupprimer_Click(System::Object^ sender, System::EventArgs
 }
 private: System::Void bRetour_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
-}
-private: System::Void HistoriqueCommande_Load(System::Object^ sender, System::EventArgs^ e) {
-	//ServiceCommande^ serviceCommande = gcnew ServiceCommande();
-	/*System::Data::DataSet^ dataSet = serviceArticle->SelectAllServiceCommande();
-	CatalogueCommande->DataSource = dataSet;
-	CatalogueCommande->DataMember = dataSet->Tables[0]->TableName;*/
 }
 };
 }

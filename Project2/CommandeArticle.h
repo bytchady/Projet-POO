@@ -202,7 +202,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				26.63043F)));
 			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				326)));
+				327)));
 			this->tableLayoutPanel4->Controls->Add(this->CatalogueListeArticle, 0, 0);
 			this->tableLayoutPanel4->Controls->Add(this->tableLayoutPanel5, 2, 0);
 			this->tableLayoutPanel4->Controls->Add(this->tableLayoutPanel2, 1, 0);
@@ -226,9 +226,8 @@ namespace ProjectPOO {
 			this->CatalogueListeArticle->Name = L"CatalogueListeArticle";
 			this->CatalogueListeArticle->RowHeadersWidth = 51;
 			this->CatalogueListeArticle->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->CatalogueListeArticle->Size = System::Drawing::Size(659, 774);
+			this->CatalogueListeArticle->Size = System::Drawing::Size(658, 774);
 			this->CatalogueListeArticle->TabIndex = 2;
-			this->CatalogueListeArticle->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &CommandeArticle::CatalogueListeArticle_CellContentClick);
 			// 
 			// tableLayoutPanel5
 			// 
@@ -242,14 +241,14 @@ namespace ProjectPOO {
 			this->tableLayoutPanel5->Controls->Add(this->bSupprimerArticle, 0, 2);
 			this->tableLayoutPanel5->Controls->Add(this->bAjouterArticle, 0, 3);
 			this->tableLayoutPanel5->Controls->Add(this->tableLayoutPanel6, 0, 1);
-			this->tableLayoutPanel5->Location = System::Drawing::Point(909, 3);
+			this->tableLayoutPanel5->Location = System::Drawing::Point(908, 3);
 			this->tableLayoutPanel5->Name = L"tableLayoutPanel5";
 			this->tableLayoutPanel5->RowCount = 4;
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 69.2053F)));
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 30.7947F)));
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 46)));
 			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 46)));
-			this->tableLayoutPanel5->Size = System::Drawing::Size(321, 774);
+			this->tableLayoutPanel5->Size = System::Drawing::Size(322, 774);
 			this->tableLayoutPanel5->TabIndex = 3;
 			// 
 			// CataloguePanierVisual
@@ -265,7 +264,7 @@ namespace ProjectPOO {
 			this->CataloguePanierVisual->Name = L"CataloguePanierVisual";
 			this->CataloguePanierVisual->RowHeadersWidth = 51;
 			this->CataloguePanierVisual->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->CataloguePanierVisual->Size = System::Drawing::Size(315, 465);
+			this->CataloguePanierVisual->Size = System::Drawing::Size(316, 465);
 			this->CataloguePanierVisual->TabIndex = 3;
 			// 
 			// bSupprimerArticle
@@ -277,7 +276,7 @@ namespace ProjectPOO {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->bSupprimerArticle->Location = System::Drawing::Point(3, 684);
 			this->bSupprimerArticle->Name = L"bSupprimerArticle";
-			this->bSupprimerArticle->Size = System::Drawing::Size(315, 40);
+			this->bSupprimerArticle->Size = System::Drawing::Size(316, 40);
 			this->bSupprimerArticle->TabIndex = 4;
 			this->bSupprimerArticle->Text = L"Supprimer Article";
 			this->bSupprimerArticle->UseVisualStyleBackColor = true;
@@ -292,7 +291,7 @@ namespace ProjectPOO {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->bAjouterArticle->Location = System::Drawing::Point(3, 730);
 			this->bAjouterArticle->Name = L"bAjouterArticle";
-			this->bAjouterArticle->Size = System::Drawing::Size(315, 41);
+			this->bAjouterArticle->Size = System::Drawing::Size(316, 41);
 			this->bAjouterArticle->TabIndex = 5;
 			this->bAjouterArticle->Text = L"Ajouter Article";
 			this->bAjouterArticle->UseVisualStyleBackColor = true;
@@ -320,7 +319,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel6->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 59)));
-			this->tableLayoutPanel6->Size = System::Drawing::Size(315, 204);
+			this->tableLayoutPanel6->Size = System::Drawing::Size(316, 204);
 			this->tableLayoutPanel6->TabIndex = 6;
 			// 
 			// Show_TotalTVA
@@ -334,7 +333,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->Show_TotalTVA->Location = System::Drawing::Point(99, 72);
 			this->Show_TotalTVA->Name = L"Show_TotalTVA";
-			this->Show_TotalTVA->Size = System::Drawing::Size(213, 22);
+			this->Show_TotalTVA->Size = System::Drawing::Size(214, 22);
 			this->Show_TotalTVA->TabIndex = 4;
 			// 
 			// label_PrixTVA
@@ -378,7 +377,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->Show_TotalPrixHT->Location = System::Drawing::Point(99, 0);
 			this->Show_TotalPrixHT->Name = L"Show_TotalPrixHT";
-			this->Show_TotalPrixHT->Size = System::Drawing::Size(213, 22);
+			this->Show_TotalPrixHT->Size = System::Drawing::Size(214, 22);
 			this->Show_TotalPrixHT->TabIndex = 3;
 			// 
 			// Show_TotalPrixTTC
@@ -392,7 +391,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->Show_TotalPrixTTC->Location = System::Drawing::Point(99, 144);
 			this->Show_TotalPrixTTC->Name = L"Show_TotalPrixTTC";
-			this->Show_TotalPrixTTC->Size = System::Drawing::Size(213, 22);
+			this->Show_TotalPrixTTC->Size = System::Drawing::Size(214, 22);
 			this->Show_TotalPrixTTC->TabIndex = 5;
 			// 
 			// tableLayoutPanel2
@@ -404,7 +403,7 @@ namespace ProjectPOO {
 				50)));
 			this->tableLayoutPanel2->Controls->Add(this->quantite, 0, 0);
 			this->tableLayoutPanel2->Controls->Add(this->quantiteArticle, 0, 1);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(668, 3);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(667, 3);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 2;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
@@ -449,7 +448,7 @@ namespace ProjectPOO {
 			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				33.81443F)));
 			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				307)));
+				308)));
 			this->tableLayoutPanel3->Controls->Add(this->bAnnuler, 1, 0);
 			this->tableLayoutPanel3->Controls->Add(this->bSuivant, 2, 0);
 			this->tableLayoutPanel3->Location = System::Drawing::Point(3, 878);
@@ -468,7 +467,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->bAnnuler->Location = System::Drawing::Point(615, 3);
 			this->bAnnuler->Name = L"bAnnuler";
-			this->bAnnuler->Size = System::Drawing::Size(307, 73);
+			this->bAnnuler->Size = System::Drawing::Size(306, 73);
 			this->bAnnuler->TabIndex = 1;
 			this->bAnnuler->Text = L"Annuler";
 			this->bAnnuler->UseVisualStyleBackColor = true;
@@ -481,9 +480,9 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->bSuivant->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bSuivant->Location = System::Drawing::Point(928, 3);
+			this->bSuivant->Location = System::Drawing::Point(927, 3);
 			this->bSuivant->Name = L"bSuivant";
-			this->bSuivant->Size = System::Drawing::Size(302, 73);
+			this->bSuivant->Size = System::Drawing::Size(303, 73);
 			this->bSuivant->TabIndex = 2;
 			this->bSuivant->Text = L"Suivant";
 			this->bSuivant->UseVisualStyleBackColor = true;
@@ -577,54 +576,13 @@ namespace ProjectPOO {
 		}
 	}
 
-	/*private: void ReloadPanier() {
-		List<Panier^>^ panier = sp->SelectAllArticle(nouveauPanier);
-		this->CataloguePanierVisual->Rows->Clear();
-		for each (Panier ^ p in panier) {
-			DataGridViewRow^ panierR = gcnew DataGridViewRow();
-
-			DataGridViewTextBoxCell^ panierc1 = gcnew DataGridViewTextBoxCell();
-			panierc1->Value = p->getArticle()->getRefArticle();
-			panierR->Cells->Add(panierc1);
-
-			DataGridViewTextBoxCell^ panierc2 = gcnew DataGridViewTextBoxCell();
-			panierc2->Value = p->getArticle()->getNom();
-			panierR->Cells->Add(panierc2);
-
-			DataGridViewTextBoxCell^ panierc3 = gcnew DataGridViewTextBoxCell();
-			panierc3->Value = p->getArticle()->getNature();
-			panierR->Cells->Add(panierc3);
-
-			DataGridViewTextBoxCell^ panierc4 = gcnew DataGridViewTextBoxCell();
-			panierc4->Value = p->getArticle()->getCouleur();
-			panierR->Cells->Add(panierc4);
-
-			DataGridViewTextBoxCell^ panierc5 = gcnew DataGridViewTextBoxCell();
-			panierc5->Value = p->getPrixFinal();
-			panierR->Cells->Add(panierc5);
-
-			DataGridViewTextBoxCell^ panierc6 = gcnew DataGridViewTextBoxCell();
-			panierc6->Value = p->getArticle()->getIdArticle();
-			panierR->Cells->Add(panierc6);
-
-			DataGridViewTextBoxCell^ panierc7 = gcnew DataGridViewTextBoxCell();
-			panierc7->Value = p->getCommande()->getIdCommande();
-			panierR->Cells->Add(panierc7);
-
-			panierR->Tag = p;
-			this->CatalogueListeArticle->Rows->Add(panierR);
-		}
-	}*/
 	private: System::Void bAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 	private: System::Void bSuivant_Click(System::Object^ sender, System::EventArgs^ e) {
-		CommandeLivraison^ nouvellecommande = gcnew CommandeLivraison(nouveauPanier, client, commande);
+		CommandeLivraison^ nouvellecommande = gcnew CommandeLivraison(client, commande);
 		nouvellecommande->ShowDialog();
 		this->Close();
-	}
-	private: System::Void CatalogueListeArticle_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-
 	}
 	private: System::Void bAjouterArticle_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->CatalogueListeArticle->SelectedRows->Count == 1) {
